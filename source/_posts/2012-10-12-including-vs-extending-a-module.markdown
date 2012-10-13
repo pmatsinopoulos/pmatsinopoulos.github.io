@@ -21,7 +21,7 @@ module Ma
     puts "ma_method1"
   end
 
-  # This method, is not reusable, in the sense that I cannot make it be an instance of class
+  # This method, is not reusable, in the sense that I cannot make it be an instance or class
   # method of a class. But still, it is a method of module Ma and I can call it directly.
   #
   def self.ma_method2
@@ -58,3 +58,6 @@ puts "B responds to ma_method2? : #{B.respond_to?(:ma_method2)}" # it will print
 puts "-------------------"
 ```
 
+But you can also `include` or `extend` a `module` in another `module` too. Read this gist by
+[pglombardo](https://gist.github.com/pglombardo) who has kindly appended to the above
+piece of code.
