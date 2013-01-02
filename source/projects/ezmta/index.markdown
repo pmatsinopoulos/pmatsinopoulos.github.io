@@ -49,7 +49,7 @@ This application allows research institutions and their contract administrators 
     * [RSpec](https://github.com/rspec). For Behaviour Driven Development.
     * [Factory Girl](https://github.com/thoughtbot/factory_girl). For factories of objects while testing, instead of using fixtures.
     * [Database Cleaner](https://github.com/bmabey/database_cleaner). For cleaning up database before every test.
-    * [validator_attachment](). Used to check whether specific validators are attached to a model.
+    * [validator_attachment](http://rubygems.org/gems/validator_attachment). Used to check whether specific validators are attached to a model.
     * [simplecov](https://github.com/colszowka/simplecov). For test coverage report.
     * [capybara](https://github.com/jnicklas/capybara). For testing the UI.
     * selenium. For testing the UI when it contains javascript.
@@ -58,7 +58,7 @@ This application allows research institutions and their contract administrators 
 
 ## Project Data
 
-* About 2 man-months
+* About 2 months
 * About 30 models
 * About 20 tables
 * About 20 controllers
