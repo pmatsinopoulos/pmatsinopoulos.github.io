@@ -9,5 +9,5 @@ footer: true
 
 ## My Projects
 
-* [ezMTA](projects/ezmta/)
-* [Fraudpointer](projects/fraudpointer/)
+* [ezMTA](ezmta/)
+* [Fraudpointer](fraudpointer/)
