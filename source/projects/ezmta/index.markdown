@@ -53,6 +53,7 @@ This application allows research institutions and their contract administrators 
     * [simplecov](https://github.com/colszowka/simplecov). For test coverage report.
     * [capybara](https://github.com/jnicklas/capybara). For testing the UI.
     * selenium. For testing the UI when it contains javascript.
+    * [jasmine](http://pivotal.github.com/jasmine/) and [jasminerice](https://github.com/bradphelan/jasminerice): For unit testing javascript functions.
 * [capistrano](https://github.com/capistrano/capistrano). Used for automatic deployments.
 * [new relic](http://newrelic.com). Used for real-time process monitoring.
 
