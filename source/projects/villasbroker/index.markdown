@@ -40,3 +40,12 @@ Villasbroker is an application that is used by a land / villas broker who whishe
     * [validator_attachment](http://rubygems.org/gems/validator_attachment). Used to check whether specific validators are attached to a model.
     * [cucumber](http://github.com/cucumber/cucumber/tree/master] for Acceptance Tests
 * [new relic](http://newrelic.com). Used for real-time process monitoring.
+
+## Project Data
+
+* About 1.5 man-months
+* About 20 models
+* About 20 tables
+* About 10 controllers
+* About X tests
+* About X lines of code
