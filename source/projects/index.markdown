@@ -11,9 +11,9 @@ footer: true
 
 ### Ruby On Rails
 
-* [ezMTA](ezmta/)
-* [villasbroker](villasbroker/)
-* [Fraudpointer](fraudpointer/)
+* [ezMTA](/projects/ezmta/)
+* [villasbroker](/projects/villasbroker/)
+* [Fraudpointer](/projects/fraudpointer/)
 
 ### Ruby
-* [Mars Rover](mars_rover/)
+* [Mars Rover](/projects/mars_rover/)

@@ -3,7 +3,7 @@ layout: post
 title: "How to define and use class-level variables while mixing in Modules"
 date: 2012-10-09 19:47
 comments: true
-categories: 
+categories: ["Ruby"] 
 ---
 
 There are sometimes that you might want to use class-level variables in a reusable `module`. How will you do that? Here is a sample ruby program that does that:
