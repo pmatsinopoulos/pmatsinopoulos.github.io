@@ -11,6 +11,8 @@ Overall: Fantastic. Worth reading for every developer that wants to become profe
 
 ## My Notes and Highlights ##
 
+<!-- more -->
+
 ### Chapter 1 - Professionalism ###
 
 - Professionalism is a marker of responsibility and accountability.
