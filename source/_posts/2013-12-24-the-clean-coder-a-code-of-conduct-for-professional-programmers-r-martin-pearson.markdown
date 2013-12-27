@@ -11,14 +11,15 @@ Overall: Fantastic. Worth reading for every developer that wants to become profe
 
 ## My Notes and Highlights ##
 
-<!-- more -->
-
 ### Chapter 1 - Professionalism ###
 
 - Professionalism is a marker of responsibility and accountability.
-- It is better to make your manager unhappy rather than your managers customers.
+- It is better to make your manager unhappy rather than your manager customers.
+
+<!-- more -->
+
 - You must be responsible for your imperfections.
-- QA should find nothing. Very well put. How development team should be stand next to QA team. Very good points.
+- QA should find nothing. Very well put. How development team should stand next to QA team. Very good points.
 - How can you know your code works? Test it.
 - How much of the code should be tested? All of it!
 - But isn't some code hard to test? Yes, but only because that code has been designed to be hard to test.
@@ -64,14 +65,14 @@ Overall: Fantastic. Worth reading for every developer that wants to become profe
 - The secret ingredient to recognizing real commitment is to look for sentences that sound like this: I will...by...
 - You can only commit to things that you have full control of.
 - If it cannot be done, you can still commit to actions that will bring you closer to the target.
-- If you cannot make a commitment, you better raise a red flag the as soon as possible.
+- If you cannot make a commitment, you better raise a red flag as soon as possible.
 
 ### Chapter 4 - Coding ###
 
 - It is up to you to see problems in the requirements and discuss that with the customer in order to make sure that the solution you are providing covers the true needs of the customer.
 - Your code must be readable by other programmers.
 - Don't write code when you are tired.
-- When you are are worried about personal stuff, don't code, or try to find a way to shut down the background process, or at least its priority so that it's not a continuous distraction. Try to spend a dedicated amount of time on the issue that creates the worry.
+- When you are worried about personal stuff, don't code, or try to find a way to shut down the background process, or at least its priority so that it's not a continuous distraction. Try to spend a dedicated amount of time on the issue that creates the worry.
 - Avoid the `Zone` (when you are highly focused, tunnel-vision state of consciousness). This state of `Zone` is not really hyper-productive neither infallible.
 - One of the big benefits of pair programming is that it is impossible for a pair to enter the `Zone`.
 - The rude response to an interruption often comes from the `Zone`.
@@ -142,7 +143,7 @@ Benefits:
 - There are two truths about meetings:
     * Meetings are necessary.
     * Meetings are huge time wasters.
-- Often these two truths often describe the same meeting.
+- Often these two truths describe the same meeting.
 - You do not have to attend every meeting to which you are invited.
 - One of the most important duties of your manager it to keep you out of meetings.
 - When the meeting gets boring, leave.
@@ -163,7 +164,7 @@ Benefits:
 - Recharge. Good long walk,conversation with friends and such.
 - Somehow muscle focus help to recharge mental focus.
 - Use the well-known Pomodoro Technique to manage your time at work.
-- Priority Inversion is a lie that we tell ourselves. Professionals executes in priority order even if they don't like it.
+- Priority Inversion is a lie that we tell ourselves. Professionals execute in priority order even if they don't like it.
 - When you are in one hole, then stop digging.
 - Realize when you are in a blind alley and find the courage to back out.
 - Messes are worse than blind alleys. They slow you down, but don't stop you. Going forward always looks shorter than the way back, but it isn't.
