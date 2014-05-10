@@ -24,7 +24,7 @@ to understand what the functionality is about.
 ## Technologies Used
 
 * Linux distribution (Ubuntu Server 12.04LTS)
-* MySQL for development/test. PostgreSQL on production. It is deployed on Heroku.
+* MySQL backend deployed on AWS RDS (Amazon Web Services RDS)
 * Ruby on Rails 4.1.0
 * Deployed on Heroku
 
@@ -41,12 +41,14 @@ to understand what the functionality is about.
 * `factory_girl`. Has been used to create instances with ease.
 * `selenium-webdriver`. Has been used in a couple of tests when javascript was necessary.
 * A full-page background image decorates the application. Nice technique to implement this has been found on [css-tricks](https://www.google.gr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CCgQFjAA&url=http%3A%2F%2Fcss-tricks.com%2Fperfect-full-page-background-image%2F&ei=RSpmU4zWAomN7Qae8IGADg&usg=AFQjCNEhgsFuP7_T7nQ8VxEGzEt0rkktCw&bvm=bv.65788261,d.ZGU).
+* `select2-rails`. Is used to have nice select boxes.
+* Ajax requests are used to create a resource while editing another.
 
 ## Project Data
 
-* About 3 days
+* About 5 days
 * 3 models
 * 3 tables
 * 3 controllers
-* 32 RSpec examples
-* 24 Scenarios with 138 Steps
+* 35 RSpec examples
+* 26 Scenarios with 159 Steps
