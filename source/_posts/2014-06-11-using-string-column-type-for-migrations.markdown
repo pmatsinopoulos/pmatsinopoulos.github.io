@@ -8,6 +8,8 @@ categories: ["Ruby on Rails", "MySQL", "PostgreSQL"]
 Ruby on Rails migrations are used to create the necessary tables inside our database. One of the most frequently used column type is `string`.
 Here is an example of an `ActiveRecord::Migration` that uses this type:
 
+<!-- more -->
+
 ```ruby
 class CreateAuthors < ActiveRecord::Migration
   def change
