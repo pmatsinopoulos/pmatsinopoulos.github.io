@@ -8,7 +8,9 @@ categories: ["Ruby on Rails", "Data loading", "Geographic Data"]
 I just wanted to have the United States, their Counties and the Cities in the Counties in CSV format. But I wanted that normalized. In different CSVs. So, here it is.
 You can also find here some Ruby on Rails sample code that loads these files. Primitive stuff, but sometimes useful.
 
-*Note*: My sponsor on that is [Book&Table](https://www.bookandtable.com)
+<div style="width: 100%;text-align: right;font-size: 0.8em;">My sponsor on that is <a href="https://www.bookandtable.com">Book&Table</a></div>
+<div style="width: 100%;text-align: right;font-size: 0.8em;">I am about to start a Seminar: Introduction to Programming. If you are interested in, <a href="/introduction-to-programming-notify-when-public">register here</a>.</div>
+
 <!-- more -->
 
 * Here is the [list of states](/csv/states.csv.tar.gz).
@@ -90,3 +92,6 @@ end
 puts "...end of loading Cities"
 
 ```
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">My sponsor on that is <a href="https://www.bookandtable.com">Book&Table</a></div>
+<div style="width: 100%;text-align: right;font-size: 0.8em;">I am about to start a Seminar: Introduction to Programming. If you are interested in, <a href="/introduction-to-programming-notify-when-public">register here</a>.</div>
