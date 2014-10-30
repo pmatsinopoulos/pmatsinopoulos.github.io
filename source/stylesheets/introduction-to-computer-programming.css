@@ -1,0 +1,49 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#intro-content, #course-details-container {
+    background-color: White;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+section .column {
+    text-align: left;
+}
+
+#course-details-container .left-column {
+    padding-left: 30px;
+    padding-right: 15px;
+}
+
+#course-details-container .right-column {
+    padding-right: 30px;
+    padding-left: 15px;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#tutor-image {
+    border-radius: 5px;
+}
+
+.text-wrap {
+    float: left;
+    margin: 10px;
+}
+
+#social-links a {
+    font-size: 2em;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+hr.thin-hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
