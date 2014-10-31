@@ -2,7 +2,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-#intro-content, #course-details-container {
+.section-container {
     background-color: White;
     border-radius: 10px;
     padding-top: 30px;
@@ -13,12 +13,12 @@ section .column {
     text-align: left;
 }
 
-#course-details-container .left-column {
+#course-overview-container .left-column {
     padding-left: 30px;
     padding-right: 15px;
 }
 
-#course-details-container .right-column {
+#course-overview-container .right-column {
     padding-right: 30px;
     padding-left: 15px;
 }
@@ -46,4 +46,31 @@ p {
 hr.thin-hr {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+i.fa.fa-li {
+    font-size: 1.8em;
+}
+
+h2 i.fa {
+    padding-right: 20px;
+}
+
+#table-of-contents-container ul.fa-ul li {
+    line-height: 1.5em;
+    font-size: 1.4em;
+    margin-left: 30px;
+}
+
+#table-of-contents-container ul.fa-ul li i.fa {
+    font-size: 0.9em;
+}
+
+i.fa-youtube.preview {
+    padding-left: 10px;
+}
+
+a.preview-link {
+    text-decoration: none;
+    font-size: 0.9em;
 }

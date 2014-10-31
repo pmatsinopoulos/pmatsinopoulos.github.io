@@ -16,6 +16,8 @@
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <link href="/stylesheets/font-mfizz.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="/stylesheets/scrolling-nav.css" rel="stylesheet"/>
 
@@ -59,13 +61,16 @@
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#course-details">Course Details</a>
+                    <a class="page-scroll" href="#course-overview">Course Overview</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#pricing">Pricing</a>
+                    <a class="page-scroll" href="#table-of-contents">Table of Contents</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
+                    <a class="page-scroll" href="#preview-lectures">Preview Lectures</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#pricing">Pricing & Versions</a>
                 </li>
             </ul>
         </div>
@@ -78,7 +83,7 @@
 <section id="intro" class="intro-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-left" id="intro-content">
+            <div class="col-lg-12 text-left section-container" id="intro-content">
                 <div class="row">
                     <div class="col-lg-offset-1 col-lg-10">
                         <h1>Introduction to Computer Programming</h1>
@@ -119,28 +124,27 @@
     </div>
 </section>
 
-<!-- Course Details Section -->
-<section id="course-details" class="course-details-section about-section">
+<!-- Course Overview Section -->
+<section id="course-overview" class="course-overview-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12" id="course-details-container">
-                <h1>Course Details</h1>
+            <div class="col-lg-12 section-container" id="course-overview-container">
+                <h1>Course Overview</h1>
                 <div class="row">
                     <div class="col-lg-6 column left-column">
                         <h2>Overview</h2>
                         <p>
                             This course is about computer programming. It starts with the basics and goes to more advanced topics.
                         </p>
-                        <ul>
-                            <li>Setup
+                        <ul class="fa-ul">
+                            <li><i class="fa fa-li fa-cogs"></i>Setup
                                 <p>
                                     You will setup your programming environment. I give you detailed instructions on how to do it. Mostly is pre-configured and
                                     ready for you to start creating computer programs immediately.
                                 </p>
                             </li>
 
-                            <li>
-                                Linux
+                            <li><i class="fa fa-li fa-linux"></i>Linux
                                 <p>
                                     You will have the chance to learn the basics of Linux, the very famous operating system, similar to Mac OS. Even if you are a Windows
                                     user, you will not have problem following this course, because we will install a Linux machine inside your Windows machine. This
@@ -148,19 +152,19 @@
                                 </p>
                             </li>
 
-                            <li>Ruby
+                            <li><i class="fa fa-li icon-ruby"></i>Ruby
                                 <p>You will learn Ruby, one of the most popular programming languages, very easy to learn and start writing your programs with the least effort.
                                     I am giving you lots of lectures on Ruby with lots of hands-on exercises.</p>
                             </li>
 
-                            <li>MySQL
+                            <li><i class="fa fa-li icon-mysql"></i>MySQL
                                 <p>
                                     You will learn MySQL, a very popular RDBMS (Relational Database Management System). MySQL principles and how we design a robust
                                     database to save our data persistently. You will learn SQL commands like <em>select</em>, <em>insert</em>, <em>update</em> and <em>delete</em>.
                                 </p>
                             </li>
 
-                            <li>HTML
+                            <li><i class="fa fa-li fa-html5"></i>HTML
                                 <p>
                                     You will learn HTML (HyperText Markup Language) and how you can write your own web pages. We will see all the basic elements, like
                                     <em>html</em>, <em>body</em>, <em>headers</em>, <em>tables</em>, <em>divs</em> e.t.c. You will also learn how to create interactive
@@ -168,14 +172,14 @@
                                 </p>
                             </li>
 
-                            <li>CSS
+                            <li><i class="fa fa-li icon-css"></i>CSS
                                 <p>
                                     You will learn the basics of CSS (Cascading Style Sheets). These are documents that give instructions to web browser how to style our
                                     web pages. In other words, what font to use, what color for the text, what color for the background and more.
                                 </p>
                             </li>
 
-                            <li>Ruby on Rails and Web Applications
+                            <li><i class="fa fa-li icon-ruby-on-rails"></i>Ruby on Rails and Web Applications
                                 <p>
                                     You will learn how to start building your own web applications, using one of the most popular web application frameworks, Ruby on Rails.
                                     You will start by creating the database and then the forms to allow the user to interact with your application. You will actually design
@@ -232,14 +236,14 @@
                         </p>
                         <h4>My current programming work includes the following:</h4>
                         <ul>
-                            <li>Chief Technology Officer at Book&Table.
+                            <li>Chief Technology Officer at <a href="http://www.bookandtable.com">Book&Table</a>.
                                 <p>I am designing and developing a Ruby on Rails application using PostgreSQL as a database backend.</p>
                             </li>
                             <li>
-                                Senior Software Engineer at Fraudpointer
+                                Senior Software Engineer at <a href="http://www.fraudpointer.com">Fraudpointer</a>
                                 <p>This is another Web application using the Ruby on Rails Web framework, with MySQL as a backend database</p>
                             </li>
-                            <li>Senior Software Engineer at Wyngle.
+                            <li>Senior Software Engineer at <a href="http://www.wyngle.com">Wyngle</a>.
                                 <p>
                                     This is also a Web application that is using Ruby on Rails. Here, I am implementing the backend database using Riak, which is a distributed NoSQL database.
                                 </p>
@@ -263,23 +267,414 @@
     </div>
 </section>
 
-<!-- Pricing Section -->
-<section id="pricing" class="pricing-section services-section">
+<!-- Table of Contents Section -->
+<section id="table-of-contents" class="table-of-contents-section services-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <h1>Pricing Section</h1>
+            <div class="col-lg-12 text-left section-container" id="table-of-contents-container">
+                <div class="row">
+                    <div class="col-lg-offset-1 col-lg-10">
+                        <h1>Table of Contents</h1>
+                        <div class="table-of-contents-section">
+                            <h2><i class="fa fa-cogs"></i>Section 1 - Introduction and Setup of Development Environment</h2>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-paw"></i>What does this Course Cover?<a href="" class="preview-link"><i class="fa fa-youtube preview"></i>Preview</a></li>
+                                <li><i class="fa fa-li fa-paw"></i>What is a Computer Program?</li>
+                                <li><i class="fa fa-li fa-paw"></i>Numbering Systems</li>
+                                <li><i class="fa fa-li fa-paw"></i>Install Oracle Virtual Box and Import Virtual Box Appliance</li>
+                                <li><i class="fa fa-li fa-paw"></i>Working with Linux Operating System</li>
+                            </ul>
+                        </div>
+
+                        <div class="table-of-contents-section">
+                            <h2><i class="fa icon-ruby"></i>Section 2 - Programming with Ruby</h2>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-paw"></i>Ruby Hello World</li>
+                                <li><i class="fa fa-li fa-paw"></i>Ruby Get Started</li>
+                                <li><i class="fa fa-li fa-paw"></i>Assignment, Operators, Integers, Decimals & Constants</li>
+                                <li><i class="fa fa-li fa-paw"></i>Text & Strings</li>
+                                <li><i class="fa fa-li fa-paw"></i>Getting Input & Sending Output</li>
+                                <li><i class="fa fa-li fa-paw"></i>Boolean Logic and Boolean Operators</li>
+                                <li><i class="fa fa-li fa-paw"></i>Conditional and Logical Operators and Control Program Flow</li>
+                                <li><i class="fa fa-li fa-paw"></i>Loops and Repetitions</li>
+                                <li><i class="fa fa-li fa-paw"></i>Arrays</li>
+                                <li><i class="fa fa-li fa-paw"></i>Hashes</li>
+                                <li><i class="fa fa-li fa-paw"></i>Symbols and Hashes</li>
+                                <li><i class="fa fa-li fa-paw"></i>Function Definitions and Arguments</li>
+                                <li><i class="fa fa-li fa-paw"></i>Function Return Value and Recursive Functions</li>
+                                <li><i class="fa fa-li fa-paw"></i>Introduction to Classes and Objects</li>
+                                <li><i class="fa fa-li fa-paw"></i>Classes Objects and Inheritance</li>
+                                <li><i class="fa fa-li fa-paw"></i>Hands-on Experience on Classes & Objects</li>
+                                <li><i class="fa fa-li fa-paw"></i>Method Visibility</li>
+                            </ul>
+                        </div>
+
+                        <div class="table-of-contents-section">
+                            <h2><i class="fa icon-mysql"></i>Section 3 - Relational Database Management Systems - MySQL</h2>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-paw"></i>Presentation about RDBMS's</li>
+                                <li><i class="fa fa-li fa-paw"></i>Manage MySQL Server</li>
+                                <li><i class="fa fa-li fa-paw"></i>SQL - Insert, Update, Delete, Select</li>
+                                <li><i class="fa fa-li fa-paw"></i>Identity Columns and Indexes</li>
+                                <li><i class="fa fa-li fa-paw"></i>Counting and Sorting Records, Limiting Results</li>
+                                <li><i class="fa fa-li fa-paw"></i>SQL and Foreign Key Constraints</li>
+                                <li><i class="fa fa-li fa-paw"></i>Advanced SQL Queries</li>
+                            </ul>
+                        </div>
+
+                        <div class="table-of-contents-section">
+                            <h2><i class="fa fa-html5"></i>Section 4 - Web Development - HTML &amp; CSS</h2>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-paw"></i>Introduction to Web Development</li>
+                                <li><i class="fa fa-li fa-paw"></i>HTML Hello World and HTML Basic Structure</li>
+                                <li><i class="fa fa-li fa-paw"></i>Paragraphs, Horizontal Lines, Comments & Lists</li>
+                                <li><i class="fa fa-li fa-paw"></i>HTML Tables</li>
+                                <li><i class="fa fa-li fa-paw"></i>Dividing HTML page with divs</li>
+                                <li><i class="fa fa-li fa-paw"></i>Interactive HTML</li>
+                                <li><i class="fa fa-li fa-paw"></i>More Interactive HTML</li>
+                                <li><i class="fa fa-li fa-paw"></i>Styling HTML page with CSS</li>
+                            </ul>
+                        </div>
+
+                        <div class="table-of-contents-section">
+                            <h2><i class="fa icon-ruby-on-rails"></i>Section 5 - Dynamic Web Applications with Ruby on Rails</h2>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-paw"></i>Bundler</li>
+                                <li><i class="fa fa-li fa-paw"></i>Bootstrap with Ruby on Rails</li>
+                                <li><i class="fa fa-li fa-paw"></i>Database Schema Migrations for Authors</li>
+                                <li><i class="fa fa-li fa-paw"></i>Database Schema Migrations for Books</li>
+                                <li><i class="fa fa-li fa-paw"></i>Roll back Schema Migrations</li>
+                                <li><i class="fa fa-li fa-paw"></i>Rails Models and Rails Console</li>
+                                <li><i class="fa fa-li fa-paw"></i>Data Validations</li>
+                                <li><i class="fa fa-li fa-paw"></i>Start and stop Rails Server & Rails Architecture</li>
+                                <li><i class="fa fa-li fa-paw"></i>Replace Default RoR Welcome Page</li>
+                                <li><i class="fa fa-li fa-paw"></i>Implementing the List of Authors Page</li>
+                                <li><i class="fa fa-li fa-paw"></i>Implementing a Page to Create Authors</li>
+                                <li><i class="fa fa-li fa-paw"></i>User Friendly Error Messages</li>
+                                <li><i class="fa fa-li fa-paw"></i>Edit and Update Actions</li>
+                                <li><i class="fa fa-li fa-paw"></i>Sharing Code between Views using Partials</li>
+                                <li><i class="fa fa-li fa-paw"></i>Deleting a Resource</li>
+                                <li><i class="fa fa-li fa-paw"></i>Books and Associations to Authors</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="contact-section">
+<!-- Preview Lectures Section -->
+<section id="preview-lectures" class="preview-lectures-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <h1>Contact Section</h1>
+            <div class="col-lg-12 section-container" id="preview-lectures-container">
+                <h1>Preview Lectures</h1>
+                <h2>Watch the video previews for each one of the lectures in the course</h2>
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/uavLT598eFc" frameborder="0" allowfullscreen></iframe>
+                        What does this Course Cover?
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/RM_YqPF80VE" frameborder="0" allowfullscreen></iframe>
+                        What is a Computer Program?
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/56lqyI2hjkg" frameborder="0" allowfullscreen></iframe>
+                        Numbering Systems
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/rFoa9tqWbow" frameborder="0" allowfullscreen></iframe>
+                        Install Oracle Virtual Box and Import Virtual Box Appliance
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/HMBv22mkiFo" frameborder="0" allowfullscreen></iframe>
+                        Working with Linux Operating System
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/L8bb3vIk9Eo" frameborder="0" allowfullscreen></iframe>
+                        Ruby Hello World
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/Y5OSyQ-8DGc" frameborder="0" allowfullscreen></iframe>
+                        Ruby Get Started
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/BxhsKw9QigE" frameborder="0" allowfullscreen></iframe>
+                        Assignment, Operators, Integers, Decimals & Constants
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/dHUmeiSjPv8" frameborder="0" allowfullscreen></iframe>
+                        Text & Strings
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/19JUjonLwwM" frameborder="0" allowfullscreen></iframe>
+                        Getting Input & Sending Output
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/bvWuKK_jQF8" frameborder="0" allowfullscreen></iframe>
+                        Boolean Logic and Boolean Operators
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/325oZpNlBEI" frameborder="0" allowfullscreen></iframe>
+                        Conditional and Logical Operators and Control Program Flow
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/YCdon78PZDs" frameborder="0" allowfullscreen></iframe>
+                        Loops and Repetitions
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/Xou90SUI0Gc" frameborder="0" allowfullscreen></iframe>
+                        Arrays
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/BEd4mxUmnwU" frameborder="0" allowfullscreen></iframe>
+                        Hashes
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/FXw1fV0wSmU" frameborder="0" allowfullscreen></iframe>
+                        Symbols and Hashes
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/HdGIJhE-XAs" frameborder="0" allowfullscreen></iframe>
+                        Function Definitions and Arguments
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/TvvWZ0VrZgk" frameborder="0" allowfullscreen></iframe>
+                        Function Return Value and Recursive Functions
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/wswCAfxJMSM" frameborder="0" allowfullscreen></iframe>
+                        Introduction to Classes and Objects
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/0gzUJ8a_u8Q" frameborder="0" allowfullscreen></iframe>
+                        Classes Objects and Inheritance
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/d8IjGE2pnG4" frameborder="0" allowfullscreen></iframe>
+                        Hands-on Experience on Classes & Objects
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/0XhMJO56gpk" frameborder="0" allowfullscreen></iframe>
+                        Method Visibility
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/ieQgXPbDuH4" frameborder="0" allowfullscreen></iframe>
+                        Presentation about RDBMS's
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/QS8CSUtARSE" frameborder="0" allowfullscreen></iframe>
+                        Manage MySQL Server
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/qW257z5DZJc" frameborder="0" allowfullscreen></iframe>
+                        SQL - Insert, Update, Delete, Select
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/HLlzmhi-njs" frameborder="0" allowfullscreen></iframe>
+                        Identity Columns and Indexes
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/TaUe7l2bCY4" frameborder="0" allowfullscreen></iframe>
+                        Counting and Sorting Records, Limiting Results
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/Zvcuqk0-jZ0" frameborder="0" allowfullscreen></iframe>
+                        SQL and Foreign Key Constraints
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/PfYM1QoukKA" frameborder="0" allowfullscreen></iframe>
+                        Advanced SQL Queries
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/krhdM1DMTkA" frameborder="0" allowfullscreen></iframe>
+                        Introduction to Web Development
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/OswyfqodUT8" frameborder="0" allowfullscreen></iframe>
+                        HTML Hello World and HTML Basic Structure
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/OC5qeBrXiuk" frameborder="0" allowfullscreen></iframe>
+                        Paragraphs, Horizontal Lines, Comments & Lists
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/-s611EuW0Nk" frameborder="0" allowfullscreen></iframe>
+                        HTML Tables
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/bdFJkKc6dYw" frameborder="0" allowfullscreen></iframe>
+                        Dividing HTML page with divs
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/zMoBB99GE9U" frameborder="0" allowfullscreen></iframe>
+                        Interactive HTML
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/xmA8bIOF9pg" frameborder="0" allowfullscreen></iframe>
+                        More Interactive HTML
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/RvCZxdzrZhI" frameborder="0" allowfullscreen></iframe>
+                        Styling HTML page with CSS
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/ClM14mf6ZHo" frameborder="0" allowfullscreen></iframe>
+                        Bundler
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/_0IyMNsoNok" frameborder="0" allowfullscreen></iframe>
+                        Bootstrap with Ruby on Rails
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/4yD6BVGgurM" frameborder="0" allowfullscreen></iframe>
+                        Database Schema Migrations for Authors
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/rqdQ4IAWpJI" frameborder="0" allowfullscreen></iframe>
+                        Database Schema Migrations for Books
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/F_YqYxmIt-0" frameborder="0" allowfullscreen></iframe>
+                        Roll back Schema Migrations
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/9MXZ1KeOcyo" frameborder="0" allowfullscreen></iframe>
+                        Rails Models and Rails Console
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/XNbFW54SRRw" frameborder="0" allowfullscreen></iframe>
+                        Data Validations
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/bhNnhkwjL04" frameborder="0" allowfullscreen></iframe>
+                        Start and stop Rails Server & Rails Architecture
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/GNNHOijuzHM" frameborder="0" allowfullscreen></iframe>
+                        Replace Default RoR Welcome Page
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/GigT0w4xgnc" frameborder="0" allowfullscreen></iframe>
+                        Implementing the List of Authors Page
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/B7UQjEa3768" frameborder="0" allowfullscreen></iframe>
+                        Implementing a Page to Create Authors
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/GEGk-RIoTaY" frameborder="0" allowfullscreen></iframe>
+                        User Friendly Error Messages
+                    </div>
+
+                    <div class="col-lg-3 column second-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/4k37k0GOgPA" frameborder="0" allowfullscreen></iframe>
+                        Edit and Update Actions
+                    </div>
+
+                    <div class="col-lg-3 column third-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/_1xku3verbE" frameborder="0" allowfullscreen></iframe>
+                        Sharing Code between Views using Partials
+                    </div>
+
+                    <div class="col-lg-3 column fourth-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/jMpB4wizMuk" frameborder="0" allowfullscreen></iframe>
+                        Deleting a Resource
+                    </div>
+                </div>
+
+                <div class="row videos-preview-row">
+                    <div class="col-lg-3 column first-column">
+                        <iframe width="265" height="149" src="//www.youtube.com/embed/YfyVqCcQ3ac" frameborder="0" allowfullscreen></iframe>
+                        Books and Associations to Authors
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="pricing" class="pricing-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 section-container" id="pricing-container">
+                <h1>Pricing & Versions</h1>
             </div>
         </div>
     </div>
