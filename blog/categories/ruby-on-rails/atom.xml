@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby on Rails | Panayotis Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2015-08-17T22:38:40+03:00</updated>
+  <updated>2015-08-17T22:47:04+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panayotis Matsinopoulos]]></name>
@@ -28,6 +28,9 @@
 
 <p>Sometimes, there is a combination of the above methods. In other words, in a <code>POST</code> request, some of the data may come both URL encoded in the URI and other data may come encoded with
 another method in the body of the request.</p>
+
+<!-- more -->
+
 
 <h2>How do we get the data inside our Rails controller?</h2>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Panayotis Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2015-08-17T22:38:40+03:00</updated>
+  <updated>2015-08-17T22:47:04+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panayotis Matsinopoulos]]></name>
@@ -24,6 +24,9 @@ is sponsoring me writing this blog post.</p>
 
 <p>Following this tutorial, I had to keep some notes. Here are the most important ones. Maybe you will find them useful too. But most importantly, I am seeking feedback from experienced
 iOS developers.</p>
+
+<!-- more -->
+
 
 <p>You can find the source code of the small application <a href="https://github.com/pmatsinopoulos/todo-obj-c">here</a></p>
 
@@ -339,6 +342,9 @@ the property becomes private, and it is only accessible in the implementation.</
 <p>Sometimes, there is a combination of the above methods. In other words, in a <code>POST</code> request, some of the data may come both URL encoded in the URI and other data may come encoded with
 another method in the body of the request.</p>
 
+<!-- more -->
+
+
 <h2>How do we get the data inside our Rails controller?</h2>
 
 <p>Rails does a very good job and allows us to have access to the data sent by the client in a very easy way. This is called <code>params</code> hash.
@@ -565,6 +571,9 @@ to process the data that a client program is sending to your Ruby on Rails end p
 integer attribute.</p>
 
 <p>Let&rsquo;s start:</p>
+
+<!-- more -->
+
 
 <h2>Sum array of integers</h2>
 

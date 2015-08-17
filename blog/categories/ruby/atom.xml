@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Panayotis Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2015-08-17T22:38:40+03:00</updated>
+  <updated>2015-08-17T22:47:04+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panayotis Matsinopoulos]]></name>
@@ -22,6 +22,9 @@
 integer attribute.</p>
 
 <p>Let&rsquo;s start:</p>
+
+<!-- more -->
+
 
 <h2>Sum array of integers</h2>
 
