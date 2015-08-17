@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="A course to introduce you to computer programming and web development. Starts from basics and takes you hand-by-hand to Ruby, then to MySQL, then to HTML, CSS and finally to Ruby on Rails."/>
+    <meta name="author" content="Panayotis Matsinopoulos"/>
+
+    <title>First Steps to Web Development</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet"/>
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/stylesheets/font-mfizz.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/stylesheets/scrolling-nav.css" rel="stylesheet"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic&subset=latin,greek-ext' rel='stylesheet' type='text/css'>
+
+    <link href="/stylesheets/full-page-background.css" rel="stylesheet"/>
+    <link href="/stylesheets/introduction-to-computer-programming.css" rel="stylesheet"/>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="/javascripts/jquery.easing.min.js"></script>
+    <script src="/javascripts/scrolling-nav.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-26210451-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/javascripts/introduction-to-computer-programming.js"></script>
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<img src="/images/computer-on-wooden-desk-user-typing.jpg" class='bg img-responsive'/>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">First Steps to Web Development</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from course details link when scrolled up past course details section -->
+                <li class="hidden">
+                    <a class="page-scroll" href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#course-overview">Course Overview</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#table-of-contents">Table of Contents</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/first-steps-to-web-development/previews_of_lectures.html">Previews Of Lectures</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#pricing">Pricing & Versions</a>
+                </li>
+                <li>
+                    <a href="/">About Me</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Intro Section -->
+<section id="intro" class="intro-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-left section-container" id="intro-content">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h1 class="text-uppercase">Web Development</h1>
+                    </div>
+                </div>
+                <div class="row text-center subjects">
+                    <div class="col-lg-2 col-lg-offset-1">
+                        <div class="row">Ruby</div>
+                        <div class="row image-container"><img src="/images/header-ruby-logo.png" alias="Ruby Logo" class="img-responsive image-center"/></div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row">MySQL</div>
+                        <div class="row image-container"><img src="/images/mysql-logo-170x115.png" alias="MySQL Logo" class="img-responsive image-center" style="height: 62px;"/></div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row">HTML</div>
+                        <div class="row image-container"><img src="/images/html-logo.png" alias="HTML Logo" class="img-responsive image-center" style="height: 62px;"/></div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row">CSS</div>
+                        <div class="row image-container"><img src="/images/css3.jpg" alias="CSS3 Logo" class="img-responsive image-center" style="height: 62px;"/></div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row">Ruby On Rails</div>
+                        <div class="row image-container"><img src="/images/rails.png" alias="Ruby On Rails Logo" class="img-responsive image-center" style="height: 62px;"/></div>
+                    </div>
+                </div>
+                <div class="row text-center subjects">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="row">
+                            <div class="col-lg-3 tall-line">
+                                14 hours of Video
+                            </div>
+                            <div class="col-lg-3 tall-line">
+                                66 Lectures
+                            </div>
+                            <div class="col-lg-3 tall-line">
+                                62 Quizzes
+                            </div>
+                            <div class="col-lg-3 tall-line">
+                                1000+ Students Community
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-offset-1 col-lg-10">
+                        <h1>First Steps to Web Development</h1>
+                        <p><em>Ruby, MySQL, HTML, CSS, Ruby On Rails</em></p>
+                        <p class="lead">
+                            <em>Web development demystified</em>
+                        </p>
+                        <p>
+                            You are a very good computer user. You know how to browse on Internet, edit documents on your favorite rich text editor, exchange e-mails,
+                            subscribe to newsletters, Skype with your friends. You have a Facebook account or a Twitter one. And...
+                        </p>
+                        <p>
+                            You always wanted to know how this machine does so many things. You always wanted to start understanding those strange people called developers or programmers.
+                        </p>
+
+                        <p>
+                            But you didn't know where to start from.
+                        </p>
+
+                        <h3>This is your start.</h3>
+
+                        <p>
+                            We will go step by step to understand what a computer program is. We will get acquainted with stuff like databases and web pages, HTML and CSS. And we will build our first web application.
+                        </p>
+
+                        <p>
+                            It is a rather long journey, but you will get too much out of it. And I promise!
+                        </p>
+
+                        <h2>You can make it!</h2>
+
+                        <h3>Testimonials</h3>
+
+                        <div class="row testimonial-container">
+                            <div class="col-lg-1 col-offset-1 testimonial-rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <div class="col-lg-10">
+                                Finally on Ruby: An instructor that helps students become instructors!
+
+                                This is an excellent guide on programming in general and an excellent way to easily learn the Ruby and Ruby on Rails approach to Programming.
+                                The instructor has not only the knowledge but also the will and the WAY to pass the knowledge! Well prepared, well presented, well delivered training material! Many THANKS!
+                            </div>
+
+                        </div>
+
+                        <div class="row testimonial-container">
+                            <div class="col-lg-1 col-offset-1 testimonial-rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <div class="col-lg-10">
+                                Really thorough.
+                                I've went through this course. Panayotis really knows his stuff and explains the different elements of Web Development step by step. I know I have much more to learn, but this has been a great introduction for me.
+                            </div>
+                        </div>
+
+                        <div class="row testimonial-container">
+                            <div class="col-lg-1 col-offset-1 testimonial-rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <div class="col-lg-10">
+                                Perfect course. I acquired basic knowledge on a broad range of programming tools. It enables further study. Thank you very much!
+                            </div>
+                        </div>
+
+                        <div class="row testimonial-container">
+                            <div class="col-lg-1 col-offset-1 testimonial-rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <div class="col-lg-10">
+                                Very good course. Good organization. Perfect tutor. We thank you very much.
+                            </div>
+                        </div>
+
+                        <div class="row testimonial-container">
+                            <div class="col-lg-1 col-offset-1 testimonial-rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <div class="col-lg-10">
+                                It is really worth taking! I definitely recommend it!
+                            </div>
+                        </div>
+
+                        <div class="row testimonial-container">
+                            <div class="col-lg-1 col-offset-1 testimonial-rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <div class="col-lg-10">
+                                Very interesting course. Tutor is very detailed and with much patience to explain everything. It can be followed by people that do not belong to the IT world.
+                                But basic computer skills are required.
+                            </div>
+                        </div>
+
+                        <div class="row testimonial-container">
+                            <div class="col-lg-1 col-offset-1 testimonial-rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <div class="col-lg-10">
+                                I hope for more such courses in the future!
+                            </div>
+                        </div>
+
+                        <div class="row testimonial-container">
+                            <div class="col-lg-1 col-offset-1 testimonial-rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <div class="col-lg-10">
+                                Very interesting course on Ruby and Rails intro. It is very obvious that if one gets acquainted with the Ruby vocabulary the process is simplified.
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <em>Scroll down to find out how you can start your computer programming personal development!</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Overview Section -->
+<section id="course-overview" class="course-overview-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 section-container" id="course-overview-container">
+                <h1>Course Overview</h1>
+                <div class="row">
+                    <div class="col-lg-6 column left-column">
+                        <h2>Overview</h2>
+                        <p>
+                            This course is about computer programming and web development. It starts with the basics and goes to more advanced topics.
+                        </p>
+                        <ul class="fa-ul">
+                            <li><i class="fa fa-li fa-cogs"></i>Setup
+                                <p>
+                                    You will setup your programming environment. I give you detailed instructions on how to do it. Mostly is pre-configured and
+                                    ready for you to start creating computer programs immediately.
+                                </p>
+                            </li>
+
+                            <li><i class="fa fa-li fa-linux"></i>Linux
+                                <p>
+                                    You will have the chance to learn the basics of Linux, the very famous operating system, similar to Mac OS. Even if you are a Windows
+                                    user, you will not have problem following this course, because we will install a Linux machine inside your Windows machine. This
+                                    will give you the chance to learn about virtual machines and how useful they can be to development.
+                                </p>
+                            </li>
+
+                            <li><i class="fa fa-li icon-ruby"></i>Ruby
+                                <p>You will learn Ruby, one of the most popular programming languages, very easy to learn and start writing your programs with the least effort.
+                                    I am giving you lots of lectures on Ruby with lots of hands-on exercises.</p>
+                            </li>
+
+                            <li><i class="fa fa-li icon-mysql"></i>MySQL
+                                <p>
+                                    You will learn MySQL, a very popular RDBMS (Relational Database Management System). MySQL principles and how we design a robust
+                                    database to save our data persistently. You will learn SQL commands like <em>select</em>, <em>insert</em>, <em>update</em> and <em>delete</em>.
+                                </p>
+                            </li>
+
+                            <li><i class="fa fa-li fa-html5"></i>HTML
+                                <p>
+                                    You will learn HTML (HyperText Markup Language) and how you can write your own web pages. We will see all the basic elements, like
+                                    <em>html</em>, <em>body</em>, <em>headers</em>, <em>tables</em>, <em>divs</em> e.t.c. You will also learn how to create interactive
+                                    HTML pages with <em>forms</em>.
+                                </p>
+                            </li>
+
+                            <li><i class="fa fa-li icon-css"></i>CSS
+                                <p>
+                                    You will learn the basics of CSS (Cascading Style Sheets). These are documents that give instructions to web browser how to style our
+                                    web pages. In other words, what font to use, what color for the text, what color for the background and more.
+                                </p>
+                            </li>
+
+                            <li><i class="fa fa-li icon-ruby-on-rails"></i>Ruby on Rails and Web Applications
+                                <p>
+                                    You will learn how to start building your own web applications, using one of the most popular web application frameworks, Ruby on Rails.
+                                    You will start by creating the database and then the forms to allow the user to interact with your application. You will actually design
+                                    and build a Bookstore application, that stores Authors and Books.
+                                </p>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <div class="col-lg-6 column right-column">
+                        <h2>Your Tutor</h2>
+                        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/c0.0.160.160/p160x160/1184842_10203434991496179_1139973165_n.jpg?oh=7f48e862de0bb797aff5e3cb6144bec8&oe=54EF59CE&__gda__=1424579100_a945297cd2b29d1ee9a96ec174b619d5" id="tutor-image" class="text-wrap img-thumbnail"/>
+                        <p><strong>Panayotis Matsinopoulos</strong></p>
+                        <p><em>Senior Software Engineer</em></p>
+                        <div id="social-links">
+
+                            <a href="http://pmatsinopoulos.github.io" target="_blank">
+                                <i class="fa fa-globe"></i>
+                            </a>
+                            <a href="https://twitter.com/pmatsino" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="https://plus.google.com/+PanayotisMatsinopoulos?rel=author" target="_blank">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a href="https://www.facebook.com/PanayotisMatsinopoulos" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/panayotismatsinopoulos" target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.youtube.com/user/pmatsinopoulos" target="_blank">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+
+                        </div>
+
+                        <hr class="thin-hr"/>
+
+                        <p>
+                            I own a Computer Science Degree from University of Athens and an MSc in Telecommunications from University College London
+                        </p>
+                        <p>
+                            I love software engineering. I am passionate about my job. I find it the most creative job that one could have.
+                        </p>
+                        <p>
+                            After a long software engineering life that started with C/C++, then went to Java and then to .NET Visual Basic/C#, the last 4 years, I have been developing web applications using Ruby on Rails.
+                        </p>
+                        <p>
+                            I believe that Ruby on Rails dramatically increased my web application development skills. REST, HTTP, testing and the whole family of tools around it tremendously improved the quality of code I deliver.
+                        <p>
+                            I am always willing to take new challenges on big projects. My biggest reward is not the money that I get, but the software that I create when it makes their users happy to use it.
+                        </p>
+                        <h4>My current programming work includes the following:</h4>
+                        <ul>
+                            <li>Chief Technology Officer at <a href="http://www.bookandtable.com">Book&Table</a>.
+                                <p>I am designing and developing a Ruby on Rails application using PostgreSQL as a database backend.</p>
+                            </li>
+                            <li>
+                                Senior Software Engineer at <a href="http://www.fraudpointer.com">Fraudpointer</a>
+                                <p>This is another Web application using the Ruby on Rails Web framework, with MySQL as a backend database</p>
+                            </li>
+                            <li>Senior Software Engineer at <a href="http://www.wyngle.com">Wyngle</a>.
+                                <p>
+                                    This is also a Web application that is using Ruby on Rails. Here, I am implementing the backend database using Riak, which is a distributed NoSQL database.
+                                </p>
+
+                            </li>
+                        </ul>
+                        <h4>Teaching</h4>
+                        <p>
+                            While I am working on real projects, I like to teach computer programming. I have taught to many kids and adults, either on-line or in classrooms. I am also teaching
+                            in private one-on-one style. In order to teach on-line I am using latest distance teaching technologies that render teaching as if I were sitting on the same desk with
+                            my students!
+                        </p>
+                        <hr/>
+                        <p>
+                            You can read more about me on <a href="/">my blog, here!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Table of Contents Section -->
+<section id="table-of-contents" class="table-of-contents-section services-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-left section-container" id="table-of-contents-container">
+                <div class="row">
+                    <div class="col-lg-offset-1 col-lg-10">
+                        <h1>Table of Contents</h1>
+                        <div class="table-of-contents-section">
+                            <h2><i class="fa fa-cogs"></i>Section 1 - Introduction and Setup of Development Environment</h2>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-paw"></i>What does this Course Cover?</li>
+                                <li><i class="fa fa-li fa-paw"></i>What is a Computer Program?</li>
+                                <li><i class="fa fa-li fa-paw"></i>Numbering Systems</li>
+                                <li><i class="fa fa-li fa-paw"></i>Install Oracle Virtual Box and Import Virtual Box Appliance</li>
+                                <li><i class="fa fa-li fa-paw"></i>Working with Linux Operating System</li>
+                            </ul>
+                        </div>
+
+                        <div class="table-of-contents-section">
+                            <h2><i class="fa icon-ruby"></i>Section 2 - Programming with Ruby</h2>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-paw"></i>Ruby Hello World</li>
+                                <li><i class="fa fa-li fa-paw"></i>Ruby Get Started</li>
+                                <li><i class="fa fa-li fa-paw"></i>Assignment, Operators, Integers, Decimals & Constants</li>
+                                <li><i class="fa fa-li fa-paw"></i>Text & Strings</li>
+                                <li><i class="fa fa-li fa-paw"></i>Getting Input & Sending Output</li>
+                                <li><i class="fa fa-li fa-paw"></i>Boolean Logic and Boolean Operators</li>
+                                <li><i class="fa fa-li fa-paw"></i>Conditional and Logical Operators and Control Program Flow</li>
+                                <li><i class="fa fa-li fa-paw"></i>Loops and Repetitions</li>
+                                <li><i class="fa fa-li fa-paw"></i>Arrays</li>
+                                <li><i class="fa fa-li fa-paw"></i>Hashes</li>
+                                <li><i class="fa fa-li fa-paw"></i>Symbols and Hashes</li>
+                                <li><i class="fa fa-li fa-paw"></i>Function Definitions and Arguments</li>
+                                <li><i class="fa fa-li fa-paw"></i>Function Return Value and Recursive Functions</li>
+                                <li><i class="fa fa-li fa-paw"></i>Introduction to Classes and Objects</li>
+                                <li><i class="fa fa-li fa-paw"></i>Classes Objects and Inheritance</li>
+                                <li><i class="fa fa-li fa-paw"></i>Hands-on Experience on Classes & Objects</li>
+                                <li><i class="fa fa-li fa-paw"></i>Method Visibility</li>
+                            </ul>
+                        </div>
+
+                        <div class="table-of-contents-section">
+                            <h2><i class="fa icon-mysql"></i>Section 3 - Relational Database Management Systems - MySQL</h2>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-paw"></i>Presentation about RDBMS's</li>
+                                <li><i class="fa fa-li fa-paw"></i>Manage MySQL Server</li>
+                                <li><i class="fa fa-li fa-paw"></i>SQL - Insert, Update, Delete, Select</li>
+                                <li><i class="fa fa-li fa-paw"></i>Identity Columns and Indexes</li>
+                                <li><i class="fa fa-li fa-paw"></i>Counting and Sorting Records, Limiting Results</li>
+                                <li><i class="fa fa-li fa-paw"></i>SQL and Foreign Key Constraints</li>
+                                <li><i class="fa fa-li fa-paw"></i>Advanced SQL Queries</li>
+                            </ul>
+                        </div>
+
+                        <div class="table-of-contents-section">
+                            <h2><i class="fa fa-html5"></i>Section 4 - Web Development - HTML &amp; CSS</h2>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-paw"></i>Introduction to Web Development</li>
+                                <li><i class="fa fa-li fa-paw"></i>HTML Hello World and HTML Basic Structure</li>
+                                <li><i class="fa fa-li fa-paw"></i>Paragraphs, Horizontal Lines, Comments & Lists</li>
+                                <li><i class="fa fa-li fa-paw"></i>HTML Tables</li>
+                                <li><i class="fa fa-li fa-paw"></i>Dividing HTML page with divs</li>
+                                <li><i class="fa fa-li fa-paw"></i>Interactive HTML</li>
+                                <li><i class="fa fa-li fa-paw"></i>More Interactive HTML</li>
+                                <li><i class="fa fa-li fa-paw"></i>Styling HTML page with CSS</li>
+                            </ul>
+                        </div>
+
+                        <div class="table-of-contents-section">
+                            <h2><i class="fa icon-ruby-on-rails"></i>Section 5 - Dynamic Web Applications with Ruby on Rails</h2>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-paw"></i>Bundler</li>
+                                <li><i class="fa fa-li fa-paw"></i>Bootstrap with Ruby on Rails</li>
+                                <li><i class="fa fa-li fa-paw"></i>Database Schema Migrations for Authors</li>
+                                <li><i class="fa fa-li fa-paw"></i>Database Schema Migrations for Books</li>
+                                <li><i class="fa fa-li fa-paw"></i>Roll back Schema Migrations</li>
+                                <li><i class="fa fa-li fa-paw"></i>Rails Models and Rails Console</li>
+                                <li><i class="fa fa-li fa-paw"></i>Data Validations</li>
+                                <li><i class="fa fa-li fa-paw"></i>Start and stop Rails Server & Rails Architecture</li>
+                                <li><i class="fa fa-li fa-paw"></i>Replace Default RoR Welcome Page</li>
+                                <li><i class="fa fa-li fa-paw"></i>Implementing the List of Authors Page</li>
+                                <li><i class="fa fa-li fa-paw"></i>Implementing a Page to Create Authors</li>
+                                <li><i class="fa fa-li fa-paw"></i>User Friendly Error Messages</li>
+                                <li><i class="fa fa-li fa-paw"></i>Edit and Update Actions</li>
+                                <li><i class="fa fa-li fa-paw"></i>Sharing Code between Views using Partials</li>
+                                <li><i class="fa fa-li fa-paw"></i>Deleting a Resource</li>
+                                <li><i class="fa fa-li fa-paw"></i>Books and Associations to Authors</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pricing" class="pricing-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 section-container" id="pricing-container">
+                <h1>Pricing & Versions</h1>
+                <h3>This Course comes in the following Versions.</h3>
+                <h3>Pick up the one that suits your learning style best!</h3>
+                <div class="row">
+                    <div class="col-lg-3 col-lg-offset-1" id="pricing-for-video-lectures">
+                        <div class="price-header">Video Lectures</div>
+                        <div class="price-subheading"><a href="previews_of_lectures.html">14 hours Screen Casts</a></div>
+                        <div class="price-subheading"><a href="previews_of_lectures.html">66 Lectures</a></div>
+                        <div class="price-subheading"><a href="previews_of_lectures.html">62 Quizzes</a></div>
+                        <div class="price-subheading"><a href="previews_of_lectures.html">Click Here for Previews of Lectures</a></div>
+                        <hr/>
+                        <div class="normal-price-container">normal price <span class="normal-price">$295</span></div>
+                        <div class="discounted-price-container"><span class="discounted-price">$236</span></div>
+                        <div>
+                            <a href="https://www.udemy.com/introduction-to-computer-programming/?couponCode=PMATSINOPOULOS-OWN-SITE2" id="purchase-link" target="_blank">
+                                <div id="purchase-link-text-container" class="click-to-purchase-container">
+                                    CLICK here<br/>Purchase from UDEMY with discounted value with promo code PMATSINOPOULOS-OWN-SITE2
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"  id="pricing-for-private-on-one-tutoring">
+                        <div class="price-header">Private Tutoring</div>
+                        <div class="price-subheading">One-On-One - Remote</div>
+                        <div class="price-subheading">On Your Own Pace</div>
+                        <hr/>
+                        <div class="discounted-price-container"><span class="price">$68/hour</span></div>
+                        <div>
+                            <a href="https://my.bookandtable.com/tutors/panayotis-matsinopoulos?do=meet" id="purchase-private-tutoring-link" target="_blank">
+                                <div id="purchase-private-tutoring-link-text-container" class="click-to-purchase-container">
+                                    CLICK here<br/>This will take you to my Book&Table hosted account. You will only have to send me a message and I will come back to you ASAP!
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" id="pricing-for-scheduled-classes">
+                        <div class="price-header">Scheduled Classes</div>
+                        <div class="price-subheading">Virtual or Real Classes</div>
+                        <div class="price-subheading">In Small Groups of 5 students</div>
+                        <hr/>
+                        <!-- AWeber Web Form Generator 3.0 -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form method="post" accept-charset="UTF-8" action="http://www.aweber.com/scripts/addlead.pl" class="form-horizontal" id="scheduled-classes-notify-me-form">
+                                    <div style="display: none;">
+                                        <input type="hidden" name="meta_web_form_id" value="811408505" />
+                                        <input type="hidden" name="meta_split_id" value="" />
+                                        <input type="hidden" name="listname" value="awlist3655464" />
+                                        <input type="hidden" name="redirect" value="http://pmatsinopoulos.github.io/panayotis-m-newsletter/you-have-to-confirm-your-subscription-to-our-newsletter" id="redirect_d99213fbe5e3c7d3cf1ab2857ce672ff" />
+                                        <input type="hidden" name="meta_redirect_onlist" value="http://pmatsinopoulos.github.io/panayotis-m-newsletter/you-are-already-subscribed/" />
+
+                                        <input type="hidden" name="meta_adtracking" value="Sign_Up_to_Panayotis_M._Newsletter" />
+                                        <input type="hidden" name="meta_message" value="1" />
+                                        <input type="hidden" name="meta_required" value="name,email" />
+                                        <input type="hidden" name="meta_forward_vars" value="1" />
+                                        <input type="hidden" name="meta_tooltip" value="" />
+                                    </div>
+
+                                    <div id="af-form-811408505">
+                                        <div id="af-body-811408505">
+                                            <div>
+                                                <div>
+                                                    <p>
+                                                        Scheduled classes are either virtual or real. Virtual ones are being offered using distance learning technologies.
+                                                        Real ones are organized in various cities around the world.
+                                                        The groups are up to 5 students. They are frequently organized.
+                                                    </p>
+
+                                                    <p>
+                                                        Sign up below in order to get notified when the next one is put on schedule!
+                                                    </p>
+
+                                                    <p> <b>B O N U S!</b>
+                                                        If you sign up, you will receive for FREE, my course "How to Write your First Computer Program!".
+                                                        This course consists of a series of emails + video screen casts, with detailed explanation on how to setup your development
+                                                        environment and write your first computer program. Also, you will have my full support via my email (panayotis@matsinopoulos.gr)
+                                                        during this course.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="awf_field-67444701" class="col-lg-3 control-label">Name: </label>
+                                                <div class="col-lg-9">
+                                                    <input id="awf_field-67444701" class="form-control" placeholder="Your Name" type="text" name="name" value=""  onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " tabindex="500" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                              <label for="awf_field-67444702" class="col-lg-3 control-label">Email: </label>
+                                                <div class="col-lg-9">
+                                                    <input id="awf_field-67444702" class="form-control" type="text" placeholder="Your Email" name="email" value="" tabindex="501" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                              <button name="submit" type="submit" class="bnt btn-primary btn-lg btn-block" tabindex="502">Notify Me</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="display: none;">
+                                        <img src="http://forms.aweber.com/form/displays.htm?id=jMzMnMysTKzMTA==" alt="" />
+                                    </div>
+                                </form>
+
+                                <!-- /AWeber Web Form Generator 3.0 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="http://load.sumome.com/" data-sumo-site-id="27b33ffaf6c60ff77617a066648532d71a5224aad319c668f2cff556a44a7031" async="async"></script>
+
+</body>
+
+</html>

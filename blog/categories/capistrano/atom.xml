@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Capistrano | Panayotis Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/capistrano/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2015-08-17T22:33:04+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Capistrano - Shared directories among releases]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/09/02/capistrano-shared-directories-among-releases/"/>
+    <updated>2012-09-02T20:47:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/09/02/capistrano-shared-directories-among-releases</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/capistrano/capistrano">Capistrano</a> is a great tool for deploying Ruby on Rails applications on remote server machines. If you have ever used it, you may already know that it creates new directory structures for each new release that it realizes and sets &ldquo;current&rdquo; to point to the latest one.</p>
+
+<p>This is very fine, but there are cases in your application that you might want to share the same directory data among releases. You can declare in your &ldquo;deploy.rb&rdquo; file the directories that will be shared among your releases. By default, the directories &ldquo;log&rdquo;, &ldquo;public/system&rdquo; and &ldquo;tmp/pids&rdquo; are already shared. Hence, you do not have to do anything for them. But, if, for example, you want to share the &ldquo;my_custom_data&rdquo; directory that you have inside your application structure, you need to add the following line inside your &ldquo;deploy.rb&rdquo; file:</p>
+
+<p><code>ruby Add this line to your deploy file
+set :shared_children, fetch(:shared_children) + ["my_custom_data"]
+</code></p>
+
+<p>This will create a link to &ldquo;shared/my_custom_data&rdquo; folder by executing the following command automatically:</p>
+
+<p><code>bash Create a link to your custom shared folder
+ln   -s  /home/&lt;my_app&gt;/&lt;deployment_dir&gt;/shared/my_custom_data   /home/&lt;my_app&gt;/&lt;deployment_dir&gt;/current/my_custom_data
+</code>
+Please, note that <code>my_custom_data</code> should pre-exist while you are doing the deployment. <strong>But</strong>, <code>bundle exec cap setup</code> will create shared folders anyway for you the first time you setup your servers.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,2573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Panayotis Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2015-08-17T22:33:04+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My First iOS App]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app/"/>
+    <updated>2015-08-14T07:40:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app</id>
+    <content type="html"><![CDATA[<p>This is my first encounter with iOS apps and Objective C. I followed the whole tutorial which is given <a href="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapiOS/index.html#//apple_ref/doc/uid/TP40011343-CH2-SW1">here</a>.
+I am a Ruby developer and I decided to take this trip to iOS development because it is necessary for my work. I am offering professional services to <a href="https://www.bookandtable.com">Book&amp;Table</a>, which
+is sponsoring me writing this blog post.</p>
+
+<p>Following this tutorial, I had to keep some notes. Here are the most important ones. Maybe you will find them useful too. But most importantly, I am seeking feedback from experienced
+iOS developers.</p>
+
+<p>You can find the source code of the small application <a href="https://github.com/pmatsinopoulos/todo-obj-c">here</a></p>
+
+<h2>Setup your Dev Env</h2>
+
+<p>The tutorial explains very well how to setup your development environment. And your development environment comes for free with XCode and iOS SDK.
+There are tools that contain everything and the UI is rich, with integrated debugger and tools to do graphical programming and design of your
+app.</p>
+
+<h2>I do not know Objective-C</h2>
+
+<p>Although I have built lots of programs in C, I have never built one in Objective-C. So, the tutorial does an introduction to this language.</p>
+
+<h3>Calling a method on a object</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[someObjectInstance someMethodName]</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Application Templates</h2>
+
+<p>XCode offers you the ability to start a project using an application template. The tutorial works with the <code>Single View Application</code> template.
+I suppose that when I will get more familiar with XCode and Objective-C I will be able to use other templates too.</p>
+
+<h2>Run Simulator</h2>
+
+<p>This is fantastic. You can run a simulator from within XCode and see how your application would look like in various devices. Tutorial explains how to do that.</p>
+
+<h2>main.m</h2>
+
+<p>Cool. Like in C, there is a file that contains the <code>main</code> function. The Objective-C files that contain the implementation (rather than the interface) have
+an extension that ends with <code>.m</code> (rather than with <code>.c</code> or <code>.cpp</code>).</p>
+
+<h2>Application &amp; AppDelegate</h2>
+
+<p>There are two objects that work together in order for the app to work. The application object and the app delegate object. The application object calls
+specific methods on app delegate object and allows app delegate object to customize the app behaviour.</p>
+
+<p>The app delegate object is defined in <code>AppDelegate.h</code> and implemented in <code>AppDelegate.m</code> file.</p>
+
+<p>Reading the method names and the comments of the <code>AppDelegate.m</code> file, I understand that an application follows a life cycle through the following states:</p>
+
+<ul>
+<li>launch &ndash;> active</li>
+<li>active &ndash;> inactive     Goes to inactive, when for example an incoming call is intercepted.</li>
+<li>inactive &ndash;> background When the user quits, the application might go to background state instead of being terminated.</li>
+<li>background &ndash;> inactive When the application goes back from background to inactive</li>
+<li>inactive &ndash;> active</li>
+<li>terminated When the application terminates</li>
+</ul>
+
+
+<h2>Storyboard</h2>
+
+<p>There is a tool that helps you design the flow of your application. This is the storyboard. Your application is going to be
+comprised of various stories each one linked to another. This will be the application flow.</p>
+
+<h2>The Canvas and Adaptive Interface</h2>
+
+<p>The canvas that is used to design your stories does not have the size of a specific iOS device. It is generic. You are responsible
+to make your application being adaptive. And the tutorial does an introduction on the adaptive app design. It teaches you how to use
+the Auto Layout feature that helps you position your elements in such a way that they will be looking good on all iOS devices.</p>
+
+<h2>Object Library</h2>
+
+<p>While you are doing the UI design of your app, you can use the Object Library that contains a big list of visual, and other items,
+ready for you to use in order to build your app interface.</p>
+
+<h2>Model View Controller</h2>
+
+<p>The application design uses the MVC (Model View Controller) architecture.</p>
+
+<h2>Views</h2>
+
+<p>All the visual elements that you put on an application &ldquo;page&rdquo; are called <code>views</code>. So, for example, an input text field is a view.
+However, the views can contain other views and you can have a view hierarchy.</p>
+
+<p>At the top of the view hierarchy is the <code>window</code> object (look at file <code>AppDelegate.h</code>).</p>
+
+<p>The <code>UIKit</code> framework provides many different views ready for you to use in order to let your users interact with your application.
+All the views are classes of <code>UIView</code> class. You can customize and create your own views by subclassing this class.</p>
+
+<h2>Storyboards</h2>
+
+<p>You use storyboards to design the interface of your app. The <code>Main.storyboard</code> is the one that is automatically created for you by
+XCode project wizard, when you chose the simple view application template.</p>
+
+<h2>Scenes</h2>
+
+<p>Each storyboard is composed of scenes. Can I think about scenes like I think about web pages when I build a Web application? I guess
+so. The scene has its own view hierarchy. Like a page has a list/tree of HTML tags that are used to render the page.</p>
+
+<h2>Inspector Pane</h2>
+
+<p>This is used to configure the views. So, you select a view and then you use Inspector Pane on the right to configure the properties
+of the view.</p>
+
+<h2>View Controllers</h2>
+
+<p>These implement the application behaviour. Events go from views to view controllers which then inform data model layer and then
+the other way around. View controllers can be thought of as Controllers in Ruby on Rails. The view controller is an instance of <code>UIViewController</code> class.</p>
+
+<p>A view controller manages a single view hierarchy. And usually, you create a custom <code>UIViewController</code> class in order to manage it.</p>
+
+<h2>Navigation Controller</h2>
+
+<p>This is a specialized view controller that is used to navigate from one view hierarchy to another. In other words from one page to
+another. You can think about the navigation controller like a top navigation bar that you may have put into a layout file in your Rails application.
+The set of view controller managed by a particular navigation controller is called the navigation stack.</p>
+
+<p>Note that navigation controller, besides managing the transition from one view controller to another, it is responsible for presenting custom
+views that belong to its own hierarchy.</p>
+
+<p>Embed your first view controller into a navigation controller, by selecting the view controller and then selecting &ldquo;Editor > Embed In > Navigation Controller&rdquo;.
+This will create a new navigation controller that has as root view controller the one embedded.</p>
+
+<h2>Segue</h2>
+
+<p>The segue is a transition from one view controller to another. There are actually various types of segues that can be used to
+link one view controller to another.</p>
+
+<ul>
+<li>Show</li>
+<li>Show detail</li>
+<li>Present modally</li>
+<li>Popover presentation</li>
+<li>Custom</li>
+<li>Unwind</li>
+</ul>
+
+
+<p>Because a <em>segue</em> is an object that holds the transition from one view controller to another, it is aware of both the source view controller
+and the destination view controller.</p>
+
+<h2>The Storyboard Entry Point</h2>
+
+<p>This is an arrow in your storyboard editor that tells which scene is the one that should be presented first when the app starts.</p>
+
+<h2>Modal View Controller</h2>
+
+<p>The modal view controller is created when the segue that takes you to the view controller is of modal mode. The modal view controller
+does not get a navigation bar because it is not added to the navigation stack. In that case, you may want to embed the modal view controller
+it its own navigation controller.</p>
+
+<h2>Customized View Controllers</h2>
+
+<p>You need to create files (<code>*.h</code> and <code>*.m</code>) that define a class that derives from standard view controller classes. Then you need to use the
+inspector editor to define that your scene is using the particular customized view controller.</p>
+
+<h2>Exit From Scene</h2>
+
+<p>You can exit from a scene as follows. You ctrl click on the navigation bar item that you want to be used for exit and your drag and drop it
+on the &ldquo;Exit&rdquo; icon on top of the scene design area. Then you specify which method to call. You should have defined the method to call before
+doing this. That method is an <code>IBAction</code> and when you do the drag and drop a list with the <code>IBActions</code> are presented for you to select.</p>
+
+<h2>Foundation Framework</h2>
+
+<p>This is one of the most basic and most important frameworks that Objective-C offers.
+Includes:</p>
+
+<ol>
+<li>value classes &amp;</li>
+<li>collection classes</li>
+</ol>
+
+
+<p>Examples of value objects:</p>
+
+<ul>
+<li>NSString</li>
+<li>NSNumber</li>
+</ul>
+
+
+<h2>NSString</h2>
+
+<p>This is an object wrapper for string.</p>
+
+<p>Examples:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSString *myString = @"Hello World";</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>@</code> symbol is necessary when assigning a literal string to an NSString object.</p>
+
+<h2>NSNumber</h2>
+
+<p>Similarly to <code>NSString</code>, you can prefix a number literal with the symbol <code>@</code> in order to create an <code>NSNumber</code> instance.</p>
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSNumber *myAge = @44;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Collection Objects</h2>
+
+<p>The most important collection objects of the Foundation framework are:</p>
+
+<ol>
+<li><code>NSArray</code> (and its mutable counterpart <code>NSMutableArray</code>)</li>
+<li><code>NSSet</code> (and its mutable counterpart <code>NSMutableSet</code>)</li>
+<li><code>NSDictionary</code> (and its mutable counterpart <code>NSMutableDictionary</code>)</li>
+</ol>
+
+
+<h2>Define Custom Classes</h2>
+
+<p>You declare the interface in a <code>.h</code> file and the implementation in a <code>.m</code> file.</p>
+
+<p>Example:</p>
+
+<pre><code>@interface ToDoItem : NSObject
+
+@end
+</code></pre>
+
+<p>is the <code>ToDoItem.h</code> file.</p>
+
+<p>and the</p>
+
+<pre><code>@implementation ToDoItem
+
+@end
+</code></pre>
+
+<p>is the <code>ToDoItem.m</code> file.</p>
+
+<h2>Use Properties to Store Object&rsquo;s Data</h2>
+
+<p>The properties are defined inside the interface part of the class definition. Example:</p>
+
+<pre><code>@interface ToDoItem : NSObject
+
+@property NSString *itemName;
+@property BOOL completed;
+
+@end
+</code></pre>
+
+<p>And you can declare a property to be readonly as follows:</p>
+
+<pre><code>@property (readonly) NSDate *completionDate;
+</code></pre>
+
+<h2>Instance VS Class Methods</h2>
+
+<p>The instance methods are defined using the <code>-</code> sign whereas the
+class methods are defined using the <code>+</code> sign.</p>
+
+<p>Example:</p>
+
+<pre><code>@interface Person : NSObject
+
+-(void) speak;
++(void) clean_data;
+
+@end
+</code></pre>
+
+<p>In the above example the <code>speak</code> is an instance method, whereas <code>clean_data</code> is a class method.</p>
+
+<h2>Models</h2>
+
+<p>Define your models using custom classes, deriving, for example, from <code>NSObject</code>.</p>
+
+<h2>Private Properties</h2>
+
+<p>You can declare properties in the interface definition of your class but in the <code>.m</code> file. In that case,
+the property becomes private, and it is only accessible in the implementation.</p>
+
+<p>Example:</p>
+
+<pre><code>@interface Person : NSObject
+@end
+
+@implementation Person
+
+// +age+ is a private property
+@property NSNumber *age;
+
+@end
+</code></pre>
+
+<h2>Let a View display Dynamic Data</h2>
+
+<p>It needs a <em>data source</em> and a <em>delegate</em>.</p>
+
+<h2>Prototype Cells</h2>
+
+<p>Take their data from the data source of the table view.</p>
+
+<h1>Where do I go from here</h1>
+
+<p>I definitely need to improve my Objective-C knowledge. I will <a href="https://www.codeschool.com/courses/try-objective-c">Try Objective-C</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rails params Does the Job]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2015/08/08/rails-params-does-the-job/"/>
+    <updated>2015-08-08T10:07:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2015/08/08/rails-params-does-the-job</id>
+    <content type="html"><![CDATA[<p>When you have a Ruby on Rails end point, the client usually sends data in one of the following:</p>
+
+<ol>
+<li>For <code>GET</code> requests, URL encoded in the URI</li>
+<li>For <code>POST</code> requests, in the body of the request encoded with <code>application/x-www-form-urlencoded</code> or <code>application/json</code> or other popular format.</li>
+</ol>
+
+
+<p>Sometimes, there is a combination of the above methods. In other words, in a <code>POST</code> request, some of the data may come both URL encoded in the URI and other data may come encoded with
+another method in the body of the request.</p>
+
+<h2>How do we get the data inside our Rails controller?</h2>
+
+<p>Rails does a very good job and allows us to have access to the data sent by the client in a very easy way. This is called <code>params</code> hash.
+The <code>params</code> hash holds the data in a <code>Hash</code> version no matter how the data have been sent by the client. You will find in the <code>params</code> hash
+data that have been sent URL encoded on the URI of the request, or <code>application/x-www-form-urlencoded</code> in the body of the request or with
+any other method.</p>
+
+<h2>Echo Data Service</h2>
+
+<p>I have very quickly created an echo data service and I have deployed that here:</p>
+
+<p><a href="https://echo-data.herokuapp.com/">https://echo-data.herokuapp.com/</a></p>
+
+<p>The source code of that is here:</p>
+
+<p><a href="https://github.com/pmatsinopoulos/echo">https://github.com/pmatsinopoulos/echo</a></p>
+
+<p>What does it do? It returns back to client the data that the client sends to server. The response is a JSON object with two properties. The <code>params</code> value and the <code>request.body</code> value.
+The <code>params</code> value will show to you how the controller has interpreted the data sent by the client. The <code>request.body</code> will show you how the body has been actually received.</p>
+
+<h2>Testing the service</h2>
+
+<p>You can use some <code>curl</code> commands to test the echo data service. Here is how:</p>
+
+<h3>Send data URL encoded as part of the URI</h3>
+
+<p>This example sends the data URL encoded as part of the URI.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl "https://echo-data.herokuapp.com/echo?foo=bar" -v --header "Accept: application/json"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you see in the output of the <code>curl</code> that is given below, this is a <code>GET</code> request and the <code>Content-Type</code> header is not
+specified, because the data are part of the URI.</p>
+
+<pre><code>* Hostname was NOT found in DNS cache
+*   Trying 54.243.224.121...
+* Connected to echo-data.herokuapp.com (54.243.224.121) port 443 (#0)
+&gt; GET /echo?foo=bar HTTP/1.1
+&gt; User-Agent: curl/7.35.0
+&gt; Host: echo-data.herokuapp.com
+&gt; Accept: application/json
+&gt; 
+&lt; HTTP/1.1 200 OK 
+&lt; Connection: keep-alive
+&lt; X-Frame-Options: SAMEORIGIN
+&lt; X-Xss-Protection: 1; mode=block
+&lt; X-Content-Type-Options: nosniff
+&lt; Content-Type: application/json; charset=utf-8
+&lt; Etag: W/"d83be65a785d7935d5b38bfcb091f75f"
+&lt; Cache-Control: max-age=0, private, must-revalidate
+&lt; X-Request-Id: 6e888864-0e1a-4f34-8f24-8c2d57f962f3
+&lt; X-Runtime: 0.006788
+* Server WEBrick/1.3.1 (Ruby/2.0.0/2015-04-13) is not blacklisted
+&lt; Server: WEBrick/1.3.1 (Ruby/2.0.0/2015-04-13)
+&lt; Date: Sat, 08 Aug 2015 09:11:42 GMT
+&lt; Content-Length: 82
+&lt; Via: 1.1 vegur
+&lt; 
+* Connection #0 to host echo-data.herokuapp.com left intact
+{"params":{"foo":"bar","controller":"echo","action":"echo"},"request":{"body":""}}
+</code></pre>
+
+<p>The last line above is the actual response payload returned from the echo data service. As you can see,
+the <code>params</code> hash contains the key <code>foo</code> with value <code>bar</code>. Note that <code>request.body</code> is empty, because we
+didn&rsquo;t send anything there.</p>
+
+<h3>Send data URL encoded in the request body</h3>
+
+<p>With this example we will send the data using a <code>POST</code> request and the data will be
+url encoded in the request body.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl "https://echo-data.herokuapp.com/echo" -v --data foo=bar --header "Accept: application/json"</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>As you can see from the <code>curl</code> output below, the request is a <code>POST</code> request and the <code>Content-Type</code>
+is automatically set to <code>application/x-www-form-urlencoded</code>.</p>
+
+<pre><code>* Hostname was NOT found in DNS cache
+*   Trying 23.21.247.21...
+* Connected to echo-data.herokuapp.com (23.21.247.21) port 443 (#0)
+&gt; POST /echo HTTP/1.1
+&gt; User-Agent: curl/7.35.0
+&gt; Host: echo-data.herokuapp.com
+&gt; Accept: application/json
+&gt; Content-Length: 7
+&gt; Content-Type: application/x-www-form-urlencoded
+&gt; 
+* upload completely sent off: 7 out of 7 bytes
+&lt; HTTP/1.1 200 OK 
+&lt; Connection: keep-alive
+&lt; X-Frame-Options: SAMEORIGIN
+&lt; X-Xss-Protection: 1; mode=block
+&lt; X-Content-Type-Options: nosniff
+&lt; Content-Type: application/json; charset=utf-8
+&lt; Etag: W/"92bb929068a54703e29e59154e7c228f"
+&lt; Cache-Control: max-age=0, private, must-revalidate
+&lt; X-Request-Id: f0262992-5542-4dc3-a2d6-ab52555d3fbe
+&lt; X-Runtime: 0.004037
+* Server WEBrick/1.3.1 (Ruby/2.0.0/2015-04-13) is not blacklisted
+&lt; Server: WEBrick/1.3.1 (Ruby/2.0.0/2015-04-13)
+&lt; Date: Sat, 08 Aug 2015 09:12:58 GMT
+&lt; Content-Length: 89
+&lt; Set-Cookie: request_method=POST; path=/
+&lt; Via: 1.1 vegur
+&lt; 
+* Connection #0 to host echo-data.herokuapp.com left intact
+{"params":{"foo":"bar","controller":"echo","action":"echo"},"request":{"body":"foo=bar"}}
+</code></pre>
+
+<p>The last line above, is the actual payload response content. It demonstrates that the <code>params</code> hash
+has successfully identified the data sent and that you can use it to retrieve it for further processing
+in your controller. See how the <code>request.body</code> now is not empty, since <code>curl</code> sent the data in the
+body of the request.</p>
+
+<h3>Send data as a JSON string inside the request body</h3>
+
+<p>In the following example we are sending the data as a JSON string in the body of the request:</p>
+
+<p> <code>
+ curl "https://echo-data.herokuapp.com/echo" -v --header "Accept: application/json" --header "Content-Type: application/json" -d "{\"foo\":\"data\"}"
+</code></p>
+
+<p> What <code>curl</code> returns back is:</p>
+
+<pre><code>* Hostname was NOT found in DNS cache
+*   Trying 54.225.207.60...
+* Connected to echo-data.herokuapp.com (54.225.207.60) port 443 (#0)
+&gt; POST /echo HTTP/1.1
+&gt; User-Agent: curl/7.35.0
+&gt; Host: echo-data.herokuapp.com
+&gt; Accept: application/json
+&gt; Content-Type: application/json
+&gt; Content-Length: 14
+&gt; 
+* upload completely sent off: 14 out of 14 bytes
+&lt; HTTP/1.1 200 OK 
+&lt; Connection: keep-alive
+&lt; X-Frame-Options: SAMEORIGIN
+&lt; X-Xss-Protection: 1; mode=block
+&lt; X-Content-Type-Options: nosniff
+&lt; Content-Type: application/json; charset=utf-8
+&lt; Etag: W/"27ba5f1877a65ff394f1899ac75f3449"
+&lt; Cache-Control: max-age=0, private, must-revalidate
+&lt; X-Request-Id: ecdd54eb-7d99-45b2-9872-cca20a63394c
+&lt; X-Runtime: 0.007516
+* Server WEBrick/1.3.1 (Ruby/2.0.0/2015-04-13) is not blacklisted
+&lt; Server: WEBrick/1.3.1 (Ruby/2.0.0/2015-04-13)
+&lt; Date: Sat, 08 Aug 2015 09:17:32 GMT
+&lt; Content-Length: 123
+&lt; Set-Cookie: request_method=POST; path=/
+&lt; Via: 1.1 vegur
+&lt; 
+* Connection #0 to host echo-data.herokuapp.com left intact
+{"params":{"foo":"data","controller":"echo","action":"echo","echo":{"foo":"data"}},"request":{"body":"{\"foo\":\"data\"}"}} 
+</code></pre>
+
+<p>As you can see from the <code>curl</code> output, the request is a <code>POST</code> request. The last line shows that, even in that case,
+the <code>params</code> hash holds the data in a way that we can handle it from our controller code. See also how the <code>request.body</code>
+bears the JSON string sent over.</p>
+
+<h3>Combine data on URI and data in request body</h3>
+
+<p>In the following example, we combine the data on URI and data in request body:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl "https://echo-data.herokuapp.com/echo?hello=world" -v --header "Accept: application/json" --header "Content-Type: application/json" -d "{\"foo\":\"data\"}"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>curl</code> output in that case is:</p>
+
+<pre><code>* Hostname was NOT found in DNS cache
+*   Trying 54.243.163.2...
+* Connected to echo-data.herokuapp.com (54.243.163.2) port 443 (#0)    
+&gt; POST /echo?hello=world HTTP/1.1
+&gt; User-Agent: curl/7.35.0
+&gt; Host: echo-data.herokuapp.com
+&gt; Accept: application/json
+&gt; Content-Type: application/json
+&gt; Content-Length: 14
+&gt; 
+* upload completely sent off: 14 out of 14 bytes
+&lt; HTTP/1.1 200 OK 
+&lt; Connection: keep-alive
+&lt; X-Frame-Options: SAMEORIGIN
+&lt; X-Xss-Protection: 1; mode=block
+&lt; X-Content-Type-Options: nosniff
+&lt; Content-Type: application/json; charset=utf-8
+&lt; Etag: W/"47484987479c63ee1f544f7c94886d5d"
+&lt; Cache-Control: max-age=0, private, must-revalidate
+&lt; X-Request-Id: 5c6d5d7c-8289-45d7-8fb4-d0909e19898d
+&lt; X-Runtime: 0.055496
+* Server WEBrick/1.3.1 (Ruby/2.0.0/2015-04-13) is not blacklisted
+&lt; Server: WEBrick/1.3.1 (Ruby/2.0.0/2015-04-13)
+&lt; Date: Sat, 08 Aug 2015 09:23:59 GMT
+&lt; Content-Length: 139
+&lt; Set-Cookie: request_method=POST; path=/
+&lt; Via: 1.1 vegur
+&lt; 
+* Connection #0 to host echo-data.herokuapp.com left intact
+{"params":{"foo":"data","hello":"world","controller":"echo","action":"echo","echo":{"foo":"data"}},"request":{"body":"{\"foo\":\"data\"}"}}
+</code></pre>
+
+<p>As you can see from the last line, the data in the URI, <code>hello=world</code> have been put in the <code>params</code>. Same goes for data in the request body.</p>
+
+<h2>Summary</h2>
+
+<p>The above article and corresponding examples and code try to show to you how the <code>params</code> hash is the single place to go if you want
+to process the data that a client program is sending to your Ruby on Rails end point.</p>
+
+<p>Thanks for reading so far and your comments are always more than welcome.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby Array Sum]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2015/07/19/ruby-array-sum/"/>
+    <updated>2015-07-19T11:12:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2015/07/19/ruby-array-sum</id>
+    <content type="html"><![CDATA[<p>This short post is going to demonstrate how we can sum an array of integers or an array of objects that have an
+integer attribute.</p>
+
+<p>Let&rsquo;s start:</p>
+
+<h2>Sum array of integers</h2>
+
+<h3>First version using reduce with block</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">array_of_i</span> <span class="o">=</span> <span class="o">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">sum</span> <span class="o">=</span> <span class="n">array_of_i</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">result</span><span class="p">,</span> <span class="n">item</span><span class="o">|</span> <span class="n">result</span> <span class="o">+</span> <span class="n">item</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Sum of </span><span class="si">#{</span><span class="n">array_of_i</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span><span class="si">}</span><span class="s2"> is: </span><span class="si">#{</span><span class="n">sum</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Second version using reduce giving the method symbol to apply</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">array_of_i</span> <span class="o">=</span> <span class="o">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">sum</span> <span class="o">=</span> <span class="n">array_of_i</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="ss">:+</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Sum of </span><span class="si">#{</span><span class="n">array_of_i</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span><span class="si">}</span><span class="s2"> is: </span><span class="si">#{</span><span class="n">sum</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Sum of objects that have an integer attribute</h2>
+
+<h3>Using reduce with a block</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Product</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:price</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">prod1</span> <span class="o">=</span> <span class="no">Product</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</span><span class='line'><span class="n">prod2</span> <span class="o">=</span> <span class="no">Product</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</span><span class='line'><span class="n">prod3</span> <span class="o">=</span> <span class="no">Product</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">array_of_products</span> <span class="o">=</span> <span class="o">[</span><span class="n">prod1</span><span class="p">,</span> <span class="n">prod2</span><span class="p">,</span> <span class="n">prod3</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">sum</span> <span class="o">=</span> <span class="n">array_of_products</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">result</span><span class="p">,</span> <span class="n">item</span><span class="o">|</span> <span class="n">result</span> <span class="o">+</span> <span class="n">item</span><span class="o">.</span><span class="n">price</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Sum of array_of_products is: </span><span class="si">#{</span><span class="n">sum</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I am pretty sure that you can come up with other methods of doing the above. Can you post in the comments any alternatives?
+Advantages and disadvantages?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Class vs Instance Variables]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2015/06/19/class-vs-instance-variables/"/>
+    <updated>2015-06-19T08:54:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2015/06/19/class-vs-instance-variables</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>demo of `Class` vs `Instance` variables</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># Here, I am defining a class Dog with an class variable &quot;@@number_of_feet&quot;</span>
+</span><span class='line'><span class="c1"># and an instance variable &quot;@color&quot;, assuming that all dogs in the world</span>
+</span><span class='line'><span class="c1"># have the same number of feet but they might differ in color. Or, at least,</span>
+</span><span class='line'><span class="c1"># this is the general rule.</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Dog</span>
+</span><span class='line'>  <span class="vc">@@number_of_feet</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@color</span> <span class="o">=</span> <span class="n">color</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">number_of_feet</span><span class="o">=</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span class='line'>    <span class="vc">@@number_of_feet</span> <span class="o">=</span> <span class="n">value</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">tell_me_about_you</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;My color is </span><span class="si">#{</span><span class="vi">@color</span><span class="si">}</span><span class="s2"> and I have </span><span class="si">#{</span><span class="vc">@@number_of_feet</span><span class="si">}</span><span class="s2"> feet&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># The next two statements will set the &quot;@color&quot; instance variable to different values</span>
+</span><span class='line'><span class="c1"># for max and rocky. But both dogs will have the same number of feet, which will be 4,</span>
+</span><span class='line'><span class="c1"># since when class is initialized the &quot;@@number_of_feet&quot; instance variable takes the value 4.</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">max</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">rocky</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;brown&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">max</span><span class="o">.</span><span class="n">tell_me_about_you</span>    <span class="c1"># will print black and 4</span>
+</span><span class='line'><span class="n">rocky</span><span class="o">.</span><span class="n">tell_me_about_you</span>  <span class="c1"># will print brown and 4</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Now, I am changing the value of the class variable &quot;@@number_of_feet&quot; and I am setting that</span>
+</span><span class='line'><span class="c1"># to &quot;3&quot;. You will see that now all dogs change to have 3 feet. </span>
+</span><span class='line'><span class="n">max</span><span class="o">.</span><span class="n">number_of_feet</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">max</span><span class="o">.</span><span class="n">tell_me_about_you</span>    <span class="c1"># will print black and 3</span>
+</span><span class='line'><span class="n">rocky</span><span class="o">.</span><span class="n">tell_me_about_you</span>  <span class="c1"># will print brown and 3</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Delayed Job Best Practices]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2014/12/12/delayed-job-best-practices/"/>
+    <updated>2014-12-12T13:49:00+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2014/12/12/delayed-job-best-practices</id>
+    <content type="html"><![CDATA[<p>Read my new article on <a href="http://www.sitepoint.com/delayed-jobs-best-practices/">Site Point about Delayed Job Best Practices</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[You don't have to be afraid to test your UI - Page Object Pattern to the rescue]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue/"/>
+    <updated>2014-09-21T18:22:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>Many software engineers do not write tests for their UI because they have a good reason not to. Firstly, they believe that UI changes frequently, so any test would have been vulnerable to frequent changes. Secondly, they do not know about the <a href="http://martinfowler.com/bliki/PageObject.html">Page Object Pattern</a>.</p>
+
+<!-- more -->
+
+
+<p>I have been introduced to Page Object Pattern by a QA Engineer, <a href="http://gr.linkedin.com/in/stylianospapadomichelakis">Stylianos Papadomichelakis</a> while we were colleagues at <a href="https://www.linkedin.com/company/e-travel-sa">E-TRAVEL S.A.</a>. He has been using that for his QA tests, although in the Java world. I was astounded by this pattern. What a pain I got while trying to migrate a huge test suite from <code>capybara</code> 1 to <code>capybara</code> 2. If only I had page object pattern from the beginning, a 2 weeks task would have finished in 2 days.</p>
+
+<p>Martin Fowler <a href="http://martinfowler.com/bliki/PageObject.html">explains</a>, very clearly, as always, how useful this pattern is for testing UI, and how it can insulate your tests from the frequest UI changes. When using it, change effects on the UI of your application will not have to be propagated throughout your whole test suite, but only inside your page objects.</p>
+
+<p>And thank God, for our <code>Ruby</code> world, there is an awesome implementation of the page object pattern. The gem is called <code>site_prism</code> and you can read about it here: <a href="https://github.com/natritmeyer/site_prism">Site Prism</a>. It has very good documentation and will really help you love this gem.</p>
+
+<p>In this article, I am going to share with you my experience using this gem. Using it for quite some time on all of my projects since I met it, I have come up with some best practices which I am sharing with you here.</p>
+
+<p>Let&rsquo;s start</p>
+
+<h3>Use a <code>page_objects</code> directory</h3>
+
+<p>Put your page object Ruby files inside a directory structure that would have as parent the <code>page_objects</code> directory. So, if for example you have a Rails application, the directory structure might be:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>app
+</span><span class='line'>bin
+</span><span class='line'>config
+</span><span class='line'>db
+</span><span class='line'>features
+</span><span class='line'>lib
+</span><span class='line'>log
+</span><span class='line'>page_objects
+</span><span class='line'>public
+</span><span class='line'>script
+</span><span class='line'>spec
+</span><span class='line'>tmp
+</span><span class='line'>vendor</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see the <code>page_objects</code> is on the same directory level like the <code>features</code> which contains the <code>Cucumber</code> features and the <code>spec</code> which contains the <code>RSpec</code> test files. <code>Cucumber</code> and <code>RSpec</code> will both be using your <code>page_objects</code>.</p>
+
+<h3>Use <code>&lt;your-app-name&gt;/page_objects</code> namespace</h3>
+
+<p>Although you are free to put all of your page object files inside the <code>page_objects</code> directory, prefer to use a sub-directory with the name of your application that would function as namespace. Further namespace that, with the word <code>page_objects</code>. For example, if your application is called <code>bookstore</code>, then you can use the following tree to store your page objects:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>page_objects
+</span><span class='line'>  |-&gt; bookstore
+</span><span class='line'>        |-&gt; page_objects</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Any <code>.rb</code> file that you will be creating to hold a page object class, will need to be inside the corresponding module <code>Bookstore::PageObjects</code> that will work as a namespace.
+Using namespace is a good practice in general and not only for the <code>site_prism</code> case we are discussing here. You will avoid having name conflicts with third-party gems.</p>
+
+<h3>Use a file to require them all</h3>
+
+<p>Write an <code>all_page_objects.rb</code> file that will require all the page objects Ruby files that would be living in your <code>page_objects</code> tree.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>page_objects
+</span><span class='line'>  |-&gt; bookstore
+</span><span class='line'>  |     |-&gt; page_objects
+</span><span class='line'>  |- all_page_objects.rb</span></code></pre></td></tr></table></div></figure>
+
+
+<p>An implementation of <code>all_page_objects.rb</code> file might be something like the following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># file: page_objects/all_page_objects.rb</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="n">current_path</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="bp">__FILE__</span><span class="p">)</span>
+</span><span class='line'><span class="vg">$LOAD_PATH</span><span class="o">.</span><span class="n">unshift</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span><span class="p">,</span> <span class="s1">&#39;bookstore&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span><span class="p">,</span> <span class="s1">&#39;**&#39;</span><span class="p">,</span> <span class="s1">&#39;*.rb&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+</span><span class='line'>  <span class="nb">require</span> <span class="n">f</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Having done that, you only have to require the <code>all_page_objects</code> file from your <code>spec_helper.rb</code> or <code>env.rb</code> file. And everytime a new page object file is defined, you do not have to require that explicitly.</p>
+
+<h3>Different directory for pages and sections</h3>
+
+<p>Site prism offers two classes to organize your page object code. Pages and Sections. Use a separate directory to hold your page classes and a separate directory to hold your sections classes.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">page_objects</span>
+</span><span class='line'>  <span class="o">|-&gt;</span> <span class="n">bookstore</span>
+</span><span class='line'>  <span class="o">|</span>     <span class="o">|-&gt;</span> <span class="n">page_objects</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|-&gt;</span> <span class="n">pages</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|-&gt;</span> <span class="n">sections</span>
+</span><span class='line'>  <span class="o">|-</span> <span class="n">all_page_objects</span><span class="o">.</span><span class="n">rb</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You will use each one of these two directories to further namespace your classes. Hence all your page object classes that are pages will be <code>Bookstore::PageObjects::Pages::</code> namespaced, and all your page object classes that are sections will be <code>Bookstore::PageObjects::Sections::</code> namespaced.</p>
+
+<h3>Follow your views directory structure</h3>
+
+<p>Although you can put all your page classes inside the <code>page_objects/bookstore/page_objects/pages</code> directory, you should be further separating your pages directory into subdirectories that follow your views directory structure.</p>
+
+<p>If for example you have a views directory that has two directories, <code>books</code> and <code>authors</code>, former one having the views that are related to <code>Book</code> resource and latter one having the views that are related to <code>Author</code> resource, you should have corresponding directories inside the <code>page_objects/pages</code> directory:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">page_objects</span>
+</span><span class='line'>  <span class="o">|-&gt;</span> <span class="n">bookstore</span>
+</span><span class='line'>  <span class="o">|</span>     <span class="o">|-&gt;</span> <span class="n">page_objects</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|-&gt;</span> <span class="n">pages</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|-&gt;</span> <span class="n">books</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|-&gt;</span> <span class="n">authors</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|-&gt;</span> <span class="n">sections</span>
+</span><span class='line'>  <span class="o">|-</span> <span class="n">all_page_objects</span><span class="o">.</span><span class="n">rb</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Think about whether you can do the same for the <code>sections</code> too. If you have <code>sections</code> that are resource specific, you can follow a similar directory structure.</p>
+
+<p>In any case, the page classes that you will define will need to be further namespaced.</p>
+
+<h3>Follow your views templates</h3>
+
+<p>When defining your actual page classes follow the views templates and create one page per template view. For example, if you have a view template that indexes all the books in your bookstore, e.g. <code>index.html.erb</code> inside the <code>books</code> view directory, then create the corresponding page inside the file <code>index_page.rb</code>. Similarly for <code>new</code>, <code>show</code>, <code>edit</code> views:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">page_objects</span>
+</span><span class='line'>  <span class="o">|-&gt;</span> <span class="n">bookstore</span>
+</span><span class='line'>  <span class="o">|</span>     <span class="o">|-&gt;</span> <span class="n">page_objects</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|-&gt;</span> <span class="n">pages</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|-&gt;</span> <span class="n">books</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">index_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">new_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">show_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">edit_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|-&gt;</span> <span class="n">authors</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">index_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">new_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">show_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">edit_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|-&gt;</span> <span class="n">sections</span>
+</span><span class='line'>  <span class="o">|-</span> <span class="n">all_page_objects</span><span class="o">.</span><span class="n">rb</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hence, your page classes will be defined as follows (example for the <code>index_page.rb</code> for <code>books</code>):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># file: page_objects/bookstore/page_objects/pages/books/index_page.rb</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="k">module</span> <span class="nn">Bookstore</span>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
+</span><span class='line'>    <span class="k">module</span> <span class="nn">Pages</span>
+</span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Page</span>
+</span><span class='line'>          <span class="c1"># ... your page code goes here ... #</span>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>One file to model your application</h3>
+
+<p>Create a file <code>application.rb</code> that will be used to instantiate the concrete page classes and will be used to access all the pages while working with site prism API on <code>feautures</code> <code>steps</code> or <code>spec</code> tests.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">page_objects</span>
+</span><span class='line'>  <span class="o">|-&gt;</span> <span class="n">bookstore</span>
+</span><span class='line'>  <span class="o">|</span>     <span class="o">|-&gt;</span> <span class="n">page_objects</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|-&gt;</span> <span class="n">pages</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|-&gt;</span> <span class="n">books</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">index_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">new_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">show_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">edit_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|-&gt;</span> <span class="n">authors</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">index_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">new_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">show_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|</span>     <span class="o">|----</span> <span class="n">edit_page</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|-&gt;</span> <span class="n">sections</span>
+</span><span class='line'>  <span class="o">|</span>           <span class="o">|-</span> <span class="n">application</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>  <span class="o">|-</span> <span class="n">all_page_objects</span><span class="o">.</span><span class="n">rb</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So, you are going to have <code>page_objects/bookstore/page_objects/application.rb</code>
+Here is a sample implementation in order to understand what I am talking about:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># file: page_objects/bookstore/page_objects/application.rb</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="k">module</span> <span class="nn">Bookstore</span>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
+</span><span class='line'>    <span class="k">class</span> <span class="nc">Application</span>
+</span><span class='line'>      <span class="k">def</span> <span class="nf">initialize</span>
+</span><span class='line'>        <span class="vi">@pages</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">def</span> <span class="nf">home</span>
+</span><span class='line'>        <span class="vi">@pages</span><span class="o">[</span><span class="ss">:home</span><span class="o">]</span> <span class="o">||=</span> <span class="ss">Bookstore</span><span class="p">:</span><span class="ss">:PageObjects</span><span class="o">::</span><span class="ss">Pages</span><span class="p">:</span><span class="ss">:HomePage</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">def</span> <span class="nf">sign_in</span>
+</span><span class='line'>        <span class="vi">@pages</span><span class="o">[</span><span class="ss">:sign_in</span><span class="o">]</span> <span class="o">||=</span> <span class="ss">Bookstore</span><span class="p">:</span><span class="ss">:PageObjects</span><span class="o">::</span><span class="ss">Pages</span><span class="p">:</span><span class="ss">:SignInPage</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">def</span> <span class="nf">checkout</span>
+</span><span class='line'>        <span class="vi">@pages</span><span class="o">[</span><span class="ss">:checkout</span><span class="o">]</span> <span class="o">||=</span> <span class="ss">Bookstore</span><span class="p">:</span><span class="ss">:PageObjects</span><span class="o">::</span><span class="ss">Pages</span><span class="p">:</span><span class="ss">:CheckoutPage</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When you will be using site prism, you will only be instantiating the <code>Bookstore::PageObjects::Application</code> class once and then you will be invoking page methods to access specific pages. For example:</p>
+
+<p>If using <code>Cucumber</code>, inside the <code>features/support/hooks.rb</code> file you can have</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Before</span> <span class="k">do</span> <span class="o">|</span><span class="n">scenario</span><span class="o">|</span>
+</span><span class='line'>  <span class="vi">@app</span> <span class="o">||=</span> <span class="ss">Bookstore</span><span class="p">:</span><span class="ss">:PageObjects</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>which will instantiate the <code>Bookstore::PageObjects::Application</code> and store it in <code>@app</code> that you can use to load and access pages as follows (in your <code>steps</code>):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">When</span><span class="p">(</span><span class="sr">/^User visits the home pages$/</span><span class="p">)</span><span class="k">do</span>
+</span><span class='line'>  <span class="vi">@app</span><span class="o">.</span><span class="n">home</span><span class="o">.</span><span class="n">load</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">When</span><span class="p">(</span><span class="sr">/^User visits the sign in page$/</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="vi">@app</span><span class="o">.</span><span class="n">sign_in</span><span class="o">.</span><span class="n">load</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can see that the <code>Bookstore::PageObjects::Application</code> is being instantiated only once and each page is being instantiated only once too. The application instance is using, internally, a hash to store the instances of the necessary pages. So, everytime you need a page, either an existing instance of the page will be returned, if you have requested same page in the past, case in which it will be located in the <code>@pages</code> hash, or a new instance will be created.</p>
+
+<h3><code>elements</code> vs <code>sections</code></h3>
+
+<p>Sometimes, especially when you are new to site prism, you cannot decide very easily when you should be using <code>elements</code> vs <code>sections</code>.</p>
+
+<p>If you understand the difference between an <code>element</code> and a <code>section</code> then it should be easy.</p>
+
+<p><code>element</code> is primitive dom selection that cannot contain other elements.</p>
+
+<p><code>section</code> should be used whenever you have a dom area that you want to select and that you want to treat its constituent elements separately, with further site prism API manipulation. In other words, <code>section</code> should be containing one or more <code>element</code> (and/or other <code>element</code>s, <code>elements</code>, <code>section</code>s or <code>sections</code>).</p>
+
+<p>Finally, both <code>elements</code> and <code>sections</code> select structures of the dom that appear as arrays in the dom. <code>elements</code> select an array of <code>element</code>. <code>sections</code> select an array of <code>section</code>.</p>
+
+<p>Hence, if you have an index page that displays the list of books, you can have the following inside the index page definition:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># file: page_objects/bookstore/page_objects/pages/books/index_page.rb</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="k">module</span> <span class="nn">Bookstore</span>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
+</span><span class='line'>    <span class="k">module</span> <span class="nn">Pages</span>
+</span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Page</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">elements</span> <span class="ss">:book_items</span><span class="p">,</span> <span class="s1">&#39;#books-table tr.book-item&#39;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>which will give you access to each one of the table rows that are used to display a book entry. But this definition does not allow to do too much with the book item itself.</p>
+
+<p>If for example, you want to access details of the book, you can use a section and say that you have an array of sections, as follows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># file: page_objects/bookstore/page_objects/pages/books/index_page.rb</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="nb">require</span> <span class="s2">&quot;bookstore/page_objects/sections/books/book_entry_section&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">module</span> <span class="nn">Bookstore</span>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
+</span><span class='line'>    <span class="k">module</span> <span class="nn">Pages</span>
+</span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Page</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">sections</span> <span class="ss">:book_items</span><span class="p">,</span> <span class="ss">Bookstore</span><span class="p">:</span><span class="ss">:PageObjects</span><span class="o">::</span><span class="ss">Sections</span><span class="p">:</span><span class="ss">:Books</span><span class="o">::</span><span class="no">BookEntrySection</span><span class="p">,</span> <span class="s1">&#39;#books-table tr.book-item&#39;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And then you need to define the book entry details in the corresponding section file:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># file: page_objects/bookstore/page_objects/sections/books/book_item_section.rb</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="k">module</span> <span class="nn">Bookstore</span>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
+</span><span class='line'>    <span class="k">module</span> <span class="nn">Sections</span>
+</span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">BookItemSection</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Section</span>
+</span><span class='line'>          <span class="n">element</span> <span class="ss">:title</span><span class="p">,</span>        <span class="s1">&#39;td.title&#39;</span>
+</span><span class='line'>          <span class="n">element</span> <span class="ss">:author</span><span class="p">,</span>       <span class="s1">&#39;td.author&#39;</span>
+</span><span class='line'>          <span class="n">element</span> <span class="ss">:published_at</span><span class="p">,</span> <span class="s1">&#39;td.published-at&#39;</span>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But, again&hellip;.</p>
+
+<h3>Prefer inline <code>section</code> (and <code>sections</code>) blocks</h3>
+
+<p>You should not be using separate class definitions for sections of pages that are not reusable among pages. It&rsquo;s waste of effort, time and requires more maintenance. Create a separate class, on a seperate file, for a section, only if this section can be reused among page definitions. Otherwise, define the section elements inline with a block.</p>
+
+<p>Hence, the above implementation for the book item, is not something that I recommend. I wouldn&rsquo;t create a section for that. You should just define the section elements inline as follows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># file: page_objects/bookstore/page_objects/pages/books/index_page.rb</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="nb">require</span> <span class="s2">&quot;bookstore/page_objects/sections/books/book_entry_section&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">module</span> <span class="nn">Bookstore</span>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
+</span><span class='line'>    <span class="k">module</span> <span class="nn">Pages</span>
+</span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Page</span>
+</span><span class='line'>          <span class="c1"># .... other index page code .... #</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">sections</span> <span class="ss">:book_items</span><span class="p">,</span> <span class="s1">&#39;#books-table tr.book-item&#39;</span> <span class="k">do</span>
+</span><span class='line'>            <span class="n">element</span> <span class="ss">:title</span><span class="p">,</span>        <span class="s1">&#39;td.title&#39;</span>
+</span><span class='line'>            <span class="n">element</span> <span class="ss">:author</span><span class="p">,</span>       <span class="s1">&#39;td.author&#39;</span>
+</span><span class='line'>            <span class="n">element</span> <span class="ss">:published_at</span><span class="p">,</span> <span class="s1">&#39;td.published-at&#39;</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="c1"># ... other index page code ... #</span>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Doing so, I do not have to create another class file specific to this section.</p>
+
+<p>Note that this hint is valid both for <code>section</code> and <code>sections</code>, of course.</p>
+
+<h3>Use ids &ndash; Do not use style properties for selectors</h3>
+
+<p>This suggestion goes out of the scope of site prism. When you are using selectors to select dom elements on your tests use html element ids, e.g. &lsquo;#books-table&rsquo; as much as you can. Do not use other attributes that style your elements or depend on the layout and structure of your dom. They are brittle to change. And if you write your tests and you see that your pages are missing ids that would help you write your tests, then go back to your core code and add ids.</p>
+
+<h2>Final</h2>
+
+<p>I believe that the page object pattern is a fantastic practice to isolate your tests from accessing UI test API (like <code>Capybara</code>) directly. And <a href="https://github.com/natritmeyer/site_prism">site_prism</a> is a perfect implementation.</p>
+
+<p>I hope that the above notes can help you organize your page objects code and become a practice in your development/QA team. Or at least start a discussion inside it about how you can better organize your page objects code.</p>
+
+<p>I would appreciate any comment and feedback to make the above even better.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[United States, Counties, Cities, Zips CSV & Ruby loading code]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2014/08/29/united-states-counties-cities-csv-ruby-loading-code/"/>
+    <updated>2014-08-29T19:28:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2014/08/29/united-states-counties-cities-csv-ruby-loading-code</id>
+    <content type="html"><![CDATA[<p>I just wanted to have the United States, their Counties, the Cities in the Counties and the Zip codes in each City in CSV format. But I wanted that normalized. In different CSVs. So, here it is.
+You can also find here some Ruby on Rails sample code that loads these files. Primitive stuff, but sometimes useful.</p>
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">My sponsor on that is <a href="https://www.bookandtable.com">Book&Table</a></div>
+
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">I am about to start a Seminar: Introduction to Programming. If you are interested in, <a href="http://pmatsinopoulos.github.io/introduction-to-programming-notify-when-public">register here</a>.</div>
+
+
+
+
+<!-- more -->
+
+
+<ul>
+<li>Here is the <a href="http://pmatsinopoulos.github.io/csv/states.csv.tar.gz">list of states</a>.</li>
+<li>Here is the <a href="http://pmatsinopoulos.github.io/csv/counties.csv.tar.gz">list of counties</a>. It has all counties and which State they belong to.</li>
+<li>Here is the <a href="http://pmatsinopoulos.github.io/csv/cities.csv.tar.gz">list of cities</a>. It has all the cities and the County they belong to.</li>
+<li>Here is the <a href="http://pmatsinopoulos.github.io/csv/zips.csv.tar.gz">list of zip codes</a>. It has all the zip codes and the city they correspond to (specified by city name, county name and state code).</li>
+</ul>
+
+
+<h2>ActiveRecord Models</h2>
+
+<h3>State</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># State
+</span><span class='line'>class State &lt; ActiveRecord::Base
+</span><span class='line'>  has_many :counties, inverse_of: :state, dependent: :destroy
+</span><span class='line'>  validates :name,           presence: true, uniqueness: {case_sensitive: false}
+</span><span class='line'>  validates :two_digit_code, presence: true, uniqueness: {case_sensitivie: false}
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>County</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># County
+</span><span class='line'>class County &lt; ActiveRecord::Base
+</span><span class='line'>  belongs_to :state, inverse_of: :counties
+</span><span class='line'>  has_many   :cities, inverse_of: :county, dependent: :destroy
+</span><span class='line'>
+</span><span class='line'>  validates :state, presence: true
+</span><span class='line'>  validates :name,  presence: true, uniqueness: {case_sensitive: false, scope: :state_id}
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>City</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># City
+</span><span class='line'>class City &lt; ActiveRecord::Base
+</span><span class='line'>  belongs_to :county, inverse_of: :cities
+</span><span class='line'>
+</span><span class='line'>  validates :county, presence: true
+</span><span class='line'>  validates :name,   presence: true, uniqueness: {case_sensitive: false, scope: :county_id}
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Zip</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Zip
+</span><span class='line'>class Zip &lt; ActiveRecord::Base
+</span><span class='line'>  belongs_to :city, inverse_of: :zips
+</span><span class='line'>
+</span><span class='line'>  validates :city, presence: true
+</span><span class='line'>  validates :code, presence: true, uniqueness: {case_sensitive: false}
+</span><span class='line'>end
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Loading States</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>puts "Loading States..."
+</span><span class='line'>CSV.foreach("#{Rails.root}/db/states.csv") do |row|
+</span><span class='line'>  state_code = row[0]
+</span><span class='line'>  state_name = row[1]
+</span><span class='line'>  State.create_with(name: state_name).find_or_create_by!(two_digit_code: state_code)
+</span><span class='line'>end
+</span><span class='line'>puts "...end of loading States"```</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Loading Counties</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>puts "Loading Counties..."
+</span><span class='line'>CSV.foreach("#{Rails.root}/db/counties.csv") do |row|
+</span><span class='line'>  state_code  = row[0]
+</span><span class='line'>  county_name = row[1]
+</span><span class='line'>  County.find_or_create_by!(state_id: State.find_by_two_digit_code(state_code).id, name: county_name)
+</span><span class='line'>end
+</span><span class='line'>puts "...end of loading Counties"</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Loading Cities</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>puts "Loading Cities..."
+</span><span class='line'>
+</span><span class='line'>CSV.foreach("#{Rails.root}/db/cities.csv") do |row|
+</span><span class='line'>  state_two_digit_code = row[0]
+</span><span class='line'>  state_id = State.find_by_two_digit_code!(state_two_digit_code).id
+</span><span class='line'>
+</span><span class='line'>  county_name = row[1]
+</span><span class='line'>  city_name   = row[2]
+</span><span class='line'>  county      = County.find_by_state_id_and_name!(state_id, county_name)
+</span><span class='line'>  City.find_or_create_by!(county_id: county.id, name: city_name)
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>puts "...end of loading Cities"
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Loading Zip Codes</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>puts "Loading Zips..."
+</span><span class='line'>
+</span><span class='line'>CSV.foreach "#{Rails.root}/db/zips.csv" do |row|
+</span><span class='line'>  zip_code  = row[0]
+</span><span class='line'>  city      = row[1]
+</span><span class='line'>  county    = row[2]
+</span><span class='line'>  state     = row[3]
+</span><span class='line'>  state_id  = State.find_by_two_digit_code!(state).id
+</span><span class='line'>  county_id = County.find_by_name_and_state_id!(county, state_id).id
+</span><span class='line'>  Zip.create_with(city_id: City.find_by_name_and_county_id!(city, county_id).id).find_or_create_by!(code: zip_code)
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>puts "...end of loading Zips"</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">My sponsor on that is <a href="https://www.bookandtable.com">Book&Table</a></div>
+
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">I am about to start a Seminar: Introduction to Programming. If you are interested in, <a href="http://pmatsinopoulos.github.io/introduction-to-programming-notify-when-public">register here</a>.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using string column type for migrations]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2014/06/11/using-string-column-type-for-migrations/"/>
+    <updated>2014-06-11T22:48:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2014/06/11/using-string-column-type-for-migrations</id>
+    <content type="html"><![CDATA[<p>Ruby on Rails migrations are used to create the necessary tables inside our database. One of the most frequently used column type is <code>string</code>.
+Here is an example of an <code>ActiveRecord::Migration</code> that uses this type:</p>
+
+<!-- more -->
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">CreateAuthors</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Migration</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">change</span>
+</span><span class='line'>    <span class="n">create_table</span> <span class="ss">:authors</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">t</span><span class="o">.</span><span class="n">string</span> <span class="ss">:name</span><span class="p">,</span>      <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
+</span><span class='line'>      <span class="n">t</span><span class="o">.</span><span class="n">string</span> <span class="ss">:biography</span><span class="p">,</span> <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But what actual sql type did that migration create for the <code>string</code> type?</p>
+
+<p>If we run this migration against a <strong>MySQL</strong> database, we can see the
+actual table that creates using the <code>mysql</code> command <code>show create table authors</code>. The output will be the following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="o">+</span><span class="c1">---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span><span class='line'><span class="o">|</span> <span class="k">Table</span>   <span class="o">|</span> <span class="k">Create</span> <span class="k">Table</span>                                                                                                                                                                                                                                                            <span class="o">|</span>
+</span><span class='line'><span class="o">+</span><span class="c1">---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span><span class='line'><span class="o">|</span> <span class="n">authors</span> <span class="o">|</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">authors</span><span class="o">`</span> <span class="p">(</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">name</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">biography</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+</span><span class='line'>  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
+</span><span class='line'><span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span> <span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8_unicode_ci</span> <span class="o">|</span>
+</span><span class='line'><span class="o">+</span><span class="c1">---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see, the <code>string</code> is translated to <code>varchar(255)</code>. This is the type that allows to store strings with maximum length 255. What if we want to increase the maximum length?
+How can we do that? In that case, you need to use the <code>limit:</code> option. Let&rsquo;s say that we want the <code>biography</code> column to have maximum length 1024. We have to change the corresponding
+line in the above migration as follows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">t</span><span class="o">.</span><span class="n">string</span> <span class="ss">:biography</span><span class="p">,</span> <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span><span class="p">,</span> <span class="ss">limit</span><span class="p">:</span> <span class="mi">1024</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you do this change and run your migration, the table that is created is the following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="o">+</span><span class="c1">---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span><span class='line'><span class="o">|</span> <span class="k">Table</span>   <span class="o">|</span> <span class="k">Create</span> <span class="k">Table</span>                                                                                                                                                                                                                                                             <span class="o">|</span>
+</span><span class='line'><span class="o">+</span><span class="c1">---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span><span class='line'><span class="o">|</span> <span class="n">authors</span> <span class="o">|</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">authors</span><span class="o">`</span> <span class="p">(</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">name</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">biography</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+</span><span class='line'>  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
+</span><span class='line'><span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span> <span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8_unicode_ci</span> <span class="o">|</span>
+</span><span class='line'><span class="o">+</span><span class="c1">---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see, we have managed to change the maximum number of characters that <code>biography</code> column can hold. Please, note that the maximum length for a <code>varchar</code> column in
+MySQL is <code>65535</code> <strong>theoretically</strong>. In practice, this is limited by the maximum row size (<code>65535 bytes</code> which is shared among all columns of the table) and the character set
+used. So, for utf-8 database collation, this might be quite smaller.</p>
+
+<p>Perfect. And what if we want to store a text that is longer than <code>65535</code> characters long? What is the option that we have?</p>
+
+<p>If you try to set a bigger limit, you will probably get an error. The next option is to use the migration type <code>text</code>.</p>
+
+<p>If you change your migration for <code>biography</code> as follows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">t</span><span class="o">.</span><span class="n">text</span> <span class="ss">:biography</span><span class="p">,</span> <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>then the table that is created:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="o">+</span><span class="c1">---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span><span class='line'><span class="o">|</span> <span class="k">Table</span>   <span class="o">|</span> <span class="k">Create</span> <span class="k">Table</span>                                                                                                                                                                                                                                                    <span class="o">|</span>
+</span><span class='line'><span class="o">+</span><span class="c1">---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span><span class='line'><span class="o">|</span> <span class="n">authors</span> <span class="o">|</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">authors</span><span class="o">`</span> <span class="p">(</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">name</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">biography</span><span class="o">`</span> <span class="nb">text</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+</span><span class='line'>  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
+</span><span class='line'><span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span> <span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8_unicode_ci</span> <span class="o">|</span>
+</span><span class='line'><span class="o">+</span><span class="c1">---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see, the <code>text</code> migration type has been translated to <code>text</code> MySQL type. And the question now is: Is that bigger than <code>varchar(65535)</code>? The answer is no. <a href="http://dev.mysql.com/doc/refman/5.5/en/storage-requirements.html">MySQL
+documentation</a> mentions that <code>text</code> maximum length is 2<sup>16</sup>.</p>
+
+<p>So, if you really want to store larger texts than that, you need to consider the two MySQL types: <code>mediumtext</code> and <code>longtext</code>. These can store really huge amounts of text.
+<code>mediumtext</code> can store up to 2<sup>24</sup> and <code>longtext</code> up to 2<sup>32</sup>.</p>
+
+<p>The problem here is that if, for example, you want the <code>biography</code> to be a <code>longtext</code>, this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">t</span><span class="o">.</span><span class="n">longtext</span> <span class="ss">:biography</span><span class="p">,</span> <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>will not work. Trying to run this migration will give you the following error:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>undefined method <span class="sb">`</span>longtext<span class="s1">&#39; for #&lt;ActiveRecord::ConnectionAdapters::TableDefinition:0x...db/migrate/..._create_authors.rb:5:in `block in change&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This is because <code>longtext</code> is not considered a standard migration column type. Neither <code>mediumtext</code> does.</p>
+
+<p>The alternative here is to use the <code>column</code> method instead, and pass the column type as 2nd argument:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">t</span><span class="o">.</span><span class="n">column</span> <span class="ss">:biography</span><span class="p">,</span> <span class="ss">:longtext</span><span class="p">,</span> <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will run successfully and will generate the table:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="o">+</span><span class="c1">---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span><span class='line'><span class="o">|</span> <span class="k">Table</span>   <span class="o">|</span> <span class="k">Create</span> <span class="k">Table</span>                                                                                                                                                                                                                                                        <span class="o">|</span>
+</span><span class='line'><span class="o">+</span><span class="c1">---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span><span class='line'><span class="o">|</span> <span class="n">authors</span> <span class="o">|</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">authors</span><span class="o">`</span> <span class="p">(</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">name</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+</span><span class='line'>  <span class="o">`</span><span class="n">biography</span><span class="o">`</span> <span class="n">longtext</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+</span><span class='line'>  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
+</span><span class='line'><span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span> <span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8_unicode_ci</span> <span class="o">|</span>
+</span><span class='line'><span class="o">+</span><span class="c1">---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You are done!</p>
+
+<p><strong>Note</strong>: For those that are using PostgreSQL:</p>
+
+<p>1) The default <code>string</code> migration type is translated to <code>character varying(255)</code>. See how the table is created with defaults:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>                               <span class="k">Table</span> <span class="ss">&quot;public.authors&quot;</span>
+</span><span class='line'>  <span class="k">Column</span>   <span class="o">|</span>          <span class="k">Type</span>           <span class="o">|</span>                      <span class="n">Modifiers</span>
+</span><span class='line'><span class="c1">-----------+-------------------------+------------------------------------------------------</span>
+</span><span class='line'> <span class="n">id</span>        <span class="o">|</span> <span class="nb">integer</span>                 <span class="o">|</span> <span class="k">not</span> <span class="k">null</span> <span class="k">default</span> <span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;authors_id_seq&#39;</span><span class="p">::</span><span class="n">regclass</span><span class="p">)</span>
+</span><span class='line'> <span class="n">name</span>      <span class="o">|</span> <span class="nb">character</span> <span class="nb">varying</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="o">|</span> <span class="k">not</span> <span class="k">null</span>
+</span><span class='line'> <span class="n">biography</span> <span class="o">|</span> <span class="nb">character</span> <span class="nb">varying</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="o">|</span> <span class="k">not</span> <span class="k">null</span>
+</span><span class='line'><span class="n">Indexes</span><span class="p">:</span>
+</span><span class='line'><span class="ss">&quot;authors_pkey&quot;</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span> <span class="n">btree</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2) If you use the <code>limit:</code> option you can change the default <code>255</code> to whatever.</p>
+
+<p>3) Note that <code>text</code> and <code>character varying(n)</code> in PostgreSQL are the same except from the fact that <code>character varying(n)</code> puts a limit. <code>text</code> does not have one.</p>
+
+<p>4) You cannot use <code>mediumtext</code> or <code>longtext</code> with PostgreSQL. <code>text</code> does the job for you.</p>
+
+<p>BTW: I am preparing a course <code>Introduction to Programming</code>. I know that most of you do not need such course but you may know somebody that might be. You can send them
+the link to pre-register for a discount when this comes public. Here it is <a href="http://pmatsinopoulos.github.io/introduction-to-programming-notify-when-public">Introduction to Programming</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Clean Coder - A Code of Conduct for Professional Programmers - R. Martin (Pearson)]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2013/12/24/the-clean-coder-a-code-of-conduct-for-professional-programmers-r-martin-pearson/"/>
+    <updated>2013-12-24T22:14:00+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2013/12/24/the-clean-coder-a-code-of-conduct-for-professional-programmers-r-martin-pearson</id>
+    <content type="html"><![CDATA[<p>I have recently finished the book <a href="http://www.amazon.com/gp/product/0137081073/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0137081073&amp;linkCode=as2&amp;tag=panayotmatsin-20">&ldquo;The Clean Coder &ndash; A Code of Conduct for Professional Programmers &ndash; R. Martin (Pearson, 2011) BBS&rdquo;</a>. Here is my short review:</p>
+
+<p>Overall: Fantastic. Worth reading for every developer that wants to become professional.</p>
+
+<h2>My Notes and Highlights</h2>
+
+<h3>Chapter 1 &ndash; Professionalism</h3>
+
+<ul>
+<li>Professionalism is a marker of responsibility and accountability.</li>
+<li>It is better to make your manager unhappy rather than your manager customers.</li>
+</ul>
+
+
+<!-- more -->
+
+
+<ul>
+<li>You must be responsible for your imperfections.</li>
+<li>QA should find nothing. Very well put. How development team should stand next to QA team. Very good points.</li>
+<li>How can you know your code works? Test it.</li>
+<li>How much of the code should be tested? All of it!</li>
+<li>But isn&rsquo;t some code hard to test? Yes, but only because that code has been designed to be hard to test.</li>
+<li>TDD will give you code that is easy to test.</li>
+<li>Do no harm to structure. Delivering function at the expense of structure is a fool&rsquo;s errand.</li>
+<li>Merciless Refactoring. &ldquo;The Boy Scout Rule&rdquo;: Always check in a module cleaner than when you checked it out.</li>
+<li>Software should be easy to change and developers should not be afraid to change code. They shouldn&rsquo;t be afraid because they should be having tests for the code that is to be changed.</li>
+<li>Your career is your responsibility. It is not your employer&rsquo;s responsibility to make sure you are marketable.</li>
+<li>Know your field. A wealth of ideas, disciplines, techniques, tools and terminologies decorate the last fifty years of our field. If you want to be a professional you have to know a sizable chunk of it and constantly be increasing the size of that chunk. I would question here, what is the limit though? You cannot know everything. No doctor knows everything. They have a specialization. Here is the suggested list:
+
+<ul>
+<li>Design patterns</li>
+<li>Design principles</li>
+<li>Disciplines</li>
+<li>Artifacts</li>
+</ul>
+</li>
+<li>Continuous learning in order to keep up.</li>
+<li>Professionals should be practicing. It is not enough to simply do your daily job and call that practice.</li>
+<li>Collaborate with other people.</li>
+<li>Teach other people.</li>
+<li>Understand the domain. When you are developing an application try to learn the domain as much as possible.</li>
+<li>Your employer&rsquo;s problems are your problems. Put yourself in your employer&rsquo;s shoes. Address their needs, not yours.</li>
+<li>Humility. Professionals do not demean another for making a mistake, because they know they may be the next to fail.</li>
+</ul>
+
+
+<h3>Chapter 2 &ndash; Saying No</h3>
+
+<ul>
+<li>Aren&rsquo;t you supposed to do what your boss says? No. Not if you are a professional. Professionals are expected to say no.</li>
+<li>Managers accept &ldquo;I&rsquo;ll try&rdquo; as &ldquo;Yes&rdquo;.</li>
+<li>When two professionals, manager and developer, work to reach the best possible outcome, conversation might be a bit adversarial and there might be some few uncomfortable moments, but that&rsquo;s expected.</li>
+<li>Why something will take that long is much less important than the fact. Providing too much detail might be an invitation for micro-management. This might lead to questions on details that manager might consider unnecessary, but still developer considers that part of the quality assurance process.</li>
+<li>The most important time to say no is when the stakes are highest.</li>
+<li>Being a Team Player. A Team Player is not somebody who says &ldquo;yes&rdquo; all the time.</li>
+<li>&ldquo;OK, I&rsquo;ll try&rdquo; is the worst response one developer can give to a manager. This is a very good analysis of how bad is to say &ldquo;I&rsquo;ll try&rdquo;.</li>
+<li>Professionals become heroes when they get the job done well, on time and on budget.</li>
+</ul>
+
+
+<h3>Chapter 3 &ndash; Saying Yes</h3>
+
+<ul>
+<li>There are three parts to making a commitment:
+
+<ol>
+<li> You say you&rsquo;ll do it.</li>
+<li> You mean it.</li>
+<li> You actually do it.</li>
+</ol>
+</li>
+<li>There are some words that people use which reveal that what these people say are not going to do.
+
+<ul>
+<li>Need/should</li>
+<li>Hope/wish</li>
+<li>Let&rsquo;s</li>
+</ul>
+</li>
+<li>The secret ingredient to recognizing real commitment is to look for sentences that sound like this: I will&hellip;by&hellip;</li>
+<li>You can only commit to things that you have full control of.</li>
+<li>If it cannot be done, you can still commit to actions that will bring you closer to the target.</li>
+<li>If you cannot make a commitment, you better raise a red flag as soon as possible.</li>
+</ul>
+
+
+<h3>Chapter 4 &ndash; Coding</h3>
+
+<ul>
+<li>It is up to you to see problems in the requirements and discuss that with the customer in order to make sure that the solution you are providing covers the true needs of the customer.</li>
+<li>Your code must be readable by other programmers.</li>
+<li>Don&rsquo;t write code when you are tired.</li>
+<li>When you are worried about personal stuff, don&rsquo;t code, or try to find a way to shut down the background process, or at least its priority so that it&rsquo;s not a continuous distraction. Try to spend a dedicated amount of time on the issue that creates the worry.</li>
+<li>Avoid the <code>Zone</code> (when you are highly focused, tunnel-vision state of consciousness). This state of <code>Zone</code> is not really hyper-productive neither infallible.</li>
+<li>One of the big benefits of pair programming is that it is impossible for a pair to enter the <code>Zone</code>.</li>
+<li>The rude response to an interruption often comes from the <code>Zone</code>.</li>
+<li>Pairing can be helpful to deal with interruptions.</li>
+<li>The professional attitude to an interruption is a polite willingness to be helpful.</li>
+<li>If you cannot code and you are blocked, find a pair partner.</li>
+<li>If you cannot create output, process creative input. And you will be unblocked.</li>
+<li>TDD will reduce the time you spend on debugging.</li>
+<li>When you are stuck, when you are tired, disengage for a while.</li>
+<li>The trick to manage lateness is early detection and transparency.</li>
+<li>Do not hope that you can get it all done. Hope is the project killer.</li>
+<li>Working overtime needs to have a fall-back plan created by your boss in case the overtime effort fails.</li>
+<li>Acceptance Tests must pass before one can say that something is done.</li>
+<li>You have to ask for help and you have to offer it when you are asked for.</li>
+</ul>
+
+
+<h3>Chapter 5 &ndash; Test Driven Development</h3>
+
+<p>TDD:</p>
+
+<ul>
+<li>You are not allowed to write any production code until you have first written a failing unit test.</li>
+<li>You are not allowed to  write more of a unit test than is sufficient to fail.</li>
+<li>You are not allowed to write more production code that is sufficient to pass the currently failing unit test.</li>
+</ul>
+
+
+<p>Benefits:</p>
+
+<ul>
+<li>Certainty.</li>
+<li>Low defect injection rate.</li>
+<li>Courage to change code that works, in order to refactor it and clean it up.</li>
+<li>Documentation. The unit tests are documents.</li>
+<li>Makes you think about better, decoupled design.</li>
+</ul>
+
+
+<h3>Chapter 6 &ndash; Practicing</h3>
+
+<ul>
+<li>A programming kata is a precise set of choreographed keystrokes and mouse movements that simulates the solving of some programming problem.</li>
+<li>A programmer should know several different kata and practice them regularly so that they don&rsquo;t fade away from memory.</li>
+<li>Have programming session for practicing with pairs.</li>
+<li>Contribute to an open-source project.</li>
+<li>Since your practice time is your own time, you don&rsquo;t have to use the same languages or platforms that you use with your employer. Pick any language you like and keep your polyglot skills sharp.</li>
+</ul>
+
+
+<h3>Chapter 7 &ndash; Acceptance Testing</h3>
+
+<ul>
+<li>Both business and programmers are tempted to fall into the trap of premature precision.</li>
+<li>The more precise you make your requirements, the less relevant they become as the system is implemented.</li>
+<li>Estimating the system does not require precision. The requirements will change making precision moot.</li>
+<li>Sometimes, stakeholders simply assume that their readers know what they mean.</li>
+<li>Acceptance Tests are written in order to define when a requirement is done.</li>
+<li>One of the most common ambiguities is the &ldquo;done&rdquo;.</li>
+<li>When the acceptance tests for your feature pass, you are done.</li>
+<li>Acceptance tests should always be automated.</li>
+<li>Professional developer negotiates with the test author for a better test.</li>
+<li>Testing through the GUI is always problematic unless you are testing just the GUI.</li>
+<li>Every time someone commits a module, the CI system should kick off a build, and then run all the tests in the system.</li>
+<li>CI tests should never fail. If they do, stop the presses. The developers need to make them green again.</li>
+</ul>
+
+
+<h3>Chapter 8 &ndash; Testing Strategies</h3>
+
+<ul>
+<li>Development should have as goal that QA finds nothing</li>
+<li>Business writes the happy path tests, whereas QA writes the corner, boundary and unhappy-path tests.</li>
+<li>QA identifies the actual behaviour of the system using the discipline of exploratory testing.</li>
+<li>Unit Tests. Are written by developers.</li>
+<li>Component Tests. Are written by QA and Business with assistance from development.</li>
+<li>Integration Tests. Have meaning for larger systems that have many components. They do not test business rules. Rather they test how well the assembly of components dances together. Typically written by system architects or lead designers of the system. We can see here performance and throughput tests. They are not typically executed as part of the CI suite. But as often as it is deemed necessary.</li>
+<li>System Tests. Execute against the entire integrated system. Written by system architects and technical leads. They need to ensure correct system construction and not correct system behaviour.</li>
+<li>Manual Exploratory Tests. Explore the system for unexpected behaviours while confirming expected ones.</li>
+</ul>
+
+
+<h3>Chapter 9 &ndash; Time Management</h3>
+
+<ul>
+<li>There are two truths about meetings:
+
+<ul>
+<li>Meetings are necessary.</li>
+<li>Meetings are huge time wasters.</li>
+</ul>
+</li>
+<li>Often these two truths describe the same meeting.</li>
+<li>You do not have to attend every meeting to which you are invited.</li>
+<li>One of the most important duties of your manager it to keep you out of meetings.</li>
+<li>When the meeting gets boring, leave.</li>
+<li>Have an agenda and a goal.</li>
+<li>Stand-Up Meetings
+
+<ol>
+<li> What did I do yesterday?</li>
+<li> What am I going to do today?</li>
+<li> What&rsquo;s in my way?</li>
+</ol>
+</li>
+<li>Iteration Planning Meetings. Rule of thumb: Should not take no more than 5% of the total time in the iteration.</li>
+<li>For a two-week iteration, retrospectives should not last more than 25 minutes.</li>
+<li>Any argument that can&rsquo;t be settled in five minutes can&rsquo;t be settled by arguing.</li>
+<li>Without data, any argument that doesn&rsquo;t forge agreement within a few minutes (somewhere between five and thirty) simply won&rsquo;t ever forge agreement. The only thing to do is to go get some data.</li>
+<li>If you finally agree, then you must engage. Do not be passive-aggressive.</li>
+<li>Beware of meetings that are really just a venue to vent a disagreement and to gather support for one side or the other.</li>
+<li>Vote or flip a coin. It&rsquo;s better than arguing forever.</li>
+<li>7 &ndash; 8 hours good sleep is very important so that you can give 8 good hours with full focus on your work.</li>
+<li>Caffeine puts a strange &ldquo;jitter&rdquo; on your focus. Too much of it can send your focus off in very strange directions.</li>
+<li>Recharge. Good long walk,conversation with friends and such.</li>
+<li>Somehow muscle focus help to recharge mental focus.</li>
+<li>Use the well-known Pomodoro Technique to manage your time at work.</li>
+<li>Priority Inversion is a lie that we tell ourselves. Professionals execute in priority order even if they don&rsquo;t like it.</li>
+<li>When you are in one hole, then stop digging.</li>
+<li>Realize when you are in a blind alley and find the courage to back out.</li>
+<li>Messes are worse than blind alleys. They slow you down, but don&rsquo;t stop you. Going forward always looks shorter than the way back, but it isn&rsquo;t.</li>
+<li>When there is a mess, going back will never be easier than it is now.</li>
+</ul>
+
+
+<h3>Chapter 10 &ndash; Estimation</h3>
+
+<ul>
+<li>Business likes to view estimates as commitments. Developers like to view estimates as guesses. The difference is profound.</li>
+<li>A commitment is something you must achieve no matter what.</li>
+<li>Professionals don&rsquo;t make commitments unless they know they can achieve them.</li>
+<li>An estimate is a guess. No commitment is implied.</li>
+<li>Most software developers are terrible estimators.</li>
+<li>An estimate is a distribution.</li>
+<li>PERT. Good explanation.</li>
+<li>The most important estimation resource you have are the people around you.</li>
+<li>Law of Large Numbers. If you break up a large task into many smaller tasks and estimate them independently, the sum of the estimates of the small tasks will be more accurate than a single estimate of the larger task.</li>
+</ul>
+
+
+<h3>Chapter 11 &ndash; Pressure</h3>
+
+<ul>
+<li>The professional developer is calm and decisive under pressure.</li>
+<li>The best way to stay calm under pressure is to avoid the situations that cause pressure.</li>
+<li>The way to go fast and to keep the deadlines at bay, is to stay clean.</li>
+<li>Dirty always means slow!</li>
+<li>You know what you believe by observing yourself in a crisis. If in a crisis you follow your disciplines then you really believe in them.</li>
+<li>Manage your stress.</li>
+<li>Do not rush while in crisis. Rushing will only drive you deeper into the hole.</li>
+<li>Let your team and superiors that you are in trouble.</li>
+<li>When there is a crisis, try to pair.</li>
+</ul>
+
+
+<h3>Chapter 12 &ndash; Collaboration</h3>
+
+<ul>
+<li>Collaborate with your managers, business analysts, testers, and other team members to deeply understand the business goals.</li>
+<li>Owned Code. Avoid at all means. It is a recipe for disaster.</li>
+<li>Have the team own all the code.</li>
+<li>Pairing is the most efficient way to solve a problem.</li>
+<li>No system should consist of code that hasn&rsquo;t been reviewed by other programmers.</li>
+<li>The most efficient and effective way to review code is to collaborate in writing it.</li>
+<li>Programmers work together.</li>
+</ul>
+
+
+<h3>Chapter 13 &ndash; Teams and Projects</h3>
+
+<ul>
+<li>There is not such thing as half a person.</li>
+<li>It makes no sense to tell a programmer to devote half their time to project A and the rest of their time to project B.</li>
+<li>The team should be composed of programmers, testers, and analysts. And it should have a project manager.</li>
+<li>A nicely gelled team of twelve might have seven programmers, two testers, two analysts, and a project manager.</li>
+<li>Professional development organizations allocate projects to existing gelled teams, they don&rsquo;t form teams around projects.</li>
+</ul>
+
+
+<h3>Chapter 14 &ndash; Mentoring, Apprenticeship, And Craftsmanship</h3>
+
+<ul>
+<li>What you learn in school and what you find on the job are often very different things.</li>
+<li>Companies who hire CS graduates ought to invest more in their training than McDonalds invests in their servers.</li>
+<li>School cannot teach the discipline, practice, and skill of being a craftsman.</li>
+</ul>
+
+
+<hr />
+
+<p>If you liked what you&rsquo;ve read above, you will find many more details and nice arguments in this excellent book: <a href="http://www.amazon.com/gp/product/0137081073/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0137081073&amp;linkCode=as2&amp;tag=panayotmatsin-20">&ldquo;The Clean Coder &ndash; A Code of Conduct for Professional Programmers &ndash; R. Martin (Pearson, 2011) BBS&rdquo;</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Twitter Bootstrap 2 Modal Scrolling Problem | Why capybara/selenium cannot locate your visible buttons]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2013/12/21/twitter-bootstrap-2-modal-scrolling-problem-%7C-why-capybara-slash-selenium-cannot-locate-your-visible-buttons/"/>
+    <updated>2013-12-21T09:19:00+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2013/12/21/twitter-bootstrap-2-modal-scrolling-problem-|-why-capybara-slash-selenium-cannot-locate-your-visible-buttons</id>
+    <content type="html"><![CDATA[<p>Twitter Bootstrap 2 has a bug while on modal dialogs. The page does not scroll as expected. So, if the browser window is not wide/tall enough to display the whole
+modal dialog content, the scroll bars do not make it appear.</p>
+
+<p>The bug is described here:</p>
+
+<ul>
+<li><a href="http://stackoverflow.com/q/7508576/658469">http://stackoverflow.com/q/7508576/658469</a></li>
+</ul>
+
+
+<p>And the answer is given a little bit below that:</p>
+
+<ul>
+<li><a href="http://stackoverflow.com/a/7787883/658469">http://stackoverflow.com/a/7787883/658469</a></li>
+</ul>
+
+
+<p>This problem does not occur with jQuery modals neither with Twitter Bootstrap 3.</p>
+
+<p>I am using Ruby on Rails and the <code>less-rails-bootstrap</code> gem.</p>
+
+<p>In order to fix the problem for my current application, and instead of moving to Twitter Bootstrap 3 or to jQuery, I have decided to fix the problem in the gem</p>
+
+<p>Here is the fix:</p>
+
+<pre><code>gem 'less-rails-bootstrap', :git =&gt; 'https://github.com/pmatsinopoulos/less-rails-bootstrap.git', :branch =&gt; 'bug-fix-modal-scrolling'
+</code></pre>
+
+<p><strong>Important Note</strong> This bug influences your capybara/selenium tests, because elements that are normally visible, while the browser is maximized, they cannot be located by
+selenium and they are reported as non-visible and cannot be interacted with, if the window browser is not open enough to display the whole modal dialog.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Model Properties - Styling]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2013/10/27/model-properties-styling/"/>
+    <updated>2013-10-27T21:09:00+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2013/10/27/model-properties-styling</id>
+    <content type="html"><![CDATA[<p>I usually come across people asking what is the preferred way of laying out the properties of a model and, in fact, of an ActiveRecord model.
+Shall we put first the validations and then the associations? Or first the associations and then the validations? Or shall we put first the
+callbacks?</p>
+
+<p>One can google for <code>rails style guide</code>. Will basically find only this:</p>
+
+<ul>
+<li><a href="https://github.com/bbatsov/rails-style-guide#models">https://github.com/bbatsov/rails-style-guide#models</a></li>
+</ul>
+
+
+<p> which is a good resource. But is not complete.</p>
+
+<h2>My Rails Model Style Guidelines</h2>
+
+<p><em>we are talking here about Rails 3</em></p>
+
+<p>Here is the list of my styling guidelines and which I use whenever I am writing a Model.</p>
+
+<!-- more -->
+
+
+<h3>This is the sequence of declarations:</h3>
+
+<ol>
+<li><code>attr_accessor</code>, and <code>attr_reader</code>, <code>attr_writer</code> for virtual attributes that are not derived from database</li>
+<li><code>nilify_blanks</code>. I am using the <a href="https://github.com/rubiety/nilify_blanks">nilify_blanks</a> gem and here is where I put the corresponding directive</li>
+<li><code>attr_accessible</code>, in order to declare the mass assignable attributes</li>
+<li>associations
+
+<ol>
+<li>all <code>belongs_to</code>,</li>
+<li>all <code>has_one</code>,</li>
+<li>all <code>has_many</code> (there is a gotcha here, read Note 1 below)</li>
+</ol>
+</li>
+<li>before validation callbacks</li>
+<li>validations</li>
+<li>after validation callbacks</li>
+<li>delegates</li>
+<li>scopes</li>
+<li>callbacks
+
+<ol>
+<li>First the before,</li>
+<li>then the after,</li>
+<li>then the around
+<br/>
+and according to the sequence that they take place. Read <a href="http://guides.rubyonrails.org/active_record_callbacks.html#available-callbacks">Rails Guides ActiveRecord Callbacks</a> (there is a gotcha here, see Note 1 below)
+and EXCEPT the (before|after)_validation callbacks, since I put them earlier in the list
+<br/></li>
+</ol>
+</li>
+<li>public methods
+
+<ol>
+<li>class methods</li>
+<li>instance methods</li>
+</ol>
+</li>
+<li>protected methods
+
+<ol>
+<li>class methods</li>
+<li>instance methods</li>
+</ol>
+</li>
+<li>private methods
+
+<ol>
+<li>class methods</li>
+<li>instance methods</li>
+</ol>
+</li>
+</ol>
+
+
+<p>Note 1: the [<code>has_many</code> | <code>has_one</code> | <code>belongs_to</code>] associations allow you to define <code>:dependent =&gt; :destroy</code> (though I do not use it on belongs_to&hellip;.is not correct design &hellip; IMHO). This creates a <code>before_destroy</code> callback.
+The <code>before_destroy</code> callbacks are executed in the sequence that they are defined. So, If you want a <code>before_destroy</code> callback to take place before a <code>before_destroy</code> callback of a <code>has_one</code> | <code>has_many</code> that destroys
+the dependent objects, you will have to put the <code>before_destroy</code> callback before the corresponding <code>has_one</code> | <code>has_many</code>.</p>
+
+<h3>This is a list of some extra guidelines:</h3>
+
+<ul>
+<li><p>Whenever I have <code>attr_accessor</code> (or <code>attr_reader</code>, or <code>attr_writer</code> or <code>attr_accessible</code>) I put the list of corresponding attributes in alphabetical order. So, in long lists it becomes easier for me to locate a specific attribute.</p></li>
+<li><p>I tend to leave a blank line between two different groups of declarations. For example, when the validations block ends, I leave a blank line before I start the after validation callbacks.</p></li>
+</ul>
+
+
+<hr />
+
+<p>I would be glad to hear about yours in order to improve mine too. (Comments are welcome on Google+)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Including VS extending a Module]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/"/>
+    <updated>2012-10-12T21:44:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Demonstration of `include` vs `extend`</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># Here, I am defining a &quot;module&quot; with name Ma. I also define two methods. One without &quot;self.&quot;</span>
+</span><span class='line'><span class="c1"># and one with. See, later on, what happens when I &quot;include&quot; and what happens when I &quot;extend&quot;</span>
+</span><span class='line'><span class="c1"># the &quot;module&quot; within a &quot;class&quot;.</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="k">module</span> <span class="nn">Ma</span>
+</span><span class='line'>  <span class="c1"># I will be able to make this method an instance or a class method of a class.</span>
+</span><span class='line'>  <span class="c1"># It depends whether I will &quot;include&quot; or &quot;extend&quot; the module in the class.</span>
+</span><span class='line'>  <span class="c1"># Note that this method, I cannot call it directly on Ma. In order for this method</span>
+</span><span class='line'>  <span class="c1"># to be useful, I have to include or extend this module within a class.</span>
+</span><span class='line'>  <span class="c1">#</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">ma_method1</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;ma_method1&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># This method, is not reusable, in the sense that I cannot make it be an instance or class</span>
+</span><span class='line'>  <span class="c1"># method of a class. But still, it is a method of module Ma and I can call it directly.</span>
+</span><span class='line'>  <span class="c1">#</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">ma_method2</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;ma_method2&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Ma responds to ma_method1? : </span><span class="si">#{</span><span class="no">Ma</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Ma responds to ma_method2? : </span><span class="si">#{</span><span class="no">Ma</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">A</span>
+</span><span class='line'>  <span class="c1"># &quot;include&quot; sets the module methods as instance methods of the class</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Ma</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;a Responds to ma_method1?: </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A Responds to ma_method1?: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;a Responds to ma_method2?: </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A Responds to ma_method2?: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">B</span>
+</span><span class='line'>  <span class="c1"># &quot;extend&quot; sets the module methods as class methods of the class</span>
+</span><span class='line'>  <span class="kp">extend</span> <span class="no">Ma</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;b Responds to ma_method1? : </span><span class="si">#{</span><span class="n">b</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B Responds to ma_method1? : </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;b responds to ma_method2? : </span><span class="si">#{</span><span class="n">b</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B responds to ma_method2? : </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------------&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But you can also <code>include</code> or <code>extend</code> a <code>module</code> in another <code>module</code> too. Read this gist by
+<a href="https://gist.github.com/pglombardo">pglombardo</a> who has kindly appended to the above
+piece of code.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to define and use class-level variables while mixing in Modules]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/10/09/how-to-define-and-use-class-level-variables-while-mixing-modules/"/>
+    <updated>2012-10-09T19:47:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/10/09/how-to-define-and-use-class-level-variables-while-mixing-modules</id>
+    <content type="html"><![CDATA[<p>There are sometimes that you might want to use class-level variables in a reusable <code>module</code>. How will you do that? Here is a sample ruby program that does that:</p>
+
+<figure class='code'><figcaption><span>Example of Modules and class-level variables</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;set&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">module</span> <span class="nn">Cacheable</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">base</span><span class="o">.</span><span class="n">send</span> <span class="ss">:extend</span><span class="p">,</span> <span class="no">ClassMethods</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">ClassMethods</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">cached_keys</span>
+</span><span class='line'>      <span class="vi">@cached_keys</span> <span class="o">||=</span> <span class="no">Set</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">add_cached_key</span><span class="p">(</span><span class="n">key_sym</span><span class="p">)</span>
+</span><span class='line'>      <span class="vi">@cached_keys</span> <span class="o">||=</span> <span class="no">Set</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>      <span class="vi">@cached_keys</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">key_sym</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">A</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Cacheable</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">B</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Cacheable</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A cached keys: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B cached keys: </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">A</span><span class="o">.</span><span class="n">add_cached_key</span><span class="p">(</span><span class="ss">:a</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A cached keys: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B cached keys: </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">B</span><span class="o">.</span><span class="n">add_cached_key</span><span class="p">(</span><span class="ss">:b</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A cached keys: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B cached keys: </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">A</span><span class="o">.</span><span class="n">add_cached_key</span><span class="p">(</span><span class="ss">:aa</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A cached keys: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B cached keys: </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">B</span><span class="o">.</span><span class="n">add_cached_key</span><span class="p">(</span><span class="ss">:bb</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A cached keys: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B cached keys: </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you run the above ruby script, you will get the following output:</p>
+
+<figure class='code'><figcaption><span>Output of running the above ruby script</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">A</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {}&gt;</span>
+</span><span class='line'><span class="n">B</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {}&gt;</span>
+</span><span class='line'><span class="n">A</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:a}&gt;</span>
+</span><span class='line'><span class="n">B</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {}&gt;</span>
+</span><span class='line'><span class="n">A</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:a}&gt;</span>
+</span><span class='line'><span class="n">B</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:b}&gt;</span>
+</span><span class='line'><span class="n">A</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:aa, :a}&gt;</span>
+</span><span class='line'><span class="n">B</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:b}&gt;</span>
+</span><span class='line'><span class="n">A</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:aa, :a}&gt;</span>
+</span><span class='line'><span class="n">B</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:bb, :b}&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In the above example, we keep a class level <code>Set</code> of symbols (<code>@cached_keys</code>). We want every <code>class</code> that mixes in <code>Cacheable</code> to have its own instance of that <code>Set</code>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My Solr Journey - Session 001]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/09/30/my-solr-journey-session-001/"/>
+    <updated>2012-09-30T14:27:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/09/30/my-solr-journey-session-001</id>
+    <content type="html"><![CDATA[<h2>Why do I take this Journey?</h2>
+
+<p>I have been using Solr the last two years for quite some projects. My work was always done using <a href="http://sunspot.github.com/">sunspot</a>
+(via <code>sunspot_rails</code> when one has Rails application), a gem that is a client library for Solr.</p>
+
+<p>You need to know few things about Solr, when using <code>sunspot</code> to access it and do most of the things. <code>sunspot</code> is a fantastic gem and relieves you from
+huge amounts of work when storing data in a Solr database.</p>
+
+<p>However, there are times that I felt that I needed to know more. For example, when I was searching for <code>University of Athens</code> and I got no results, but I knew
+that my documents had all or any of the words &ldquo;University&rdquo;, &ldquo;of&rdquo;, &ldquo;Athens&rdquo; in their body, or, even worse, there were also documents that were having the whole
+phrase &ldquo;University of Athens&rdquo; in their body. Or I wanted to query with parts of words, or parts of e-mails, and still I was not getting any results. You can see how
+I ended up solving these problems reading these two: 1) <a href="http://stackoverflow.com/questions/12650859/why-sunspot-solr-does-not-bring-results-when-i-include-of-word-in-search-query/12653931">Why Sunspot Solr does not bring results when I include “of” word in search query?</a>
+ 2) <a href="http://stackoverflow.com/questions/12131473/how-can-i-set-sunspot-to-search-for-sequences-of-characters-instead-of-words">How can I set Sunspot to search for sequences of characters instead of words?</a></p>
+
+<p>Hence, I decided to take a journey to Solr. And this will be a registration of my steps to this journey. Understanding how Solr works, will make me manage
+better what I can do and achieve with <code>sunspot</code> too.</p>
+
+<p>And here we go</p>
+
+<h2>First steps</h2>
+
+<ul>
+<li>I downloaded solr from <a href="http://lucene.apache.org/solr/">here</a></li>
+<li>Followed the <a href="http://lucene.apache.org/solr/api-3_6_1/doc-files/tutorial.html">tutorial</a></li>
+</ul>
+
+
+<h3>Summary</h3>
+
+<p>One cannot be but extremely impressed of the features and capabilities of Solr. I believe that I will use to replace many of my MySQL stores that are only
+used for querying.</p>
+
+<p>(Next steps will soon follow)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Executing Migration Commands from Rails Console]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/09/25/executing-migration-commands-from-rails-console/"/>
+    <updated>2012-09-25T20:19:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/09/25/executing-migration-commands-from-rails-console</id>
+    <content type="html"><![CDATA[<p>Did you know that you can execute migration commands from rails console? Assume that you want to change the column &lsquo;name&rsquo; of the &lsquo;Product&rsquo; model, to have a limit of 32 characters and set it to not null. Here is what you can do:</p>
+
+<figure class='code'><figcaption><span>Example of ActiveRecord Migration run from Rails Console</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">rails</span> <span class="n">c</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Migration</span><span class="o">.</span><span class="n">change_column</span> <span class="ss">:products</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:string</span><span class="p">,</span> <span class="ss">:limit</span> <span class="o">=&gt;</span> <span class="mi">32</span><span class="p">,</span> <span class="ss">:null</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+</span><span class='line'><span class="o">--</span> <span class="n">change_column</span><span class="p">(</span><span class="ss">:products</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:string</span><span class="p">,</span> <span class="p">{</span><span class="ss">:limit</span><span class="o">=&gt;</span><span class="mi">32</span><span class="p">})</span>
+</span><span class='line'><span class="p">(</span><span class="mi">38</span><span class="o">.</span><span class="mi">1</span><span class="n">ms</span><span class="p">)</span>  <span class="no">ALTER</span> <span class="no">TABLE</span> <span class="sb">`products`</span> <span class="no">CHANGE</span> <span class="sb">`name`</span> <span class="sb">`name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="no">NOT</span> <span class="no">NULL</span>
+</span><span class='line'><span class="o">-&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mo">03</span><span class="mi">96</span><span class="n">s</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="kp">nil</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Capistrano - Shared directories among releases]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/09/02/capistrano-shared-directories-among-releases/"/>
+    <updated>2012-09-02T20:47:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/09/02/capistrano-shared-directories-among-releases</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/capistrano/capistrano">Capistrano</a> is a great tool for deploying Ruby on Rails applications on remote server machines. If you have ever used it, you may already know that it creates new directory structures for each new release that it realizes and sets &ldquo;current&rdquo; to point to the latest one.</p>
+
+<p>This is very fine, but there are cases in your application that you might want to share the same directory data among releases. You can declare in your &ldquo;deploy.rb&rdquo; file the directories that will be shared among your releases. By default, the directories &ldquo;log&rdquo;, &ldquo;public/system&rdquo; and &ldquo;tmp/pids&rdquo; are already shared. Hence, you do not have to do anything for them. But, if, for example, you want to share the &ldquo;my_custom_data&rdquo; directory that you have inside your application structure, you need to add the following line inside your &ldquo;deploy.rb&rdquo; file:</p>
+
+<figure class='code'><figcaption><span>Add this line to your deploy file</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">set</span> <span class="ss">:shared_children</span><span class="p">,</span> <span class="n">fetch</span><span class="p">(</span><span class="ss">:shared_children</span><span class="p">)</span> <span class="o">+</span> <span class="o">[</span><span class="s2">&quot;my_custom_data&quot;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will create a link to &ldquo;shared/my_custom_data&rdquo; folder by executing the following command automatically:</p>
+
+<figure class='code'><figcaption><span>Create a link to your custom shared folder</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ln   -s  /home/&lt;my_app&gt;/&lt;deployment_dir&gt;/shared/my_custom_data   /home/&lt;my_app&gt;/&lt;deployment_dir&gt;/current/my_custom_data
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Please, note that <code>my_custom_data</code> should pre-exist while you are doing the deployment. <strong>But</strong>, <code>bundle exec cap setup</code> will create shared folders anyway for you the first time you setup your servers.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Testing - Asserting Template and Layout]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/03/25/testing-asserting-template-and-layout/"/>
+    <updated>2012-03-25T20:16:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/03/25/testing-asserting-template-and-layout</id>
+    <content type="html"><![CDATA[<p>I consider testing one of the most important phase in application development and Rails does a very good job on that. However, testing documentation on Rails Guides is still work under development.</p>
+
+<p>Here is a short tutorial on how you can test that a reponse has rendered the correct template and the correct layout.</p>
+
+<p>If you want to make sure that the response rendered the correct template and layout, you can use the assert_template method:</p>
+
+<figure class='code'><figcaption><span>assert_template usage</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="err">“</span><span class="n">index</span> <span class="n">should</span> <span class="n">render</span> <span class="n">correct</span> <span class="n">template</span> <span class="ow">and</span> <span class="n">layout</span><span class="err">”</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">get</span> <span class="ss">:index</span>
+</span><span class='line'>  <span class="n">assert_template</span> <span class="ss">:index</span>
+</span><span class='line'>  <span class="n">assert_template</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="err">“</span><span class="n">layouts</span><span class="o">/</span><span class="n">application</span><span class="err">”</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note that you cannot test for template and layout at the same time, with one call to assert_template method. Also, for the layout test, you can give a regular expression instead of a string, but using the string, makes things clearer. On the other hand, you have to include the “layouts” directory name even if you save your layout file in this standard layout directory. Hence,</p>
+
+<figure class='code'><figcaption><span>This will not work</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">assert_template</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="err">“</span><span class="n">application</span><span class="err">”</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>will not work.</p>
+
+<p><strong>Gotcha: Watch out if your view renders any partial</strong></p>
+
+<p>If your view renders any partial, when asserting for the layout, you have to assert for the partial at the same time. Otherwise, assertion will fail.</p>
+
+<p>Hence:</p>
+
+<figure class='code'><figcaption><span>Correct way to assert for the layout</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="err">“</span><span class="kp">new</span> <span class="n">should</span> <span class="n">render</span> <span class="n">correct</span> <span class="n">layout</span><span class="err">”</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">get</span> <span class="ss">:new</span>
+</span><span class='line'>  <span class="n">assert_template</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="err">“</span><span class="n">layouts</span><span class="o">/</span><span class="n">application</span><span class="err">”</span><span class="p">,</span> <span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="err">“</span><span class="n">_form</span><span class="err">”</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>is the correct way to assert for the layout when the view renders a partial with <code>name_form</code>. Omitting the <code>:partial</code> key in your <code>assert_template</code> call will complain.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby Style Guide]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/03/24/ruby-style-guide/"/>
+    <updated>2012-03-24T23:30:00+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/03/24/ruby-style-guide</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/styleguide/ruby">This</a> is a very good guide on how one should style its Ruby code. I am following this since I started Ruby and I suggest that everybody does the same.</p>
+
+<p>One extra on usage of {&hellip;} vs do&hellip;end blocks can be found <a href="http://onestepback.org/index.cgi/Tech/Ruby/BraceVsDoEnd.rdoc">here (Weirich Convention)</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL Replication]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/02/16/mysql-replication/"/>
+    <updated>2012-02-16T21:21:00+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/02/16/mysql-replication</id>
+    <content type="html"><![CDATA[<p>Read my new article on <a href="http://www.sitepoint.com/mysql-master-slave-replication-setting-up/">Site Point about MySQL Replication</a> (<a href="http://www.sitepoint.com/mysql-master-slave-replication-setting-up/">Part I</a> and <a href="http://www.sitepoint.com/mysql-master-slave-replication-starting-replication/">Part II</a>)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Maze Implementaion in Ruby]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/02/12/maze-implementation-in-ruby/"/>
+    <updated>2012-02-12T23:11:00+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/02/12/maze-implementation-in-ruby</id>
+    <content type="html"><![CDATA[<p>This is an implementation of a Maze algorithm to find the path from start to goal in between the walls of a maze.</p>
+
+<p>Read the details <a href="https://github.com/pmatsinopoulos/Maze-Algorithm">here</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

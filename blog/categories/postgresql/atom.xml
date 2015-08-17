@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: PostgreSQL | Panayotis Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/postgresql/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2015-08-17T22:33:04+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using string column type for migrations]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2014/06/11/using-string-column-type-for-migrations/"/>
+    <updated>2014-06-11T22:48:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2014/06/11/using-string-column-type-for-migrations</id>
+    <content type="html"><![CDATA[<p>Ruby on Rails migrations are used to create the necessary tables inside our database. One of the most frequently used column type is <code>string</code>.
+Here is an example of an <code>ActiveRecord::Migration</code> that uses this type:</p>
+
+<!-- more -->
+
+
+<p>```ruby
+class CreateAuthors &lt; ActiveRecord::Migration
+  def change</p>
+
+<pre><code>create_table :authors do |t|
+  t.string :name,      null: false
+  t.string :biography, null: false
+end
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>But what actual sql type did that migration create for the <code>string</code> type?</p>
+
+<p>If we run this migration against a <strong>MySQL</strong> database, we can see the
+actual table that creates using the <code>mysql</code> command <code>show create table authors</code>. The output will be the following:</p>
+
+<p><code>sql
++---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table   | Create Table                                                                                                                                                                                                                                                            |
++---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| authors | CREATE TABLE `authors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `biography` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci |
++---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</code></p>
+
+<p>As you can see, the <code>string</code> is translated to <code>varchar(255)</code>. This is the type that allows to store strings with maximum length 255. What if we want to increase the maximum length?
+How can we do that? In that case, you need to use the <code>limit:</code> option. Let&rsquo;s say that we want the <code>biography</code> column to have maximum length 1024. We have to change the corresponding
+line in the above migration as follows:</p>
+
+<p><code>ruby
+t.string :biography, null: false, limit: 1024
+</code></p>
+
+<p>If you do this change and run your migration, the table that is created is the following:</p>
+
+<p><code>sql
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table   | Create Table                                                                                                                                                                                                                                                             |
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| authors | CREATE TABLE `authors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `biography` varchar(1024) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci |
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</code></p>
+
+<p>As you can see, we have managed to change the maximum number of characters that <code>biography</code> column can hold. Please, note that the maximum length for a <code>varchar</code> column in
+MySQL is <code>65535</code> <strong>theoretically</strong>. In practice, this is limited by the maximum row size (<code>65535 bytes</code> which is shared among all columns of the table) and the character set
+used. So, for utf-8 database collation, this might be quite smaller.</p>
+
+<p>Perfect. And what if we want to store a text that is longer than <code>65535</code> characters long? What is the option that we have?</p>
+
+<p>If you try to set a bigger limit, you will probably get an error. The next option is to use the migration type <code>text</code>.</p>
+
+<p>If you change your migration for <code>biography</code> as follows:</p>
+
+<p><code>ruby
+t.text :biography, null: false
+</code></p>
+
+<p>then the table that is created:</p>
+
+<p><code>sql
++---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table   | Create Table                                                                                                                                                                                                                                                    |
++---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| authors | CREATE TABLE `authors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `biography` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci |
++---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</code></p>
+
+<p>As you can see, the <code>text</code> migration type has been translated to <code>text</code> MySQL type. And the question now is: Is that bigger than <code>varchar(65535)</code>? The answer is no. <a href="http://dev.mysql.com/doc/refman/5.5/en/storage-requirements.html">MySQL
+documentation</a> mentions that <code>text</code> maximum length is 2<sup>16</sup>.</p>
+
+<p>So, if you really want to store larger texts than that, you need to consider the two MySQL types: <code>mediumtext</code> and <code>longtext</code>. These can store really huge amounts of text.
+<code>mediumtext</code> can store up to 2<sup>24</sup> and <code>longtext</code> up to 2<sup>32</sup>.</p>
+
+<p>The problem here is that if, for example, you want the <code>biography</code> to be a <code>longtext</code>, this:</p>
+
+<p><code>ruby
+t.longtext :biography, null: false
+</code></p>
+
+<p>will not work. Trying to run this migration will give you the following error:</p>
+
+<p><code>bash
+undefined method `longtext' for #&lt;ActiveRecord::ConnectionAdapters::TableDefinition:0x...db/migrate/..._create_authors.rb:5:in `block in change'
+</code></p>
+
+<p>This is because <code>longtext</code> is not considered a standard migration column type. Neither <code>mediumtext</code> does.</p>
+
+<p>The alternative here is to use the <code>column</code> method instead, and pass the column type as 2nd argument:</p>
+
+<p><code>ruby
+t.column :biography, :longtext, null: false
+</code></p>
+
+<p>This will run successfully and will generate the table:</p>
+
+<p><code>sql
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table   | Create Table                                                                                                                                                                                                                                                        |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| authors | CREATE TABLE `authors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `biography` longtext COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci |
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</code></p>
+
+<p>You are done!</p>
+
+<p><strong>Note</strong>: For those that are using PostgreSQL:</p>
+
+<p>1) The default <code>string</code> migration type is translated to <code>character varying(255)</code>. See how the table is created with defaults:</p>
+
+<p>```sql</p>
+
+<pre><code>                               Table "public.authors"
+</code></pre>
+
+<p>  Column   |          Type           |                      Modifiers
+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+ id        | integer                 | not null default nextval(&lsquo;authors_id_seq&rsquo;::regclass)
+ name      | character varying(255)  | not null
+ biography | character varying(255)  | not null
+Indexes:</p>
+
+<pre><code>"authors_pkey" PRIMARY KEY, btree (id)
+</code></pre>
+
+<p>```</p>
+
+<p>2) If you use the <code>limit:</code> option you can change the default <code>255</code> to whatever.</p>
+
+<p>3) Note that <code>text</code> and <code>character varying(n)</code> in PostgreSQL are the same except from the fact that <code>character varying(n)</code> puts a limit. <code>text</code> does not have one.</p>
+
+<p>4) You cannot use <code>mediumtext</code> or <code>longtext</code> with PostgreSQL. <code>text</code> does the job for you.</p>
+
+<p>BTW: I am preparing a course <code>Introduction to Programming</code>. I know that most of you do not need such course but you may know somebody that might be. You can send them
+the link to pre-register for a discount when this comes public. Here it is <a href="http://pmatsinopoulos.github.io/introduction-to-programming-notify-when-public">Introduction to Programming</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

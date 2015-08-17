@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Panayotis Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2015-08-17T22:33:04+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby Array Sum]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2015/07/19/ruby-array-sum/"/>
+    <updated>2015-07-19T11:12:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2015/07/19/ruby-array-sum</id>
+    <content type="html"><![CDATA[<p>This short post is going to demonstrate how we can sum an array of integers or an array of objects that have an
+integer attribute.</p>
+
+<p>Let&rsquo;s start:</p>
+
+<h2>Sum array of integers</h2>
+
+<h3>First version using reduce with block</h3>
+
+<p>```ruby
+array_of_i = [10, 2, 8, 5, 7, 9]</p>
+
+<p>sum = array_of_i.reduce(0) { |result, item| result + item }</p>
+
+<p>puts &ldquo;Sum of #{array_of_i.join(&rdquo;,&ldquo;)} is: #{sum}&rdquo;
+```</p>
+
+<h3>Second version using reduce giving the method symbol to apply</h3>
+
+<p>```ruby
+array_of_i = [10, 2, 8, 5, 7, 9]</p>
+
+<p>sum = array_of_i.reduce(:+)</p>
+
+<p>puts &ldquo;Sum of #{array_of_i.join(&rdquo;,&ldquo;)} is: #{sum}&rdquo;
+```</p>
+
+<h2>Sum of objects that have an integer attribute</h2>
+
+<h3>Using reduce with a block</h3>
+
+<p>```ruby
+class Product
+  attr_accessor :price</p>
+
+<p>  def initialize(price)</p>
+
+<pre><code>self.price = price
+</code></pre>
+
+<p>  end<br/>
+end</p>
+
+<p>prod1 = Product.new(1000)
+prod2 = Product.new(500)
+prod3 = Product.new(1500)</p>
+
+<p>array_of_products = [prod1, prod2, prod3]</p>
+
+<p>sum = array_of_products.reduce(0) {|result, item| result + item.price}</p>
+
+<p>puts &ldquo;Sum of array_of_products is: #{sum}&rdquo;
+```
+I am pretty sure that you can come up with other methods of doing the above. Can you post in the comments any alternatives?
+Advantages and disadvantages?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Class vs Instance Variables]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2015/06/19/class-vs-instance-variables/"/>
+    <updated>2015-06-19T08:54:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2015/06/19/class-vs-instance-variables</id>
+    <content type="html"><![CDATA[<p><code>`` ruby demo of</code>Class<code>vs</code>Instance` variables</p>
+
+<h1>Here, I am defining a class Dog with an class variable &ldquo;@@number_of_feet&rdquo;</h1>
+
+<h1>and an instance variable &ldquo;@color&rdquo;, assuming that all dogs in the world</h1>
+
+<h1>have the same number of feet but they might differ in color. Or, at least,</h1>
+
+<h1>this is the general rule.</h1>
+
+<p>#
+class Dog
+  @@number_of_feet = 4</p>
+
+<p>  def initialize(color)</p>
+
+<pre><code>@color = color
+</code></pre>
+
+<p>  end</p>
+
+<p>  def number_of_feet=(value)</p>
+
+<pre><code>@@number_of_feet = value
+</code></pre>
+
+<p>  end</p>
+
+<p>  def tell_me_about_you</p>
+
+<pre><code>puts "My color is #{@color} and I have #{@@number_of_feet} feet"
+</code></pre>
+
+<p>  end
+end</p>
+
+<h1>The next two statements will set the &ldquo;@color&rdquo; instance variable to different values</h1>
+
+<h1>for max and rocky. But both dogs will have the same number of feet, which will be 4,</h1>
+
+<h1>since when class is initialized the &ldquo;@@number_of_feet&rdquo; instance variable takes the value 4.</h1>
+
+<p>max = Dog.new(&lsquo;black&rsquo;)
+rocky = Dog.new(&lsquo;brown&rsquo;)</p>
+
+<p>max.tell_me_about_you    # will print black and 4
+rocky.tell_me_about_you  # will print brown and 4</p>
+
+<h1>Now, I am changing the value of the class variable &ldquo;@@number_of_feet&rdquo; and I am setting that</h1>
+
+<h1>to &ldquo;3&rdquo;. You will see that now all dogs change to have 3 feet.</h1>
+
+<p>max.number_of_feet = 3</p>
+
+<p>max.tell_me_about_you    # will print black and 3
+rocky.tell_me_about_you  # will print brown and 3
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Delayed Job Best Practices]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2014/12/12/delayed-job-best-practices/"/>
+    <updated>2014-12-12T13:49:00+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2014/12/12/delayed-job-best-practices</id>
+    <content type="html"><![CDATA[<p>Read my new article on <a href="http://www.sitepoint.com/delayed-jobs-best-practices/">Site Point about Delayed Job Best Practices</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[You don't have to be afraid to test your UI - Page Object Pattern to the rescue]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue/"/>
+    <updated>2014-09-21T18:22:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>Many software engineers do not write tests for their UI because they have a good reason not to. Firstly, they believe that UI changes frequently, so any test would have been vulnerable to frequent changes. Secondly, they do not know about the <a href="http://martinfowler.com/bliki/PageObject.html">Page Object Pattern</a>.</p>
+
+<!-- more -->
+
+
+<p>I have been introduced to Page Object Pattern by a QA Engineer, <a href="http://gr.linkedin.com/in/stylianospapadomichelakis">Stylianos Papadomichelakis</a> while we were colleagues at <a href="https://www.linkedin.com/company/e-travel-sa">E-TRAVEL S.A.</a>. He has been using that for his QA tests, although in the Java world. I was astounded by this pattern. What a pain I got while trying to migrate a huge test suite from <code>capybara</code> 1 to <code>capybara</code> 2. If only I had page object pattern from the beginning, a 2 weeks task would have finished in 2 days.</p>
+
+<p>Martin Fowler <a href="http://martinfowler.com/bliki/PageObject.html">explains</a>, very clearly, as always, how useful this pattern is for testing UI, and how it can insulate your tests from the frequest UI changes. When using it, change effects on the UI of your application will not have to be propagated throughout your whole test suite, but only inside your page objects.</p>
+
+<p>And thank God, for our <code>Ruby</code> world, there is an awesome implementation of the page object pattern. The gem is called <code>site_prism</code> and you can read about it here: <a href="https://github.com/natritmeyer/site_prism">Site Prism</a>. It has very good documentation and will really help you love this gem.</p>
+
+<p>In this article, I am going to share with you my experience using this gem. Using it for quite some time on all of my projects since I met it, I have come up with some best practices which I am sharing with you here.</p>
+
+<p>Let&rsquo;s start</p>
+
+<h3>Use a <code>page_objects</code> directory</h3>
+
+<p>Put your page object Ruby files inside a directory structure that would have as parent the <code>page_objects</code> directory. So, if for example you have a Rails application, the directory structure might be:</p>
+
+<p><code>
+app
+bin
+config
+db
+features
+lib
+log
+page_objects
+public
+script
+spec
+tmp
+vendor
+</code></p>
+
+<p>As you can see the <code>page_objects</code> is on the same directory level like the <code>features</code> which contains the <code>Cucumber</code> features and the <code>spec</code> which contains the <code>RSpec</code> test files. <code>Cucumber</code> and <code>RSpec</code> will both be using your <code>page_objects</code>.</p>
+
+<h3>Use <code>&lt;your-app-name&gt;/page_objects</code> namespace</h3>
+
+<p>Although you are free to put all of your page object files inside the <code>page_objects</code> directory, prefer to use a sub-directory with the name of your application that would function as namespace. Further namespace that, with the word <code>page_objects</code>. For example, if your application is called <code>bookstore</code>, then you can use the following tree to store your page objects:</p>
+
+<p>```
+page_objects
+  |&ndash;> bookstore</p>
+
+<pre><code>    |-&gt; page_objects
+</code></pre>
+
+<p>```</p>
+
+<p>Any <code>.rb</code> file that you will be creating to hold a page object class, will need to be inside the corresponding module <code>Bookstore::PageObjects</code> that will work as a namespace.
+Using namespace is a good practice in general and not only for the <code>site_prism</code> case we are discussing here. You will avoid having name conflicts with third-party gems.</p>
+
+<h3>Use a file to require them all</h3>
+
+<p>Write an <code>all_page_objects.rb</code> file that will require all the page objects Ruby files that would be living in your <code>page_objects</code> tree.</p>
+
+<p><code>
+page_objects
+  |-&gt; bookstore
+  |     |-&gt; page_objects
+  |- all_page_objects.rb
+</code></p>
+
+<p>An implementation of <code>all_page_objects.rb</code> file might be something like the following:</p>
+
+<p>```ruby</p>
+
+<h1>file: page_objects/all_page_objects.rb</h1>
+
+<p>#
+current_path = File.expand_path(&lsquo;..&rsquo;, <strong>FILE</strong>)
+$LOAD_PATH.unshift File.join(current_path, &lsquo;bookstore&rsquo;)</p>
+
+<p>Dir.glob(File.join(current_path, &lsquo;<em>*&rsquo;, &lsquo;</em>.rb&rsquo;)).each do |f|
+  require f
+end
+```</p>
+
+<p>Having done that, you only have to require the <code>all_page_objects</code> file from your <code>spec_helper.rb</code> or <code>env.rb</code> file. And everytime a new page object file is defined, you do not have to require that explicitly.</p>
+
+<h3>Different directory for pages and sections</h3>
+
+<p>Site prism offers two classes to organize your page object code. Pages and Sections. Use a separate directory to hold your page classes and a separate directory to hold your sections classes.</p>
+
+<p><code>
+page_objects
+  |-&gt; bookstore
+  |     |-&gt; page_objects
+  |           |-&gt; pages
+  |           |-&gt; sections
+  |- all_page_objects.rb
+</code></p>
+
+<p>You will use each one of these two directories to further namespace your classes. Hence all your page object classes that are pages will be <code>Bookstore::PageObjects::Pages::</code> namespaced, and all your page object classes that are sections will be <code>Bookstore::PageObjects::Sections::</code> namespaced.</p>
+
+<h3>Follow your views directory structure</h3>
+
+<p>Although you can put all your page classes inside the <code>page_objects/bookstore/page_objects/pages</code> directory, you should be further separating your pages directory into subdirectories that follow your views directory structure.</p>
+
+<p>If for example you have a views directory that has two directories, <code>books</code> and <code>authors</code>, former one having the views that are related to <code>Book</code> resource and latter one having the views that are related to <code>Author</code> resource, you should have corresponding directories inside the <code>page_objects/pages</code> directory:</p>
+
+<p><code>
+page_objects
+  |-&gt; bookstore
+  |     |-&gt; page_objects
+  |           |-&gt; pages
+  |           |     |-&gt; books
+  |           |     |-&gt; authors
+  |           |-&gt; sections
+  |- all_page_objects.rb
+</code></p>
+
+<p>Think about whether you can do the same for the <code>sections</code> too. If you have <code>sections</code> that are resource specific, you can follow a similar directory structure.</p>
+
+<p>In any case, the page classes that you will define will need to be further namespaced.</p>
+
+<h3>Follow your views templates</h3>
+
+<p>When defining your actual page classes follow the views templates and create one page per template view. For example, if you have a view template that indexes all the books in your bookstore, e.g. <code>index.html.erb</code> inside the <code>books</code> view directory, then create the corresponding page inside the file <code>index_page.rb</code>. Similarly for <code>new</code>, <code>show</code>, <code>edit</code> views:</p>
+
+<p><code>
+page_objects
+  |-&gt; bookstore
+  |     |-&gt; page_objects
+  |           |-&gt; pages
+  |           |     |-&gt; books
+  |           |     |---- index_page.rb
+  |           |     |---- new_page.rb
+  |           |     |---- show_page.rb
+  |           |     |---- edit_page.rb
+  |           |     |-&gt; authors
+  |           |     |---- index_page.rb
+  |           |     |---- new_page.rb
+  |           |     |---- show_page.rb
+  |           |     |---- edit_page.rb
+  |           |-&gt; sections
+  |- all_page_objects.rb
+</code></p>
+
+<p>Hence, your page classes will be defined as follows (example for the <code>index_page.rb</code> for <code>books</code>):</p>
+
+<p>```ruby</p>
+
+<h1>file: page_objects/bookstore/page_objects/pages/books/index_page.rb</h1>
+
+<p>#
+module Bookstore
+  module PageObjects</p>
+
+<pre><code>module Pages
+  module Books
+    class IndexPage &lt; SitePrism::Page
+      # ... your page code goes here ... #
+    end
+  end
+end
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<h3>One file to model your application</h3>
+
+<p>Create a file <code>application.rb</code> that will be used to instantiate the concrete page classes and will be used to access all the pages while working with site prism API on <code>feautures</code> <code>steps</code> or <code>spec</code> tests.
+<code>
+page_objects
+  |-&gt; bookstore
+  |     |-&gt; page_objects
+  |           |-&gt; pages
+  |           |     |-&gt; books
+  |           |     |---- index_page.rb
+  |           |     |---- new_page.rb
+  |           |     |---- show_page.rb
+  |           |     |---- edit_page.rb
+  |           |     |-&gt; authors
+  |           |     |---- index_page.rb
+  |           |     |---- new_page.rb
+  |           |     |---- show_page.rb
+  |           |     |---- edit_page.rb
+  |           |-&gt; sections
+  |           |- application.rb
+  |- all_page_objects.rb
+</code></p>
+
+<p>So, you are going to have <code>page_objects/bookstore/page_objects/application.rb</code>
+Here is a sample implementation in order to understand what I am talking about:</p>
+
+<p>```ruby</p>
+
+<h1>file: page_objects/bookstore/page_objects/application.rb</h1>
+
+<p>#
+module Bookstore
+  module PageObjects</p>
+
+<pre><code>class Application
+  def initialize
+    @pages = {}
+  end
+
+  def home
+    @pages[:home] ||= Bookstore::PageObjects::Pages::HomePage.new
+  end
+
+  def sign_in
+    @pages[:sign_in] ||= Bookstore::PageObjects::Pages::SignInPage.new
+  end
+
+  def checkout
+    @pages[:checkout] ||= Bookstore::PageObjects::Pages::CheckoutPage.new
+  end
+end
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>```</p>
+
+<p>When you will be using site prism, you will only be instantiating the <code>Bookstore::PageObjects::Application</code> class once and then you will be invoking page methods to access specific pages. For example:</p>
+
+<p>If using <code>Cucumber</code>, inside the <code>features/support/hooks.rb</code> file you can have</p>
+
+<p><code>ruby
+Before do |scenario|
+  @app ||= Bookstore::PageObjects::Application.new
+end
+</code></p>
+
+<p>which will instantiate the <code>Bookstore::PageObjects::Application</code> and store it in <code>@app</code> that you can use to load and access pages as follows (in your <code>steps</code>):</p>
+
+<p>```ruby
+When(/^User visits the home pages$/)do
+  @app.home.load
+end</p>
+
+<p>When(/^User visits the sign in page$/) do
+  @app.sign_in.load
+end
+```</p>
+
+<p>You can see that the <code>Bookstore::PageObjects::Application</code> is being instantiated only once and each page is being instantiated only once too. The application instance is using, internally, a hash to store the instances of the necessary pages. So, everytime you need a page, either an existing instance of the page will be returned, if you have requested same page in the past, case in which it will be located in the <code>@pages</code> hash, or a new instance will be created.</p>
+
+<h3><code>elements</code> vs <code>sections</code></h3>
+
+<p>Sometimes, especially when you are new to site prism, you cannot decide very easily when you should be using <code>elements</code> vs <code>sections</code>.</p>
+
+<p>If you understand the difference between an <code>element</code> and a <code>section</code> then it should be easy.</p>
+
+<p><code>element</code> is primitive dom selection that cannot contain other elements.</p>
+
+<p><code>section</code> should be used whenever you have a dom area that you want to select and that you want to treat its constituent elements separately, with further site prism API manipulation. In other words, <code>section</code> should be containing one or more <code>element</code> (and/or other <code>element</code>s, <code>elements</code>, <code>section</code>s or <code>sections</code>).</p>
+
+<p>Finally, both <code>elements</code> and <code>sections</code> select structures of the dom that appear as arrays in the dom. <code>elements</code> select an array of <code>element</code>. <code>sections</code> select an array of <code>section</code>.</p>
+
+<p>Hence, if you have an index page that displays the list of books, you can have the following inside the index page definition:</p>
+
+<p>```ruby</p>
+
+<h1>file: page_objects/bookstore/page_objects/pages/books/index_page.rb</h1>
+
+<p>#
+module Bookstore
+  module PageObjects</p>
+
+<pre><code>module Pages
+  module Books
+    class IndexPage &lt; SitePrism::Page
+
+      elements :book_items, '#books-table tr.book-item'
+
+    end
+  end
+end
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>which will give you access to each one of the table rows that are used to display a book entry. But this definition does not allow to do too much with the book item itself.</p>
+
+<p>If for example, you want to access details of the book, you can use a section and say that you have an array of sections, as follows:</p>
+
+<p>```ruby</p>
+
+<h1>file: page_objects/bookstore/page_objects/pages/books/index_page.rb</h1>
+
+<p>#
+require &ldquo;bookstore/page_objects/sections/books/book_entry_section&rdquo;</p>
+
+<p>module Bookstore
+  module PageObjects</p>
+
+<pre><code>module Pages
+  module Books
+    class IndexPage &lt; SitePrism::Page
+
+      sections :book_items, Bookstore::PageObjects::Sections::Books::BookEntrySection, '#books-table tr.book-item'
+
+    end
+  end
+end
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>And then you need to define the book entry details in the corresponding section file:</p>
+
+<p>```ruby</p>
+
+<h1>file: page_objects/bookstore/page_objects/sections/books/book_item_section.rb</h1>
+
+<p>#
+module Bookstore
+  module PageObjects</p>
+
+<pre><code>module Sections
+  module Books
+    class BookItemSection &lt; SitePrism::Section
+      element :title,        'td.title'
+      element :author,       'td.author'
+      element :published_at, 'td.published-at'
+    end
+  end
+end
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>But, again&hellip;.</p>
+
+<h3>Prefer inline <code>section</code> (and <code>sections</code>) blocks</h3>
+
+<p>You should not be using separate class definitions for sections of pages that are not reusable among pages. It&rsquo;s waste of effort, time and requires more maintenance. Create a separate class, on a seperate file, for a section, only if this section can be reused among page definitions. Otherwise, define the section elements inline with a block.</p>
+
+<p>Hence, the above implementation for the book item, is not something that I recommend. I wouldn&rsquo;t create a section for that. You should just define the section elements inline as follows:</p>
+
+<p>```ruby</p>
+
+<h1>file: page_objects/bookstore/page_objects/pages/books/index_page.rb</h1>
+
+<p>#
+require &ldquo;bookstore/page_objects/sections/books/book_entry_section&rdquo;</p>
+
+<p>module Bookstore
+  module PageObjects</p>
+
+<pre><code>module Pages
+  module Books
+    class IndexPage &lt; SitePrism::Page
+      # .... other index page code .... #
+
+      sections :book_items, '#books-table tr.book-item' do
+        element :title,        'td.title'
+        element :author,       'td.author'
+        element :published_at, 'td.published-at'
+      end                    
+
+      # ... other index page code ... #
+    end
+  end
+end
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>Doing so, I do not have to create another class file specific to this section.</p>
+
+<p>Note that this hint is valid both for <code>section</code> and <code>sections</code>, of course.</p>
+
+<h3>Use ids &ndash; Do not use style properties for selectors</h3>
+
+<p>This suggestion goes out of the scope of site prism. When you are using selectors to select dom elements on your tests use html element ids, e.g. &lsquo;#books-table&rsquo; as much as you can. Do not use other attributes that style your elements or depend on the layout and structure of your dom. They are brittle to change. And if you write your tests and you see that your pages are missing ids that would help you write your tests, then go back to your core code and add ids.</p>
+
+<h2>Final</h2>
+
+<p>I believe that the page object pattern is a fantastic practice to isolate your tests from accessing UI test API (like <code>Capybara</code>) directly. And <a href="https://github.com/natritmeyer/site_prism">site_prism</a> is a perfect implementation.</p>
+
+<p>I hope that the above notes can help you organize your page objects code and become a practice in your development/QA team. Or at least start a discussion inside it about how you can better organize your page objects code.</p>
+
+<p>I would appreciate any comment and feedback to make the above even better.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Including VS extending a Module]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/"/>
+    <updated>2012-10-12T21:44:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module</id>
+    <content type="html"><![CDATA[<p><code>`` ruby Demonstration of</code>include<code>vs</code>extend`</p>
+
+<h1>Here, I am defining a &ldquo;module&rdquo; with name Ma. I also define two methods. One without &ldquo;self.&rdquo;</h1>
+
+<h1>and one with. See, later on, what happens when I &ldquo;include&rdquo; and what happens when I &ldquo;extend&rdquo;</h1>
+
+<h1>the &ldquo;module&rdquo; within a &ldquo;class&rdquo;.</h1>
+
+<p>#
+module Ma
+  # I will be able to make this method an instance or a class method of a class.
+  # It depends whether I will &ldquo;include&rdquo; or &ldquo;extend&rdquo; the module in the class.
+  # Note that this method, I cannot call it directly on Ma. In order for this method
+  # to be useful, I have to include or extend this module within a class.
+  #
+  def ma_method1</p>
+
+<pre><code>puts "ma_method1"
+</code></pre>
+
+<p>  end</p>
+
+<p>  # This method, is not reusable, in the sense that I cannot make it be an instance or class
+  # method of a class. But still, it is a method of module Ma and I can call it directly.
+  #
+  def self.ma_method2</p>
+
+<pre><code>puts "ma_method2"
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>puts &ldquo;Ma responds to ma_method1? : #{Ma.respond_to?(:ma_method1)}&rdquo; # it will print &ldquo;false&rdquo;
+puts &ldquo;Ma responds to ma_method2? : #{Ma.respond_to?(:ma_method2)}&rdquo; # it will print &ldquo;true&rdquo;
+puts &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;&rdquo;</p>
+
+<p>class A
+  # &ldquo;include&rdquo; sets the module methods as instance methods of the class
+  include Ma
+end</p>
+
+<p>a = A.new
+puts &ldquo;a Responds to ma_method1?: #{a.respond_to?(:ma_method1)}&rdquo; # it will print &ldquo;true&rdquo;
+puts &ldquo;A Responds to ma_method1?: #{A.respond_to?(:ma_method1)}&rdquo; # it will print &ldquo;false&rdquo;
+puts &ldquo;a Responds to ma_method2?: #{a.respond_to?(:ma_method2)}&rdquo; # it will print &ldquo;false&rdquo;
+puts &ldquo;A Responds to ma_method2?: #{A.respond_to?(:ma_method2)}&rdquo; # it will print &ldquo;false&rdquo;
+puts &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;&rdquo;</p>
+
+<p>class B
+  # &ldquo;extend&rdquo; sets the module methods as class methods of the class
+  extend Ma
+end</p>
+
+<p>b = B.new
+puts &ldquo;b Responds to ma_method1? : #{b.respond_to?(:ma_method1)}&rdquo; # it will print &ldquo;false&rdquo;
+puts &ldquo;B Responds to ma_method1? : #{B.respond_to?(:ma_method1)}&rdquo; # it will print &ldquo;true&rdquo;
+puts &ldquo;b responds to ma_method2? : #{b.respond_to?(:ma_method2)}&rdquo;  # it will print &ldquo;false&rdquo;
+puts &ldquo;B responds to ma_method2? : #{B.respond_to?(:ma_method2)}&rdquo; # it will print &ldquo;false&rdquo;
+puts &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;&rdquo;
+```</p>
+
+<p>But you can also <code>include</code> or <code>extend</code> a <code>module</code> in another <code>module</code> too. Read this gist by
+<a href="https://gist.github.com/pglombardo">pglombardo</a> who has kindly appended to the above
+piece of code.</p>
+]]></content>
+  </entry>
+  
+</feed>

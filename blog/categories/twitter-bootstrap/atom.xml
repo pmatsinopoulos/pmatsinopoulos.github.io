@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Twitter Bootstrap | Panayotis Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/twitter-bootstrap/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2015-08-17T22:33:04+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Twitter Bootstrap 2 Modal Scrolling Problem | Why capybara/selenium cannot locate your visible buttons]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2013/12/21/twitter-bootstrap-2-modal-scrolling-problem-%7C-why-capybara-slash-selenium-cannot-locate-your-visible-buttons/"/>
+    <updated>2013-12-21T09:19:00+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2013/12/21/twitter-bootstrap-2-modal-scrolling-problem-|-why-capybara-slash-selenium-cannot-locate-your-visible-buttons</id>
+    <content type="html"><![CDATA[<p>Twitter Bootstrap 2 has a bug while on modal dialogs. The page does not scroll as expected. So, if the browser window is not wide/tall enough to display the whole
+modal dialog content, the scroll bars do not make it appear.</p>
+
+<p>The bug is described here:</p>
+
+<ul>
+<li><a href="http://stackoverflow.com/q/7508576/658469">http://stackoverflow.com/q/7508576/658469</a></li>
+</ul>
+
+
+<p>And the answer is given a little bit below that:</p>
+
+<ul>
+<li><a href="http://stackoverflow.com/a/7787883/658469">http://stackoverflow.com/a/7787883/658469</a></li>
+</ul>
+
+
+<p>This problem does not occur with jQuery modals neither with Twitter Bootstrap 3.</p>
+
+<p>I am using Ruby on Rails and the <code>less-rails-bootstrap</code> gem.</p>
+
+<p>In order to fix the problem for my current application, and instead of moving to Twitter Bootstrap 3 or to jQuery, I have decided to fix the problem in the gem</p>
+
+<p>Here is the fix:</p>
+
+<pre><code>gem 'less-rails-bootstrap', :git =&gt; 'https://github.com/pmatsinopoulos/less-rails-bootstrap.git', :branch =&gt; 'bug-fix-modal-scrolling'
+</code></pre>
+
+<p><strong>Important Note</strong> This bug influences your capybara/selenium tests, because elements that are normally visible, while the browser is maximized, they cannot be located by
+selenium and they are reported as non-visible and cannot be interacted with, if the window browser is not open enough to display the whole modal dialog.</p>
+]]></content>
+  </entry>
+  
+</feed>

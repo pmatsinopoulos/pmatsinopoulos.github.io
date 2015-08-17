@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>My First iOS App - Panayotis Matsinopoulos</title>
+  <meta name="author" content="Panayotis Matsinopoulos">
+
+  
+  <meta name="description" content="This is my first encounter with iOS apps and Objective C. I followed the whole tutorial which is given here.
+I am a Ruby developer and I decided to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Panayotis Matsinopoulos" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">jQuery.noConflict();</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26210451-1']);
+    _gaq.push(['_setDomainName', 'github.io']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  <script src="http://load.sumome.com/" data-sumo-site-id="27b33ffaf6c60ff77617a066648532d71a5224aad319c668f2cff556a44a7031" async="async"></script>
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Panayotis Matsinopoulos</a></h1>
+  
+    <h2>Senior Software Engineer: Love Creating Software, Taking Entrepreneurial Risks, Teaching Computer Programming & Blogging here or in many other places</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="mailto:panayotis@matsinopoulos.gr" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pmatsinopoulos.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">My First iOS App</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-14T07:40:00+03:00" pubdate data-updated="true">14 Aug 2015</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This is my first encounter with iOS apps and Objective C. I followed the whole tutorial which is given <a href="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapiOS/index.html#//apple_ref/doc/uid/TP40011343-CH2-SW1">here</a>.
+I am a Ruby developer and I decided to take this trip to iOS development because it is necessary for my work. I am offering professional services to <a href="https://www.bookandtable.com">Book&amp;Table</a>, which
+is sponsoring me writing this blog post.</p>
+
+<p>Following this tutorial, I had to keep some notes. Here are the most important ones. Maybe you will find them useful too. But most importantly, I am seeking feedback from experienced
+iOS developers.</p>
+
+<p>You can find the source code of the small application <a href="https://github.com/pmatsinopoulos/todo-obj-c">here</a></p>
+
+<h2>Setup your Dev Env</h2>
+
+<p>The tutorial explains very well how to setup your development environment. And your development environment comes for free with XCode and iOS SDK.
+There are tools that contain everything and the UI is rich, with integrated debugger and tools to do graphical programming and design of your
+app.</p>
+
+<h2>I do not know Objective-C</h2>
+
+<p>Although I have built lots of programs in C, I have never built one in Objective-C. So, the tutorial does an introduction to this language.</p>
+
+<h3>Calling a method on a object</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[someObjectInstance someMethodName]</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Application Templates</h2>
+
+<p>XCode offers you the ability to start a project using an application template. The tutorial works with the <code>Single View Application</code> template.
+I suppose that when I will get more familiar with XCode and Objective-C I will be able to use other templates too.</p>
+
+<h2>Run Simulator</h2>
+
+<p>This is fantastic. You can run a simulator from within XCode and see how your application would look like in various devices. Tutorial explains how to do that.</p>
+
+<h2>main.m</h2>
+
+<p>Cool. Like in C, there is a file that contains the <code>main</code> function. The Objective-C files that contain the implementation (rather than the interface) have
+an extension that ends with <code>.m</code> (rather than with <code>.c</code> or <code>.cpp</code>).</p>
+
+<h2>Application &amp; AppDelegate</h2>
+
+<p>There are two objects that work together in order for the app to work. The application object and the app delegate object. The application object calls
+specific methods on app delegate object and allows app delegate object to customize the app behaviour.</p>
+
+<p>The app delegate object is defined in <code>AppDelegate.h</code> and implemented in <code>AppDelegate.m</code> file.</p>
+
+<p>Reading the method names and the comments of the <code>AppDelegate.m</code> file, I understand that an application follows a life cycle through the following states:</p>
+
+<ul>
+<li>launch &ndash;> active</li>
+<li>active &ndash;> inactive     Goes to inactive, when for example an incoming call is intercepted.</li>
+<li>inactive &ndash;> background When the user quits, the application might go to background state instead of being terminated.</li>
+<li>background &ndash;> inactive When the application goes back from background to inactive</li>
+<li>inactive &ndash;> active</li>
+<li>terminated When the application terminates</li>
+</ul>
+
+
+<h2>Storyboard</h2>
+
+<p>There is a tool that helps you design the flow of your application. This is the storyboard. Your application is going to be
+comprised of various stories each one linked to another. This will be the application flow.</p>
+
+<h2>The Canvas and Adaptive Interface</h2>
+
+<p>The canvas that is used to design your stories does not have the size of a specific iOS device. It is generic. You are responsible
+to make your application being adaptive. And the tutorial does an introduction on the adaptive app design. It teaches you how to use
+the Auto Layout feature that helps you position your elements in such a way that they will be looking good on all iOS devices.</p>
+
+<h2>Object Library</h2>
+
+<p>While you are doing the UI design of your app, you can use the Object Library that contains a big list of visual, and other items,
+ready for you to use in order to build your app interface.</p>
+
+<h2>Model View Controller</h2>
+
+<p>The application design uses the MVC (Model View Controller) architecture.</p>
+
+<h2>Views</h2>
+
+<p>All the visual elements that you put on an application &ldquo;page&rdquo; are called <code>views</code>. So, for example, an input text field is a view.
+However, the views can contain other views and you can have a view hierarchy.</p>
+
+<p>At the top of the view hierarchy is the <code>window</code> object (look at file <code>AppDelegate.h</code>).</p>
+
+<p>The <code>UIKit</code> framework provides many different views ready for you to use in order to let your users interact with your application.
+All the views are classes of <code>UIView</code> class. You can customize and create your own views by subclassing this class.</p>
+
+<h2>Storyboards</h2>
+
+<p>You use storyboards to design the interface of your app. The <code>Main.storyboard</code> is the one that is automatically created for you by
+XCode project wizard, when you chose the simple view application template.</p>
+
+<h2>Scenes</h2>
+
+<p>Each storyboard is composed of scenes. Can I think about scenes like I think about web pages when I build a Web application? I guess
+so. The scene has its own view hierarchy. Like a page has a list/tree of HTML tags that are used to render the page.</p>
+
+<h2>Inspector Pane</h2>
+
+<p>This is used to configure the views. So, you select a view and then you use Inspector Pane on the right to configure the properties
+of the view.</p>
+
+<h2>View Controllers</h2>
+
+<p>These implement the application behaviour. Events go from views to view controllers which then inform data model layer and then
+the other way around. View controllers can be thought of as Controllers in Ruby on Rails. The view controller is an instance of <code>UIViewController</code> class.</p>
+
+<p>A view controller manages a single view hierarchy. And usually, you create a custom <code>UIViewController</code> class in order to manage it.</p>
+
+<h2>Navigation Controller</h2>
+
+<p>This is a specialized view controller that is used to navigate from one view hierarchy to another. In other words from one page to
+another. You can think about the navigation controller like a top navigation bar that you may have put into a layout file in your Rails application.
+The set of view controller managed by a particular navigation controller is called the navigation stack.</p>
+
+<p>Note that navigation controller, besides managing the transition from one view controller to another, it is responsible for presenting custom
+views that belong to its own hierarchy.</p>
+
+<p>Embed your first view controller into a navigation controller, by selecting the view controller and then selecting &ldquo;Editor > Embed In > Navigation Controller&rdquo;.
+This will create a new navigation controller that has as root view controller the one embedded.</p>
+
+<h2>Segue</h2>
+
+<p>The segue is a transition from one view controller to another. There are actually various types of segues that can be used to
+link one view controller to another.</p>
+
+<ul>
+<li>Show</li>
+<li>Show detail</li>
+<li>Present modally</li>
+<li>Popover presentation</li>
+<li>Custom</li>
+<li>Unwind</li>
+</ul>
+
+
+<p>Because a <em>segue</em> is an object that holds the transition from one view controller to another, it is aware of both the source view controller
+and the destination view controller.</p>
+
+<h2>The Storyboard Entry Point</h2>
+
+<p>This is an arrow in your storyboard editor that tells which scene is the one that should be presented first when the app starts.</p>
+
+<h2>Modal View Controller</h2>
+
+<p>The modal view controller is created when the segue that takes you to the view controller is of modal mode. The modal view controller
+does not get a navigation bar because it is not added to the navigation stack. In that case, you may want to embed the modal view controller
+it its own navigation controller.</p>
+
+<h2>Customized View Controllers</h2>
+
+<p>You need to create files (<code>*.h</code> and <code>*.m</code>) that define a class that derives from standard view controller classes. Then you need to use the
+inspector editor to define that your scene is using the particular customized view controller.</p>
+
+<h2>Exit From Scene</h2>
+
+<p>You can exit from a scene as follows. You ctrl click on the navigation bar item that you want to be used for exit and your drag and drop it
+on the &ldquo;Exit&rdquo; icon on top of the scene design area. Then you specify which method to call. You should have defined the method to call before
+doing this. That method is an <code>IBAction</code> and when you do the drag and drop a list with the <code>IBActions</code> are presented for you to select.</p>
+
+<h2>Foundation Framework</h2>
+
+<p>This is one of the most basic and most important frameworks that Objective-C offers.
+Includes:</p>
+
+<ol>
+<li>value classes &amp;</li>
+<li>collection classes</li>
+</ol>
+
+
+<p>Examples of value objects:</p>
+
+<ul>
+<li>NSString</li>
+<li>NSNumber</li>
+</ul>
+
+
+<h2>NSString</h2>
+
+<p>This is an object wrapper for string.</p>
+
+<p>Examples:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSString *myString = @"Hello World";</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>@</code> symbol is necessary when assigning a literal string to an NSString object.</p>
+
+<h2>NSNumber</h2>
+
+<p>Similarly to <code>NSString</code>, you can prefix a number literal with the symbol <code>@</code> in order to create an <code>NSNumber</code> instance.</p>
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSNumber *myAge = @44;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Collection Objects</h2>
+
+<p>The most important collection objects of the Foundation framework are:</p>
+
+<ol>
+<li><code>NSArray</code> (and its mutable counterpart <code>NSMutableArray</code>)</li>
+<li><code>NSSet</code> (and its mutable counterpart <code>NSMutableSet</code>)</li>
+<li><code>NSDictionary</code> (and its mutable counterpart <code>NSMutableDictionary</code>)</li>
+</ol>
+
+
+<h2>Define Custom Classes</h2>
+
+<p>You declare the interface in a <code>.h</code> file and the implementation in a <code>.m</code> file.</p>
+
+<p>Example:</p>
+
+<pre><code>@interface ToDoItem : NSObject
+
+@end
+</code></pre>
+
+<p>is the <code>ToDoItem.h</code> file.</p>
+
+<p>and the</p>
+
+<pre><code>@implementation ToDoItem
+
+@end
+</code></pre>
+
+<p>is the <code>ToDoItem.m</code> file.</p>
+
+<h2>Use Properties to Store Object&rsquo;s Data</h2>
+
+<p>The properties are defined inside the interface part of the class definition. Example:</p>
+
+<pre><code>@interface ToDoItem : NSObject
+
+@property NSString *itemName;
+@property BOOL completed;
+
+@end
+</code></pre>
+
+<p>And you can declare a property to be readonly as follows:</p>
+
+<pre><code>@property (readonly) NSDate *completionDate;
+</code></pre>
+
+<h2>Instance VS Class Methods</h2>
+
+<p>The instance methods are defined using the <code>-</code> sign whereas the
+class methods are defined using the <code>+</code> sign.</p>
+
+<p>Example:</p>
+
+<pre><code>@interface Person : NSObject
+
+-(void) speak;
++(void) clean_data;
+
+@end
+</code></pre>
+
+<p>In the above example the <code>speak</code> is an instance method, whereas <code>clean_data</code> is a class method.</p>
+
+<h2>Models</h2>
+
+<p>Define your models using custom classes, deriving, for example, from <code>NSObject</code>.</p>
+
+<h2>Private Properties</h2>
+
+<p>You can declare properties in the interface definition of your class but in the <code>.m</code> file. In that case,
+the property becomes private, and it is only accessible in the implementation.</p>
+
+<p>Example:</p>
+
+<pre><code>@interface Person : NSObject
+@end
+
+@implementation Person
+
+// +age+ is a private property
+@property NSNumber *age;
+
+@end
+</code></pre>
+
+<h2>Let a View display Dynamic Data</h2>
+
+<p>It needs a <em>data source</em> and a <em>delegate</em>.</p>
+
+<h2>Prototype Cells</h2>
+
+<p>Take their data from the data source of the table view.</p>
+
+<h1>Where do I go from here</h1>
+
+<p>I definitely need to improve my Objective-C knowledge. I will <a href="https://www.codeschool.com/courses/try-objective-c">Try Objective-C</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Panayotis Matsinopoulos</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-14T07:40:00+03:00" pubdate data-updated="true">14 Aug 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/objective-c/'>Objective-C</a>, <a class='category' href='/blog/categories/ios/'>iOS</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app/" data-via="pmatsino" data-counturl="http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/08/08/rails-params-does-the-job/" title="Previous Post: Rails params Does the Job">&laquo; Rails params Does the Job</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/08/14/my-first-ios-app/">My First iOS App</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/08/08/rails-params-does-the-job/">Rails Params Does the Job</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/07/19/ruby-array-sum/">Ruby Array Sum</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/19/class-vs-instance-variables/">Class vs Instance Variables</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/12/delayed-job-best-practices/">Delayed Job Best Practices</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/pmatsinopoulos">@pmatsinopoulos</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'pmatsinopoulos',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/panayotis@matsinopoulos.gr?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Panayotis Matsinopoulos -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'pmatsinopoulos';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app/';
+        var disqus_url = 'http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<script type="text/javascript">
+    jQuery.noConflict();
+    jQuery(document).ready(function() {
+        //$post_title = $('header .entry-title').text();
+        //$post_domain = document.domain;
+        if( jQuery('article').hasClass('hentry') )
+        {
+            $post_link = encodeURI(jQuery(location).attr('href'));
+            $gp_url = jQuery('.googleplus h1 a').attr('href');
+            $google_plus_id = $gp_url.split('/')[3].split('?')[0] ;
+
+            $google_query_url = "https://www.googleapis.com/plus/v1/activities?query=" +
+                    $post_link +
+                    "&maxResults=20&orderBy=best&fields=id%2Citems(actor(displayName%2Cid%2Curl)" +
+                    "%2Cid%2Cobject(attachments(id%2Curl)%2Curl))%2Ctitle&key=AIzaSyBk7Bn5ofTEY_8fiHhqENEDwQoZtvnYsjU";
+
+            jQuery.getJSON($google_query_url,
+                    function(data) {
+                        jQuery.each(data.items, function(i,item){
+                            if(item.actor.id == $google_plus_id)
+                            {
+                                jQuery('.entry-content').append( "<h3>Comments?</h3><p>Join the discussion at the <a href='" + item.object.url +"'>Google+ post</a></p>");
+                                return false;
+                            }
+                        });
+                    });
+        };
+    });
+</script>
+
+
+
+</body>
+</html>

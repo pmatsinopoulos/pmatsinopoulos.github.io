@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Solr | Panayotis Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/solr/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2015-08-17T22:33:04+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My Solr Journey - Session 001]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2012/09/30/my-solr-journey-session-001/"/>
+    <updated>2012-09-30T14:27:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2012/09/30/my-solr-journey-session-001</id>
+    <content type="html"><![CDATA[<h2>Why do I take this Journey?</h2>
+
+<p>I have been using Solr the last two years for quite some projects. My work was always done using <a href="http://sunspot.github.com/">sunspot</a>
+(via <code>sunspot_rails</code> when one has Rails application), a gem that is a client library for Solr.</p>
+
+<p>You need to know few things about Solr, when using <code>sunspot</code> to access it and do most of the things. <code>sunspot</code> is a fantastic gem and relieves you from
+huge amounts of work when storing data in a Solr database.</p>
+
+<p>However, there are times that I felt that I needed to know more. For example, when I was searching for <code>University of Athens</code> and I got no results, but I knew
+that my documents had all or any of the words &ldquo;University&rdquo;, &ldquo;of&rdquo;, &ldquo;Athens&rdquo; in their body, or, even worse, there were also documents that were having the whole
+phrase &ldquo;University of Athens&rdquo; in their body. Or I wanted to query with parts of words, or parts of e-mails, and still I was not getting any results. You can see how
+I ended up solving these problems reading these two: 1) <a href="http://stackoverflow.com/questions/12650859/why-sunspot-solr-does-not-bring-results-when-i-include-of-word-in-search-query/12653931">Why Sunspot Solr does not bring results when I include “of” word in search query?</a>
+ 2) <a href="http://stackoverflow.com/questions/12131473/how-can-i-set-sunspot-to-search-for-sequences-of-characters-instead-of-words">How can I set Sunspot to search for sequences of characters instead of words?</a></p>
+
+<p>Hence, I decided to take a journey to Solr. And this will be a registration of my steps to this journey. Understanding how Solr works, will make me manage
+better what I can do and achieve with <code>sunspot</code> too.</p>
+
+<p>And here we go</p>
+
+<h2>First steps</h2>
+
+<ul>
+<li>I downloaded solr from <a href="http://lucene.apache.org/solr/">here</a></li>
+<li>Followed the <a href="http://lucene.apache.org/solr/api-3_6_1/doc-files/tutorial.html">tutorial</a></li>
+</ul>
+
+
+<h3>Summary</h3>
+
+<p>One cannot be but extremely impressed of the features and capabilities of Solr. I believe that I will use to replace many of my MySQL stores that are only
+used for querying.</p>
+
+<p>(Next steps will soon follow)</p>
+]]></content>
+  </entry>
+  
+</feed>

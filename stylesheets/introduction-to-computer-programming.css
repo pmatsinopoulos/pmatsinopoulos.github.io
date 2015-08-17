@@ -1,0 +1,170 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.section-container {
+    background-color: White;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+section .column {
+    text-align: left;
+}
+
+#course-overview-container .left-column {
+    padding-left: 30px;
+    padding-right: 15px;
+}
+
+#course-overview-container .right-column {
+    padding-right: 30px;
+    padding-left: 15px;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#tutor-image {
+    border-radius: 5px;
+}
+
+.text-wrap {
+    float: left;
+    margin: 10px;
+}
+
+#social-links a {
+    font-size: 2em;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+hr.thin-hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+i.fa.fa-li {
+    font-size: 1.8em;
+}
+
+h2 i.fa {
+    padding-right: 20px;
+}
+
+#table-of-contents-container ul.fa-ul li {
+    line-height: 1.5em;
+    font-size: 1.4em;
+    margin-left: 30px;
+}
+
+#table-of-contents-container ul.fa-ul li i.fa {
+    font-size: 0.9em;
+}
+
+i.fa-youtube.preview {
+    padding-left: 10px;
+}
+
+a.preview-link {
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+#pricing-for-video-lectures {
+    margin-left: 27px;
+}
+
+#pricing-for-video-lectures,
+#pricing-for-private-on-one-tutoring,
+#pricing-for-scheduled-classes {
+    background-color: maroon;
+    color: white;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.click-to-purchase-container {
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    color: maroon;
+    font-size: 1.4em;
+    border-radius: 15px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.click-to-purchase-container:hover {
+    background-color: #5e0000;
+    color: White;
+}
+
+div.price-header{
+    font-size: 2.5em;
+}
+
+#pricing-for-video-lectures div.price-subheading{
+    font-size: 1em;
+}
+
+#pricing-for-video-lectures div.price-subheading a {
+    text-docoration: underline;
+    color: white;
+}
+
+.normal-price-container {
+    font-size: 1.5em;
+}
+
+.normal-price {
+    text-decoration: line-through;
+}
+
+.discounted-price-container {
+    font-size: 5em;
+}
+
+#purchase-link, #purchase-private-tutoring-link {
+    text-decoration: none;
+}
+
+.testimonial-container {
+    padding-left: 14px;
+    padding-bottom: 10px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.testimonial-rating {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#pricing-for-private-on-one-tutoring,
+#pricing-for-scheduled-classes {
+    margin-left: 20px;
+}
+
+.subjects {
+    font-size: 1.5em;
+}
+
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-container {
+    padding-top: 1em;
+}
+
+.tall-line {
+    padding-top: 3em;
+}

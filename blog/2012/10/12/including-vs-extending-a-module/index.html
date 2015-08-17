@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Including VS extending a Module - Panayotis Matsinopoulos</title>
+  <meta name="author" content="Panayotis Matsinopoulos">
+
+  
+  <meta name="description" content="Demonstration of `include` vs `extend`1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Panayotis Matsinopoulos" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">jQuery.noConflict();</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26210451-1']);
+    _gaq.push(['_setDomainName', 'github.io']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  <script src="http://load.sumome.com/" data-sumo-site-id="27b33ffaf6c60ff77617a066648532d71a5224aad319c668f2cff556a44a7031" async="async"></script>
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Panayotis Matsinopoulos</a></h1>
+  
+    <h2>Senior Software Engineer: Love Creating Software, Taking Entrepreneurial Risks, Teaching Computer Programming & Blogging here or in many other places</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="mailto:panayotis@matsinopoulos.gr" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pmatsinopoulos.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Including vs Extending a Module</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-12T21:44:00+03:00" pubdate data-updated="true">12 Oct 2012</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><figure class='code'><figcaption><span>Demonstration of `include` vs `extend`</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># Here, I am defining a &quot;module&quot; with name Ma. I also define two methods. One without &quot;self.&quot;</span>
+</span><span class='line'><span class="c1"># and one with. See, later on, what happens when I &quot;include&quot; and what happens when I &quot;extend&quot;</span>
+</span><span class='line'><span class="c1"># the &quot;module&quot; within a &quot;class&quot;.</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="k">module</span> <span class="nn">Ma</span>
+</span><span class='line'>  <span class="c1"># I will be able to make this method an instance or a class method of a class.</span>
+</span><span class='line'>  <span class="c1"># It depends whether I will &quot;include&quot; or &quot;extend&quot; the module in the class.</span>
+</span><span class='line'>  <span class="c1"># Note that this method, I cannot call it directly on Ma. In order for this method</span>
+</span><span class='line'>  <span class="c1"># to be useful, I have to include or extend this module within a class.</span>
+</span><span class='line'>  <span class="c1">#</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">ma_method1</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;ma_method1&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># This method, is not reusable, in the sense that I cannot make it be an instance or class</span>
+</span><span class='line'>  <span class="c1"># method of a class. But still, it is a method of module Ma and I can call it directly.</span>
+</span><span class='line'>  <span class="c1">#</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">ma_method2</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;ma_method2&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Ma responds to ma_method1? : </span><span class="si">#{</span><span class="no">Ma</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Ma responds to ma_method2? : </span><span class="si">#{</span><span class="no">Ma</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">A</span>
+</span><span class='line'>  <span class="c1"># &quot;include&quot; sets the module methods as instance methods of the class</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Ma</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;a Responds to ma_method1?: </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A Responds to ma_method1?: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;a Responds to ma_method2?: </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A Responds to ma_method2?: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">B</span>
+</span><span class='line'>  <span class="c1"># &quot;extend&quot; sets the module methods as class methods of the class</span>
+</span><span class='line'>  <span class="kp">extend</span> <span class="no">Ma</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;b Responds to ma_method1? : </span><span class="si">#{</span><span class="n">b</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B Responds to ma_method1? : </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;b responds to ma_method2? : </span><span class="si">#{</span><span class="n">b</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B responds to ma_method2? : </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------------&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But you can also <code>include</code> or <code>extend</code> a <code>module</code> in another <code>module</code> too. Read this gist by
+<a href="https://gist.github.com/pglombardo">pglombardo</a> who has kindly appended to the above
+piece of code.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Panayotis Matsinopoulos</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-12T21:44:00+03:00" pubdate data-updated="true">12 Oct 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/" data-via="pmatsino" data-counturl="http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/09/how-to-define-and-use-class-level-variables-while-mixing-modules/" title="Previous Post: How to define and use class-level variables while mixing in Modules">&laquo; How to define and use class-level variables while mixing in Modules</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/10/27/model-properties-styling/" title="Next Post: Model Properties - Styling">Model Properties - Styling &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/08/14/my-first-ios-app/">My First iOS App</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/08/08/rails-params-does-the-job/">Rails Params Does the Job</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/07/19/ruby-array-sum/">Ruby Array Sum</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/19/class-vs-instance-variables/">Class vs Instance Variables</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/12/delayed-job-best-practices/">Delayed Job Best Practices</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/pmatsinopoulos">@pmatsinopoulos</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'pmatsinopoulos',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/panayotis@matsinopoulos.gr?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Panayotis Matsinopoulos -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'pmatsinopoulos';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/';
+        var disqus_url = 'http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<script type="text/javascript">
+    jQuery.noConflict();
+    jQuery(document).ready(function() {
+        //$post_title = $('header .entry-title').text();
+        //$post_domain = document.domain;
+        if( jQuery('article').hasClass('hentry') )
+        {
+            $post_link = encodeURI(jQuery(location).attr('href'));
+            $gp_url = jQuery('.googleplus h1 a').attr('href');
+            $google_plus_id = $gp_url.split('/')[3].split('?')[0] ;
+
+            $google_query_url = "https://www.googleapis.com/plus/v1/activities?query=" +
+                    $post_link +
+                    "&maxResults=20&orderBy=best&fields=id%2Citems(actor(displayName%2Cid%2Curl)" +
+                    "%2Cid%2Cobject(attachments(id%2Curl)%2Curl))%2Ctitle&key=AIzaSyBk7Bn5ofTEY_8fiHhqENEDwQoZtvnYsjU";
+
+            jQuery.getJSON($google_query_url,
+                    function(data) {
+                        jQuery.each(data.items, function(i,item){
+                            if(item.actor.id == $google_plus_id)
+                            {
+                                jQuery('.entry-content').append( "<h3>Comments?</h3><p>Join the discussion at the <a href='" + item.object.url +"'>Google+ post</a></p>");
+                                return false;
+                            }
+                        });
+                    });
+        };
+    });
+</script>
+
+
+
+</body>
+</html>

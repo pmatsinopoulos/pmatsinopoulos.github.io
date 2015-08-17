@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Geographic Data | Panayotis Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/geographic-data/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2015-08-17T22:33:04+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[United States, Counties, Cities, Zips CSV & Ruby loading code]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2014/08/29/united-states-counties-cities-csv-ruby-loading-code/"/>
+    <updated>2014-08-29T19:28:00+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2014/08/29/united-states-counties-cities-csv-ruby-loading-code</id>
+    <content type="html"><![CDATA[<p>I just wanted to have the United States, their Counties, the Cities in the Counties and the Zip codes in each City in CSV format. But I wanted that normalized. In different CSVs. So, here it is.
+You can also find here some Ruby on Rails sample code that loads these files. Primitive stuff, but sometimes useful.</p>
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">My sponsor on that is <a href="https://www.bookandtable.com">Book&Table</a></div>
+
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">I am about to start a Seminar: Introduction to Programming. If you are interested in, <a href="http://pmatsinopoulos.github.io/introduction-to-programming-notify-when-public">register here</a>.</div>
+
+
+
+
+<!-- more -->
+
+
+<ul>
+<li>Here is the <a href="/csv/states.csv.tar.gz">list of states</a>.</li>
+<li>Here is the <a href="/csv/counties.csv.tar.gz">list of counties</a>. It has all counties and which State they belong to.</li>
+<li>Here is the <a href="/csv/cities.csv.tar.gz">list of cities</a>. It has all the cities and the County they belong to.</li>
+<li>Here is the <a href="/csv/zips.csv.tar.gz">list of zip codes</a>. It has all the zip codes and the city they correspond to (specified by city name, county name and state code).</li>
+</ul>
+
+
+<h2>ActiveRecord Models</h2>
+
+<h3>State</h3>
+
+<p>```</p>
+
+<h1>State</h1>
+
+<p>class State &lt; ActiveRecord::Base
+  has_many :counties, inverse_of: :state, dependent: :destroy
+  validates :name,           presence: true, uniqueness: {case_sensitive: false}
+  validates :two_digit_code, presence: true, uniqueness: {case_sensitivie: false}
+end
+```</p>
+
+<h3>County</h3>
+
+<p>```</p>
+
+<h1>County</h1>
+
+<p>class County &lt; ActiveRecord::Base
+  belongs_to :state, inverse_of: :counties
+  has_many   :cities, inverse_of: :county, dependent: :destroy</p>
+
+<p>  validates :state, presence: true
+  validates :name,  presence: true, uniqueness: {case_sensitive: false, scope: :state_id}
+end
+```</p>
+
+<h3>City</h3>
+
+<p>```</p>
+
+<h1>City</h1>
+
+<p>class City &lt; ActiveRecord::Base
+  belongs_to :county, inverse_of: :cities</p>
+
+<p>  validates :county, presence: true
+  validates :name,   presence: true, uniqueness: {case_sensitive: false, scope: :county_id}
+end
+```</p>
+
+<h3>Zip</h3>
+
+<p>```</p>
+
+<h1>Zip</h1>
+
+<p>class Zip &lt; ActiveRecord::Base
+  belongs_to :city, inverse_of: :zips</p>
+
+<p>  validates :city, presence: true
+  validates :code, presence: true, uniqueness: {case_sensitive: false}
+end</p>
+
+<p>```</p>
+
+<h3>Loading States</h3>
+
+<p><code>
+puts "Loading States..."
+CSV.foreach("#{Rails.root}/db/states.csv") do |row|
+  state_code = row[0]
+  state_name = row[1]
+  State.create_with(name: state_name).find_or_create_by!(two_digit_code: state_code)
+end
+puts "...end of loading States"</code>
+```</p>
+
+<h3>Loading Counties</h3>
+
+<p><code>
+puts "Loading Counties..."
+CSV.foreach("#{Rails.root}/db/counties.csv") do |row|
+  state_code  = row[0]
+  county_name = row[1]
+  County.find_or_create_by!(state_id: State.find_by_two_digit_code(state_code).id, name: county_name)
+end
+puts "...end of loading Counties"
+</code></p>
+
+<h3>Loading Cities</h3>
+
+<p>```
+puts &ldquo;Loading Cities&hellip;&rdquo;</p>
+
+<p>CSV.foreach(&ldquo;#{Rails.root}/db/cities.csv&rdquo;) do |row|
+  state_two_digit_code = row[0]
+  state_id = State.find_by_two_digit_code!(state_two_digit_code).id</p>
+
+<p>  county_name = row[1]
+  city_name   = row[2]
+  county      = County.find_by_state_id_and_name!(state_id, county_name)
+  City.find_or_create_by!(county_id: county.id, name: city_name)
+end</p>
+
+<p>puts &ldquo;&hellip;end of loading Cities&rdquo;</p>
+
+<p>```</p>
+
+<h3>Loading Zip Codes</h3>
+
+<p>```
+puts &ldquo;Loading Zips&hellip;&rdquo;</p>
+
+<p>CSV.foreach &ldquo;#{Rails.root}/db/zips.csv&rdquo; do |row|
+  zip_code  = row[0]
+  city      = row[1]
+  county    = row[2]
+  state     = row[3]
+  state_id  = State.find_by_two_digit_code!(state).id
+  county_id = County.find_by_name_and_state_id!(county, state_id).id
+  Zip.create_with(city_id: City.find_by_name_and_county_id!(city, county_id).id).find_or_create_by!(code: zip_code)
+end</p>
+
+<p>puts &ldquo;&hellip;end of loading Zips&rdquo;
+```</p>
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">My sponsor on that is <a href="https://www.bookandtable.com">Book&Table</a></div>
+
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">I am about to start a Seminar: Introduction to Programming. If you are interested in, <a href="http://pmatsinopoulos.github.io/introduction-to-programming-notify-when-public">register here</a>.</div>
+
+]]></content>
+  </entry>
+  
+</feed>
