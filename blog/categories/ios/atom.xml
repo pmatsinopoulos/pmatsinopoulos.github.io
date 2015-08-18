@@ -4,7 +4,7 @@
   <title><![CDATA[Category: iOS | Panayotis Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2015-08-19T00:34:27+03:00</updated>
+  <updated>2015-08-19T00:36:28+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panayotis Matsinopoulos]]></name>
@@ -19,7 +19,7 @@
     <updated>2015-08-17T23:31:00+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school</id>
     <content type="html"><![CDATA[<p>Having done the Apple developer tutorial Getting Started on iOS development, the next was to have a deeper dive in
-Objective-C. Looking around for online Objective-C tutorials, I cam across a very good one, on <a href="https://www.codeschool.com">Code School</a>.
+Objective-C. Looking around for online Objective-C tutorials, I came across a very good one, on <a href="https://www.codeschool.com">Code School</a>.
 The tutorial is called <a href="http://tryobjectivec.codeschool.com/levels/1">Try Objective-C</a>.</p>
 
 <!-- more -->
