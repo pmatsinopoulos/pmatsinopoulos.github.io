@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Try Objective-C on Code School - Panayotis Matsinopoulos</title>
+  <meta name="author" content="Panayotis Matsinopoulos">
+
+  
+  <meta name="description" content="Having done the Apple developer tutorial Getting Started on iOS development, the next was to have a deeper dive in
+Objective-C. Looking around for &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Panayotis Matsinopoulos" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">jQuery.noConflict();</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26210451-1']);
+    _gaq.push(['_setDomainName', 'github.io']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  <script src="http://load.sumome.com/" data-sumo-site-id="27b33ffaf6c60ff77617a066648532d71a5224aad319c668f2cff556a44a7031" async="async"></script>
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Panayotis Matsinopoulos</a></h1>
+  
+    <h2>Senior Software Engineer: Love Creating Software, Taking Entrepreneurial Risks, Teaching Computer Programming & Blogging here or in many other places</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="mailto:panayotis@matsinopoulos.gr" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pmatsinopoulos.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Try Objective-C on Code School</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-17T23:31:00+03:00" pubdate data-updated="true">17 Aug 2015</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Having done the Apple developer tutorial Getting Started on iOS development, the next was to have a deeper dive in
+Objective-C. Looking around for online Objective-C tutorials, I cam across a very good one, on <a href="https://www.codeschool.com">Code School</a>.
+The tutorial is called <a href="http://tryobjectivec.codeschool.com/levels/1">Try Objective-C</a>.</p>
+
+<!-- more -->
+
+
+<h2>NSLog</h2>
+
+<p><code>NSLog</code> method is used to log stuff on console.</p>
+
+<h2><code>@</code> Prefix on Literal Values</h2>
+
+<p><code>@"..."</code>: This is an <code>NSString *</code> literal.</p>
+
+<h2>Store Numbers</h2>
+
+<p><code>NSNumber *</code>: Useful object to store numbers.</p>
+
+<p>Example:</p>
+
+<pre><code>NSNumber *myAge = @44;
+</code></pre>
+
+<p>See how the literal on the right, has the <code>@</code> symbol prefix, necessary to assign to an <code>NS</code> object.</p>
+
+<h2>Construct Arrays</h2>
+
+<p>For arrays use <code>NSArray *</code></p>
+
+<p>Example:</p>
+
+<pre><code>NSArray *fruits = @[@"Apples", @"Oranges", @"Pears"];
+</code></pre>
+
+<p>Watch out the @ prefix both in front of array literal and in front of the string literals.</p>
+
+<p>And access value of an item by position: fruits[0], fruits[1] e.t.c.</p>
+
+<h2>Mutable Arrays</h2>
+
+<p><code>NSArray</code> is immutable. So, you cannot change it. Use <code>NSMutableArray</code> if you want to create an array that
+can be changed.</p>
+
+<h2>Hashes and Dictionaries</h2>
+
+<p>How to create hashes or dictionaries? Use the <code>NSDictionary *</code>.</p>
+
+<p>Example:</p>
+
+<pre><code>NSDictionary *person = @{@"First Name": @"Panos"};
+</code></pre>
+
+<p>We can access the values using the keys:</p>
+
+<pre><code>person[@"First Name"]   
+</code></pre>
+
+<h2>Send message to an object:</h2>
+
+<pre><code>[objectVar methodName];
+</code></pre>
+
+<h2>Method description</h2>
+
+<p>Use method &ldquo;description&rdquo; to get a nice-to-read representation of an object:</p>
+
+<pre><code>[objectVar description]
+</code></pre>
+
+<h2>Unsigned Integers</h2>
+
+<p><code>NSUInteger</code> is a type to stored unsigned integers.</p>
+
+<p>Example:</p>
+
+<pre><code>NSUInteger = 5;
+</code></pre>
+
+<h2>Operations with NSNumbers</h2>
+
+<p>This is not so straight forward. You can not just use the + operator, for example.
+You need to get the <code>NSUInteger</code> version of the <code>NSNumber *</code> and then operate on that.</p>
+
+<pre><code>NSNumber *first = @1;
+NSNumber *second = @2;
+NSUInteger uiFirst  = [first unsignedIntegerValue];
+NSUInteger uiSecond = [second unsignedIntegerValue];
+</code></pre>
+
+<p>Then</p>
+
+<pre><code>uiFirst + uiSecond
+</code></pre>
+
+<h2>Appending Strings</h2>
+
+<p>This will not work: <code>@"foo" + @"bar"</code>.</p>
+
+<p>But this will do:</p>
+
+<pre><code>[@"foo " stringByAppendingString:@"bar"]
+</code></pre>
+
+<h2>Initialize String</h2>
+
+<p>You can use <code>stringWithString:</code> to initialize a string.</p>
+
+<p>Example:</p>
+
+<pre><code>NSString *firstName = [NSString stringWithString:@"foo"];
+</code></pre>
+
+<h2>Alloc &amp; Init</h2>
+
+<p>Create an <code>NSString</code> with <code>alloc</code> and <code>init</code>.</p>
+
+<p>Examples:</p>
+
+<pre><code>NSString *firstName = [[NSString alloc] initWithString:@"foo"];
+</code></pre>
+
+<h2>Comparing 2 NSStrings</h2>
+
+<pre><code>[firstName isEqualToString:anotherFirstName]            
+</code></pre>
+
+<h2>Enumerate on Arrays</h2>
+
+<p>Enumerate and work on each one of the items of an array:</p>
+
+<p>Example:</p>
+
+<pre><code> NSArray *fruits = @[@"Apples", @"Oranges", @"Pears"];
+ for (NSString *fruit in fruits) {
+   NSLog(fruit);
+ }
+</code></pre>
+
+<h2>Code Blocks</h2>
+
+<p>Code blocks work like anonymous functions or closures.</p>
+
+<p>Here is an example of a block that takes arguments and returns value.</p>
+
+<pre><code>NSString * (^sayHello)(NSString *) = ^(NSString *name){
+  [NSString stringWithFormat: @"Hello %@", name];
+};
+</code></pre>
+
+<h2>Enumerate using blocks</h2>
+
+<p>You can send a whole block as an argument to an enumeration
+and have the block applied to each one of the elements.</p>
+
+<pre><code>NSArray *funnyWords = @[@"Goobly", @"Blobie", @"Fnogie"];
+[funnyWords enumerateObjectsUsingBlock: 
+    ^(NSString *word, NSUInteger index, BOOL *stop) {
+       NSLog(@"%@ is a funny word", word);
+    }
+];
+</code></pre>
+
+<h2>Defining Class Properties</h2>
+
+<p>This is an example of defining class properties.</p>
+
+<p>Example:</p>
+
+<pre><code>@interface Person : NSObject
+
+@property NSString *firstName;
+@property NSString *lastName;
+
+@end        
+</code></pre>
+
+<p>The above creates 2 public properties. And 4 methods.
+2 setters and 2 getters. One setter to set firstName
+and one setter to set lastName. One getter to get firstName
+and one getter to get lastName. Also, it creates a class
+instance variable with name &ldquo;<em>firstName&rdquo; and another one
+with name &ldquo;</em>lastName&rdquo; that one can access directly from the
+implementation code of the class. However, clients of the class
+cannot access them.</p>
+
+<h2>Public Methods</h2>
+
+<p>When you want to declare the public behaviour of a class you declare       <br/>
+it on the interface level</p>
+
+<pre><code>@interface Person : NSObject
+
+-(void)sayHello;
+
+@end
+</code></pre>
+
+<p>and you implement that on the implementation file, e.g. in <code>Person.m</code></p>
+
+<pre><code>@implementation Person
+
+-(void)sayHello {
+   NSLog(@"Hello");
+}
+end
+</code></pre>
+
+<p>Then when you want to call that method, you send the message to the object instance:</p>
+
+<pre><code>Person *p = [[Person alloc] init];
+[p sayHello];
+</code></pre>
+
+<h2>Method with arguments</h2>
+
+<p>When a method takes arguments, then we are using <code>:</code> to separate the method name from the
+argument definition:</p>
+
+<pre><code>@interface Person : NSObject
+
+-(NSString *)speak:(NSString *)greeting;
+
+@end    
+</code></pre>
+
+<p>Or when it takes 2 arguments, for example &ldquo;greeting&rdquo; and &ldquo;times&rdquo;:</p>
+
+<pre><code>-(NSString *)speak:(NSString *) greeting soManyTimes:(NSNumber *)times;
+</code></pre>
+
+<p>The method name now is <code>speak:soManyTimes:</code></p>
+
+<p>From the number of colons inside the name we can tell how many arguments
+it requires when called.</p>
+
+<p>You can make a property readonly as follows:</p>
+
+<pre><code>@interface Person : NSObject
+
+@property (readonly) NSNumber *salary;
+
+@end
+</code></pre>
+
+<h2>Overriding Default Object Constructor</h2>
+
+<p>The default object constructor is <code>init</code>. We can override that
+in the implementation of the class.</p>
+
+<pre><code>@implementation Person
+
+-(Person *)init {
+  _salary = @18;
+  return [super init];
+}
+
+@end
+</code></pre>
+
+<p>Calling <code>return [super init];</code> is usually necessary in order
+to make sure that the Person is correctly constructed as an NSObject.</p>
+
+<h2>Instance Variables</h2>
+
+<p>Instance variables are declared in the interface.</p>
+
+<pre><code>@interface Coffee : NSObject {
+  NSNumber *_temperature;
+}
+@end    
+</code></pre>
+
+<h2>Check whether object responds to a method</h2>
+
+<p>We can check whether an object responds to a method at run-time
+using the <code>respondsToSelector:</code> method</p>
+
+<p>Example:</p>
+
+<pre><code>if ([coffee respondToSelector:@selector(brew)]) {
+  NSLog(@"Coffee responds to brew message");
+}
+</code></pre>
+
+<h2>Protocols</h2>
+
+<p>Protocols are sets of methods that need to be implemented by a class.
+Which protocols a class needs to implement is declared in the interface
+of the class. Example:</p>
+
+<pre><code>@interface Person : NSObject &lt;NSCopying&gt;
+@end
+</code></pre>
+
+<p>Person class derives from <code>NSObject</code> and also implements the protocol <code>NSCopying</code>.</p>
+
+<p>Whereas standard constructor/initializer is the <code>init</code> method, one can
+declare custom initializers. These are methods that have a name that
+starts with <code>init</code>.</p>
+
+<p>Example:</p>
+
+<pre><code>@interface Person : NSObject
+
+-(Person *) initWithFirstName:(NSString *)firstName
+                     lastName:(NSString *)lastName;
+
+@end        
+</code></pre>
+
+<p>and then in the implementation you can assign the arguments to properties or
+instance variables.</p>
+
+<p>When you instantiate the object you can call:</p>
+
+<pre><code>Person *p = [[Person alloc] initWithFirstName:@"First" lastName:@"Last"];
+</code></pre>
+
+<h2>Object instance responds to class</h2>
+
+<p>An object instance responds to <code>class</code> which returns the class of the object.
+This can be used, for example, to dynamically instantiate an object.</p>
+
+<pre><code>[[[objectVar class] alloc] init];
+</code></pre>
+
+<p>without knowing the actual class of the object instance.</p>
+
+<p>Use the special type <code>id</code> instead of <code>NSObject *</code> for when you have
+a generic Objective-C object that you don&rsquo;t know the type of at
+compile time.</p>
+
+<h2>What&rsquo;s Next from Here ##</h2>
+
+<p>I will go to <a href="http://www.binpress.com/tutorial/learn-objectivec-in-24-days/38">Learn Objective-C in 24 Days</a>.
+But first, I may take a short break to work with <code>Swift</code>. It seems that it may be more Ruby-like language.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Panayotis Matsinopoulos</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-17T23:31:00+03:00" pubdate data-updated="true">17 Aug 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/objective-c/'>Objective-C</a>, <a class='category' href='/blog/categories/ios/'>iOS</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school/" data-via="pmatsino" data-counturl="http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/08/14/my-first-ios-app/" title="Previous Post: My First iOS App">&laquo; My First iOS App</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/08/17/try-objective-c-on-code-school/">Try Objective-C on Code School</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/08/14/my-first-ios-app/">My First iOS App</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/08/08/rails-params-does-the-job/">Rails Params Does the Job</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/07/19/ruby-array-sum/">Ruby Array Sum</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/19/class-vs-instance-variables/">Class vs Instance Variables</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/pmatsinopoulos">@pmatsinopoulos</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'pmatsinopoulos',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/panayotis@matsinopoulos.gr?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Panayotis Matsinopoulos -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'pmatsinopoulos';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school/';
+        var disqus_url = 'http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<script type="text/javascript">
+    jQuery.noConflict();
+    jQuery(document).ready(function() {
+        //$post_title = $('header .entry-title').text();
+        //$post_domain = document.domain;
+        if( jQuery('article').hasClass('hentry') )
+        {
+            $post_link = encodeURI(jQuery(location).attr('href'));
+            $gp_url = jQuery('.googleplus h1 a').attr('href');
+            $google_plus_id = $gp_url.split('/')[3].split('?')[0] ;
+
+            $google_query_url = "https://www.googleapis.com/plus/v1/activities?query=" +
+                    $post_link +
+                    "&maxResults=20&orderBy=best&fields=id%2Citems(actor(displayName%2Cid%2Curl)" +
+                    "%2Cid%2Cobject(attachments(id%2Curl)%2Curl))%2Ctitle&key=AIzaSyBk7Bn5ofTEY_8fiHhqENEDwQoZtvnYsjU";
+
+            jQuery.getJSON($google_query_url,
+                    function(data) {
+                        jQuery.each(data.items, function(i,item){
+                            if(item.actor.id == $google_plus_id)
+                            {
+                                jQuery('.entry-content').append( "<h3>Comments?</h3><p>Join the discussion at the <a href='" + item.object.url +"'>Google+ post</a></p>");
+                                return false;
+                            }
+                        });
+                    });
+        };
+    });
+</script>
+
+
+
+</body>
+</html>
