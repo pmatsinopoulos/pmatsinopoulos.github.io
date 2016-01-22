@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>villasbroker - Panayotis Matsinopoulos</title>
+  <title>Book & Table - Panayotis Matsinopoulos</title>
   <meta name="author" content="Panayotis Matsinopoulos">
 
   
-  <meta name="description" content="Villasbroker 01 Aug 2011 Application Purpose Villasbroker is an application that is used by a land / villas broker who whishes to sell properties. &hellip;">
+  <meta name="description" content="Book & Table 22 Jan 2016 Live Demo You can see a live demo of the application here. You can sign up as student in order to have access to the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pmatsinopoulos.github.io/projects/villasbroker">
+  <link rel="canonical" href="http://pmatsinopoulos.github.io/projects/book_and_table">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Panayotis Matsinopoulos" type="application/atom+xml">
@@ -85,7 +85,7 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Villasbroker</h1>
+    <h1 class="entry-title">Book & Table</h1>
     <p class="meta">
 
 
@@ -98,65 +98,118 @@
   
 
 
-<time datetime="2011-08-01T21:39:00+03:00" pubdate data-updated="true">01 Aug 2011</time></p>
+<time datetime="2016-01-22T08:20:00+02:00" pubdate data-updated="true">22 Jan 2016</time></p>
   </header>
   
-  <h2>Application Purpose</h2>
+  <h2>Live Demo</h2>
 
-<p>Villasbroker is an application that is used by a land / villas broker who whishes to sell properties. More about this on <a href="http://www.villasbroker.gr">Villasbroker</a>.</p>
+<p>You can see a live demo of the application <a href="https://www.bookandtable.com">here</a>. You can sign up as student in order to have access to the internals of the app.</p>
 
-<h2>Special Features of this Application</h2>
+<h2>Application Purpose</h2>
+
+<p>It&rsquo;s a marketplace for students/parents/learners to find tutors on various subject areas. Besides the matching, the application offers various features to their
+users:</p>
+
+<ol>
+<li>Ability to Invite Friends, via email and via Google contacts.</li>
+<li>Students rate their experience with the tutor.</li>
+<li>Text/SMS notifications for various important events.</li>
+<li>Full integrated messaging functionality.</li>
+<li>Follow up and history on all lessons with the tutors.</li>
+<li>Payments via Stripe payment gateway.</li>
+<li>Tutors are being paid out to their Bank Account (using Stripe API).</li>
+<li>Tutors form teams and they can refer a student to another tutor and earn money.</li>
+<li>Point system that allocates points to tutors and affects the ranking of tutors on search results.</li>
+</ol>
+
+
+<h2>Challenges</h2>
+
+<p>The biggest challenges for me on this project, things that I really enjoyed and learned new stuff:</p>
 
 <ul>
-<li>Fully multilingual, both on data and labels</li>
-<li>Admin logs in to make changes to content</li>
-<li>CMS like features</li>
-<li>Multimedia support for villas sold</li>
+<li>Inherited a project code base that didn&rsquo;t have a single test. So, I had to quickly write tests for the core features, at that time, of the app.</li>
+<li>Full front-end development. That was my first project that I did full front-end development. I can finally call myself full-stack engineer. I am very proud of the
+result, although, the enemy of good is the better one, which means that I could always have done it better. The final result is fully responsive on mobile devices.</li>
+<li>Mobile API with authentication. That I enjoyed it very much. My first API to support the mobile iPhone application. It had to support authentication both
+with email / password and with social networks like Facebook and Google.</li>
+<li>Apple Push Notifications. Had to integrate with Apple Push Notification Service.</li>
+<li>Stripe Managed Accounts. I have worked a lot with the Stripe API to create managed accounts. Since the app was not just to charge the users. Had to do it on behalf of the tutors.</li>
+<li>Stripe Bank Accounts. I had to implement the bank account pay out integration with Stripe.</li>
+<li>Integration with Twilio for SMS/TEXT notifications. Both application-outgoing and application-incoming flows.</li>
+<li>Background Check and integration with <a href="https://checkr.com/">Checkr</a>. Had to follow the exact requirements about how pages would be designed and implement callbacks to get check results.</li>
+<li>Swagger. The tool to create documentation for  APIs. This is the page that has the documentation of the API that I have designed: <a href="https://www.bookandtable.com/api/mobile/index.html">Book&amp;Table Mobile API Documentation</a>.</li>
+<li>Client-side page walk throughs and interactive help. I have used two tools for this. <a href="https://github.com/linkedin/hopscotch">Hopscotch</a> and <a href="http://fortesinformatica.github.io/Sideshow/#.VqHvXVN97fA">Sideshow</a>.</li>
 </ul>
 
 
 <h2>Technologies Used</h2>
 
 <ul>
-<li>Linux distribution (Debian 6)</li>
-<li>Hosted on a virtual private server</li>
-<li>Apache proxy to Thin servers</li>
+<li>Deployed on Heroku</li>
+<li>PostgreSQL database</li>
 <li>Ruby on Rails</li>
-<li>MySQL</li>
+<li>Javascript &amp; jQuery</li>
+<li>Twitter Bootstrap 3.0 &ndash; The app is fully responsive</li>
 </ul>
 
 
 <h2>Ruby on Rails Special Considerations</h2>
 
 <ul>
-<li>Full internationalization</li>
-<li><a href="http://github.com/rmagick/rmagick">rmagick</a> and <a href="https://github.com/jnicklas/carrierwave">carrierwave</a> for uploading and resizing images</li>
-<li><a href="https://github.com/swanandp/acts_as_list">acts_as_list</a>: Sortable list of objects</li>
-<li><a href="https://github.com/kjvarga/sitemap_generator">sitemap_generator</a> to generate sitemap xml</li>
-<li><a href="https://github.com/amatsuda/kaminari">kaminari</a>: Used for pagination</li>
-<li><a href="http://jquery.com">jQuery</a> and <a href="http://jqueryui.com">jQuery UI</a></li>
-<li>Testing:
+<li>Ruby 2.2.3</li>
+<li>Rails 4.2</li>
+<li>SASS</li>
+<li><a href="https://github.com/rails/jbuilder">jbuilder</a>: For JSON API</li>
+<li><a href="https://github.com/RolifyCommunity/rolify">rolify</a>: For role-based authorization</li>
+<li><a href="https://github.com/plataformatec/devise">devise</a>: For authentication</li>
+<li><a href="https://github.com/plataformatec/simple_form">simple_form</a>: For quick form styling</li>
+<li><a href="https://github.com/carrierwaveuploader/carrierwave">carrierwave</a>: For uploading of files and images</li>
+<li><a href="http://haml.info/">haml</a>: To write cleaner view code</li>
+<li><a href="https://stripe.com/">stripe</a>: To integrate with Stripe gateway</li>
+<li><a href="https://github.com/thoughtbot/griddler">griddler</a>: To parse incoming SendGrid emails</li>
+<li><a href="https://github.com/intridea/omniauth">omniauth</a>: To integrate OAuth2 authentication</li>
+<li><a href="https://github.com/CanCanCommunity/cancancan">cancancan</a>: For REST authorization</li>
+<li><a href="https://github.com/CanCanCommunity/cancancan">delayed_job</a>: For background tasks</li>
+<li><a href="https://github.com/pluginaweek/state_machine">state_machine</a>: For state models</li>
+<li><a href="https://github.com/drapergem/draper">draper</a>: For the decorator pattern</li>
+<li><a href="https://github.com/RubyMoney/money-rails">money-rails</a>: For modeling amounts / Money</li>
+<li><a href="https://github.com/swanandp/acts_as_list">acts_as_list</a>: To keep objects in a list</li>
+<li><a href="https://www.tinymce.com/">tinymce</a>: For rich text editors</li>
+<li><a href="https://github.com/twilio/twilio-ruby">twilio-ruby</a>: For integrating with Twilio API</li>
+<li><a href="https://github.com/norman/friendly_id">friendly_id</a>: For slug functionality on URLs</li>
+<li><a href="https://github.com/joshnesbitt/google_url_shortener">google_url_shortener</a>: For integrating with Google URL Shortener service</li>
+<li><a href="https://github.com/aliang/google_contacts_api">google_contacts_api</a>: For integrating with Google Contacts</li>
+<li><a href="https://github.com/checkr/checkr-ruby">checkr-official</a>: For integrating with CheckR background checker.</li>
+<li><a href="https://github.com/mgomes/api_auth">api-auth</a>: For building an API and applying authentication to it.</li>
+<li><a href="https://github.com/nomad/houston">houston</a>: For Apple Push Notifications</li>
+<li><a href="https://rubygems.org/gems/aws-sdk-resources/versions/2.2.9">aws-sdk-resources</a>: For integrating AWS services</li>
+</ul>
+
+
+<p>For testing I have used:</p>
 
 <ul>
-<li>Test Unit</li>
-<li>Fixtures</li>
-<li><a href="http://rubygems.org/gems/validator_attachment">validator_attachment</a>. Used to check whether specific validators are attached to a model.</li>
-<li>[cucumber](<a href="http://github.com/cucumber/cucumber/tree/master">http://github.com/cucumber/cucumber/tree/master</a>] for Acceptance Tests</li>
-</ul>
-</li>
-<li><a href="http://newrelic.com">new relic</a>. Used for real-time process monitoring.</li>
+<li>RSpec</li>
+<li>Capybara</li>
+<li>Cucumber</li>
+<li>SitePrism</li>
+<li>FactoryGirl</li>
+<li>VCR</li>
+<li>and other gems</li>
 </ul>
 
 
 <h2>Project Data</h2>
 
 <ul>
-<li>About 1.5 man-months</li>
-<li>About 20 models</li>
-<li>About 20 tables</li>
-<li>About 10 controllers</li>
-<li>About X tests</li>
-<li>About X lines of code</li>
+<li>About 18 months</li>
+<li>About 250 models</li>
+<li>About 100 tables</li>
+<li>About 100 controllers</li>
+<li>About 460 cucumber scenarios</li>
+<li>About 1100 rspec unit tests</li>
+<li>About 130K lines of code</li>
 </ul>
 
 
@@ -176,13 +229,13 @@
   
 
 
-<time datetime="2011-08-01T21:39:00+03:00" pubdate data-updated="true">01 Aug 2011</time>
+<time datetime="2016-01-22T08:20:00+02:00" pubdate data-updated="true">22 Jan 2016</time>
         
       </p>
       
         <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pmatsinopoulos.github.io/projects/villasbroker/index.html" data-via="pmatsino" data-counturl="http://pmatsinopoulos.github.io/projects/villasbroker/index.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pmatsinopoulos.github.io/projects/book_and_table/index.html" data-via="pmatsino" data-counturl="http://pmatsinopoulos.github.io/projects/book_and_table/index.html" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -295,8 +348,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pmatsinopoulos.github.io/projects/villasbroker/index.html';
-        var disqus_url = 'http://pmatsinopoulos.github.io/projects/villasbroker/index.html';
+        var disqus_identifier = 'http://pmatsinopoulos.github.io/projects/book_and_table/index.html';
+        var disqus_url = 'http://pmatsinopoulos.github.io/projects/book_and_table/index.html';
         var disqus_script = 'embed.js';
       
     (function () {
