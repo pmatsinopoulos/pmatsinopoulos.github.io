@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>projects - Panayotis Matsinopoulos</title>
+  <title>E-TRAVEL S.A. Customer Relationship Management Application - Panayotis Matsinopoulos</title>
   <meta name="author" content="Panayotis Matsinopoulos">
 
   
-  <meta name="description" content="Projects 22 Jan 2016 My Projects Ruby On Rails Book&amp;Table &ndash; Started: Jul 2014 &ndash; Ended: Jan 2016
-E-TRAVEL CRM &ndash; Started: Oct &hellip;">
+  <meta name="description" content="E-TRAVEL S.A. Customer Relationship Management Application 22 Jan 2016 Live Demo Don&rsquo;t have a live demo link here, because it is an internal &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ E-TRAVEL CRM &ndash; Started: Oct &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pmatsinopoulos.github.io/projects">
+  <link rel="canonical" href="http://pmatsinopoulos.github.io/projects/e-travel-crm">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Panayotis Matsinopoulos" type="application/atom+xml">
@@ -86,7 +85,7 @@ E-TRAVEL CRM &ndash; Started: Oct &hellip;">
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Projects</h1>
+    <h1 class="entry-title">E-TRAVEL S.A. Customer Relationship Management Application</h1>
     <p class="meta">
 
 
@@ -99,28 +98,82 @@ E-TRAVEL CRM &ndash; Started: Oct &hellip;">
   
 
 
-<time datetime="2016-01-22T15:54:00+02:00" pubdate data-updated="true">22 Jan 2016</time></p>
+<time datetime="2016-01-22T08:20:00+02:00" pubdate data-updated="true">22 Jan 2016</time></p>
   </header>
   
-  <h2>My Projects</h2>
+  <h2>Live Demo</h2>
 
-<h3>Ruby On Rails</h3>
+<p>Don&rsquo;t have a live demo link here, because it is an internal application.</p>
+
+<h2>Application Purpose</h2>
+
+<p>Customer Relationship Management system for one of the biggest Online Travel Agencies in Europe, selling their services all around the world actually.
+The used to sell, and still do, tickets for flights, mainly, but also other travel-related services.</p>
+
+<p>Features included:</p>
+
+<ol>
+<li>Integration with the front-end application that was used to sell the tickets.</li>
+<li>All operations employees (180 at the moment) use this application to manage customer requests.</li>
+<li>A workflow management system drives the agents carry out the correct actions to fulfill a request.</li>
+</ol>
+
+
+<h2>Challenges</h2>
+
+<p>The biggest challenges for me on this project, things that I really enjoyed and learned new stuff:</p>
 
 <ul>
-<li><a href="/projects/book_and_table/">Book&amp;Table</a> &ndash; Started: Jul 2014 &ndash; Ended: Jan 2016</li>
-<li><a href="/projects/e-travel-crm">E-TRAVEL CRM</a> &ndash; Started: Oct 2012 &ndash; Ended: Jul 2014</li>
-<li><a href="/projects/fraudpointer/">Fraudpointer</a> &ndash; Started: Dec 2010 &ndash; Still part time: Jan 2016</li>
-<li><a href="/projects/mutants/">Mutants</a> &ndash; May 2014</li>
-<li><a href="/projects/ezmta/">ezMTA</a> &ndash; Started: July 2012 &ndash; Ended: March 2013</li>
-<li><a href="/projects/villasbroker/">villasbroker</a></li>
+<li>Started a project on blank paper in a business domain I was not familiar with. The flight tickets business, although might not sound like,
+it is quite complex, especially when things do not go as expected. When flight changes or cancellations take place, for example.
+So, the business complexity was big challenge for me.</li>
+<li>Migration from the old CRM to the new one and 0-downtime on business interruption.</li>
+<li>Integration with GDS (Global Distribution System) Amadeus + Sabre. Very difficult task to accept and process their file based interfaces.</li>
+<li>Automation of communication with the customers. Timely-sensitive information had to be sent to customers on various points of their request processing.</li>
+<li>Build API to support integration of CRM with other internal applications.</li>
 </ul>
 
 
-<h3>Ruby</h3>
+<h2>Technologies Used</h2>
 
 <ul>
-<li><a href="/projects/mars_rover/">Mars Rover</a></li>
-<li>Many more on my <a href="https://github.com/pmatsinopoulos">Github account</a></li>
+<li>Deployed on Amazon Web Services</li>
+<li>MySQL database</li>
+<li>Ruby on Rails</li>
+<li>Javascript &amp; jQuery</li>
+<li>Twitter Bootstrap 2.0</li>
+<li>Solr</li>
+</ul>
+
+
+<h2>Ruby on Rails Special Considerations</h2>
+
+<ul>
+<li>Ruby 1.9</li>
+<li>Rails 3.2</li>
+<li>SASS</li>
+<li><a href="https://github.com/airblade/paper_trail">paper_trail</a>: To keep versions of our data</li>
+<li><a href="https://github.com/stefankroes/ancestry">ancestry</a>: To organize records as a tree structure</li>
+<li><a href="https://github.com/petergoldstein/dalli">dalli</a>: To use Memcache</li>
+<li><a href="https://github.com/ryanb/cancan">cancan</a>: For authorization</li>
+<li><a href="https://github.com/sunspot/sunspot">sunspot_rails</a>: To integrate with Solr</li>
+<li><a href="https://github.com/collectiveidea/delayed_job">delayed_job</a>: For processing tasks in the background</li>
+<li><a href="https://github.com/rest-client/rest-client">rest-client</a>: For consuming Web services</li>
+<li><a href="https://github.com/thiagopradi/octopus">ar-octopus</a>: For using more than one database at the same time, replication</li>
+<li><a href="https://aws.amazon.com/sdk-for-ruby/">aws-sdk</a>: For integrating with Amazon Web Services</li>
+<li><a href="https://github.com/thoughtbot/paperclip">paperclip</a>: For file uploads</li>
+<li><a href="https://github.com/nesquena/rabl">rabl</a>: To easily build JSON APIs</li>
+</ul>
+
+
+<p>For testing:</p>
+
+<ul>
+<li>RSpec</li>
+<li>Factory Girl</li>
+<li>VCR</li>
+<li>Cucumber</li>
+<li>Capybara</li>
 </ul>
 
 
@@ -140,13 +193,13 @@ E-TRAVEL CRM &ndash; Started: Oct &hellip;">
   
 
 
-<time datetime="2016-01-22T15:54:00+02:00" pubdate data-updated="true">22 Jan 2016</time>
+<time datetime="2016-01-22T08:20:00+02:00" pubdate data-updated="true">22 Jan 2016</time>
         
       </p>
       
         <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pmatsinopoulos.github.io/projects/index.html" data-via="pmatsino" data-counturl="http://pmatsinopoulos.github.io/projects/index.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pmatsinopoulos.github.io/projects/e-travel-crm/index.html" data-via="pmatsino" data-counturl="http://pmatsinopoulos.github.io/projects/e-travel-crm/index.html" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -259,8 +312,8 @@ E-TRAVEL CRM &ndash; Started: Oct &hellip;">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pmatsinopoulos.github.io/projects/index.html';
-        var disqus_url = 'http://pmatsinopoulos.github.io/projects/index.html';
+        var disqus_identifier = 'http://pmatsinopoulos.github.io/projects/e-travel-crm/index.html';
+        var disqus_url = 'http://pmatsinopoulos.github.io/projects/e-travel-crm/index.html';
         var disqus_script = 'embed.js';
       
     (function () {
