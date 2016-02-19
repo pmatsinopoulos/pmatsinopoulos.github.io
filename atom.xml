@@ -4,7 +4,7 @@
   <title><![CDATA[Panayotis Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-02-15T08:14:21+02:00</updated>
+  <updated>2016-02-19T18:06:45+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panayotis Matsinopoulos]]></name>
@@ -12,6 +12,122 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Making Rails Logger Use One Log File Per Process with Phusion Passenger]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/"/>
+    <updated>2016-02-19T16:57:00+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>Today, I had to find a way to make my production Rails application log into different log files per process. I have
+the application deployed using <a href="https://www.phusionpassenger.com/">Phusion Passenger</a> as an Apache 2 module. The reason
+I decided to do that was the fact that I wanted to analyze the logs with <a href="https://github.com/wvanbergen/request-log-analyzer">Request Log Analyzer</a> tool.
+This tool requires the log files to be separate so that they do not interleave the log entries of different requests.</p>
+
+<!-- more -->
+
+
+<h2>Blog Sponsor</h2>
+
+<p>This post is sponsored by <a href="http://www.fraudpointer.com/">Fraudpointer</a>.</p>
+
+<h2>References</h2>
+
+<p>In order to solve that I was helped by what I found about the similar problem solved for Unicorn processes here:</p>
+
+<p><a href="http://jordan.broughs.net/archives/2014/09/provide-separate-rails-log-files-for-each-unicorn-worker">A blog about how one can have different log file per Unicorn worker</a></p>
+
+<p>Then, I had to google about how I could hook to after fork events on Phusion Passenger. There was a very good <a href="http://stackoverflow.com/q/24180809/658469">question here</a>
+and its <a href="http://stackoverflow.com/a/24188716/658469">answer here</a>. The answer directed me also on Phusion Passenger documentation for
+<a href="https://www.phusionpassenger.com/library/indepth/ruby/spawn_methods/#smart-spawning-hooks">hooking on spawning events</a>.</p>
+
+<h2>Implementation</h2>
+
+<p>I have created an initializer with the following content:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">begin</span>
+</span><span class='line'>  <span class="k">if</span> <span class="no">Rails</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">production?</span> <span class="o">&amp;&amp;</span> <span class="n">defined?</span><span class="p">(</span><span class="no">PhusionPassenger</span><span class="p">)</span>
+</span><span class='line'>    <span class="no">PhusionPassenger</span><span class="o">.</span><span class="n">on_event</span><span class="p">(</span><span class="ss">:starting_worker_process</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">forked</span><span class="o">|</span>
+</span><span class='line'>      <span class="c1"># get access to log device</span>
+</span><span class='line'>      <span class="k">if</span> <span class="ss">Rails</span><span class="p">:</span><span class="ss">:VERSION</span><span class="o">::</span><span class="no">STRING</span><span class="o">.</span><span class="n">start_with?</span><span class="p">(</span><span class="s1">&#39;4.&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">logdev</span> <span class="o">=</span> <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:@logdev</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">elsif</span> <span class="ss">Rails</span><span class="p">:</span><span class="ss">:VERSION</span><span class="o">::</span><span class="no">STRING</span><span class="o">.</span><span class="n">start_with?</span><span class="p">(</span><span class="s1">&#39;3.2&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">logdev</span> <span class="o">=</span> <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:@logger</span><span class="p">)</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:@log</span><span class="p">)</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:@logdev</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1"># logdev.dev is a File instance that is the open file to log file.</span>
+</span><span class='line'>      <span class="c1"># Get the extension and prepend the process id.</span>
+</span><span class='line'>      <span class="n">ext</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">extname</span><span class="p">(</span><span class="n">logdev</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">pid</span>
+</span><span class='line'>      <span class="n">path</span> <span class="o">=</span> <span class="n">logdev</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">gsub</span> <span class="sr">/</span><span class="si">#{</span><span class="no">Regexp</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span><span class="si">}</span><span class="sr">$/</span><span class="p">,</span> <span class="s2">&quot;.</span><span class="si">#{</span><span class="n">pid</span><span class="si">}#{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1"># open the new file</span>
+</span><span class='line'>      <span class="n">file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">file</span><span class="o">.</span><span class="n">binmode</span>
+</span><span class='line'>      <span class="n">file</span><span class="o">.</span><span class="n">sync</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1"># We flush and close the current file handle, the one that writes to the single file.</span>
+</span><span class='line'>      <span class="n">logdev</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">flush</span>
+</span><span class='line'>      <span class="n">logdev</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">close</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1"># We replace the file handle with the new one +file+ that refers to process specific file.</span>
+</span><span class='line'>      <span class="n">logdev</span><span class="o">.</span><span class="n">instance_variable_set</span><span class="p">(</span><span class="ss">:@dev</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">rescue</span> <span class="no">Exception</span> <span class="o">=&gt;</span> <span class="n">ex</span>
+</span><span class='line'>  <span class="k">begin</span>
+</span><span class='line'>    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</span><span class='line'>    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">backtrace</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">rescue</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Closing</h2>
+
+<p>This has been implemented for a Rails 3.2 and a Rails 4.2 application.</p>
+
+<p>Any feedback from you would be much appreciated.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Try Objective-C on Code School]]></title>
@@ -2901,15 +3017,6 @@ used for querying.</p>
     <content type="html"><![CDATA[<p><a href="https://github.com/styleguide/ruby">This</a> is a very good guide on how one should style its Ruby code. I am following this since I started Ruby and I suggest that everybody does the same.</p>
 
 <p>One extra on usage of {&hellip;} vs do&hellip;end blocks can be found <a href="http://onestepback.org/index.cgi/Tech/Ruby/BraceVsDoEnd.rdoc">here (Weirich Convention)</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[MySQL Replication]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2012/02/16/mysql-replication/"/>
-    <updated>2012-02-16T21:21:00+02:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2012/02/16/mysql-replication</id>
-    <content type="html"><![CDATA[<p>Read my new article on <a href="http://www.sitepoint.com/mysql-master-slave-replication-setting-up/">Site Point about MySQL Replication</a> (<a href="http://www.sitepoint.com/mysql-master-slave-replication-setting-up/">Part I</a> and <a href="http://www.sitepoint.com/mysql-master-slave-replication-starting-replication/">Part II</a>)</p>
 ]]></content>
   </entry>
   

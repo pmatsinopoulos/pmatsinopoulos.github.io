@@ -5,50 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Including VS extending a Module - Panayotis Matsinopoulos</title>
+  <title>Making Rails Logger Use One Log File Per Process with Phusion Passenger - Panayotis Matsinopoulos</title>
   <meta name="author" content="Panayotis Matsinopoulos">
 
   
-  <meta name="description" content="Demonstration of `include` vs `extend`1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40 &hellip;">
+  <meta name="description" content="Introduction Today, I had to find a way to make my production Rails application log into different log files per process. I have
+the application &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -57,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module">
+  <link rel="canonical" href="http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Panayotis Matsinopoulos" type="application/atom+xml">
@@ -125,7 +87,7 @@
   
   <header>
     
-      <h1 class="entry-title">Including vs Extending a Module</h1>
+      <h1 class="entry-title">Making Rails Logger Use One Log File Per Process With Phusion Passenger</h1>
     
     
       <p class="meta">
@@ -141,7 +103,7 @@
   
 
 
-<time datetime="2012-10-12T21:44:00+03:00" pubdate data-updated="true">12 Oct 2012</time>
+<time datetime="2016-02-19T16:57:00+02:00" pubdate data-updated="true">19 Feb 2016</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pmatsinopoulos.github.io">Comments</a>
@@ -151,7 +113,35 @@
   </header>
 
 
-<div class="entry-content"><figure class='code'><figcaption><span>Demonstration of `include` vs `extend`</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="entry-content"><h2>Introduction</h2>
+
+<p>Today, I had to find a way to make my production Rails application log into different log files per process. I have
+the application deployed using <a href="https://www.phusionpassenger.com/">Phusion Passenger</a> as an Apache 2 module. The reason
+I decided to do that was the fact that I wanted to analyze the logs with <a href="https://github.com/wvanbergen/request-log-analyzer">Request Log Analyzer</a> tool.
+This tool requires the log files to be separate so that they do not interleave the log entries of different requests.</p>
+
+<!-- more -->
+
+
+<h2>Blog Sponsor</h2>
+
+<p>This post is sponsored by <a href="http://www.fraudpointer.com/">Fraudpointer</a>.</p>
+
+<h2>References</h2>
+
+<p>In order to solve that I was helped by what I found about the similar problem solved for Unicorn processes here:</p>
+
+<p><a href="http://jordan.broughs.net/archives/2014/09/provide-separate-rails-log-files-for-each-unicorn-worker">A blog about how one can have different log file per Unicorn worker</a></p>
+
+<p>Then, I had to google about how I could hook to after fork events on Phusion Passenger. There was a very good <a href="http://stackoverflow.com/q/24180809/658469">question here</a>
+and its <a href="http://stackoverflow.com/a/24188716/658469">answer here</a>. The answer directed me also on Phusion Passenger documentation for
+<a href="https://www.phusionpassenger.com/library/indepth/ruby/spawn_methods/#smart-spawning-hooks">hooking on spawning events</a>.</p>
+
+<h2>Implementation</h2>
+
+<p>I have created an initializer with the following content:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -187,74 +177,50 @@
 <span class='line-number'>34</span>
 <span class='line-number'>35</span>
 <span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># Here, I am defining a &quot;module&quot; with name Ma. I also define two methods. One without &quot;self.&quot;</span>
-</span><span class='line'><span class="c1"># and one with. See, later on, what happens when I &quot;include&quot; and what happens when I &quot;extend&quot;</span>
-</span><span class='line'><span class="c1"># the &quot;module&quot; within a &quot;class&quot;.</span>
-</span><span class='line'><span class="c1">#</span>
-</span><span class='line'><span class="k">module</span> <span class="nn">Ma</span>
-</span><span class='line'>  <span class="c1"># I will be able to make this method an instance or a class method of a class.</span>
-</span><span class='line'>  <span class="c1"># It depends whether I will &quot;include&quot; or &quot;extend&quot; the module in the class.</span>
-</span><span class='line'>  <span class="c1"># Note that this method, I cannot call it directly on Ma. In order for this method</span>
-</span><span class='line'>  <span class="c1"># to be useful, I have to include or extend this module within a class.</span>
-</span><span class='line'>  <span class="c1">#</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">ma_method1</span>
-</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;ma_method1&quot;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">begin</span>
+</span><span class='line'>  <span class="k">if</span> <span class="no">Rails</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">production?</span> <span class="o">&amp;&amp;</span> <span class="n">defined?</span><span class="p">(</span><span class="no">PhusionPassenger</span><span class="p">)</span>
+</span><span class='line'>    <span class="no">PhusionPassenger</span><span class="o">.</span><span class="n">on_event</span><span class="p">(</span><span class="ss">:starting_worker_process</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">forked</span><span class="o">|</span>
+</span><span class='line'>      <span class="c1"># get access to log device</span>
+</span><span class='line'>      <span class="k">if</span> <span class="ss">Rails</span><span class="p">:</span><span class="ss">:VERSION</span><span class="o">::</span><span class="no">STRING</span><span class="o">.</span><span class="n">start_with?</span><span class="p">(</span><span class="s1">&#39;4.&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">logdev</span> <span class="o">=</span> <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:@logdev</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">elsif</span> <span class="ss">Rails</span><span class="p">:</span><span class="ss">:VERSION</span><span class="o">::</span><span class="no">STRING</span><span class="o">.</span><span class="n">start_with?</span><span class="p">(</span><span class="s1">&#39;3.2&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">logdev</span> <span class="o">=</span> <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:@logger</span><span class="p">)</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:@log</span><span class="p">)</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:@logdev</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1"># logdev.dev is a File instance that is the open file to log file.</span>
+</span><span class='line'>      <span class="c1"># Get the extension and prepend the process id.</span>
+</span><span class='line'>      <span class="n">ext</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">extname</span><span class="p">(</span><span class="n">logdev</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">pid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">pid</span>
+</span><span class='line'>      <span class="n">path</span> <span class="o">=</span> <span class="n">logdev</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">gsub</span> <span class="sr">/</span><span class="si">#{</span><span class="no">Regexp</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span><span class="si">}</span><span class="sr">$/</span><span class="p">,</span> <span class="s2">&quot;.</span><span class="si">#{</span><span class="n">pid</span><span class="si">}#{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1"># open the new file</span>
+</span><span class='line'>      <span class="n">file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">file</span><span class="o">.</span><span class="n">binmode</span>
+</span><span class='line'>      <span class="n">file</span><span class="o">.</span><span class="n">sync</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1"># We flush and close the current file handle, the one that writes to the single file.</span>
+</span><span class='line'>      <span class="n">logdev</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">flush</span>
+</span><span class='line'>      <span class="n">logdev</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">close</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1"># We replace the file handle with the new one +file+ that refers to process specific file.</span>
+</span><span class='line'>      <span class="n">logdev</span><span class="o">.</span><span class="n">instance_variable_set</span><span class="p">(</span><span class="ss">:@dev</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
 </span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1"># This method, is not reusable, in the sense that I cannot make it be an instance or class</span>
-</span><span class='line'>  <span class="c1"># method of a class. But still, it is a method of module Ma and I can call it directly.</span>
-</span><span class='line'>  <span class="c1">#</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">ma_method2</span>
-</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;ma_method2&quot;</span>
+</span><span class='line'><span class="k">rescue</span> <span class="no">Exception</span> <span class="o">=&gt;</span> <span class="n">ex</span>
+</span><span class='line'>  <span class="k">begin</span>
+</span><span class='line'>    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</span><span class='line'>    <span class="no">Rails</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">backtrace</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">rescue</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Ma responds to ma_method1? : </span><span class="si">#{</span><span class="no">Ma</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Ma responds to ma_method2? : </span><span class="si">#{</span><span class="no">Ma</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">A</span>
-</span><span class='line'>  <span class="c1"># &quot;include&quot; sets the module methods as instance methods of the class</span>
-</span><span class='line'>  <span class="kp">include</span> <span class="no">Ma</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">new</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;a Responds to ma_method1?: </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A Responds to ma_method1?: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;a Responds to ma_method2?: </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A Responds to ma_method2?: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">B</span>
-</span><span class='line'>  <span class="c1"># &quot;extend&quot; sets the module methods as class methods of the class</span>
-</span><span class='line'>  <span class="kp">extend</span> <span class="no">Ma</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">new</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;b Responds to ma_method1? : </span><span class="si">#{</span><span class="n">b</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B Responds to ma_method1? : </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;b responds to ma_method2? : </span><span class="si">#{</span><span class="n">b</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B responds to ma_method2? : </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------------&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>But you can also <code>include</code> or <code>extend</code> a <code>module</code> in another <code>module</code> too. Read this gist by
-<a href="https://gist.github.com/pglombardo">pglombardo</a> who has kindly appended to the above
-piece of code.</p>
+<h2>Closing</h2>
+
+<p>This has been implemented for a Rails 3.2 and a Rails 4.2 application.</p>
+
+<p>Any feedback from you would be much appreciated.</p>
 </div>
 
 
@@ -277,12 +243,12 @@ piece of code.</p>
   
 
 
-<time datetime="2012-10-12T21:44:00+03:00" pubdate data-updated="true">12 Oct 2012</time>
+<time datetime="2016-02-19T16:57:00+02:00" pubdate data-updated="true">19 Feb 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+    <a class='category' href='/blog/categories/phusion-passenger/'>Phusion Passenger</a>, <a class='category' href='/blog/categories/ruby-on-rails/'>Ruby on Rails</a>
   
 </span>
 
@@ -291,7 +257,7 @@ piece of code.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/" data-via="pmatsino" data-counturl="http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/" data-via="pmatsino" data-counturl="http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -304,10 +270,8 @@ piece of code.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/10/09/how-to-define-and-use-class-level-variables-while-mixing-modules/" title="Previous Post: How to define and use class-level variables while mixing in Modules">&laquo; How to define and use class-level variables while mixing in Modules</a>
+        <a class="basic-alignment left" href="/blog/2015/08/17/try-objective-c-on-code-school/" title="Previous Post: Try Objective-C on Code School">&laquo; Try Objective-C on Code School</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/10/27/model-properties-styling/" title="Next Post: Model Properties - Styling">Model Properties - Styling &raquo;</a>
       
     </p>
   </footer>
@@ -411,8 +375,8 @@ piece of code.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/';
-        var disqus_url = 'http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/';
+        var disqus_identifier = 'http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/';
+        var disqus_url = 'http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/';
         var disqus_script = 'embed.js';
       
     (function () {
