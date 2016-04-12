@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Test | Panayotis Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-02-19T18:06:45+02:00</updated>
+  <updated>2016-04-12T20:46:00+01:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panayotis Matsinopoulos]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[You don't have to be afraid to test your UI - Page Object Pattern to the rescue]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue/"/>
-    <updated>2014-09-21T18:22:00+03:00</updated>
+    <updated>2014-09-21T18:22:00+01:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
@@ -335,7 +335,7 @@ end
 
 <p>```ruby</p>
 
-<h1>file: page_objects/bookstore/page_objects/sections/books/book_item_section.rb</h1>
+<h1>file: page_objects/bookstore/page_objects/sections/books/book_entry_section.rb</h1>
 
 <p>#
 module Bookstore
@@ -343,7 +343,7 @@ module Bookstore
 
 <pre><code>module Sections
   module Books
-    class BookItemSection &lt; SitePrism::Section
+    class BookEntrySection &lt; SitePrism::Section
       element :title,        'td.title'
       element :author,       'td.author'
       element :published_at, 'td.published-at'
@@ -369,9 +369,7 @@ end
 <h1>file: page_objects/bookstore/page_objects/pages/books/index_page.rb</h1>
 
 <p>#
-require &ldquo;bookstore/page_objects/sections/books/book_entry_section&rdquo;</p>
-
-<p>module Bookstore
+module Bookstore
   module PageObjects</p>
 
 <pre><code>module Pages

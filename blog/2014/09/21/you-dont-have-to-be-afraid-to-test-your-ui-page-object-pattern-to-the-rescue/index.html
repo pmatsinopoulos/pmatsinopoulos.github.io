@@ -102,7 +102,7 @@
   
 
 
-<time datetime="2014-09-21T18:22:00+03:00" pubdate data-updated="true">21 Sep 2014</time>
+<time datetime="2014-09-21T18:22:00+01:00" pubdate data-updated="true">21 Sep 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pmatsinopoulos.github.io">Comments</a>
@@ -567,13 +567,13 @@ Here is a sample implementation in order to understand what I am talking about:<
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># file: page_objects/bookstore/page_objects/sections/books/book_item_section.rb</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># file: page_objects/bookstore/page_objects/sections/books/book_entry_section.rb</span>
 </span><span class='line'><span class="c1">#</span>
 </span><span class='line'><span class="k">module</span> <span class="nn">Bookstore</span>
 </span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
 </span><span class='line'>    <span class="k">module</span> <span class="nn">Sections</span>
 </span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
-</span><span class='line'>        <span class="k">class</span> <span class="nc">BookItemSection</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Section</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">BookEntrySection</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Section</span>
 </span><span class='line'>          <span class="n">element</span> <span class="ss">:title</span><span class="p">,</span>        <span class="s1">&#39;td.title&#39;</span>
 </span><span class='line'>          <span class="n">element</span> <span class="ss">:author</span><span class="p">,</span>       <span class="s1">&#39;td.author&#39;</span>
 </span><span class='line'>          <span class="n">element</span> <span class="ss">:published_at</span><span class="p">,</span> <span class="s1">&#39;td.published-at&#39;</span>
@@ -614,12 +614,8 @@ Here is a sample implementation in order to understand what I am talking about:<
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># file: page_objects/bookstore/page_objects/pages/books/index_page.rb</span>
 </span><span class='line'><span class="c1">#</span>
-</span><span class='line'><span class="nb">require</span> <span class="s2">&quot;bookstore/page_objects/sections/books/book_entry_section&quot;</span>
-</span><span class='line'>
 </span><span class='line'><span class="k">module</span> <span class="nn">Bookstore</span>
 </span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
 </span><span class='line'>    <span class="k">module</span> <span class="nn">Pages</span>
@@ -679,7 +675,7 @@ Here is a sample implementation in order to understand what I am talking about:<
   
 
 
-<time datetime="2014-09-21T18:22:00+03:00" pubdate data-updated="true">21 Sep 2014</time>
+<time datetime="2014-09-21T18:22:00+01:00" pubdate data-updated="true">21 Sep 2014</time>
       
 
 <span class="categories">

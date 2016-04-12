@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Panayotis Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-02-19T18:06:45+02:00</updated>
+  <updated>2016-04-12T20:46:00+01:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panayotis Matsinopoulos]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Ruby Array Sum]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2015/07/19/ruby-array-sum/"/>
-    <updated>2015-07-19T11:12:00+03:00</updated>
+    <updated>2015-07-19T11:12:00+01:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2015/07/19/ruby-array-sum</id>
     <content type="html"><![CDATA[<p>This short post is going to demonstrate how we can sum an array of integers or an array of objects that have an
 integer attribute.</p>
@@ -82,7 +82,7 @@ Advantages and disadvantages?</p>
   <entry>
     <title type="html"><![CDATA[Class vs Instance Variables]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2015/06/19/class-vs-instance-variables/"/>
-    <updated>2015-06-19T08:54:00+03:00</updated>
+    <updated>2015-06-19T08:54:00+01:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2015/06/19/class-vs-instance-variables</id>
     <content type="html"><![CDATA[<p><code>`` ruby demo of</code>Class<code>vs</code>Instance` variables</p>
 
@@ -147,7 +147,7 @@ rocky.tell_me_about_you  # will print brown and 3
   <entry>
     <title type="html"><![CDATA[Delayed Job Best Practices]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2014/12/12/delayed-job-best-practices/"/>
-    <updated>2014-12-12T13:49:00+02:00</updated>
+    <updated>2014-12-12T13:49:00+00:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2014/12/12/delayed-job-best-practices</id>
     <content type="html"><![CDATA[<p>Read my new article on <a href="http://www.sitepoint.com/delayed-jobs-best-practices/">Site Point about Delayed Job Best Practices</a></p>
 ]]></content>
@@ -156,7 +156,7 @@ rocky.tell_me_about_you  # will print brown and 3
   <entry>
     <title type="html"><![CDATA[You don't have to be afraid to test your UI - Page Object Pattern to the rescue]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue/"/>
-    <updated>2014-09-21T18:22:00+03:00</updated>
+    <updated>2014-09-21T18:22:00+01:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
@@ -475,7 +475,7 @@ end
 
 <p>```ruby</p>
 
-<h1>file: page_objects/bookstore/page_objects/sections/books/book_item_section.rb</h1>
+<h1>file: page_objects/bookstore/page_objects/sections/books/book_entry_section.rb</h1>
 
 <p>#
 module Bookstore
@@ -483,7 +483,7 @@ module Bookstore
 
 <pre><code>module Sections
   module Books
-    class BookItemSection &lt; SitePrism::Section
+    class BookEntrySection &lt; SitePrism::Section
       element :title,        'td.title'
       element :author,       'td.author'
       element :published_at, 'td.published-at'
@@ -509,9 +509,7 @@ end
 <h1>file: page_objects/bookstore/page_objects/pages/books/index_page.rb</h1>
 
 <p>#
-require &ldquo;bookstore/page_objects/sections/books/book_entry_section&rdquo;</p>
-
-<p>module Bookstore
+module Bookstore
   module PageObjects</p>
 
 <pre><code>module Pages
@@ -556,7 +554,7 @@ end
   <entry>
     <title type="html"><![CDATA[Including VS extending a Module]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/"/>
-    <updated>2012-10-12T21:44:00+03:00</updated>
+    <updated>2012-10-12T21:44:00+01:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module</id>
     <content type="html"><![CDATA[<p><code>`` ruby Demonstration of</code>include<code>vs</code>extend`</p>
 

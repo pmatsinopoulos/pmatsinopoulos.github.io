@@ -4,7 +4,7 @@
   <title><![CDATA[Category: PostgreSQL | Panayotis Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/postgresql/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-02-19T18:06:45+02:00</updated>
+  <updated>2016-04-12T20:46:00+01:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panayotis Matsinopoulos]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Using string column type for migrations]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2014/06/11/using-string-column-type-for-migrations/"/>
-    <updated>2014-06-11T22:48:00+03:00</updated>
+    <updated>2014-06-11T22:48:00+01:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2014/06/11/using-string-column-type-for-migrations</id>
     <content type="html"><![CDATA[<p>Ruby on Rails migrations are used to create the necessary tables inside our database. One of the most frequently used column type is <code>string</code>.
 Here is an example of an <code>ActiveRecord::Migration</code> that uses this type:</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: iOS | Panayotis Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-02-19T18:06:45+02:00</updated>
+  <updated>2016-04-12T20:46:00+01:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panayotis Matsinopoulos]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Try Objective-C on Code School]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school/"/>
-    <updated>2015-08-17T23:31:00+03:00</updated>
+    <updated>2015-08-17T23:31:00+01:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school</id>
     <content type="html"><![CDATA[<p>Having done the Apple developer tutorial Getting Started on iOS development, the next was to have a deeper dive in
 Objective-C. Looking around for online Objective-C tutorials, I came across a very good one, on <a href="https://www.codeschool.com">Code School</a>.
@@ -361,7 +361,7 @@ But first, I may take a short break to work with <code>Swift</code>. It seems th
   <entry>
     <title type="html"><![CDATA[My First iOS App]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app/"/>
-    <updated>2015-08-14T07:40:00+03:00</updated>
+    <updated>2015-08-14T07:40:00+01:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app</id>
     <content type="html"><![CDATA[<p>This is my first encounter with iOS apps and Objective C. I followed the whole tutorial which is given <a href="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapiOS/index.html#//apple_ref/doc/uid/TP40011343-CH2-SW1">here</a>.
 I am a Ruby developer and I decided to take this trip to iOS development because it is necessary for my work. I am offering professional services to <a href="https://www.bookandtable.com">Book&amp;Table</a>, which

@@ -2,190 +2,190 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2011/08/10/ruby-on-rails-gems-i-use/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2011/10/16/rails-validator-attachment/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2011/10/30/rails-and-test-unit-bug-on-counting-passed-tests/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2012/01/06/octopus-problem-with-rake/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2012/02/12/maze-implementation-in-ruby/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2012/02/16/mysql-replication/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2012/03/24/ruby-style-guide/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2012/03/25/testing-asserting-template-and-layout/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2012/09/02/capistrano-shared-directories-among-releases/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2012/09/25/executing-migration-commands-from-rails-console/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2012/09/30/my-solr-journey-session-001/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2012/10/09/how-to-define-and-use-class-level-variables-while-mixing-modules/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2013/10/27/model-properties-styling/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2013/12/21/twitter-bootstrap-2-modal-scrolling-problem-%7C-why-capybara-slash-selenium-cannot-locate-your-visible-buttons/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2013/12/24/the-clean-coder-a-code-of-conduct-for-professional-programmers-r-martin-pearson/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2014/06/11/using-string-column-type-for-migrations/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2014/08/29/united-states-counties-cities-csv-ruby-loading-code/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue/
         </loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2016-04-12T20:45:14+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2014/12/12/delayed-job-best-practices/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2015/06/19/class-vs-instance-variables/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2015/07/19/ruby-array-sum/</loc>
-        <lastmod>2015-08-17T22:46:12+03:00</lastmod>
+        <lastmod>2015-08-17T20:46:12+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2015/08/08/rails-params-does-the-job/</loc>
-        <lastmod>2015-08-17T22:45:59+03:00</lastmod>
+        <lastmod>2015-08-17T20:45:59+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app/</loc>
-        <lastmod>2015-08-17T23:20:57+03:00</lastmod>
+        <lastmod>2015-08-17T21:20:57+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school/</loc>
-        <lastmod>2015-08-19T00:35:50+03:00</lastmod>
+        <lastmod>2015-08-18T22:35:50+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/
         </loc>
-        <lastmod>2016-02-19T18:04:48+02:00</lastmod>
+        <lastmod>2016-02-19T16:04:48+00:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/blog/archives/</loc>
-        <lastmod>2016-02-19T18:04:48+02:00</lastmod>
+        <lastmod>2016-04-12T20:45:14+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/cv/</loc>
-        <lastmod>2016-02-15T08:13:41+02:00</lastmod>
+        <lastmod>2016-02-15T06:13:41+00:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/</loc>
-        <lastmod>2016-02-19T18:04:48+02:00</lastmod>
+        <lastmod>2016-04-12T20:45:14+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/my-contact-details/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/projects/book_and_table/</loc>
-        <lastmod>2016-01-22T11:08:35+02:00</lastmod>
+        <lastmod>2016-01-22T09:08:35+00:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/projects/e-travel-crm/</loc>
-        <lastmod>2016-01-22T15:28:45+02:00</lastmod>
+        <lastmod>2016-01-22T13:28:45+00:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/projects/ezmta/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/projects/fraudpointer/</loc>
-        <lastmod>2016-01-22T15:26:12+02:00</lastmod>
+        <lastmod>2016-01-22T13:26:12+00:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/projects/</loc>
-        <lastmod>2016-01-22T15:31:16+02:00</lastmod>
+        <lastmod>2016-01-22T13:31:16+00:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/projects/mars_rover/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/projects/mutants/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/projects/villasbroker/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/projects/wyngle/</loc>
-        <lastmod>2016-02-12T15:58:58+02:00</lastmod>
+        <lastmod>2016-02-12T13:58:58+00:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/robots.txt</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
     <url>
         <loc>http://pmatsinopoulos.github.io/seminars/introduction-to-programming-nov-2012/</loc>
-        <lastmod>2015-08-14T07:33:41+03:00</lastmod>
+        <lastmod>2015-08-14T05:33:41+01:00</lastmod>
     </url>
 </urlset>
