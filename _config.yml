@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: https://pmatsinopoulos.github.io
-title: Panayotis Matsinopoulos
+url: http://pmatsinopoulos.github.io
+title: Panos Matsinopoulos
 subtitle: "Senior Software Engineer: Love Creating Software, Taking Entrepreneurial Risks, Teaching Computer Programming & Blogging here or in many other places"
 author: Panos Matsinopoulos
 simple_search: http://google.com/search
-description: I am a Senior Software Engineer that loves creating software, taking entrepreneurial risks, teaching computer programming and blogging here and in many other places.
+description: I am a Senior Software Engineer that loves creating software, taking entrepreneurial risks, teaching computer programming and blogging here and on many other blogs.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in

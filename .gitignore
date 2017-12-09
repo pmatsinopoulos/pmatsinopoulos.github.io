@@ -1,1 +1,9 @@
 .idea/
+.pygments-cache/
+.ruby-gemset
+.ruby-verions
+.sass-cache/
+Gemfile.lock
+_deploy/
+public/
+
