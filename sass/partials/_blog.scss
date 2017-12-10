@@ -82,6 +82,9 @@ article {
   }
 
 }
+#main #content .blog-index h1 {
+  margin-left: 20px;
+}
 article + article {
   .blog-index & {
     background: $img-border top left repeat-x;
