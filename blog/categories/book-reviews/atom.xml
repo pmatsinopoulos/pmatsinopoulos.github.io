@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Book Reviews | Panayotis Matsinopoulos]]></title>
+  <title><![CDATA[Category: Book Reviews | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/book-reviews/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-04-12T20:46:00+01:00</updated>
+  <updated>2019-03-12T22:59:07+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
-    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
     <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[The Clean Coder - A Code of Conduct for Professional Programmers - R. Martin (Pearson)]]></title>
+    <title type="html"><![CDATA[The Clean Coder - a Code of Conduct for Professional Programmers - R. Martin (Pearson)]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2013/12/24/the-clean-coder-a-code-of-conduct-for-professional-programmers-r-martin-pearson/"/>
-    <updated>2013-12-24T22:14:00+00:00</updated>
+    <updated>2013-12-24T22:14:00+02:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2013/12/24/the-clean-coder-a-code-of-conduct-for-professional-programmers-r-martin-pearson</id>
-    <content type="html"><![CDATA[<p>I have recently finished the book <a href="http://www.amazon.com/gp/product/0137081073/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0137081073&amp;linkCode=as2&amp;tag=panayotmatsin-20">&ldquo;The Clean Coder &ndash; A Code of Conduct for Professional Programmers &ndash; R. Martin (Pearson, 2011) BBS&rdquo;</a>. Here is my short review:</p>
+    <content type="html"><![CDATA[<p>I have recently finished the book <a href="http://www.amazon.com/gp/product/0137081073/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0137081073&amp;linkCode=as2&amp;tag=panayotmatsin-20">&ldquo;The Clean Coder - A Code of Conduct for Professional Programmers - R. Martin (Pearson, 2011) BBS&rdquo;</a>. Here is my short review:</p>
 
 <p>Overall: Fantastic. Worth reading for every developer that wants to become professional.</p>
 
 <h2>My Notes and Highlights</h2>
 
-<h3>Chapter 1 &ndash; Professionalism</h3>
+<h3>Chapter 1 - Professionalism</h3>
 
 <ul>
 <li>Professionalism is a marker of responsibility and accountability.</li>
@@ -65,7 +65,7 @@
 </ul>
 
 
-<h3>Chapter 2 &ndash; Saying No</h3>
+<h3>Chapter 2 - Saying No</h3>
 
 <ul>
 <li>Aren&rsquo;t you supposed to do what your boss says? No. Not if you are a professional. Professionals are expected to say no.</li>
@@ -79,15 +79,15 @@
 </ul>
 
 
-<h3>Chapter 3 &ndash; Saying Yes</h3>
+<h3>Chapter 3 - Saying Yes</h3>
 
 <ul>
 <li>There are three parts to making a commitment:
 
 <ol>
-<li> You say you&rsquo;ll do it.</li>
-<li> You mean it.</li>
-<li> You actually do it.</li>
+<li>You say you&rsquo;ll do it.</li>
+<li>You mean it.</li>
+<li>You actually do it.</li>
 </ol>
 </li>
 <li>There are some words that people use which reveal that what these people say are not going to do.
@@ -105,7 +105,7 @@
 </ul>
 
 
-<h3>Chapter 4 &ndash; Coding</h3>
+<h3>Chapter 4 - Coding</h3>
 
 <ul>
 <li>It is up to you to see problems in the requirements and discuss that with the customer in order to make sure that the solution you are providing covers the true needs of the customer.</li>
@@ -129,7 +129,7 @@
 </ul>
 
 
-<h3>Chapter 5 &ndash; Test Driven Development</h3>
+<h3>Chapter 5 - Test Driven Development</h3>
 
 <p>TDD:</p>
 
@@ -151,7 +151,7 @@
 </ul>
 
 
-<h3>Chapter 6 &ndash; Practicing</h3>
+<h3>Chapter 6 - Practicing</h3>
 
 <ul>
 <li>A programming kata is a precise set of choreographed keystrokes and mouse movements that simulates the solving of some programming problem.</li>
@@ -162,7 +162,7 @@
 </ul>
 
 
-<h3>Chapter 7 &ndash; Acceptance Testing</h3>
+<h3>Chapter 7 - Acceptance Testing</h3>
 
 <ul>
 <li>Both business and programmers are tempted to fall into the trap of premature precision.</li>
@@ -180,7 +180,7 @@
 </ul>
 
 
-<h3>Chapter 8 &ndash; Testing Strategies</h3>
+<h3>Chapter 8 - Testing Strategies</h3>
 
 <ul>
 <li>Development should have as goal that QA finds nothing</li>
@@ -194,7 +194,7 @@
 </ul>
 
 
-<h3>Chapter 9 &ndash; Time Management</h3>
+<h3>Chapter 9 - Time Management</h3>
 
 <ul>
 <li>There are two truths about meetings:
@@ -212,9 +212,9 @@
 <li>Stand-Up Meetings
 
 <ol>
-<li> What did I do yesterday?</li>
-<li> What am I going to do today?</li>
-<li> What&rsquo;s in my way?</li>
+<li>What did I do yesterday?</li>
+<li>What am I going to do today?</li>
+<li>What&rsquo;s in my way?</li>
 </ol>
 </li>
 <li>Iteration Planning Meetings. Rule of thumb: Should not take no more than 5% of the total time in the iteration.</li>
@@ -224,7 +224,7 @@
 <li>If you finally agree, then you must engage. Do not be passive-aggressive.</li>
 <li>Beware of meetings that are really just a venue to vent a disagreement and to gather support for one side or the other.</li>
 <li>Vote or flip a coin. It&rsquo;s better than arguing forever.</li>
-<li>7 &ndash; 8 hours good sleep is very important so that you can give 8 good hours with full focus on your work.</li>
+<li>7 - 8 hours good sleep is very important so that you can give 8 good hours with full focus on your work.</li>
 <li>Caffeine puts a strange &ldquo;jitter&rdquo; on your focus. Too much of it can send your focus off in very strange directions.</li>
 <li>Recharge. Good long walk,conversation with friends and such.</li>
 <li>Somehow muscle focus help to recharge mental focus.</li>
@@ -237,7 +237,7 @@
 </ul>
 
 
-<h3>Chapter 10 &ndash; Estimation</h3>
+<h3>Chapter 10 - Estimation</h3>
 
 <ul>
 <li>Business likes to view estimates as commitments. Developers like to view estimates as guesses. The difference is profound.</li>
@@ -252,7 +252,7 @@
 </ul>
 
 
-<h3>Chapter 11 &ndash; Pressure</h3>
+<h3>Chapter 11 - Pressure</h3>
 
 <ul>
 <li>The professional developer is calm and decisive under pressure.</li>
@@ -267,7 +267,7 @@
 </ul>
 
 
-<h3>Chapter 12 &ndash; Collaboration</h3>
+<h3>Chapter 12 - Collaboration</h3>
 
 <ul>
 <li>Collaborate with your managers, business analysts, testers, and other team members to deeply understand the business goals.</li>
@@ -280,7 +280,7 @@
 </ul>
 
 
-<h3>Chapter 13 &ndash; Teams and Projects</h3>
+<h3>Chapter 13 - Teams and Projects</h3>
 
 <ul>
 <li>There is not such thing as half a person.</li>
@@ -291,7 +291,7 @@
 </ul>
 
 
-<h3>Chapter 14 &ndash; Mentoring, Apprenticeship, And Craftsmanship</h3>
+<h3>Chapter 14 - Mentoring, Apprenticeship, And Craftsmanship</h3>
 
 <ul>
 <li>What you learn in school and what you find on the job are often very different things.</li>
@@ -302,7 +302,7 @@
 
 <hr />
 
-<p>If you liked what you&rsquo;ve read above, you will find many more details and nice arguments in this excellent book: <a href="http://www.amazon.com/gp/product/0137081073/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0137081073&amp;linkCode=as2&amp;tag=panayotmatsin-20">&ldquo;The Clean Coder &ndash; A Code of Conduct for Professional Programmers &ndash; R. Martin (Pearson, 2011) BBS&rdquo;</a></p>
+<p>If you liked what you&rsquo;ve read above, you will find many more details and nice arguments in this excellent book: <a href="http://www.amazon.com/gp/product/0137081073/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0137081073&amp;linkCode=as2&amp;tag=panayotmatsin-20">&ldquo;The Clean Coder - A Code of Conduct for Professional Programmers - R. Martin (Pearson, 2011) BBS&rdquo;</a></p>
 ]]></content>
   </entry>
   

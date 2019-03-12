@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Javascript | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2019-03-12T22:59:07+02:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Functions as Arguments and Return Values - JavaScript vs Ruby]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2018/01/20/functions-as-arguments-and-return-values-javascript-vs-ruby/"/>
+    <updated>2018-01-20T06:54:06+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2018/01/20/functions-as-arguments-and-return-values-javascript-vs-ruby</id>
+    <content type="html"><![CDATA[<h2>My New Blog Post in Tech Career Booster</h2>
+
+<p>This is a new blog post in Tech Career Booster. I am explaining how one can use functions as arguments and return values in
+two very popular programming languages, JavaScript and Ruby.
+<a href="https://www.techcareerbooster.com/blog/functions-as-arguments-and-return-values-javascript-vs-ruby?utm_source=pmatsinopoulos_blog&amp;utm_medium=new_blog_post&amp;utm_campaign=blog_post_function_arguments">Click here to visit it</a></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Solr | Panayotis Matsinopoulos]]></title>
+  <title><![CDATA[Category: Solr | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/solr/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-04-12T20:46:00+01:00</updated>
+  <updated>2019-03-12T22:59:07+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
-    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
     <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[My Solr Journey - Session 001]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2012/09/30/my-solr-journey-session-001/"/>
-    <updated>2012-09-30T14:27:00+01:00</updated>
+    <updated>2012-09-30T14:27:00+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2012/09/30/my-solr-journey-session-001</id>
     <content type="html"><![CDATA[<h2>Why do I take this Journey?</h2>
 
@@ -29,7 +29,7 @@ huge amounts of work when storing data in a Solr database.</p>
 <p>However, there are times that I felt that I needed to know more. For example, when I was searching for <code>University of Athens</code> and I got no results, but I knew
 that my documents had all or any of the words &ldquo;University&rdquo;, &ldquo;of&rdquo;, &ldquo;Athens&rdquo; in their body, or, even worse, there were also documents that were having the whole
 phrase &ldquo;University of Athens&rdquo; in their body. Or I wanted to query with parts of words, or parts of e-mails, and still I was not getting any results. You can see how
-I ended up solving these problems reading these two: 1) <a href="http://stackoverflow.com/questions/12650859/why-sunspot-solr-does-not-bring-results-when-i-include-of-word-in-search-query/12653931">Why Sunspot Solr does not bring results when I include “of” word in search query?</a>
+I ended up solving these problems reading these two: 1) <a href="http://stackoverflow.com/questions/12650859/why-sunspot-solr-does-not-bring-results-when-i-include-of-word-in-search-query/12653931">Why Sunspot Solr does not bring results when I include &ldquo;of&rdquo; word in search query?</a>
  2) <a href="http://stackoverflow.com/questions/12131473/how-can-i-set-sunspot-to-search-for-sequences-of-characters-instead-of-words">How can I set Sunspot to search for sequences of characters instead of words?</a></p>
 
 <p>Hence, I decided to take a journey to Solr. And this will be a registration of my steps to this journey. Understanding how Solr works, will make me manage

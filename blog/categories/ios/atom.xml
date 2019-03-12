@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: iOS | Panayotis Matsinopoulos]]></title>
+  <title><![CDATA[Category: Ios | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-04-12T20:46:00+01:00</updated>
+  <updated>2019-03-12T22:59:07+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
-    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
     <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Try Objective-C on Code School]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school/"/>
-    <updated>2015-08-17T23:31:00+01:00</updated>
+    <updated>2015-08-17T23:31:00+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school</id>
     <content type="html"><![CDATA[<p>Having done the Apple developer tutorial Getting Started on iOS development, the next was to have a deeper dive in
 Objective-C. Looking around for online Objective-C tutorials, I came across a very good one, on <a href="https://www.codeschool.com">Code School</a>.
@@ -361,7 +361,7 @@ But first, I may take a short break to work with <code>Swift</code>. It seems th
   <entry>
     <title type="html"><![CDATA[My First iOS App]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app/"/>
-    <updated>2015-08-14T07:40:00+01:00</updated>
+    <updated>2015-08-14T07:40:00+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2015/08/14/my-first-ios-app</id>
     <content type="html"><![CDATA[<p>This is my first encounter with iOS apps and Objective C. I followed the whole tutorial which is given <a href="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapiOS/index.html#//apple_ref/doc/uid/TP40011343-CH2-SW1">here</a>.
 I am a Ruby developer and I decided to take this trip to iOS development because it is necessary for my work. I am offering professional services to <a href="https://www.bookandtable.com">Book&amp;Table</a>, which
@@ -387,9 +387,8 @@ app.</p>
 
 <h3>Calling a method on a object</h3>
 
-<p><code>
-[someObjectInstance someMethodName]
-</code></p>
+<pre><code>[someObjectInstance someMethodName]
+</code></pre>
 
 <h2>Application Templates</h2>
 
@@ -415,11 +414,11 @@ specific methods on app delegate object and allows app delegate object to custom
 <p>Reading the method names and the comments of the <code>AppDelegate.m</code> file, I understand that an application follows a life cycle through the following states:</p>
 
 <ul>
-<li>launch &ndash;> active</li>
-<li>active &ndash;> inactive     Goes to inactive, when for example an incoming call is intercepted.</li>
-<li>inactive &ndash;> background When the user quits, the application might go to background state instead of being terminated.</li>
-<li>background &ndash;> inactive When the application goes back from background to inactive</li>
-<li>inactive &ndash;> active</li>
+<li>launch -> active</li>
+<li>active -> inactive     Goes to inactive, when for example an incoming call is intercepted.</li>
+<li>inactive -> background When the user quits, the application might go to background state instead of being terminated.</li>
+<li>background -> inactive When the application goes back from background to inactive</li>
+<li>inactive -> active</li>
 <li>terminated When the application terminates</li>
 </ul>
 
@@ -552,9 +551,8 @@ Includes:</p>
 
 <p>Examples:</p>
 
-<p><code>
-NSString *myString = @"Hello World";
-</code></p>
+<pre><code>NSString *myString = @"Hello World";
+</code></pre>
 
 <p>The <code>@</code> symbol is necessary when assigning a literal string to an NSString object.</p>
 
@@ -564,9 +562,8 @@ NSString *myString = @"Hello World";
 
 <p>Example:</p>
 
-<p><code>
-NSNumber *myAge = @44;
-</code></p>
+<pre><code>NSNumber *myAge = @44;
+</code></pre>
 
 <h2>Collection Objects</h2>
 

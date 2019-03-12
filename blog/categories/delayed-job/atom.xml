@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Delayed Job | Panayotis Matsinopoulos]]></title>
+  <title><![CDATA[Category: Delayed Job | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/delayed-job/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-04-12T20:46:00+01:00</updated>
+  <updated>2019-03-12T22:59:07+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
-    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
     <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Delayed Job Best Practices]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2014/12/12/delayed-job-best-practices/"/>
-    <updated>2014-12-12T13:49:00+00:00</updated>
+    <updated>2014-12-12T13:49:00+02:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2014/12/12/delayed-job-best-practices</id>
     <content type="html"><![CDATA[<p>Read my new article on <a href="http://www.sitepoint.com/delayed-jobs-best-practices/">Site Point about Delayed Job Best Practices</a></p>
 ]]></content>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Phusion Passenger | Panayotis Matsinopoulos]]></title>
+  <title><![CDATA[Category: Phusion Passenger | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/phusion-passenger/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-04-12T20:46:00+01:00</updated>
+  <updated>2019-03-12T22:59:07+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
-    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
     <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[Making Rails Logger Use One Log File Per Process with Phusion Passenger]]></title>
+    <title type="html"><![CDATA[Making Rails Logger Use One Log File Per Process With Phusion Passenger]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/"/>
-    <updated>2016-02-19T16:57:00+00:00</updated>
+    <updated>2016-02-19T16:57:00+02:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
@@ -46,50 +46,43 @@ and its <a href="http://stackoverflow.com/a/24188716/658469">answer here</a>. Th
 
 <p>I have created an initializer with the following content:</p>
 
-<p>``` ruby
-begin
-  if Rails.env.production? &amp;&amp; defined?(PhusionPassenger)</p>
+<pre><code class="ruby">begin
+  if Rails.env.production? &amp;&amp; defined?(PhusionPassenger)
+    PhusionPassenger.on_event(:starting_worker_process) do |forked|
+      # get access to log device
+      if Rails::VERSION::STRING.start_with?('4.')
+        logdev = Rails.logger.instance_variable_get(:@logdev)
+      elsif Rails::VERSION::STRING.start_with?('3.2')
+        logdev = Rails.logger.instance_variable_get(:@logger).instance_variable_get(:@log).instance_variable_get(:@logdev)
+      end
 
-<pre><code>PhusionPassenger.on_event(:starting_worker_process) do |forked|
-  # get access to log device
-  if Rails::VERSION::STRING.start_with?('4.')
-    logdev = Rails.logger.instance_variable_get(:@logdev)
-  elsif Rails::VERSION::STRING.start_with?('3.2')
-    logdev = Rails.logger.instance_variable_get(:@logger).instance_variable_get(:@log).instance_variable_get(:@logdev)
+      # logdev.dev is a File instance that is the open file to log file.
+      # Get the extension and prepend the process id.
+      ext = File.extname(logdev.dev.path)
+      pid = Process.pid
+      path = logdev.dev.path.gsub /#{Regexp.escape(ext)}$/, ".#{pid}#{ext}"
+
+      # open the new file
+      file = File.open(path, 'a')
+      file.binmode
+      file.sync = true
+
+      # We flush and close the current file handle, the one that writes to the single file.
+      logdev.dev.flush
+      logdev.dev.close
+
+      # We replace the file handle with the new one +file+ that refers to process specific file.
+      logdev.instance_variable_set(:@dev, file)
+    end
   end
-
-  # logdev.dev is a File instance that is the open file to log file.
-  # Get the extension and prepend the process id.
-  ext = File.extname(logdev.dev.path)
-  pid = Process.pid
-  path = logdev.dev.path.gsub /#{Regexp.escape(ext)}$/, ".#{pid}#{ext}"
-
-  # open the new file
-  file = File.open(path, 'a')
-  file.binmode
-  file.sync = true
-
-  # We flush and close the current file handle, the one that writes to the single file.
-  logdev.dev.flush
-  logdev.dev.close
-
-  # We replace the file handle with the new one +file+ that refers to process specific file.
-  logdev.instance_variable_set(:@dev, file)
-end
-</code></pre>
-
-<p>  end
-rescue Exception => ex
-  begin</p>
-
-<pre><code>Rails.logger.error(ex.message)
-Rails.logger.error(ex.backtrace)
-</code></pre>
-
-<p>  rescue
+rescue Exception =&gt; ex
+  begin
+    Rails.logger.error(ex.message)
+    Rails.logger.error(ex.backtrace)
+  rescue
   end
 end
-```</p>
+</code></pre>
 
 <h2>Closing</h2>
 

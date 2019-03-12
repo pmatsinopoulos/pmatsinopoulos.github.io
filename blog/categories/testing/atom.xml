@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: testing | Panayotis Matsinopoulos]]></title>
+  <title><![CDATA[Category: Testing | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/testing/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-04-12T20:46:00+01:00</updated>
+  <updated>2019-03-12T22:59:07+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
-    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
     <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[Twitter Bootstrap 2 Modal Scrolling Problem | Why capybara/selenium cannot locate your visible buttons]]></title>
+    <title type="html"><![CDATA[Twitter Bootstrap 2 Modal Scrolling Problem | Why Capybara/selenium Cannot Locate Your Visible Buttons]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2013/12/21/twitter-bootstrap-2-modal-scrolling-problem-%7C-why-capybara-slash-selenium-cannot-locate-your-visible-buttons/"/>
-    <updated>2013-12-21T09:19:00+00:00</updated>
+    <updated>2013-12-21T09:19:00+02:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2013/12/21/twitter-bootstrap-2-modal-scrolling-problem-|-why-capybara-slash-selenium-cannot-locate-your-visible-buttons</id>
     <content type="html"><![CDATA[<p>Twitter Bootstrap 2 has a bug while on modal dialogs. The page does not scroll as expected. So, if the browser window is not wide/tall enough to display the whole
 modal dialog content, the scroll bars do not make it appear.</p>

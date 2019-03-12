@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Test | Panayotis Matsinopoulos]]></title>
+  <title><![CDATA[Category: Test | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-04-12T20:46:00+01:00</updated>
+  <updated>2019-03-12T22:59:07+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
-    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
     <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[You don't have to be afraid to test your UI - Page Object Pattern to the rescue]]></title>
+    <title type="html"><![CDATA[You Don't Have to Be Afraid to Test Your UI - Page Object Pattern to the Rescue]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue/"/>
-    <updated>2014-09-21T18:22:00+01:00</updated>
+    <updated>2014-09-21T18:22:00+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue</id>
     <content type="html"><![CDATA[<h2>Introduction</h2>
 
@@ -39,8 +39,7 @@
 
 <p>Put your page object Ruby files inside a directory structure that would have as parent the <code>page_objects</code> directory. So, if for example you have a Rails application, the directory structure might be:</p>
 
-<p><code>
-app
+<pre><code>app
 bin
 config
 db
@@ -53,7 +52,7 @@ script
 spec
 tmp
 vendor
-</code></p>
+</code></pre>
 
 <p>As you can see the <code>page_objects</code> is on the same directory level like the <code>features</code> which contains the <code>Cucumber</code> features and the <code>spec</code> which contains the <code>RSpec</code> test files. <code>Cucumber</code> and <code>RSpec</code> will both be using your <code>page_objects</code>.</p>
 
@@ -61,14 +60,10 @@ vendor
 
 <p>Although you are free to put all of your page object files inside the <code>page_objects</code> directory, prefer to use a sub-directory with the name of your application that would function as namespace. Further namespace that, with the word <code>page_objects</code>. For example, if your application is called <code>bookstore</code>, then you can use the following tree to store your page objects:</p>
 
-<p>```
-page_objects
-  |&ndash;> bookstore</p>
-
-<pre><code>    |-&gt; page_objects
+<pre><code>page_objects
+  |-&gt; bookstore
+        |-&gt; page_objects
 </code></pre>
-
-<p>```</p>
 
 <p>Any <code>.rb</code> file that you will be creating to hold a page object class, will need to be inside the corresponding module <code>Bookstore::PageObjects</code> that will work as a namespace.
 Using namespace is a good practice in general and not only for the <code>site_prism</code> case we are discussing here. You will avoid having name conflicts with third-party gems.</p>
@@ -77,27 +72,23 @@ Using namespace is a good practice in general and not only for the <code>site_pr
 
 <p>Write an <code>all_page_objects.rb</code> file that will require all the page objects Ruby files that would be living in your <code>page_objects</code> tree.</p>
 
-<p><code>
-page_objects
+<pre><code>page_objects
   |-&gt; bookstore
   |     |-&gt; page_objects
   |- all_page_objects.rb
-</code></p>
+</code></pre>
 
 <p>An implementation of <code>all_page_objects.rb</code> file might be something like the following:</p>
 
-<p>```ruby</p>
+<pre><code class="ruby"># file: page_objects/all_page_objects.rb
+#
+current_path = File.expand_path('..', __FILE__)
+$LOAD_PATH.unshift File.join(current_path, 'bookstore')
 
-<h1>file: page_objects/all_page_objects.rb</h1>
-
-<p>#
-current_path = File.expand_path(&lsquo;..&rsquo;, <strong>FILE</strong>)
-$LOAD_PATH.unshift File.join(current_path, &lsquo;bookstore&rsquo;)</p>
-
-<p>Dir.glob(File.join(current_path, &lsquo;<em>*&rsquo;, &lsquo;</em>.rb&rsquo;)).each do |f|
+Dir.glob(File.join(current_path, '**', '*.rb')).each do |f|
   require f
 end
-```</p>
+</code></pre>
 
 <p>Having done that, you only have to require the <code>all_page_objects</code> file from your <code>spec_helper.rb</code> or <code>env.rb</code> file. And everytime a new page object file is defined, you do not have to require that explicitly.</p>
 
@@ -105,14 +96,13 @@ end
 
 <p>Site prism offers two classes to organize your page object code. Pages and Sections. Use a separate directory to hold your page classes and a separate directory to hold your sections classes.</p>
 
-<p><code>
-page_objects
+<pre><code>page_objects
   |-&gt; bookstore
   |     |-&gt; page_objects
   |           |-&gt; pages
   |           |-&gt; sections
   |- all_page_objects.rb
-</code></p>
+</code></pre>
 
 <p>You will use each one of these two directories to further namespace your classes. Hence all your page object classes that are pages will be <code>Bookstore::PageObjects::Pages::</code> namespaced, and all your page object classes that are sections will be <code>Bookstore::PageObjects::Sections::</code> namespaced.</p>
 
@@ -122,8 +112,7 @@ page_objects
 
 <p>If for example you have a views directory that has two directories, <code>books</code> and <code>authors</code>, former one having the views that are related to <code>Book</code> resource and latter one having the views that are related to <code>Author</code> resource, you should have corresponding directories inside the <code>page_objects/pages</code> directory:</p>
 
-<p><code>
-page_objects
+<pre><code>page_objects
   |-&gt; bookstore
   |     |-&gt; page_objects
   |           |-&gt; pages
@@ -131,7 +120,7 @@ page_objects
   |           |     |-&gt; authors
   |           |-&gt; sections
   |- all_page_objects.rb
-</code></p>
+</code></pre>
 
 <p>Think about whether you can do the same for the <code>sections</code> too. If you have <code>sections</code> that are resource specific, you can follow a similar directory structure.</p>
 
@@ -141,8 +130,7 @@ page_objects
 
 <p>When defining your actual page classes follow the views templates and create one page per template view. For example, if you have a view template that indexes all the books in your bookstore, e.g. <code>index.html.erb</code> inside the <code>books</code> view directory, then create the corresponding page inside the file <code>index_page.rb</code>. Similarly for <code>new</code>, <code>show</code>, <code>edit</code> views:</p>
 
-<p><code>
-page_objects
+<pre><code>page_objects
   |-&gt; bookstore
   |     |-&gt; page_objects
   |           |-&gt; pages
@@ -158,30 +146,24 @@ page_objects
   |           |     |---- edit_page.rb
   |           |-&gt; sections
   |- all_page_objects.rb
-</code></p>
+</code></pre>
 
 <p>Hence, your page classes will be defined as follows (example for the <code>index_page.rb</code> for <code>books</code>):</p>
 
-<p>```ruby</p>
-
-<h1>file: page_objects/bookstore/page_objects/pages/books/index_page.rb</h1>
-
-<p>#
+<pre><code class="ruby"># file: page_objects/bookstore/page_objects/pages/books/index_page.rb
+#
 module Bookstore
-  module PageObjects</p>
-
-<pre><code>module Pages
-  module Books
-    class IndexPage &lt; SitePrism::Page
-      # ... your page code goes here ... #
+  module PageObjects
+    module Pages
+      module Books
+        class IndexPage &lt; SitePrism::Page
+          # ... your page code goes here ... #
+        end
+      end
     end
   end
 end
 </code></pre>
-
-<p>  end
-end
-```</p>
 
 <h3>One file to model your application</h3>
 
@@ -209,59 +191,50 @@ page_objects
 <p>So, you are going to have <code>page_objects/bookstore/page_objects/application.rb</code>
 Here is a sample implementation in order to understand what I am talking about:</p>
 
-<p>```ruby</p>
-
-<h1>file: page_objects/bookstore/page_objects/application.rb</h1>
-
-<p>#
+<pre><code class="ruby"># file: page_objects/bookstore/page_objects/application.rb
+#
 module Bookstore
-  module PageObjects</p>
+  module PageObjects
+    class Application
+      def initialize
+        @pages = {}
+      end
 
-<pre><code>class Application
-  def initialize
-    @pages = {}
-  end
+      def home
+        @pages[:home] ||= Bookstore::PageObjects::Pages::HomePage.new
+      end
 
-  def home
-    @pages[:home] ||= Bookstore::PageObjects::Pages::HomePage.new
-  end
+      def sign_in
+        @pages[:sign_in] ||= Bookstore::PageObjects::Pages::SignInPage.new
+      end
 
-  def sign_in
-    @pages[:sign_in] ||= Bookstore::PageObjects::Pages::SignInPage.new
-  end
-
-  def checkout
-    @pages[:checkout] ||= Bookstore::PageObjects::Pages::CheckoutPage.new
+      def checkout
+        @pages[:checkout] ||= Bookstore::PageObjects::Pages::CheckoutPage.new
+      end
+    end
   end
 end
 </code></pre>
-
-<p>  end
-end</p>
-
-<p>```</p>
 
 <p>When you will be using site prism, you will only be instantiating the <code>Bookstore::PageObjects::Application</code> class once and then you will be invoking page methods to access specific pages. For example:</p>
 
 <p>If using <code>Cucumber</code>, inside the <code>features/support/hooks.rb</code> file you can have</p>
 
-<p><code>ruby
-Before do |scenario|
+<pre><code class="ruby">Before do |scenario|
   @app ||= Bookstore::PageObjects::Application.new
 end
-</code></p>
+</code></pre>
 
 <p>which will instantiate the <code>Bookstore::PageObjects::Application</code> and store it in <code>@app</code> that you can use to load and access pages as follows (in your <code>steps</code>):</p>
 
-<p>```ruby
-When(/^User visits the home pages$/)do
+<pre><code class="ruby">When(/^User visits the home pages$/)do
   @app.home.load
-end</p>
+end
 
-<p>When(/^User visits the sign in page$/) do
+When(/^User visits the sign in page$/) do
   @app.sign_in.load
 end
-```</p>
+</code></pre>
 
 <p>You can see that the <code>Bookstore::PageObjects::Application</code> is being instantiated only once and each page is being instantiated only once too. The application instance is using, internally, a hash to store the instances of the necessary pages. So, everytime you need a page, either an existing instance of the page will be returned, if you have requested same page in the past, case in which it will be located in the <code>@pages</code> hash, or a new instance will be created.</p>
 
@@ -279,82 +252,64 @@ end
 
 <p>Hence, if you have an index page that displays the list of books, you can have the following inside the index page definition:</p>
 
-<p>```ruby</p>
-
-<h1>file: page_objects/bookstore/page_objects/pages/books/index_page.rb</h1>
-
-<p>#
+<pre><code class="ruby"># file: page_objects/bookstore/page_objects/pages/books/index_page.rb
+#
 module Bookstore
-  module PageObjects</p>
+  module PageObjects
+    module Pages
+      module Books
+        class IndexPage &lt; SitePrism::Page
 
-<pre><code>module Pages
-  module Books
-    class IndexPage &lt; SitePrism::Page
+          elements :book_items, '#books-table tr.book-item'
 
-      elements :book_items, '#books-table tr.book-item'
-
+        end
+      end
     end
   end
 end
 </code></pre>
-
-<p>  end
-end
-```</p>
 
 <p>which will give you access to each one of the table rows that are used to display a book entry. But this definition does not allow to do too much with the book item itself.</p>
 
 <p>If for example, you want to access details of the book, you can use a section and say that you have an array of sections, as follows:</p>
 
-<p>```ruby</p>
+<pre><code class="ruby"># file: page_objects/bookstore/page_objects/pages/books/index_page.rb
+#
+require "bookstore/page_objects/sections/books/book_entry_section"
 
-<h1>file: page_objects/bookstore/page_objects/pages/books/index_page.rb</h1>
+module Bookstore
+  module PageObjects
+    module Pages
+      module Books
+        class IndexPage &lt; SitePrism::Page
 
-<p>#
-require &ldquo;bookstore/page_objects/sections/books/book_entry_section&rdquo;</p>
+          sections :book_items, Bookstore::PageObjects::Sections::Books::BookEntrySection, '#books-table tr.book-item'
 
-<p>module Bookstore
-  module PageObjects</p>
-
-<pre><code>module Pages
-  module Books
-    class IndexPage &lt; SitePrism::Page
-
-      sections :book_items, Bookstore::PageObjects::Sections::Books::BookEntrySection, '#books-table tr.book-item'
-
+        end
+      end
     end
   end
 end
 </code></pre>
-
-<p>  end
-end
-```</p>
 
 <p>And then you need to define the book entry details in the corresponding section file:</p>
 
-<p>```ruby</p>
-
-<h1>file: page_objects/bookstore/page_objects/sections/books/book_entry_section.rb</h1>
-
-<p>#
+<pre><code class="ruby"># file: page_objects/bookstore/page_objects/sections/books/book_entry_section.rb
+#
 module Bookstore
-  module PageObjects</p>
-
-<pre><code>module Sections
-  module Books
-    class BookEntrySection &lt; SitePrism::Section
-      element :title,        'td.title'
-      element :author,       'td.author'
-      element :published_at, 'td.published-at'
+  module PageObjects
+    module Sections
+      module Books
+        class BookEntrySection &lt; SitePrism::Section
+          element :title,        'td.title'
+          element :author,       'td.author'
+          element :published_at, 'td.published-at'
+        end
+      end
     end
   end
 end
 </code></pre>
-
-<p>  end
-end
-```</p>
 
 <p>But, again&hellip;.</p>
 
@@ -364,40 +319,34 @@ end
 
 <p>Hence, the above implementation for the book item, is not something that I recommend. I wouldn&rsquo;t create a section for that. You should just define the section elements inline as follows:</p>
 
-<p>```ruby</p>
-
-<h1>file: page_objects/bookstore/page_objects/pages/books/index_page.rb</h1>
-
-<p>#
+<pre><code class="ruby"># file: page_objects/bookstore/page_objects/pages/books/index_page.rb
+#
 module Bookstore
-  module PageObjects</p>
+  module PageObjects
+    module Pages
+      module Books
+        class IndexPage &lt; SitePrism::Page
+          # .... other index page code .... #
 
-<pre><code>module Pages
-  module Books
-    class IndexPage &lt; SitePrism::Page
-      # .... other index page code .... #
+          sections :book_items, '#books-table tr.book-item' do
+            element :title,        'td.title'
+            element :author,       'td.author'
+            element :published_at, 'td.published-at'
+          end                    
 
-      sections :book_items, '#books-table tr.book-item' do
-        element :title,        'td.title'
-        element :author,       'td.author'
-        element :published_at, 'td.published-at'
-      end                    
-
-      # ... other index page code ... #
+          # ... other index page code ... #
+        end
+      end
     end
   end
 end
 </code></pre>
 
-<p>  end
-end
-```</p>
-
 <p>Doing so, I do not have to create another class file specific to this section.</p>
 
 <p>Note that this hint is valid both for <code>section</code> and <code>sections</code>, of course.</p>
 
-<h3>Use ids &ndash; Do not use style properties for selectors</h3>
+<h3>Use ids - Do not use style properties for selectors</h3>
 
 <p>This suggestion goes out of the scope of site prism. When you are using selectors to select dom elements on your tests use html element ids, e.g. &lsquo;#books-table&rsquo; as much as you can. Do not use other attributes that style your elements or depend on the layout and structure of your dom. They are brittle to change. And if you write your tests and you see that your pages are missing ids that would help you write your tests, then go back to your core code and add ids.</p>
 

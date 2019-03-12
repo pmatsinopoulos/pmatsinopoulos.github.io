@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: curl | Panayotis Matsinopoulos]]></title>
+  <title><![CDATA[Category: Curl | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/curl/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2016-04-12T20:46:00+01:00</updated>
+  <updated>2019-03-12T22:59:07+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
-    <name><![CDATA[Panayotis Matsinopoulos]]></name>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
     <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[Rails params Does the Job]]></title>
+    <title type="html"><![CDATA[Rails Params Does the Job]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2015/08/08/rails-params-does-the-job/"/>
-    <updated>2015-08-08T10:07:00+01:00</updated>
+    <updated>2015-08-08T10:07:00+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2015/08/08/rails-params-does-the-job</id>
     <content type="html"><![CDATA[<p>When you have a Ruby on Rails end point, the client usually sends data in one of the following:</p>
 
@@ -60,9 +60,8 @@ The <code>params</code> value will show to you how the controller has interprete
 
 <p>This example sends the data URL encoded as part of the URI.</p>
 
-<p><code>
-curl "https://echo-data.herokuapp.com/echo?foo=bar" -v --header "Accept: application/json"
-</code></p>
+<pre><code>curl "https://echo-data.herokuapp.com/echo?foo=bar" -v --header "Accept: application/json"
+</code></pre>
 
 <p>As you see in the output of the <code>curl</code> that is given below, this is a <code>GET</code> request and the <code>Content-Type</code> header is not
 specified, because the data are part of the URI.</p>
@@ -104,9 +103,8 @@ didn&rsquo;t send anything there.</p>
 <p>With this example we will send the data using a <code>POST</code> request and the data will be
 url encoded in the request body.</p>
 
-<p><code>
-curl "https://echo-data.herokuapp.com/echo" -v --data foo=bar --header "Accept: application/json"
-</code></p>
+<pre><code>curl "https://echo-data.herokuapp.com/echo" -v --data foo=bar --header "Accept: application/json"
+</code></pre>
 
 <p>As you can see from the <code>curl</code> output below, the request is a <code>POST</code> request and the <code>Content-Type</code>
 is automatically set to <code>application/x-www-form-urlencoded</code>.</p>
@@ -152,9 +150,8 @@ body of the request.</p>
 
 <p>In the following example we are sending the data as a JSON string in the body of the request:</p>
 
-<p> <code>
- curl "https://echo-data.herokuapp.com/echo" -v --header "Accept: application/json" --header "Content-Type: application/json" -d "{\"foo\":\"data\"}"
-</code></p>
+<pre><code class="`"> curl "https://echo-data.herokuapp.com/echo" -v --header "Accept: application/json" --header "Content-Type: application/json" -d "{\"foo\":\"data\"}"
+</code></pre>
 
 <p> What <code>curl</code> returns back is:</p>
 
@@ -198,9 +195,8 @@ bears the JSON string sent over.</p>
 
 <p>In the following example, we combine the data on URI and data in request body:</p>
 
-<p><code>
-curl "https://echo-data.herokuapp.com/echo?hello=world" -v --header "Accept: application/json" --header "Content-Type: application/json" -d "{\"foo\":\"data\"}"
-</code></p>
+<pre><code>curl "https://echo-data.herokuapp.com/echo?hello=world" -v --header "Accept: application/json" --header "Content-Type: application/json" -d "{\"foo\":\"data\"}"
+</code></pre>
 
 <p>The <code>curl</code> output in that case is:</p>
 
