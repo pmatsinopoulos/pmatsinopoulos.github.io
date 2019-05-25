@@ -9,44 +9,8 @@
   <meta name="author" content="Panos Matsinopoulos">
 
   
-  <meta name="description" content="demo of Class vs Instance variables1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-# Here, I am &hellip;">
+  <meta name="description" content="This short post is going to demonstrate how we can sum an array of integers or an array of objects that have an
+integer attribute. Let&rsquo;s start: ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -169,6 +133,46 @@
   </article>
 
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/07/19/ruby-array-sum/">Ruby Array Sum</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-07-19T11:12:00+03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:12 am</span></time>
+        
+           | <a href="/blog/2015/07/19/ruby-array-sum/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2015/07/19/ruby-array-sum/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This short post is going to demonstrate how we can sum an array of integers or an array of objects that have an
+integer attribute.</p>
+
+<p>Let&rsquo;s start:</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/07/19/ruby-array-sum/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -731,158 +735,6 @@ piece of code.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/09/how-to-define-and-use-class-level-variables-while-mixing-modules/">How to Define and Use Class-level Variables While Mixing in Modules</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-10-09T19:47:00+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>7:47 pm</span></time>
-        
-           | <a href="/blog/2012/10/09/how-to-define-and-use-class-level-variables-while-mixing-modules/#disqus_thread"
-             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2012/10/09/how-to-define-and-use-class-level-variables-while-mixing-modules/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There are sometimes that you might want to use class-level variables in a reusable <code>module</code>. How will you do that? Here is a sample ruby program that does that:</p>
-
-<figure class='code'><figcaption><span>Example of Modules and class-level variables</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;set&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">module</span> <span class="nn">Cacheable</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">base</span><span class="o">.</span><span class="n">send</span> <span class="ss">:extend</span><span class="p">,</span> <span class="no">ClassMethods</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">module</span> <span class="nn">ClassMethods</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">cached_keys</span>
-</span><span class='line'>      <span class="vi">@cached_keys</span> <span class="o">||=</span> <span class="no">Set</span><span class="o">.</span><span class="n">new</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">add_cached_key</span><span class="p">(</span><span class="n">key_sym</span><span class="p">)</span>
-</span><span class='line'>      <span class="vi">@cached_keys</span> <span class="o">||=</span> <span class="no">Set</span><span class="o">.</span><span class="n">new</span>
-</span><span class='line'>      <span class="vi">@cached_keys</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">key_sym</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">A</span>
-</span><span class='line'>  <span class="kp">include</span> <span class="no">Cacheable</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">B</span>
-</span><span class='line'>  <span class="kp">include</span> <span class="no">Cacheable</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A cached keys: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B cached keys: </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">A</span><span class="o">.</span><span class="n">add_cached_key</span><span class="p">(</span><span class="ss">:a</span><span class="p">)</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A cached keys: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B cached keys: </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">B</span><span class="o">.</span><span class="n">add_cached_key</span><span class="p">(</span><span class="ss">:b</span><span class="p">)</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A cached keys: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B cached keys: </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">A</span><span class="o">.</span><span class="n">add_cached_key</span><span class="p">(</span><span class="ss">:aa</span><span class="p">)</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A cached keys: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B cached keys: </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">B</span><span class="o">.</span><span class="n">add_cached_key</span><span class="p">(</span><span class="ss">:bb</span><span class="p">)</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A cached keys: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B cached keys: </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">cached_keys</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If you run the above ruby script, you will get the following output:</p>
-
-<figure class='code'><figcaption><span>Output of running the above ruby script</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">A</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {}&gt;</span>
-</span><span class='line'><span class="n">B</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {}&gt;</span>
-</span><span class='line'><span class="n">A</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:a}&gt;</span>
-</span><span class='line'><span class="n">B</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {}&gt;</span>
-</span><span class='line'><span class="n">A</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:a}&gt;</span>
-</span><span class='line'><span class="n">B</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:b}&gt;</span>
-</span><span class='line'><span class="n">A</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:aa, :a}&gt;</span>
-</span><span class='line'><span class="n">B</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:b}&gt;</span>
-</span><span class='line'><span class="n">A</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:aa, :a}&gt;</span>
-</span><span class='line'><span class="n">B</span> <span class="n">cached</span> <span class="ss">keys</span><span class="p">:</span> <span class="c1">#&lt;Set: {:bb, :b}&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>In the above example, we keep a class level <code>Set</code> of symbols (<code>@cached_keys</code>). We want every <code>class</code> that mixes in <code>Cacheable</code> to have its own instance of that <code>Set</code>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -900,6 +752,10 @@ piece of code.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2019/05/25/deploying-a-zookeeper-ensemble-on-aws/">Deploying a Zookeeper Ensemble on AWS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2019/03/12/build-your-own-schema-registry-server-using-python-and-django/">Build Your Own Schema Registry Server Using Python and Django</a>
       </li>
     
@@ -913,10 +769,6 @@ piece of code.</p>
     
       <li class="post">
         <a href="/blog/2018/01/20/functions-as-arguments-and-return-values-javascript-vs-ruby/">Functions as Arguments and Return Values - JavaScript vs Ruby</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/12/09/use-activerecord-in-your-ruby-application/">Use ActiveRecord in Your Ruby Application</a>
       </li>
     
   </ul>
