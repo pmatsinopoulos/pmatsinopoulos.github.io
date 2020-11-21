@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2020/11/21/hanami-vs-ruby-on-rails/</loc>
+<lastmod>2020-11-21T10:21:08+02:00</lastmod>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/2020/11/21/my-first-objective-c-application/</loc>
+<lastmod>2020-11-21T10:19:22+02:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2020/07/05/use-embedded-ruby-as-a-template-language/</loc>
 <lastmod>2020-07-05T19:00:12+03:00</lastmod>
 </url>
@@ -253,13 +261,7 @@
 <loc>http://pmatsinopoulos.github.io/blog/categories/kafka/</loc>
 </url>
 <url>
-<loc>http://pmatsinopoulos.github.io/posts/2/</loc>
-</url>
-<url>
-<loc>http://pmatsinopoulos.github.io/posts/3/</loc>
-</url>
-<url>
-<loc>http://pmatsinopoulos.github.io/posts/4/</loc>
+<loc>http://pmatsinopoulos.github.io/blog/categories/hanami/</loc>
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/panayotis-m-newsletter/thank-you-for-confirming-subscription-to-our-newsletter/index.html</loc>
