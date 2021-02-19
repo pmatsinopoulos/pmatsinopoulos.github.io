@@ -4,7 +4,7 @@
   <title><![CDATA[Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2021-02-18T14:49:38+02:00</updated>
+  <updated>2021-02-19T08:28:03+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby and Trusting Young People]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2021/02/19/ruby-and-trusting-young-people/"/>
+    <updated>2021-02-19T08:25:32+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2021/02/19/ruby-and-trusting-young-people</id>
+    <content type="html"><![CDATA[<p>Read my new article on how to <a href="https://panosm.medium.com/ruby-and-trusting-young-people-a18b6394f808">Ruby and Trusting Young People</a> changed my life for better.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Custom Exception Hierarchy Best Practices]]></title>
@@ -2071,230 +2080,6 @@ You can also find here some Ruby on Rails sample code that loads these files. Pr
 
 <div style="width: 100%;text-align: right;font-size: 0.8em;">I am about to start a Seminar: Introduction to Programming. If you are interested in, <a href="http://pmatsinopoulos.github.io/introduction-to-programming-notify-when-public">register here</a>.</div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Using String Column Type for Migrations]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2014/06/11/using-string-column-type-for-migrations/"/>
-    <updated>2014-06-11T22:48:00+03:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2014/06/11/using-string-column-type-for-migrations</id>
-    <content type="html"><![CDATA[<p>Ruby on Rails migrations are used to create the necessary tables inside our database. One of the most frequently used column type is <code>string</code>.
-Here is an example of an <code>ActiveRecord::Migration</code> that uses this type:</p>
-
-<!-- more -->
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">CreateAuthors</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Migration</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">change</span>
-</span><span class='line'>    <span class="n">create_table</span> <span class="ss">:authors</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
-</span><span class='line'>      <span class="n">t</span><span class="o">.</span><span class="n">string</span> <span class="ss">:name</span><span class="p">,</span>      <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
-</span><span class='line'>      <span class="n">t</span><span class="o">.</span><span class="n">string</span> <span class="ss">:biography</span><span class="p">,</span> <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>But what actual sql type did that migration create for the <code>string</code> type?</p>
-
-<p>If we run this migration against a <strong>MySQL</strong> database, we can see the
-actual table that creates using the <code>mysql</code> command <code>show create table authors</code>. The output will be the following:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="o">+</span><span class="c1">---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span><span class='line'><span class="o">|</span> <span class="k">Table</span>   <span class="o">|</span> <span class="k">Create</span> <span class="k">Table</span>                                                                                                                                                                                                                                                            <span class="o">|</span>
-</span><span class='line'><span class="o">+</span><span class="c1">---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span><span class='line'><span class="o">|</span> <span class="n">authors</span> <span class="o">|</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">authors</span><span class="o">`</span> <span class="p">(</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">name</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">biography</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-</span><span class='line'>  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
-</span><span class='line'><span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span> <span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8_unicode_ci</span> <span class="o">|</span>
-</span><span class='line'><span class="o">+</span><span class="c1">---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As you can see, the <code>string</code> is translated to <code>varchar(255)</code>. This is the type that allows to store strings with maximum length 255. What if we want to increase the maximum length?
-How can we do that? In that case, you need to use the <code>limit:</code> option. Let&rsquo;s say that we want the <code>biography</code> column to have maximum length 1024. We have to change the corresponding
-line in the above migration as follows:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">t</span><span class="o">.</span><span class="n">string</span> <span class="ss">:biography</span><span class="p">,</span> <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span><span class="p">,</span> <span class="ss">limit</span><span class="p">:</span> <span class="mi">1024</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If you do this change and run your migration, the table that is created is the following:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="o">+</span><span class="c1">---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span><span class='line'><span class="o">|</span> <span class="k">Table</span>   <span class="o">|</span> <span class="k">Create</span> <span class="k">Table</span>                                                                                                                                                                                                                                                             <span class="o">|</span>
-</span><span class='line'><span class="o">+</span><span class="c1">---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span><span class='line'><span class="o">|</span> <span class="n">authors</span> <span class="o">|</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">authors</span><span class="o">`</span> <span class="p">(</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">name</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">biography</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-</span><span class='line'>  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
-</span><span class='line'><span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span> <span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8_unicode_ci</span> <span class="o">|</span>
-</span><span class='line'><span class="o">+</span><span class="c1">---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As you can see, we have managed to change the maximum number of characters that <code>biography</code> column can hold. Please, note that the maximum length for a <code>varchar</code> column in
-MySQL is <code>65535</code> <strong>theoretically</strong>. In practice, this is limited by the maximum row size (<code>65535 bytes</code> which is shared among all columns of the table) and the character set
-used. So, for utf-8 database collation, this might be quite smaller.</p>
-
-<p>Perfect. And what if we want to store a text that is longer than <code>65535</code> characters long? What is the option that we have?</p>
-
-<p>If you try to set a bigger limit, you will probably get an error. The next option is to use the migration type <code>text</code>.</p>
-
-<p>If you change your migration for <code>biography</code> as follows:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">t</span><span class="o">.</span><span class="n">text</span> <span class="ss">:biography</span><span class="p">,</span> <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>then the table that is created:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="o">+</span><span class="c1">---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span><span class='line'><span class="o">|</span> <span class="k">Table</span>   <span class="o">|</span> <span class="k">Create</span> <span class="k">Table</span>                                                                                                                                                                                                                                                    <span class="o">|</span>
-</span><span class='line'><span class="o">+</span><span class="c1">---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span><span class='line'><span class="o">|</span> <span class="n">authors</span> <span class="o">|</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">authors</span><span class="o">`</span> <span class="p">(</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">name</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">biography</span><span class="o">`</span> <span class="nb">text</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-</span><span class='line'>  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
-</span><span class='line'><span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span> <span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8_unicode_ci</span> <span class="o">|</span>
-</span><span class='line'><span class="o">+</span><span class="c1">---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As you can see, the <code>text</code> migration type has been translated to <code>text</code> MySQL type. And the question now is: Is that bigger than <code>varchar(65535)</code>? The answer is no. <a href="http://dev.mysql.com/doc/refman/5.5/en/storage-requirements.html">MySQL
-documentation</a> mentions that <code>text</code> maximum length is 2<sup>16</sup>.</p>
-
-<p>So, if you really want to store larger texts than that, you need to consider the two MySQL types: <code>mediumtext</code> and <code>longtext</code>. These can store really huge amounts of text.
-<code>mediumtext</code> can store up to 2<sup>24</sup> and <code>longtext</code> up to 2<sup>32</sup>.</p>
-
-<p>The problem here is that if, for example, you want the <code>biography</code> to be a <code>longtext</code>, this:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">t</span><span class="o">.</span><span class="n">longtext</span> <span class="ss">:biography</span><span class="p">,</span> <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>will not work. Trying to run this migration will give you the following error:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>undefined method <span class="sb">`</span>longtext<span class="s1">&#39; for #&lt;ActiveRecord::ConnectionAdapters::TableDefinition:0x...db/migrate/..._create_authors.rb:5:in `block in change&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This is because <code>longtext</code> is not considered a standard migration column type. Neither <code>mediumtext</code> does.</p>
-
-<p>The alternative here is to use the <code>column</code> method instead, and pass the column type as 2nd argument:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">t</span><span class="o">.</span><span class="n">column</span> <span class="ss">:biography</span><span class="p">,</span> <span class="ss">:longtext</span><span class="p">,</span> <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This will run successfully and will generate the table:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="o">+</span><span class="c1">---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span><span class='line'><span class="o">|</span> <span class="k">Table</span>   <span class="o">|</span> <span class="k">Create</span> <span class="k">Table</span>                                                                                                                                                                                                                                                        <span class="o">|</span>
-</span><span class='line'><span class="o">+</span><span class="c1">---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span><span class='line'><span class="o">|</span> <span class="n">authors</span> <span class="o">|</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">authors</span><span class="o">`</span> <span class="p">(</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">name</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-</span><span class='line'>  <span class="o">`</span><span class="n">biography</span><span class="o">`</span> <span class="n">longtext</span> <span class="k">COLLATE</span> <span class="n">utf8_unicode_ci</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-</span><span class='line'>  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
-</span><span class='line'><span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span> <span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8_unicode_ci</span> <span class="o">|</span>
-</span><span class='line'><span class="o">+</span><span class="c1">---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>You are done!</p>
-
-<p><strong>Note</strong>: For those that are using PostgreSQL:</p>
-
-<p>1) The default <code>string</code> migration type is translated to <code>character varying(255)</code>. See how the table is created with defaults:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'>                               <span class="k">Table</span> <span class="ss">&quot;public.authors&quot;</span>
-</span><span class='line'>  <span class="k">Column</span>   <span class="o">|</span>          <span class="k">Type</span>           <span class="o">|</span>                      <span class="n">Modifiers</span>
-</span><span class='line'><span class="c1">-----------+-------------------------+------------------------------------------------------</span>
-</span><span class='line'> <span class="n">id</span>        <span class="o">|</span> <span class="nb">integer</span>                 <span class="o">|</span> <span class="k">not</span> <span class="k">null</span> <span class="k">default</span> <span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;authors_id_seq&#39;</span><span class="p">::</span><span class="n">regclass</span><span class="p">)</span>
-</span><span class='line'> <span class="n">name</span>      <span class="o">|</span> <span class="nb">character</span> <span class="nb">varying</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="o">|</span> <span class="k">not</span> <span class="k">null</span>
-</span><span class='line'> <span class="n">biography</span> <span class="o">|</span> <span class="nb">character</span> <span class="nb">varying</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="o">|</span> <span class="k">not</span> <span class="k">null</span>
-</span><span class='line'><span class="n">Indexes</span><span class="p">:</span>
-</span><span class='line'><span class="ss">&quot;authors_pkey&quot;</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span> <span class="n">btree</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>2) If you use the <code>limit:</code> option you can change the default <code>255</code> to whatever.</p>
-
-<p>3) Note that <code>text</code> and <code>character varying(n)</code> in PostgreSQL are the same except from the fact that <code>character varying(n)</code> puts a limit. <code>text</code> does not have one.</p>
-
-<p>4) You cannot use <code>mediumtext</code> or <code>longtext</code> with PostgreSQL. <code>text</code> does the job for you.</p>
-
-<p>BTW: I am preparing a course <code>Introduction to Programming</code>. I know that most of you do not need such course but you may know somebody that might be. You can send them
-the link to pre-register for a discount when this comes public. Here it is <a href="http://pmatsinopoulos.github.io/introduction-to-programming-notify-when-public">Introduction to Programming</a>.</p>
 ]]></content>
   </entry>
   

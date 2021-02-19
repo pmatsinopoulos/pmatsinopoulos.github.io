@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Trust | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/trust/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2021-02-19T08:28:03+02:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby and Trusting Young People]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2021/02/19/ruby-and-trusting-young-people/"/>
+    <updated>2021-02-19T08:25:32+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2021/02/19/ruby-and-trusting-young-people</id>
+    <content type="html"><![CDATA[<p>Read my new article on how to <a href="https://panosm.medium.com/ruby-and-trusting-young-people-a18b6394f808">Ruby and Trusting Young People</a> changed my life for better.</p>
+]]></content>
+  </entry>
+  
+</feed>
