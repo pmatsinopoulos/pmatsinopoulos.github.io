@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: React | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/react/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2021-03-07T13:03:55+02:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Event-Driven Architecture Demo]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2021/03/07/event-driven-architecture-demo/"/>
+    <updated>2021-03-07T13:00:23+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2021/03/07/event-driven-architecture-demo</id>
+    <content type="html"><![CDATA[<p>Read my new article about an <a href="https://panosm.medium.com/event-driven-architecture-demo-29f5649144b7">event-driven architecture demo</a> that I have built.</p>
+]]></content>
+  </entry>
+  
+</feed>
