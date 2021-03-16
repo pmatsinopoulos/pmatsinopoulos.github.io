@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Programming for Music | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/programming-for-music/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2021-03-16T10:14:30+02:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Input Notes to MuseScore With VMPK]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2021/03/16/input-notes-to-musescore-with-vmpk/"/>
+    <updated>2021-03-16T10:12:26+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2021/03/16/input-notes-to-musescore-with-vmpk</id>
+    <content type="html"><![CDATA[<p>My new blog post in &ldquo;Programming for Music&rdquo; publication: <a href="https://medium.com/programming-for-music/input-notes-to-musescore-with-vmpk-aa04e8774b0f">Input Notes to MuseScore with VMPK</a></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2021/03/16/input-notes-to-musescore-with-vmpk/</loc>
+<lastmod>2021-03-16T10:12:26+02:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2021/03/07/event-driven-architecture-demo/</loc>
 <lastmod>2021-03-07T13:00:23+02:00</lastmod>
 </url>
@@ -307,6 +311,15 @@
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/blog/categories/event-sourcing/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/musescore/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/vmpk/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/programming-for-music/</loc>
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/panayotis-m-newsletter/thank-you-for-confirming-subscription-to-our-newsletter/index.html</loc>

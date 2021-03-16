@@ -9,7 +9,7 @@
   <meta name="author" content="Panos Matsinopoulos">
 
   
-  <meta name="description" content="I just wanted to have the United States, their Counties, the Cities in the Counties and the Zip codes in each City in CSV format. But I wanted that &hellip;">
+  <meta name="description" content="Introduction Many software engineers do not write tests for their UI because they have a good reason not to. Firstly, they believe that UI changes &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -155,6 +155,45 @@
   </article>
 
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue/">You Don't Have to Be Afraid to Test Your UI - Page Object Pattern to the Rescue</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-09-21T18:22:00+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>6:22 pm</span></time>
+        
+           | <a href="/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Introduction</h2>
+
+<p>Many software engineers do not write tests for their UI because they have a good reason not to. Firstly, they believe that UI changes frequently, so any test would have been vulnerable to frequent changes. Secondly, they do not know about the <a href="http://martinfowler.com/bliki/PageObject.html">Page Object Pattern</a>.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/09/21/you-dont-have-to-be-afraid-to-test-your-ui-page-object-pattern-to-the-rescue/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -802,54 +841,6 @@ used for querying.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/02/capistrano-shared-directories-among-releases/">Capistrano - Shared Directories Among Releases</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-09-02T20:47:00+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2012</span></span> <span class='time'>8:47 pm</span></time>
-        
-           | <a href="/blog/2012/09/02/capistrano-shared-directories-among-releases/#disqus_thread"
-             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2012/09/02/capistrano-shared-directories-among-releases/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://github.com/capistrano/capistrano">Capistrano</a> is a great tool for deploying Ruby on Rails applications on remote server machines. If you have ever used it, you may already know that it creates new directory structures for each new release that it realizes and sets &ldquo;current&rdquo; to point to the latest one.</p>
-
-<p>This is very fine, but there are cases in your application that you might want to share the same directory data among releases. You can declare in your &ldquo;deploy.rb&rdquo; file the directories that will be shared among your releases. By default, the directories &ldquo;log&rdquo;, &ldquo;public/system&rdquo; and &ldquo;tmp/pids&rdquo; are already shared. Hence, you do not have to do anything for them. But, if, for example, you want to share the &ldquo;my_custom_data&rdquo; directory that you have inside your application structure, you need to add the following line inside your &ldquo;deploy.rb&rdquo; file:</p>
-
-<figure class='code'><figcaption><span>Add this line to your deploy file</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">set</span> <span class="ss">:shared_children</span><span class="p">,</span> <span class="n">fetch</span><span class="p">(</span><span class="ss">:shared_children</span><span class="p">)</span> <span class="o">+</span> <span class="o">[</span><span class="s2">&quot;my_custom_data&quot;</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This will create a link to &ldquo;shared/my_custom_data&rdquo; folder by executing the following command automatically:</p>
-
-<figure class='code'><figcaption><span>Create a link to your custom shared folder</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>ln   -s  /home/&lt;my_app&gt;/&lt;deployment_dir&gt;/shared/my_custom_data   /home/&lt;my_app&gt;/&lt;deployment_dir&gt;/current/my_custom_data
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Please, note that <code>my_custom_data</code> should pre-exist while you are doing the deployment. <strong>But</strong>, <code>bundle exec cap setup</code> will create shared folders anyway for you the first time you setup your servers.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/4">&larr; Older</a>
@@ -867,6 +858,10 @@ used for querying.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2021/03/16/input-notes-to-musescore-with-vmpk/">Input Notes to MuseScore With VMPK</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2021/03/07/event-driven-architecture-demo/">Event-Driven Architecture Demo</a>
       </li>
     
@@ -880,10 +875,6 @@ used for querying.</p>
     
       <li class="post">
         <a href="/blog/2020/11/21/hanami-vs-ruby-on-rails/">Hanami vs Ruby on Rails</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2020/11/21/my-first-objective-c-application/">My First Objective-C Application</a>
       </li>
     
   </ul>
