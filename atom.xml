@@ -4,7 +4,7 @@
   <title><![CDATA[Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2021-03-28T09:56:28+03:00</updated>
+  <updated>2021-03-28T09:57:42+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Generating Raw Audio Samples]]></title>
     <link href="http://pmatsinopoulos.github.io/blog/2021/03/28/generating-raw-audio-samples/"/>
-    <updated>2021-03-28T00:00:00+02:00</updated>
+    <updated>2021-03-28T09:54:59+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2021/03/28/generating-raw-audio-samples</id>
     <content type="html"><![CDATA[<p>Read my new article on how to <a href="https://medium.com/programming-for-music/generating-raw-audio-samples-f08f3adf73af">Generate Raw Audio Samples</a>.</p>
 ]]></content>
