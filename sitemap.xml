@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2021/04/06/audio-stream-basic-descriptions/</loc>
+<lastmod>2021-04-06T08:50:32+03:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2021/03/28/generating-raw-audio-samples/</loc>
 <lastmod>2021-03-28T09:54:59+03:00</lastmod>
 </url>
@@ -334,6 +338,18 @@
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/blog/categories/macos/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/posts/2/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/posts/3/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/posts/4/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/posts/5/</loc>
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/panayotis-m-newsletter/thank-you-for-confirming-subscription-to-our-newsletter/index.html</loc>
