@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2021/07/12/core-foundation-working-with-cfdata-objects/</loc>
+<lastmod>2021-07-12T08:21:04+03:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2021/07/10/core-foundation-convert-a-string-to-an-array-of-values/</loc>
 <lastmod>2021-07-10T13:36:12+03:00</lastmod>
 </url>
