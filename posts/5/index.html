@@ -9,7 +9,7 @@
   <meta name="author" content="Panos Matsinopoulos">
 
   
-  <meta name="description" content="Capistrano is a great tool for deploying Ruby on Rails applications on remote server machines. If you have ever used it, you may already know that it &hellip;">
+  <meta name="description" content="Did you know that you can execute migration commands from rails console? Assume that you want to change the column &lsquo;name&rsquo; of the &lsquo; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -155,6 +155,53 @@
   </article>
 
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/25/executing-migration-commands-from-rails-console/">Executing Migration Commands From Rails Console</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-09-25T20:19:00+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>8:19 pm</span></time>
+        
+           | <a href="/blog/2012/09/25/executing-migration-commands-from-rails-console/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2012/09/25/executing-migration-commands-from-rails-console/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Did you know that you can execute migration commands from rails console? Assume that you want to change the column &lsquo;name&rsquo; of the &lsquo;Product&rsquo; model, to have a limit of 32 characters and set it to not null. Here is what you can do:</p>
+
+<figure class='code'><figcaption><span>Example of ActiveRecord Migration run from Rails Console</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">rails</span> <span class="n">c</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Migration</span><span class="o">.</span><span class="n">change_column</span> <span class="ss">:products</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:string</span><span class="p">,</span> <span class="ss">:limit</span> <span class="o">=&gt;</span> <span class="mi">32</span><span class="p">,</span> <span class="ss">:null</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+</span><span class='line'><span class="o">--</span> <span class="n">change_column</span><span class="p">(</span><span class="ss">:products</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:string</span><span class="p">,</span> <span class="p">{</span><span class="ss">:limit</span><span class="o">=&gt;</span><span class="mi">32</span><span class="p">})</span>
+</span><span class='line'><span class="p">(</span><span class="mi">38</span><span class="o">.</span><span class="mi">1</span><span class="n">ms</span><span class="p">)</span>  <span class="no">ALTER</span> <span class="no">TABLE</span> <span class="sb">`products`</span> <span class="no">CHANGE</span> <span class="sb">`name`</span> <span class="sb">`name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="no">NOT</span> <span class="no">NULL</span>
+</span><span class='line'><span class="o">-&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mo">03</span><span class="mi">96</span><span class="n">s</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="kp">nil</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -572,6 +619,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2021/07/16/core-foundation-working-with-arrays/">Core Foundation — Working With Arrays</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2021/07/12/core-foundation-working-with-cfdata-objects/">Core Foundation — Working With CFData Objects</a>
       </li>
     
@@ -585,10 +636,6 @@
     
       <li class="post">
         <a href="/blog/2021/06/20/converting-an-audio-file-to-lpcm/">Converting an Audio File to LPCM</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2021/06/12/converting-any-audio-format-to-lpcm/">Converting Any Audio Format to LPCM</a>
       </li>
     
   </ul>
