@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Macos | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/macos/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2021-07-18T09:59:23+03:00</updated>
+  <updated>2021-07-19T20:18:07+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Core Foundation - Working With Numbers]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2021/07/19/core-foundation-working-with-numbers/"/>
+    <updated>2021-07-19T20:16:53+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2021/07/19/core-foundation-working-with-numbers</id>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.matsinopoulos.gr/core-foundation-working-with-numbers-1ef9f259f4d3">Core Foundation - Working With Numbers</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Core Foundation - Array With non-CF Objects]]></title>
@@ -46,15 +55,6 @@
     <updated>2021-07-10T13:36:12+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2021/07/10/core-foundation-convert-a-string-to-an-array-of-values</id>
     <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.matsinopoulos.gr/core-foundation-convert-a-string-to-an-array-of-values-bf10a63fd83a">Core Foundation — Convert a String to an Array of Values</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Playing Back With Audio Units]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2021/07/08/playing-back-with-audio-units/"/>
-    <updated>2021-07-08T11:52:57+03:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2021/07/08/playing-back-with-audio-units</id>
-    <content type="html"><![CDATA[<p>Read my new article on how to <a href="https://medium.com/programming-for-music/playing-back-with-audio-units-11c4552aa65e">Playback With Audio Units</a></p>
 ]]></content>
   </entry>
   
