@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Audiotoolbox | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/audiotoolbox/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2021-08-01T13:43:18+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Connecting Audio Units Together]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2021/08/01/connecting-audio-units-together/"/>
+    <updated>2021-08-01T13:41:48+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2021/08/01/connecting-audio-units-together</id>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.com/programming-for-music/connecting-audio-units-together-51ee30279434">Connecting Audio Units Together</a></p>
+]]></content>
+  </entry>
+  
+</feed>
