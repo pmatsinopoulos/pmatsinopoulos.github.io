@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Openal | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/openal/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2021-08-09T10:10:44+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Positional Sound With OpenAL]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2021/08/09/positional-sound-with-openal/"/>
+    <updated>2021-08-09T10:08:31+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2021/08/09/positional-sound-with-openal</id>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.com/programming-for-music/positional-sound-with-openal-d3d951204b30">Positional Sound with OpenAL</a></p>
+]]></content>
+  </entry>
+  
+</feed>
