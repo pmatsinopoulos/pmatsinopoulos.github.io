@@ -9,8 +9,8 @@
   <meta name="author" content="Panos Matsinopoulos">
 
   
-  <meta name="description" content="This short post is going to demonstrate how we can sum an array of integers or an array of objects that have an
-integer attribute. Let&rsquo;s start: ">
+  <meta name="description" content="When you have a Ruby on Rails end point, the client usually sends data in one of the following: For GET requests, URL encoded in the URI
+For POST &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -195,6 +195,52 @@ integer attribute. Let&rsquo;s start: ">
   </article>
 
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/08/08/rails-params-does-the-job/">Rails Params Does the Job</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-08-08T10:07:00+03:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:07 am</span></time>
+        
+           | <a href="/blog/2015/08/08/rails-params-does-the-job/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2015/08/08/rails-params-does-the-job/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When you have a Ruby on Rails end point, the client usually sends data in one of the following:</p>
+
+<ol>
+<li>For <code>GET</code> requests, URL encoded in the URI</li>
+<li>For <code>POST</code> requests, in the body of the request encoded with <code>application/x-www-form-urlencoded</code> or <code>application/json</code> or other popular format.</li>
+</ol>
+
+
+<p>Sometimes, there is a combination of the above methods. In other words, in a <code>POST</code> request, some of the data may come both URL encoded in the URI and other data may come encoded with
+another method in the body of the request.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/08/08/rails-params-does-the-job/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -662,141 +708,6 @@ callbacks?</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/12/including-vs-extending-a-module/">Including vs Extending a Module</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-10-12T21:44:00+03:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>9:44 pm</span></time>
-        
-           | <a href="/blog/2012/10/12/including-vs-extending-a-module/#disqus_thread"
-             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2012/10/12/including-vs-extending-a-module/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><figcaption><span>Demonstration of `include` vs `extend`</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># Here, I am defining a &quot;module&quot; with name Ma. I also define two methods. One without &quot;self.&quot;</span>
-</span><span class='line'><span class="c1"># and one with. See, later on, what happens when I &quot;include&quot; and what happens when I &quot;extend&quot;</span>
-</span><span class='line'><span class="c1"># the &quot;module&quot; within a &quot;class&quot;.</span>
-</span><span class='line'><span class="c1">#</span>
-</span><span class='line'><span class="k">module</span> <span class="nn">Ma</span>
-</span><span class='line'>  <span class="c1"># I will be able to make this method an instance or a class method of a class.</span>
-</span><span class='line'>  <span class="c1"># It depends whether I will &quot;include&quot; or &quot;extend&quot; the module in the class.</span>
-</span><span class='line'>  <span class="c1"># Note that this method, I cannot call it directly on Ma. In order for this method</span>
-</span><span class='line'>  <span class="c1"># to be useful, I have to include or extend this module within a class.</span>
-</span><span class='line'>  <span class="c1">#</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">ma_method1</span>
-</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;ma_method1&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1"># This method, is not reusable, in the sense that I cannot make it be an instance or class</span>
-</span><span class='line'>  <span class="c1"># method of a class. But still, it is a method of module Ma and I can call it directly.</span>
-</span><span class='line'>  <span class="c1">#</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">ma_method2</span>
-</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;ma_method2&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Ma responds to ma_method1? : </span><span class="si">#{</span><span class="no">Ma</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Ma responds to ma_method2? : </span><span class="si">#{</span><span class="no">Ma</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">A</span>
-</span><span class='line'>  <span class="c1"># &quot;include&quot; sets the module methods as instance methods of the class</span>
-</span><span class='line'>  <span class="kp">include</span> <span class="no">Ma</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">new</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;a Responds to ma_method1?: </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A Responds to ma_method1?: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;a Responds to ma_method2?: </span><span class="si">#{</span><span class="n">a</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;A Responds to ma_method2?: </span><span class="si">#{</span><span class="n">A</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">B</span>
-</span><span class='line'>  <span class="c1"># &quot;extend&quot; sets the module methods as class methods of the class</span>
-</span><span class='line'>  <span class="kp">extend</span> <span class="no">Ma</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">new</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;b Responds to ma_method1? : </span><span class="si">#{</span><span class="n">b</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B Responds to ma_method1? : </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;true&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;b responds to ma_method2? : </span><span class="si">#{</span><span class="n">b</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;B responds to ma_method2? : </span><span class="si">#{</span><span class="n">B</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:ma_method2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># it will print &quot;false&quot;</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;-------------------&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>But you can also <code>include</code> or <code>extend</code> a <code>module</code> in another <code>module</code> too. Read this gist by
-<a href="https://gist.github.com/pglombardo">pglombardo</a> who has kindly appended to the above
-piece of code.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -814,6 +725,10 @@ piece of code.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2022/02/02/execute-long-running-jobs-in-the-background-node-dot-js/">Execute Long Running Jobs in the Background [Node.js]</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2022/01/17/developing-a-website-scraper/">Developing a Website Scraper</a>
       </li>
     
@@ -827,10 +742,6 @@ piece of code.</p>
     
       <li class="post">
         <a href="/blog/2021/08/15/connecting-to-a-midi-controller/">Connecting to a MIDI Controller</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2021/08/11/openal-streaming-example/">OpenAL Streaming Example</a>
       </li>
     
   </ul>
