@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Leadership | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/leadership/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2022-02-25T07:56:50+02:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Easing Decision Making as a Team Leader of a Fully Remote Team]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2022/02/25/easing-decision-making-as-a-team-leader-of-a-fully-remote-team/"/>
+    <updated>2022-02-25T07:55:41+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2022/02/25/easing-decision-making-as-a-team-leader-of-a-fully-remote-team</id>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://levelup.gitconnected.com/easing-decision-making-as-a-team-leader-of-a-fully-remote-team-67cd92301cba">Easing Decision Making as a Team Leader of a Fully Remote Team</a></p>
+]]></content>
+  </entry>
+  
+</feed>

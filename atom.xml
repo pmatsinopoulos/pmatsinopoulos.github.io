@@ -4,7 +4,7 @@
   <title><![CDATA[Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2022-02-02T17:49:11+02:00</updated>
+  <updated>2022-02-25T07:56:50+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Easing Decision Making as a Team Leader of a Fully Remote Team]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2022/02/25/easing-decision-making-as-a-team-leader-of-a-fully-remote-team/"/>
+    <updated>2022-02-25T07:55:41+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2022/02/25/easing-decision-making-as-a-team-leader-of-a-fully-remote-team</id>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://levelup.gitconnected.com/easing-decision-making-as-a-team-leader-of-a-fully-remote-team-67cd92301cba">Easing Decision Making as a Team Leader of a Fully Remote Team</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Execute Long Running Jobs in the Background [Node.js]]]></title>
@@ -181,15 +190,6 @@
     <updated>2021-06-12T18:38:14+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2021/06/12/converting-any-audio-format-to-lpcm</id>
     <content type="html"><![CDATA[<p>Read my new article on how to <a href="https://medium.com/programming-for-music/converting-any-audio-format-to-lpcm-5077dc533126">Convert Any Audio Format to LPCM</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Playing Back With Audio Queues]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2021/05/02/playing-back-with-audio-queues/"/>
-    <updated>2021-05-02T08:58:08+03:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2021/05/02/playing-back-with-audio-queues</id>
-    <content type="html"><![CDATA[<p>Read my new article on how to <a href="https://medium.com/programming-for-music/playing-back-with-audio-queues-c8e9137bc850">Play Back With Audio Queues</a>.</p>
 ]]></content>
   </entry>
   
