@@ -9,8 +9,8 @@
   <meta name="author" content="Panos Matsinopoulos">
 
   
-  <meta name="description" content="This is my first encounter with iOS apps and Objective C. I followed the whole tutorial which is given here.
-I am a Ruby developer and I decided to &hellip;">
+  <meta name="description" content="Having done the Apple developer tutorial Getting Started on iOS development, the next was to have a deeper dive in
+Objective-C. Looking around for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -195,6 +195,45 @@ I am a Ruby developer and I decided to &hellip;">
   </article>
 
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/08/17/try-objective-c-on-code-school/">Try Objective-C on Code School</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-08-17T23:31:00+03:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:31 pm</span></time>
+        
+           | <a href="/blog/2015/08/17/try-objective-c-on-code-school/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2015/08/17/try-objective-c-on-code-school/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Having done the Apple developer tutorial Getting Started on iOS development, the next was to have a deeper dive in
+Objective-C. Looking around for online Objective-C tutorials, I came across a very good one, on <a href="https://www.codeschool.com">Code School</a>.
+The tutorial is called <a href="http://tryobjectivec.codeschool.com/levels/1">Try Objective-C</a>.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/08/17/try-objective-c-on-code-school/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -635,67 +674,6 @@ Here is an example of an <code>ActiveRecord::Migration</code> that uses this typ
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/21/twitter-bootstrap-2-modal-scrolling-problem-%7C-why-capybara-slash-selenium-cannot-locate-your-visible-buttons/">Twitter Bootstrap 2 Modal Scrolling Problem | Why Capybara/selenium Cannot Locate Your Visible Buttons</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-12-21T09:19:00+02:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2013</span></span> <span class='time'>9:19 am</span></time>
-        
-           | <a href="/blog/2013/12/21/twitter-bootstrap-2-modal-scrolling-problem-%7C-why-capybara-slash-selenium-cannot-locate-your-visible-buttons/#disqus_thread"
-             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2013/12/21/twitter-bootstrap-2-modal-scrolling-problem-%7C-why-capybara-slash-selenium-cannot-locate-your-visible-buttons/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Twitter Bootstrap 2 has a bug while on modal dialogs. The page does not scroll as expected. So, if the browser window is not wide/tall enough to display the whole
-modal dialog content, the scroll bars do not make it appear.</p>
-
-<p>The bug is described here:</p>
-
-<ul>
-<li><a href="http://stackoverflow.com/q/7508576/658469">http://stackoverflow.com/q/7508576/658469</a></li>
-</ul>
-
-
-<p>And the answer is given a little bit below that:</p>
-
-<ul>
-<li><a href="http://stackoverflow.com/a/7787883/658469">http://stackoverflow.com/a/7787883/658469</a></li>
-</ul>
-
-
-<p>This problem does not occur with jQuery modals neither with Twitter Bootstrap 3.</p>
-
-<p>I am using Ruby on Rails and the <code>less-rails-bootstrap</code> gem.</p>
-
-<p>In order to fix the problem for my current application, and instead of moving to Twitter Bootstrap 3 or to jQuery, I have decided to fix the problem in the gem</p>
-
-<p>Here is the fix:</p>
-
-<pre><code>gem 'less-rails-bootstrap', :git =&gt; 'https://github.com/pmatsinopoulos/less-rails-bootstrap.git', :branch =&gt; 'bug-fix-modal-scrolling'
-</code></pre>
-
-<p><strong>Important Note</strong> This bug influences your capybara/selenium tests, because elements that are normally visible, while the browser is maximized, they cannot be located by
-selenium and they are reported as non-visible and cannot be interacted with, if the window browser is not open enough to display the whole modal dialog.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -713,6 +691,10 @@ selenium and they are reported as non-visible and cannot be interacted with, if 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2022/03/08/ensure-file-integrity-when-uploading-a-file-to-a-remote-server/">Ensure File Integrity When Uploading a File to a Remote Server</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2022/02/25/easing-decision-making-as-a-team-leader-of-a-fully-remote-team/">Easing Decision Making as a Team Leader of a Fully Remote Team</a>
       </li>
     
@@ -726,10 +708,6 @@ selenium and they are reported as non-visible and cannot be interacted with, if 
     
       <li class="post">
         <a href="/blog/2021/10/26/tech-characteristics-of-a-react-native-app/">Tech Characteristics of a React Native App</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2021/08/16/primitive-midi-controller/">Primitive MIDI Controller</a>
       </li>
     
   </ul>

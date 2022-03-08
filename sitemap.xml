@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2022/03/08/ensure-file-integrity-when-uploading-a-file-to-a-remote-server/</loc>
+<lastmod>2022-03-08T12:02:46+02:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2022/02/25/easing-decision-making-as-a-team-leader-of-a-fully-remote-team/</loc>
 <lastmod>2022-02-25T07:55:41+02:00</lastmod>
 </url>
@@ -459,6 +463,15 @@
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/blog/categories/leadership/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/s3/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/go/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/md5/</loc>
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/panayotis-m-newsletter/thank-you-for-confirming-subscription-to-our-newsletter/index.html</loc>
