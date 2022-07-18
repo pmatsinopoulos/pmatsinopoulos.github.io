@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Vs Code | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/vs-code/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2022-07-18T08:43:10+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Switching to Visual Code for Ruby Development]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2022/07/18/switching-to-visual-code-for-ruby-development/"/>
+    <updated>2022-07-18T08:40:50+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2022/07/18/switching-to-visual-code-for-ruby-development</id>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://levelup.gitconnected.com/switching-to-visual-studio-code-for-ruby-development-6d42922aacc8">Switching To Visual Studio Code for Ruby Development</a></p>
+]]></content>
+  </entry>
+  
+</feed>

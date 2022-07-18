@@ -9,8 +9,7 @@
   <meta name="author" content="Panos Matsinopoulos">
 
   
-  <meta name="description" content="Ruby on Rails migrations are used to create the necessary tables inside our database. One of the most frequently used column type is string.
-Here is &hellip;">
+  <meta name="description" content="I just wanted to have the United States, their Counties, the Cities in the Counties and the Zip codes in each City in CSV format. But I wanted that &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -195,6 +194,52 @@ Here is &hellip;">
   </article>
 
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/29/united-states-counties-cities-csv-ruby-loading-code/">United States, Counties, Cities, Zips CSV & Ruby Loading Code</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-08-29T19:28:00+03:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:28 pm</span></time>
+        
+           | <a href="/blog/2014/08/29/united-states-counties-cities-csv-ruby-loading-code/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2014/08/29/united-states-counties-cities-csv-ruby-loading-code/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I just wanted to have the United States, their Counties, the Cities in the Counties and the Zip codes in each City in CSV format. But I wanted that normalized. In different CSVs. So, here it is.
+You can also find here some Ruby on Rails sample code that loads these files. Primitive stuff, but sometimes useful.</p>
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">My sponsor on that is <a href="https://www.bookandtable.com">Book&Table</a></div>
+
+
+<div style="width: 100%;text-align: right;font-size: 0.8em;">I am about to start a Seminar: Introduction to Programming. If you are interested in, <a href="/introduction-to-programming-notify-when-public">register here</a>.</div>
+
+
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/08/29/united-states-counties-cities-csv-ruby-loading-code/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -844,83 +889,6 @@ used for querying.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/25/testing-asserting-template-and-layout/">Testing - Asserting Template and Layout</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-03-25T20:16:00+03:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>8:16 pm</span></time>
-        
-           | <a href="/blog/2012/03/25/testing-asserting-template-and-layout/#disqus_thread"
-             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2012/03/25/testing-asserting-template-and-layout/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I consider testing one of the most important phase in application development and Rails does a very good job on that. However, testing documentation on Rails Guides is still work under development.</p>
-
-<p>Here is a short tutorial on how you can test that a reponse has rendered the correct template and the correct layout.</p>
-
-<p>If you want to make sure that the response rendered the correct template and layout, you can use the assert_template method:</p>
-
-<figure class='code'><figcaption><span>assert_template usage</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="s2">&quot;index should render correct template and layout&quot;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">get</span> <span class="ss">:index</span>
-</span><span class='line'>  <span class="n">assert_template</span> <span class="ss">:index</span>
-</span><span class='line'>  <span class="n">assert_template</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="s2">&quot;layouts/application&quot;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Note that you cannot test for template and layout at the same time, with one call to assert_template method. Also, for the layout test, you can give a regular expression instead of a string, but using the string, makes things clearer. On the other hand, you have to include the &ldquo;layouts&rdquo; directory name even if you save your layout file in this standard layout directory. Hence,</p>
-
-<figure class='code'><figcaption><span>This will not work</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">assert_template</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="s2">&quot;application&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>will not work.</p>
-
-<p><strong>Gotcha: Watch out if your view renders any partial</strong></p>
-
-<p>If your view renders any partial, when asserting for the layout, you have to assert for the partial at the same time. Otherwise, assertion will fail.</p>
-
-<p>Hence:</p>
-
-<figure class='code'><figcaption><span>Correct way to assert for the layout</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="s2">&quot;new should render correct layout&quot;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">get</span> <span class="ss">:new</span>
-</span><span class='line'>  <span class="n">assert_template</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="s2">&quot;layouts/application&quot;</span><span class="p">,</span> <span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="s2">&quot;_form&quot;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>is the correct way to assert for the layout when the view renders a partial with <code>name_form</code>. Omitting the <code>:partial</code> key in your <code>assert_template</code> call will complain.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/7">&larr; Older</a>
@@ -938,6 +906,10 @@ used for querying.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2022/07/18/switching-to-visual-code-for-ruby-development/">Switching to Visual Code for Ruby Development</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2022/06/25/lessons-learnt-reading-a-36-years-old-management-book/">Lessons Learnt Reading a 36 Years Old Management Book</a>
       </li>
     
@@ -951,10 +923,6 @@ used for querying.</p>
     
       <li class="post">
         <a href="/blog/2022/02/25/easing-decision-making-as-a-team-leader-of-a-fully-remote-team/">Easing Decision Making as a Team Leader of a Fully Remote Team</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2022/02/02/execute-long-running-jobs-in-the-background-node-dot-js/">Execute Long Running Jobs in the Background [Node.js]</a>
       </li>
     
   </ul>
