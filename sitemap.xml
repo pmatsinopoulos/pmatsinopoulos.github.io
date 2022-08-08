@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2022/08/08/moving-from-webflow-to-tina/</loc>
+<lastmod>2022-08-08T07:48:44+03:00</lastmod>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/2022/08/04/https-slash-slash-www-dot-wheelrun-dot-biz-slash-post-slash-replacing-redis-to-go-heroku-add-on/</loc>
+<lastmod>2022-08-04T07:32:06+03:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2022/07/18/switching-to-visual-code-for-ruby-development/</loc>
 <lastmod>2022-07-18T08:40:50+03:00</lastmod>
 </url>
@@ -502,6 +510,24 @@
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/blog/categories/visual-studio-code/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/redis/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/heroku/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/next-dot-js/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/cms/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/tina/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/webflow/</loc>
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/panayotis-m-newsletter/thank-you-for-confirming-subscription-to-our-newsletter/index.html</loc>
