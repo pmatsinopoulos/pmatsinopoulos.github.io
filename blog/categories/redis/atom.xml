@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Redis | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/redis/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2022-08-08T07:55:30+03:00</updated>
+  <updated>2022-08-23T21:29:15+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -18,7 +18,7 @@
     <link href="http://pmatsinopoulos.github.io/blog/2022/08/04/replacing-redis-to-go-heroku-add-on/"/>
     <updated>2022-08-04T07:32:06+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2022/08/04/replacing-redis-to-go-heroku-add-on</id>
-    <content type="html"><![CDATA[<p>Read my new article about <a href="https://www.wheelrun.biz/post/Replacing_Redis-To-Go_Heroku_Add-on">How I switched from Redi-to-go Heroku Add-on to another service</a>.</p>
+    <content type="html"><![CDATA[<p>Read my new article about <a href="https://www.wheelrun.biz/post/Replacing_Redis-To-Go_Heroku_Add-on">How I switched from Redis-to-go Heroku Add-on to another service</a>.</p>
 ]]></content>
   </entry>
   

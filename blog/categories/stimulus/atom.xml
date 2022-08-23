@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Stimulus | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/stimulus/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2022-08-23T21:29:15+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Moden Development With Rails]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2022/08/23/moden-development-with-rails/"/>
+    <updated>2022-08-23T21:26:03+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2022/08/23/moden-development-with-rails</id>
+    <content type="html"><![CDATA[<p>Read my new article about <a href="https://levelup.gitconnected.com/modern-development-with-rails-d9c6cf929ff6">Modern Development with Rails</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

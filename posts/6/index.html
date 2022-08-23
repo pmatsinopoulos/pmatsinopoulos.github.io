@@ -9,8 +9,44 @@
   <meta name="author" content="Panos Matsinopoulos">
 
   
-  <meta name="description" content="Read my new article on Site Point about Delayed Job Best Practices
-">
+  <meta name="description" content="demo of Class vs Instance variables1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+# Here, I am &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -195,6 +231,113 @@
   </article>
 
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/19/class-vs-instance-variables/">Class vs Instance Variables</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-19T08:54:00+03:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:54 am</span></time>
+        
+           | <a href="/blog/2015/06/19/class-vs-instance-variables/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2015/06/19/class-vs-instance-variables/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span>demo of Class vs Instance variables</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># Here, I am defining a class Dog with an class variable &quot;@@number_of_feet&quot;</span>
+</span><span class='line'><span class="c1"># and an instance variable &quot;@color&quot;, assuming that all dogs in the world</span>
+</span><span class='line'><span class="c1"># have the same number of feet but they might differ in color. Or, at least,</span>
+</span><span class='line'><span class="c1"># this is the general rule.</span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Dog</span>
+</span><span class='line'>  <span class="vc">@@number_of_feet</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@color</span> <span class="o">=</span> <span class="n">color</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">number_of_feet</span><span class="o">=</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span class='line'>    <span class="vc">@@number_of_feet</span> <span class="o">=</span> <span class="n">value</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">tell_me_about_you</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;My color is </span><span class="si">#{</span><span class="vi">@color</span><span class="si">}</span><span class="s2"> and I have </span><span class="si">#{</span><span class="vc">@@number_of_feet</span><span class="si">}</span><span class="s2"> feet&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># The next two statements will set the &quot;@color&quot; instance variable to different values</span>
+</span><span class='line'><span class="c1"># for max and rocky. But both dogs will have the same number of feet, which will be 4,</span>
+</span><span class='line'><span class="c1"># since when class is initialized the &quot;@@number_of_feet&quot; instance variable takes the value 4.</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">max</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">rocky</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;brown&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">max</span><span class="o">.</span><span class="n">tell_me_about_you</span>    <span class="c1"># will print black and 4</span>
+</span><span class='line'><span class="n">rocky</span><span class="o">.</span><span class="n">tell_me_about_you</span>  <span class="c1"># will print brown and 4</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Now, I am changing the value of the class variable &quot;@@number_of_feet&quot; and I am setting that</span>
+</span><span class='line'><span class="c1"># to &quot;3&quot;. You will see that now all dogs change to have 3 feet.</span>
+</span><span class='line'><span class="n">max</span><span class="o">.</span><span class="n">number_of_feet</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">max</span><span class="o">.</span><span class="n">tell_me_about_you</span>    <span class="c1"># will print black and 3</span>
+</span><span class='line'><span class="n">rocky</span><span class="o">.</span><span class="n">tell_me_about_you</span>  <span class="c1"># will print brown and 3</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -802,70 +945,6 @@ piece of code.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/30/my-solr-journey-session-001/">My Solr Journey - Session 001</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-09-30T14:27:00+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>2:27 pm</span></time>
-        
-           | <a href="/blog/2012/09/30/my-solr-journey-session-001/#disqus_thread"
-             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2012/09/30/my-solr-journey-session-001/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Why do I take this Journey?</h2>
-
-<p>I have been using Solr the last two years for quite some projects. My work was always done using <a href="http://sunspot.github.com/">sunspot</a>
-(via <code>sunspot_rails</code> when one has Rails application), a gem that is a client library for Solr.</p>
-
-<p>You need to know few things about Solr, when using <code>sunspot</code> to access it and do most of the things. <code>sunspot</code> is a fantastic gem and relieves you from
-huge amounts of work when storing data in a Solr database.</p>
-
-<p>However, there are times that I felt that I needed to know more. For example, when I was searching for <code>University of Athens</code> and I got no results, but I knew
-that my documents had all or any of the words &ldquo;University&rdquo;, &ldquo;of&rdquo;, &ldquo;Athens&rdquo; in their body, or, even worse, there were also documents that were having the whole
-phrase &ldquo;University of Athens&rdquo; in their body. Or I wanted to query with parts of words, or parts of e-mails, and still I was not getting any results. You can see how
-I ended up solving these problems reading these two: 1) <a href="http://stackoverflow.com/questions/12650859/why-sunspot-solr-does-not-bring-results-when-i-include-of-word-in-search-query/12653931">Why Sunspot Solr does not bring results when I include &ldquo;of&rdquo; word in search query?</a>
- 2) <a href="http://stackoverflow.com/questions/12131473/how-can-i-set-sunspot-to-search-for-sequences-of-characters-instead-of-words">How can I set Sunspot to search for sequences of characters instead of words?</a></p>
-
-<p>Hence, I decided to take a journey to Solr. And this will be a registration of my steps to this journey. Understanding how Solr works, will make me manage
-better what I can do and achieve with <code>sunspot</code> too.</p>
-
-<p>And here we go</p>
-
-<h2>First steps</h2>
-
-<ul>
-<li>I downloaded solr from <a href="http://lucene.apache.org/solr/">here</a></li>
-<li>Followed the <a href="http://lucene.apache.org/solr/api-3_6_1/doc-files/tutorial.html">tutorial</a></li>
-</ul>
-
-
-<h3>Summary</h3>
-
-<p>One cannot be but extremely impressed of the features and capabilities of Solr. I believe that I will use to replace many of my MySQL stores that are only
-used for querying.</p>
-
-<p>(Next steps will soon follow)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/7">&larr; Older</a>
@@ -883,6 +962,10 @@ used for querying.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2022/08/23/moden-development-with-rails/">Moden Development With Rails</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2022/08/08/moving-from-webflow-to-tina/">Moving From Webflow to Tina</a>
       </li>
     
@@ -896,10 +979,6 @@ used for querying.</p>
     
       <li class="post">
         <a href="/blog/2022/06/25/lessons-learnt-reading-a-36-years-old-management-book/">Lessons Learnt Reading a 36 Years Old Management Book</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2022/05/17/using-react-in-a-ruby-project-to-dynamically-generate-pdf-documents/">Using React in a Ruby Project to Dynamically Generate PDF Documents</a>
       </li>
     
   </ul>
