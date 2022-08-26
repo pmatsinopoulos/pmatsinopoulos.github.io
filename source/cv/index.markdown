@@ -7,9 +7,9 @@ sharing: true
 footer: true
 ---
 {% blockquote %}
-I love software engineering. I am passionate about my job. I find it the most creative job that one could have. 
+I love software engineering. I am passionate about my job. I find it the most creative job that one could have.
 
-After a long software engineering life that started with C/C++, then went to java and then to .NET Visual Basic/C#, the last 3 years, I have been developing web applications using Ruby on Rails.
+After a long software engineering life that started with C/C++, then went to Java and then to .NET Visual Basic/C#, the last 12 years, I have been developing web applications using Ruby on Rails.
 
 I believe that Ruby on Rails dramatically increased my web application development skills. REST, HTTP, testing and the whole family of tools around it tremendously improved the quality of code I deliver.
 
@@ -17,15 +17,23 @@ I am always willing to take new challenges on big projects. My biggest reward is
 
 "Test is my friend" and "Customer has always something useful to say when making a comment about my software." It is my task to turn it into something valuable that will render my final work even better. "The enemy of good is the better one."
 
-Nevertheless, I never go without planning and I like working on specific non-moving targets. Focus, Focus and Focus. Agile estimating and planning (by Mike Cohn) is one of my best book on that and I come back to read it again and again. And nothing is finished if not tested and if not customer says is done.
+Nevertheless, I never go without planning and I like working on specific non-moving targets. Focus, Focus and Focus.
+
+Currently, I am wired up with the [Shape Up Process](https://basecamp.com/shapeup), and I have recently become an
+[Educative.io Author too](https://www.educative.io/profile/view/5897863717453824)
 {% endblockquote %}
 
 ## Technologies ##
 
 - Ruby
 - Ruby on Rails
+- React
+- React Native
+- PostgreSQL
 - MySQL
-- Javascript
+- JavaScript
+- TypeScript
+- Bootstrap
 - jQuery
 - HTTP
 - DEBIAN
@@ -75,7 +83,7 @@ Read about my Ruby on Rails Projects here: [Projects](http://pmatsinopoulos.gith
 
 E-Travel S.A. & Fraudpointer S.A. as Senior Software Engineer
 
-[WWW.PAMEDIAKOPES.GR](http://www.pamediakopes.gr), 
+[WWW.PAMEDIAKOPES.GR](http://www.pamediakopes.gr),
 [WWW.FRAUDPOINTER.COM](http://www.fraudpointer.com)
 
 Ruby, Ruby on Rails, MySQL, Solr and various other tools for Web Application Development. Team Leader with many different approaches on project management to keep my team happy and productive.
@@ -261,5 +269,3 @@ August 8, 2005 - January 31st 2009 - Project Management Professional
 
 English - Both Oral and Written Very Well
 Spanish - Basic
-
-
