@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../test_terraform"
+		},
+		{
+			"path": "../event_processing_tutorial"
+		}
+	],
+	"settings": {}
+}
