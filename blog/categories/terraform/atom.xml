@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Terraform | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/terraform/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2022-11-03T08:35:17+02:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Saving Terraform State Online]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2022/11/03/saving-terraform-state-online/"/>
+    <updated>2022-11-03T08:32:49+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2022/11/03/saving-terraform-state-online</id>
+    <content type="html"><![CDATA[<p>Read my new article about <a href="https://medium.matsinopoulos.gr/saving-terraform-state-online-dd61d613b5d9">Saving Terraform State Online</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
