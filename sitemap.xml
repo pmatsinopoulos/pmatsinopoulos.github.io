@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2023/02/13/practical-terraform-and-aws/</loc>
+<lastmod>2023-02-13T18:53:00+03:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2022/11/03/saving-terraform-state-online/</loc>
 <lastmod>2022-11-03T08:32:49+02:00</lastmod>
 </url>
@@ -569,27 +573,6 @@
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/blog/categories/iac/</loc>
-</url>
-<url>
-<loc>http://pmatsinopoulos.github.io/posts/2/</loc>
-</url>
-<url>
-<loc>http://pmatsinopoulos.github.io/posts/3/</loc>
-</url>
-<url>
-<loc>http://pmatsinopoulos.github.io/posts/4/</loc>
-</url>
-<url>
-<loc>http://pmatsinopoulos.github.io/posts/5/</loc>
-</url>
-<url>
-<loc>http://pmatsinopoulos.github.io/posts/6/</loc>
-</url>
-<url>
-<loc>http://pmatsinopoulos.github.io/posts/7/</loc>
-</url>
-<url>
-<loc>http://pmatsinopoulos.github.io/posts/8/</loc>
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/panayotis-m-newsletter/thank-you-for-confirming-subscription-to-our-newsletter/index.html</loc>
