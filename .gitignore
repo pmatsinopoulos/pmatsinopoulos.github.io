@@ -4,4 +4,4 @@
 Gemfile.lock
 _deploy/
 public/
-
+*.code-workspace
