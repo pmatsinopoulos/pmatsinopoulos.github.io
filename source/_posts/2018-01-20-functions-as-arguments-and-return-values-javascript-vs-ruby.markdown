@@ -4,6 +4,7 @@ title: "Functions as Arguments and Return Values - JavaScript vs Ruby"
 date: 2018-01-20 06:54:06 +0200
 comments: true
 categories: ["Ruby", "JavaScript"]
+canonical: 'https://www.techcareerbooster.com/blog/functions-as-arguments-and-return-values-javascript-vs-ruby'
 ---
 
 ## My New Blog Post in Tech Career Booster

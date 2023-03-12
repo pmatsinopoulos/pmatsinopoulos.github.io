@@ -4,6 +4,7 @@ title: "Use ActiveRecord in your Ruby Application"
 date: 2017-12-09 09:17
 comments: true
 categories: ["Ruby", "Ruby on Rails"]
+canonical: 'https://www.techcareerbooster.com/blog/use-activerecord-in-your-ruby-project'
 ---
 
 ## My New Blog Post in Tech Career Booster
