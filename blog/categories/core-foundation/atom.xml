@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Core Foundation | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/core-foundation/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2023-03-12T16:15:46+02:00</updated>
+  <updated>2023-03-14T08:22:26+02:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -18,7 +18,7 @@
     <link href="http://pmatsinopoulos.github.io/blog/2021/07/19/core-foundation-working-with-numbers/"/>
     <updated>2021-07-19T20:16:53+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2021/07/19/core-foundation-working-with-numbers</id>
-    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.matsinopoulos.gr/core-foundation-working-with-numbers-1ef9f259f4d3">Core Foundation - Working With Numbers</a></p>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.com/codex/core-foundation-working-with-numbers-1ef9f259f4d3">Core Foundation - Working With Numbers</a></p>
 ]]></content>
   </entry>
   
@@ -27,7 +27,7 @@
     <link href="http://pmatsinopoulos.github.io/blog/2021/07/18/core-foundation-array-with-non-cf-objects/"/>
     <updated>2021-07-18T09:57:28+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2021/07/18/core-foundation-array-with-non-cf-objects</id>
-    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.matsinopoulos.gr/core-foundation-arrays-with-non-cf-objects-28bacb80a10c">Core Foundation - Array With non-CF Objects</a></p>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.com/codex/core-foundation-arrays-with-non-cf-objects-28bacb80a10c">Core Foundation - Array With non-CF Objects</a></p>
 ]]></content>
   </entry>
   
@@ -36,7 +36,16 @@
     <link href="http://pmatsinopoulos.github.io/blog/2021/07/16/core-foundation-working-with-mutable-arrays/"/>
     <updated>2021-07-16T21:26:45+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2021/07/16/core-foundation-working-with-mutable-arrays</id>
-    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.matsinopoulos.gr/core-foundation-working-with-mutable-arrays-cea73b913b5e">Core Foundation - Working With Mutable Arrays</a></p>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.com/codex/core-foundation-working-with-mutable-arrays-cea73b913b5e">Core Foundation - Working With Mutable Arrays</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Core Foundation — Working With Arrays]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2021/07/16/core-foundation-working-with-arrays/"/>
+    <updated>2021-07-16T09:50:13+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2021/07/16/core-foundation-working-with-arrays</id>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.com/codex/core-foundation-working-with-arrays-ca89a2685026">Core Foundation — Working With Arrays</a></p>
 ]]></content>
   </entry>
   
@@ -45,16 +54,7 @@
     <link href="http://pmatsinopoulos.github.io/blog/2021/07/12/core-foundation-working-with-cfdata-objects/"/>
     <updated>2021-07-12T08:21:04+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2021/07/12/core-foundation-working-with-cfdata-objects</id>
-    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.matsinopoulos.gr/core-foundation-working-with-cfdata-objects-3fa9e34586e0">Core Foundation - Working with CFData Objects</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Core Foundation — Convert a String to an Array of Values]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2021/07/10/core-foundation-convert-a-string-to-an-array-of-values/"/>
-    <updated>2021-07-10T13:36:12+03:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2021/07/10/core-foundation-convert-a-string-to-an-array-of-values</id>
-    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.matsinopoulos.gr/core-foundation-convert-a-string-to-an-array-of-values-bf10a63fd83a">Core Foundation — Convert a String to an Array of Values</a></p>
+    <content type="html"><![CDATA[<p>Read my new article: <a href="https://medium.com/codex/core-foundation-working-with-cfdata-objects-3fa9e34586e0">Core Foundation - Working with CFData Objects</a></p>
 ]]></content>
   </entry>
   
