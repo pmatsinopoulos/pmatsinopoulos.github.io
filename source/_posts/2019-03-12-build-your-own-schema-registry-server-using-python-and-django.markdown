@@ -4,11 +4,11 @@ title: "Build Your Own Schema Registry Server Using Python and Django"
 date: 2019-03-12 22:55:57 +0200
 comments: true
 categories: ["Python", "Django"]
-canonical: "https://www.techcareerbooster.com/blog/build-your-own-schema-registry-server-using-python-and-django"
+canonical: "https://medium.com/gitconnected/build-your-own-data-schema-registry-server-c4a7fd4004c4"
 ---
 
-## My New Blog Post in Tech Career Booster
+## My New Blog Post on Medium
 
-This is a new blog post in Tech Career Booster blog. It has to do with implementing a JSON Validator and Schema Registry
+This is a new blog post on Medium. It has to do with implementing a JSON Validator and Schema Registry
 server using Python and Django.
-[Click here to visit it](https://www.techcareerbooster.com/blog/build-your-own-schema-registry-server-using-python-and-django).
+[Click here to visit it](https://medium.com/gitconnected/build-your-own-data-schema-registry-server-c4a7fd4004c4).
