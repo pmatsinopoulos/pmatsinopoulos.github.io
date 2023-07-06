@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby on Rails | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2023-04-15T13:57:11+03:00</updated>
+  <updated>2023-07-06T08:54:03+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -47,8 +47,8 @@
     <id>http://pmatsinopoulos.github.io/blog/2017/12/09/use-activerecord-in-your-ruby-application</id>
     <content type="html"><![CDATA[<h2>My New Blog Post in Tech Career Booster</h2>
 
-<p>This is a new blog post in Tech Career Booster blog. It has to do with using ActiveRecord in a Ruby application.
-<a href="https://www.techcareerbooster.com/blog/use-activerecord-in-your-ruby-project?utm_source=pmatsinopoulos_blog&amp;utm_medium=new_blog_post&amp;utm_campaign=blog_post_use_active_record">Click here to visit it</a>.</p>
+<p>This is a new blog post on Medium. It has to do with using ActiveRecord in a Ruby application.
+<a href="https://medium.com/gitconnected/use-activerecord-in-your-ruby-project-13ec333d190b">Click here to visit it</a>.</p>
 ]]></content>
   </entry>
   

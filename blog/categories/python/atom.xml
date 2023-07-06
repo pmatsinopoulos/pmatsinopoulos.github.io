@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2023-04-15T13:57:11+03:00</updated>
+  <updated>2023-07-06T08:54:03+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -45,11 +45,11 @@
     <link href="http://pmatsinopoulos.github.io/blog/2019/03/12/build-your-own-schema-registry-server-using-python-and-django/"/>
     <updated>2019-03-12T22:55:57+02:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2019/03/12/build-your-own-schema-registry-server-using-python-and-django</id>
-    <content type="html"><![CDATA[<h2>My New Blog Post in Tech Career Booster</h2>
+    <content type="html"><![CDATA[<h2>My New Blog Post on Medium</h2>
 
-<p>This is a new blog post in Tech Career Booster blog. It has to do with implementing a JSON Validator and Schema Registry
+<p>This is a new blog post on Medium. It has to do with implementing a JSON Validator and Schema Registry
 server using Python and Django.
-<a href="https://www.techcareerbooster.com/blog/build-your-own-schema-registry-server-using-python-and-django">Click here to visit it</a>.</p>
+<a href="https://medium.com/gitconnected/build-your-own-data-schema-registry-server-c4a7fd4004c4">Click here to visit it</a>.</p>
 ]]></content>
   </entry>
   

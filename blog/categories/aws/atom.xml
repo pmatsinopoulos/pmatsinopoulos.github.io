@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Aws | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/aws/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2023-04-15T13:57:11+03:00</updated>
+  <updated>2023-07-06T08:54:03+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -18,7 +18,7 @@
     <link href="http://pmatsinopoulos.github.io/blog/2023/03/03/basics-of-access-to-aws-s3-buckets-and-objects/"/>
     <updated>2023-03-03T18:27:08+02:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2023/03/03/basics-of-access-to-aws-s3-buckets-and-objects</id>
-    <content type="html"><![CDATA[<p>I have published a new AWS related blog post: <a href="https://www.techcareerbooster.com/blog/basics-of-access-to-aws-s3-buckets-and-objects">Basics of Access to AWS S3 Buckets and Objects</a></p>
+    <content type="html"><![CDATA[<p>I have published a new AWS related blog post: <a href="https://medium.com/gitconnected/basics-of-access-to-aws-s3-buckets-6fb46cc38eb1">Basics of Access to AWS S3 Buckets and Objects</a></p>
 ]]></content>
   </entry>
   
@@ -54,10 +54,10 @@
     <link href="http://pmatsinopoulos.github.io/blog/2019/05/25/deploying-a-zookeeper-ensemble-on-aws/"/>
     <updated>2019-05-25T19:35:09+03:00</updated>
     <id>http://pmatsinopoulos.github.io/blog/2019/05/25/deploying-a-zookeeper-ensemble-on-aws</id>
-    <content type="html"><![CDATA[<h2>My New Blog Post in Tech Career Booster - Zookeeper Ensemble Deployment on AWS</h2>
+    <content type="html"><![CDATA[<h2>My New Blog Post on Medium - Zookeeper Ensemble Deployment on AWS</h2>
 
-<p>This is a new blog post in Tech Career Booster blog. It has to do with deploying Zookeeper on AWS.
-<a href="https://www.techcareerbooster.com/blog/deploying-a-zookeeper-ensemble-on-aws">Click here to visit it</a>.</p>
+<p>This is a new blog post on Medium. It has to do with deploying Zookeeper on AWS.
+<a href="https://medium.com/nerd-for-tech/deploying-a-zookeeper-ensemble-on-aws-4de8224a1263">Click here to visit it</a>.</p>
 ]]></content>
   </entry>
   
