@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2023/08/30/aws-private-and-public-subnets/</loc>
+<lastmod>2023-08-30T16:29:36+03:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2023/03/03/basics-of-access-to-aws-s3-buckets-and-objects/</loc>
 <lastmod>2023-03-03T18:27:08+02:00</lastmod>
 </url>
@@ -580,6 +584,12 @@
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/blog/categories/iac/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/vpc/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/subnets/</loc>
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/posts/2/</loc>
