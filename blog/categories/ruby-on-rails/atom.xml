@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Ruby on Rails | Panos Matsinopoulos]]></title>
+  <title><![CDATA[Category: Ruby-on-rails | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2023-12-07T07:50:35+02:00</updated>
+  <updated>2024-04-28T16:52:07+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -14,120 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Moden Development With Rails]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2022/08/23/moden-development-with-rails/"/>
-    <updated>2022-08-23T21:26:03+03:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2022/08/23/moden-development-with-rails</id>
-    <content type="html"><![CDATA[<p>Read my new article about <a href="https://levelup.gitconnected.com/modern-development-with-rails-d9c6cf929ff6">Modern Development with Rails</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Using React in a Ruby Project to Dynamically Generate PDF Documents]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2022/05/17/using-react-in-a-ruby-project-to-dynamically-generate-pdf-documents/"/>
-    <updated>2022-05-17T21:28:08+03:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2022/05/17/using-react-in-a-ruby-project-to-dynamically-generate-pdf-documents</id>
-    <content type="html"><![CDATA[<p>You can watch my talk to LRUG (London Ruby User Group) <a href="https://assets.lrug.org/videos/2022/april/panos-matsinopoulos-using-react-in-a-ruby-project-to-dynamically-generate-pdf-documents-lrug-apr-2022.mp4">about how to generate PDF in a Ruby on Rails project using React</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hanami vs Ruby on Rails]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2020/11/21/hanami-vs-ruby-on-rails/"/>
-    <updated>2020-11-21T10:21:08+02:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2020/11/21/hanami-vs-ruby-on-rails</id>
-    <content type="html"><![CDATA[<p>Read my new article: <a href="https://getlavanda.com/engineering/2020-10-30-hanami-vs-ruby-on-rails">Hanami vs Ruby on Rails</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Use ActiveRecord in Your Ruby Application]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2017/12/09/use-activerecord-in-your-ruby-application/"/>
-    <updated>2017-12-09T09:17:00+02:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2017/12/09/use-activerecord-in-your-ruby-application</id>
-    <content type="html"><![CDATA[<h2>My New Blog Post in Tech Career Booster</h2>
+    <title type="html"><![CDATA[Encrypting & Decrypting Files - Ruby on Rails]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2023/10/11/encrypting-and-decrypting-files-ruby-on-rails/"/>
+    <updated>2023-10-11T07:54:35+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2023/10/11/encrypting-and-decrypting-files-ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>This is my new blog post about encrypting and decrypting files using Ruby on Rails utilities</p>
 
-<p>This is a new blog post on Medium. It has to do with using ActiveRecord in a Ruby application.
-<a href="https://medium.com/gitconnected/use-activerecord-in-your-ruby-project-13ec333d190b">Click here to visit it</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Making Rails Logger Use One Log File Per Process With Phusion Passenger]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/"/>
-    <updated>2016-02-19T16:57:00+02:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger</id>
-    <content type="html"><![CDATA[<h2>Introduction</h2>
-
-<p>Today, I had to find a way to make my production Rails application log into different log files per process. I have
-the application deployed using <a href="https://www.phusionpassenger.com/">Phusion Passenger</a> as an Apache 2 module. The reason
-I decided to do that was the fact that I wanted to analyze the logs with <a href="https://github.com/wvanbergen/request-log-analyzer">Request Log Analyzer</a> tool.
-This tool requires the log files to be separate so that they do not interleave the log entries of different requests.</p>
-
-<!-- more -->
-
-
-<h2>Blog Sponsor</h2>
-
-<p>This post is sponsored by <a href="http://www.fraudpointer.com/">Fraudpointer</a>.</p>
-
-<h2>References</h2>
-
-<p>In order to solve that I was helped by what I found about the similar problem solved for Unicorn processes here:</p>
-
-<p><a href="http://jordan.broughs.net/archives/2014/09/provide-separate-rails-log-files-for-each-unicorn-worker">A blog about how one can have different log file per Unicorn worker</a></p>
-
-<p>Then, I had to google about how I could hook to after fork events on Phusion Passenger. There was a very good <a href="http://stackoverflow.com/q/24180809/658469">question here</a>
-and its <a href="http://stackoverflow.com/a/24188716/658469">answer here</a>. The answer directed me also on Phusion Passenger documentation for
-<a href="https://www.phusionpassenger.com/library/indepth/ruby/spawn_methods/#smart-spawning-hooks">hooking on spawning events</a>.</p>
-
-<h2>Implementation</h2>
-
-<p>I have created an initializer with the following content:</p>
-
-<pre><code class="ruby">begin
-  if Rails.env.production? &amp;&amp; defined?(PhusionPassenger)
-    PhusionPassenger.on_event(:starting_worker_process) do |forked|
-      # get access to log device
-      if Rails::VERSION::STRING.start_with?('4.')
-        logdev = Rails.logger.instance_variable_get(:@logdev)
-      elsif Rails::VERSION::STRING.start_with?('3.2')
-        logdev = Rails.logger.instance_variable_get(:@logger).instance_variable_get(:@log).instance_variable_get(:@logdev)
-      end
-
-      # logdev.dev is a File instance that is the open file to log file.
-      # Get the extension and prepend the process id.
-      ext = File.extname(logdev.dev.path)
-      pid = Process.pid
-      path = logdev.dev.path.gsub /#{Regexp.escape(ext)}$/, ".#{pid}#{ext}"
-
-      # open the new file
-      file = File.open(path, 'a')
-      file.binmode
-      file.sync = true
-
-      # We flush and close the current file handle, the one that writes to the single file.
-      logdev.dev.flush
-      logdev.dev.close
-
-      # We replace the file handle with the new one +file+ that refers to process specific file.
-      logdev.instance_variable_set(:@dev, file)
-    end
-  end
-rescue Exception =&gt; ex
-  begin
-    Rails.logger.error(ex.message)
-    Rails.logger.error(ex.backtrace)
-  rescue
-  end
-end
-</code></pre>
-
-<h2>Closing</h2>
-
-<p>This has been implemented for a Rails 3.2 and a Rails 4.2 application.</p>
-
-<p>Any feedback from you would be much appreciated.</p>
+<p><a href="https://www.rayo.gr/blog/encrypt-decrypt-files-ruby-on-rails">Encrypting &amp; Decrypting Files - Ruby on Rails</a></p>
 ]]></content>
   </entry>
   
