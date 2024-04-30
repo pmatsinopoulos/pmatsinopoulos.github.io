@@ -14,7 +14,7 @@ footer: true
 This is a Web-2-SMS Gateway. Suited for the enterprise with an API that allows it to integrate with other applications,
 as well as with an Admin Web App to manage contacts/groups e.t.c and send SMS.
 
-### [Wheel Run](https://www.wheelrun.biz)
+### Wheel Run
 
 This is a Vehicle Management application. One can manage any Car or Motorcycle or any Vehicle that deserves maintenance.
 
