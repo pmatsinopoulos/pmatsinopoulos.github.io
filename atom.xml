@@ -4,7 +4,7 @@
   <title><![CDATA[Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2024-04-30T08:38:04+03:00</updated>
+  <updated>2024-05-12T08:02:28+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Encrypting & Decrypting Files - Ruby on Rails]]></title>
-    <link href="http://pmatsinopoulos.github.io/blog/2023/10/11/encrypting-and-decrypting-files-ruby-on-rails/"/>
-    <updated>2023-10-11T07:54:35+03:00</updated>
-    <id>http://pmatsinopoulos.github.io/blog/2023/10/11/encrypting-and-decrypting-files-ruby-on-rails</id>
+    <link href="http://pmatsinopoulos.github.io/blog/2024/04/28/encrypting-and-decrypting-files-ruby-on-rails/"/>
+    <updated>2024-04-28T07:54:35+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2024/04/28/encrypting-and-decrypting-files-ruby-on-rails</id>
     <content type="html"><![CDATA[<p>This is my new blog post about encrypting and decrypting files using Ruby on Rails utilities</p>
 
 <p><a href="https://www.rayo.gr/blog/encrypt-decrypt-files-ruby-on-rails">Encrypting &amp; Decrypting Files - Ruby on Rails</a></p>
