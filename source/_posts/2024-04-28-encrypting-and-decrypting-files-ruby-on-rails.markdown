@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Encrypting & Decrypting Files - Ruby on Rails"
-date: 2023-10-11 07:54:35 +0300
+date: 2024-04-28 07:54:35 +0300
 comments: true
 categories: ["encryption", "decryption", "ruby-on-rails"]
 ---
