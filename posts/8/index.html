@@ -9,7 +9,7 @@
   <meta name="author" content="Panos Matsinopoulos">
 
   
-  <meta name="description" content="This is a very good guide on how one should style its Ruby code. I am following this since I started Ruby and I suggest that everybody does the same &hellip;">
+  <meta name="description" content="I consider testing one of the most important phase in application development and Rails does a very good job on that. However, testing documentation &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -215,6 +215,83 @@
   </article>
 
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/25/testing-asserting-template-and-layout/">Testing - Asserting Template and Layout</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-03-25T20:16:00+03:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>8:16 pm</span></time>
+        
+           | <a href="/blog/2012/03/25/testing-asserting-template-and-layout/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2012/03/25/testing-asserting-template-and-layout/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I consider testing one of the most important phase in application development and Rails does a very good job on that. However, testing documentation on Rails Guides is still work under development.</p>
+
+<p>Here is a short tutorial on how you can test that a reponse has rendered the correct template and the correct layout.</p>
+
+<p>If you want to make sure that the response rendered the correct template and layout, you can use the assert_template method:</p>
+
+<figure class='code'><figcaption><span>assert_template usage</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="s2">&quot;index should render correct template and layout&quot;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">get</span> <span class="ss">:index</span>
+</span><span class='line'>  <span class="n">assert_template</span> <span class="ss">:index</span>
+</span><span class='line'>  <span class="n">assert_template</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="s2">&quot;layouts/application&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note that you cannot test for template and layout at the same time, with one call to assert_template method. Also, for the layout test, you can give a regular expression instead of a string, but using the string, makes things clearer. On the other hand, you have to include the &ldquo;layouts&rdquo; directory name even if you save your layout file in this standard layout directory. Hence,</p>
+
+<figure class='code'><figcaption><span>This will not work</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">assert_template</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="s2">&quot;application&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>will not work.</p>
+
+<p><strong>Gotcha: Watch out if your view renders any partial</strong></p>
+
+<p>If your view renders any partial, when asserting for the layout, you have to assert for the partial at the same time. Otherwise, assertion will fail.</p>
+
+<p>Hence:</p>
+
+<figure class='code'><figcaption><span>Correct way to assert for the layout</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="s2">&quot;new should render correct layout&quot;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">get</span> <span class="ss">:new</span>
+</span><span class='line'>  <span class="n">assert_template</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="s2">&quot;layouts/application&quot;</span><span class="p">,</span> <span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="s2">&quot;_form&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>is the correct way to assert for the layout when the view renders a partial with <code>name_form</code>. Omitting the <code>:partial</code> key in your <code>assert_template</code> call will complain.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -507,6 +584,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2024/06/15/openzeppelin-a-hands-on-learning-experience/">OpenZeppelin - a Hands-On Learning Experience</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2024/04/28/encrypting-and-decrypting-files-ruby-on-rails/">Encrypting & Decrypting Files - Ruby on Rails</a>
       </li>
     
@@ -520,10 +601,6 @@
     
       <li class="post">
         <a href="/blog/2023/03/03/basics-of-access-to-aws-s3-buckets-and-objects/">Basics of Access to AWS S3 Buckets and Objects</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2023/02/13/practical-terraform-and-aws/">Practical Terraform & AWS</a>
       </li>
     
   </ul>
