@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2024/06/23/the-history-of-money-book-review/</loc>
+<lastmod>2024-06-23T21:49:59+03:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2024/06/15/openzeppelin-a-hands-on-learning-experience/</loc>
 <lastmod>2024-06-15T14:33:15+03:00</lastmod>
 </url>
@@ -623,6 +627,15 @@
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/blog/categories/hardhat/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/books/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/money/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/history/</loc>
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/panayotis-m-newsletter/thank-you-for-confirming-subscription-to-our-newsletter/index.html</loc>
