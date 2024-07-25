@@ -9,7 +9,8 @@
   <meta name="author" content="Panos Matsinopoulos">
 
   
-  <meta name="description" content="Capistrano is a great tool for deploying Ruby on Rails applications on remote server machines. If you have ever used it, you may already know that it &hellip;">
+  <meta name="description" content="Why do I take this Journey? I have been using Solr the last two years for quite some projects. My work was always done using sunspot
+(via &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -215,6 +216,117 @@
   </article>
 
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/30/my-solr-journey-session-001/">My Solr Journey - Session 001</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-09-30T14:27:00+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>2:27 pm</span></time>
+        
+           | <a href="/blog/2012/09/30/my-solr-journey-session-001/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2012/09/30/my-solr-journey-session-001/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Why do I take this Journey?</h2>
+
+<p>I have been using Solr the last two years for quite some projects. My work was always done using <a href="http://sunspot.github.com/">sunspot</a>
+(via <code>sunspot_rails</code> when one has Rails application), a gem that is a client library for Solr.</p>
+
+<p>You need to know few things about Solr, when using <code>sunspot</code> to access it and do most of the things. <code>sunspot</code> is a fantastic gem and relieves you from
+huge amounts of work when storing data in a Solr database.</p>
+
+<p>However, there are times that I felt that I needed to know more. For example, when I was searching for <code>University of Athens</code> and I got no results, but I knew
+that my documents had all or any of the words &ldquo;University&rdquo;, &ldquo;of&rdquo;, &ldquo;Athens&rdquo; in their body, or, even worse, there were also documents that were having the whole
+phrase &ldquo;University of Athens&rdquo; in their body. Or I wanted to query with parts of words, or parts of e-mails, and still I was not getting any results. You can see how
+I ended up solving these problems reading these two: 1) <a href="http://stackoverflow.com/questions/12650859/why-sunspot-solr-does-not-bring-results-when-i-include-of-word-in-search-query/12653931">Why Sunspot Solr does not bring results when I include &ldquo;of&rdquo; word in search query?</a>
+ 2) <a href="http://stackoverflow.com/questions/12131473/how-can-i-set-sunspot-to-search-for-sequences-of-characters-instead-of-words">How can I set Sunspot to search for sequences of characters instead of words?</a></p>
+
+<p>Hence, I decided to take a journey to Solr. And this will be a registration of my steps to this journey. Understanding how Solr works, will make me manage
+better what I can do and achieve with <code>sunspot</code> too.</p>
+
+<p>And here we go</p>
+
+<h2>First steps</h2>
+
+<ul>
+<li>I downloaded solr from <a href="http://lucene.apache.org/solr/">here</a></li>
+<li>Followed the <a href="http://lucene.apache.org/solr/api-3_6_1/doc-files/tutorial.html">tutorial</a></li>
+</ul>
+
+
+<h3>Summary</h3>
+
+<p>One cannot be but extremely impressed of the features and capabilities of Solr. I believe that I will use to replace many of my MySQL stores that are only
+used for querying.</p>
+
+<p>(Next steps will soon follow)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/25/executing-migration-commands-from-rails-console/">Executing Migration Commands From Rails Console</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-09-25T20:19:00+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>8:19 pm</span></time>
+        
+           | <a href="/blog/2012/09/25/executing-migration-commands-from-rails-console/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2012/09/25/executing-migration-commands-from-rails-console/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Did you know that you can execute migration commands from rails console? Assume that you want to change the column &lsquo;name&rsquo; of the &lsquo;Product&rsquo; model, to have a limit of 32 characters and set it to not null. Here is what you can do:</p>
+
+<figure class='code'><figcaption><span>Example of ActiveRecord Migration run from Rails Console</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">rails</span> <span class="n">c</span>
+</span><span class='line'><span class="o">&gt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Migration</span><span class="o">.</span><span class="n">change_column</span> <span class="ss">:products</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:string</span><span class="p">,</span> <span class="ss">:limit</span> <span class="o">=&gt;</span> <span class="mi">32</span><span class="p">,</span> <span class="ss">:null</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+</span><span class='line'><span class="o">--</span> <span class="n">change_column</span><span class="p">(</span><span class="ss">:products</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:string</span><span class="p">,</span> <span class="p">{</span><span class="ss">:limit</span><span class="o">=&gt;</span><span class="mi">32</span><span class="p">})</span>
+</span><span class='line'><span class="p">(</span><span class="mi">38</span><span class="o">.</span><span class="mi">1</span><span class="n">ms</span><span class="p">)</span>  <span class="no">ALTER</span> <span class="no">TABLE</span> <span class="sb">`products`</span> <span class="no">CHANGE</span> <span class="sb">`name`</span> <span class="sb">`name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="no">NOT</span> <span class="no">NULL</span>
+</span><span class='line'><span class="o">-&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mo">03</span><span class="mi">96</span><span class="n">s</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="kp">nil</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -555,69 +667,9 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/08/10/ruby-on-rails-gems-i-use/">Ruby on Rails Gems I Use</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2011-08-10T20:05:00+03:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>8:05 pm</span></time>
-        
-           | <a href="/blog/2011/08/10/ruby-on-rails-gems-i-use/#disqus_thread"
-             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2011/08/10/ruby-on-rails-gems-i-use/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Since I have started developing applications with Ruby on Rails, I have used again and again some very useful gems. Here they are:</p>
-
-<ul>
-<li>bundler: The gem dependency resolver and manager.</li>
-<li>mysql2: The ActiveRecord adapter for MySQL. MySQL is my personal preference for database server.</li>
-<li>fast_gettext, gettext_i18n_rails, gettext: For I18n.</li>
-<li>routing-filter: I used this one in one of my multilingual applications, when I wanted my paths to include the locale.</li>
-<li>foreigner: Allows me to declare foreign keys in my migrations.</li>
-<li>nilify_blanks: Very useful to convert empty parameter values to nulls and avoid storing empty strings in db where it should be null.</li>
-<li>jquery-rails: For jQuery used in rails.</li>
-<li>settingslogic: For run-time configuration settings.</li>
-<li>dynamic_form: For &ldquo;error_messages_for&rdquo; in my views.</li>
-<li>kaminari: For pagination in my index views.</li>
-<li>unicode: For Unicode support which is missing in ruby 1.8 (available in 1.9).</li>
-<li>rmagick, carrierwave: For image uploading and resizing.</li>
-<li>acts_as_list: For lists that I want to be able to easily reposition their items.</li>
-<li>sitemap_generator: Usefull gem to let you generate sitemap files.</li>
-</ul>
-
-
-<p>Especially for development and testing:</p>
-
-<ul>
-<li>mongrel: A web server adequate for development and better than Webrick.</li>
-<li>web-app-theme: A layout for quick start of my web fron end.</li>
-<li>ruby-debug, ruby-debug-ide: For debugging from within my IDE (Intellij)</li>
-<li>mocha: For Moching and Stubbing</li>
-<li>single_test: To be able to run a single test from the command line</li>
-<li>cucumber-rails, database_cleaner: For Cucumber tests.</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/posts/9">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -632,6 +684,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2024/07/25/ethcc-7-ethglobal-9-amazing-days-in-my-life/">EthCC[7] - EthGlobal - 9 Amazing Days in My Life</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2024/07/25/i-have-participated-to-ethglobal-hackathon-in-brussels-july-2024/">I Have Participated to EthGlobal Hackathon in Brussels (July 2024)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2024/06/23/the-history-of-money-book-review/">The History of Money - Book Review</a>
       </li>
     
@@ -641,14 +701,6 @@
     
       <li class="post">
         <a href="/blog/2024/04/28/encrypting-and-decrypting-files-ruby-on-rails/">Encrypting & Decrypting Files - Ruby on Rails</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2023/10/11/celebrating-a-year-of-tech-adventures-at-mixlr/">Celebrating a Year of Tech Adventures at Mixlr</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2023/08/30/aws-private-and-public-subnets/">AWS Private and Public Subnets</a>
       </li>
     
   </ul>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Web3 | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/web3/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2024-07-25T23:33:57+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[EthCC[7] - EthGlobal - 9 Amazing Days in My Life]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2024/07/25/ethcc-7-ethglobal-9-amazing-days-in-my-life/"/>
+    <updated>2024-07-25T23:31:03+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2024/07/25/ethcc-7-ethglobal-9-amazing-days-in-my-life</id>
+    <content type="html"><![CDATA[<p>Here is my blog post about the awesome experience that I had in Brussels:</p>
+
+<p><a href="https://www.rayo.gr/blog/ethcc-7-ethglobal-9-amazing-days-in-my-life">EthCC[7] - EthGlobal - 9 Amazing Days In My Life</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[I Have Participated to EthGlobal Hackathon in Brussels (July 2024)]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2024/07/25/i-have-participated-to-ethglobal-hackathon-in-brussels-july-2024/"/>
+    <updated>2024-07-25T23:28:50+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2024/07/25/i-have-participated-to-ethglobal-hackathon-in-brussels-july-2024</id>
+    <content type="html"><![CDATA[<p>And here is my <a href="https://collectors.poap.xyz/token/7169069">POAP</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
