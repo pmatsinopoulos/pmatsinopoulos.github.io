@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Gratitude | Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/blog/categories/gratitude/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2024-08-25T23:28:13+03:00</updated>
+  <updated>2024-08-25T23:34:22+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -144,24 +144,24 @@ Lavanda! I was so happy I saw that.</p>
 
 <h2>ERC-20 Token</h2>
 
-<p>Arigatai, with symbol <code>$ARIG</code>, stores the gratitude value on Ethereum, as an <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">ERC-20 token</a>.</p>
+<p>Arigatai, with symbol <code>ARIG</code>, stores the gratitude value on Ethereum, as an <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">ERC-20 token</a>.</p>
 
 <p><img src="../images/ARIGATAI-is-erc-20.png" alt="ARIGATAI is an ERC-20 Token" /></p>
 
-<p><code>$ARIG</code>, is my professional reputation points on the <em>gratitude</em> dimension.</p>
+<p><code>ARIG</code>, is my professional reputation points on the <em>gratitude</em> dimension.</p>
 
 <h2>Minting</h2>
 
-<p>When <code>$ARIG</code> was deployed it didn&rsquo;t have any initial circulation. I.e. the circulating supply was <code>0</code>.</p>
+<p>When <code>Arigatai</code> Smart Contract is deployed it doesn&rsquo;t have any initial circulation. I.e. the circulating supply is <code>0</code>.</p>
 
-<p>Minting started when clients called the external functions <code>arigatoDeliver()</code> and <code>arigatoAccept()</code></p>
+<p>Minting starts when clients call the external functions <code>arigatoDeliver()</code> and <code>arigatoAccept()</code></p>
 
 <p>This is the signature of the function:</p>
 
 <pre><code class="solidity">function arigatoDeliver(
-  address _recipient, // The EOA that will receive the `$ARIG`
-  uint256 _amount, // The amount of `$ARIG` the _recipient will get
-  bytes[640] memory _reason, // The reason sender is sending the _recipient this amount of $ARIG
+  address _recipient, // The EOA that will receive the `ARIG`
+  uint256 _amount, // The amount of `ARIG` the _recipient will get
+  bytes[640] memory _reason, // The reason sender is sending the _recipient this amount of ARIG
 ) external;
 </code></pre>
 
@@ -174,7 +174,7 @@ Lavanda! I was so happy I saw that.</p>
 </ol>
 
 
-<p>This function does not actually <em>create</em> <code>$ARIG</code>.  It is the <code>arigatoAccept()</code> that does.</p>
+<p>This function does not actually <em>create</em> <code>ARIG</code>.  It is the <code>arigatoAccept()</code> that does.</p>
 
 <pre><code class="solidity">function arigatoAccept(
   address _sender, // The EOA that sent the arigatoRequest()
@@ -183,15 +183,15 @@ Lavanda! I was so happy I saw that.</p>
 </code></pre>
 
 <ol>
-<li>The caller needs to have a pending $ARIG delivery from the _sender.</li>
-<li>The pending delivery should be for the _amount.</li>
+<li>The caller needs to have a pending <code>ARIG</code> delivery from the <code>_sender</code>.</li>
+<li>The pending delivery should be for the <code>_amount</code>.</li>
 <li>The delivery should have been created within the last 24 hours from acceptance.</li>
 </ol>
 
 
-<p>So, it is the <code>arigatoAccept()</code> that does the actual minting of the <code>$ARIG</code> token.</p>
+<p>So, it is the <code>arigatoAccept()</code> that does the actual minting of the <code>ARIG</code> token.</p>
 
-<p>When <code>arigatoAccept()</code> succeeds, the caller gets the amount of <code>$ARIG</code> and there is
+<p>When <code>arigatoAccept()</code> succeeds, the caller gets the amount of <code>ARIG</code> and there is
 a record created (<code>Arigato</code> record) in the state of the contract to record the details of the reward.</p>
 
 <p>The <code>arigatoAccept()</code> will internally call a <code>_mint()</code> function like:</p>
