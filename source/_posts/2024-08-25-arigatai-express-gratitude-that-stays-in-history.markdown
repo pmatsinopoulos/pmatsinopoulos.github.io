@@ -15,6 +15,8 @@ Back when I worked at [Lavanda](https://www.getlavanda.com/), I introduced the `
 
 Why?
 
+<!-- more -->
+
 <br>
 <br>
 
@@ -28,7 +30,7 @@ Why?
 <br>
 <br>
 
-I always sent my gratitude with a _thank you_ message to the person having offered his time, knowledge and help, to make my life at work better.....but I didn't want this to stay only between us.
+I always sent my gratitude with a _thank you_ message to the person having offered his time, knowledge and help, to make my life at work better...but I didn't want this to stay only between us.
 
 * That person made me happy, and I wanted to show to the rest of the company **that I was happy**.
 
