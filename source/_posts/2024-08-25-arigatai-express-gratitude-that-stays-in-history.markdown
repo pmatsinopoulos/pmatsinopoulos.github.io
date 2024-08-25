@@ -117,25 +117,25 @@ Join **Arigatai**.
 
 ## ERC-20 Token
 
-Arigatai, with symbol `$ARIG`, stores the gratitude value on Ethereum, as an [ERC-20 token](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/).
+Arigatai, with symbol `ARIG`, stores the gratitude value on Ethereum, as an [ERC-20 token](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/).
 
 ![ARIGATAI is an ERC-20 Token](../images/ARIGATAI-is-erc-20.png)
 
-`$ARIG`, is my professional reputation points on the *gratitude* dimension.
+`ARIG`, is my professional reputation points on the *gratitude* dimension.
 
 ## Minting
 
-When `$ARIG` was deployed it didn't have any initial circulation. I.e. the circulating supply was `0`.
+When `Arigatai` Smart Contract is deployed it doesn't have any initial circulation. I.e. the circulating supply is `0`.
 
-Minting started when clients called the external functions `arigatoDeliver()` and `arigatoAccept()`
+Minting starts when clients call the external functions `arigatoDeliver()` and `arigatoAccept()`
 
 This is the signature of the function:
 
 ```solidity
 function arigatoDeliver(
-  address _recipient, // The EOA that will receive the `$ARIG`
-  uint256 _amount, // The amount of `$ARIG` the _recipient will get
-  bytes[640] memory _reason, // The reason sender is sending the _recipient this amount of $ARIG
+  address _recipient, // The EOA that will receive the `ARIG`
+  uint256 _amount, // The amount of `ARIG` the _recipient will get
+  bytes[640] memory _reason, // The reason sender is sending the _recipient this amount of ARIG
 ) external;
 ```
 
@@ -145,7 +145,7 @@ There are some rules for this call to succeed.
 1. Recipient should be an EOA, not a contract.
 1. The caller should not exceed the maximum daily delivery amount which is 5.
 
-This function does not actually _create_ `$ARIG`.  It is the `arigatoAccept()` that does.
+This function does not actually _create_ `ARIG`.  It is the `arigatoAccept()` that does.
 
 ```solidity
 function arigatoAccept(
@@ -154,13 +154,13 @@ function arigatoAccept(
 ) external;
 ```
 
-1. The caller needs to have a pending $ARIG delivery from the _sender.
-1. The pending delivery should be for the _amount.
+1. The caller needs to have a pending `ARIG` delivery from the `_sender`.
+1. The pending delivery should be for the `_amount`.
 1. The delivery should have been created within the last 24 hours from acceptance.
 
-So, it is the `arigatoAccept()` that does the actual minting of the `$ARIG` token.
+So, it is the `arigatoAccept()` that does the actual minting of the `ARIG` token.
 
-When `arigatoAccept()` succeeds, the caller gets the amount of `$ARIG` and there is
+When `arigatoAccept()` succeeds, the caller gets the amount of `ARIG` and there is
 a record created (`Arigato` record) in the state of the contract to record the details of the reward.
 
 The `arigatoAccept()` will internally call a `_mint()` function like:
