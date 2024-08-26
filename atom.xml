@@ -4,7 +4,7 @@
   <title><![CDATA[Panos Matsinopoulos]]></title>
   <link href="http://pmatsinopoulos.github.io/atom.xml" rel="self"/>
   <link href="http://pmatsinopoulos.github.io/"/>
-  <updated>2024-08-25T16:53:42+03:00</updated>
+  <updated>2024-08-26T09:25:39+03:00</updated>
   <id>http://pmatsinopoulos.github.io/</id>
   <author>
     <name><![CDATA[Panos Matsinopoulos]]></name>
@@ -20,64 +20,34 @@
     <id>http://pmatsinopoulos.github.io/blog/2024/08/25/arigatai-express-gratitude-that-stays-in-history</id>
     <content type="html"><![CDATA[<h1>Introduction</h1>
 
-<p>Back when I worked at <a href="https://www.getlavanda.com/">Lavanda</a>, I introduced the <code>#thankyou</code> Slack channel.
-<br>
-<br>
-<br>
-Why?
-<br>
-<br>
-<br></p>
+<p>This is the idea behind <code>Arigatai</code>, a project that dreams to save the gratitude statements in
+history.</p>
+
+<!-- more -->
+
+
+<h1>When I First Had The Idea for a <code>#thankyou</code> Slack Channel</h1>
+
+<p>Back when I worked at <a href="https://www.getlavanda.com/">Lavanda</a>, I introduced the <code>#thankyou</code> Slack channel.</p>
+
+<p>Why?</p>
 
 <p>I wanted to express my gratitude to another colleague, <strong>in public</strong>.</p>
 
-<p><br>
-<br>
-<br>
-Why?
-<br>
-<br>
-<br></p>
+<p>Why?</p>
 
-<p>I always sent my gratitude with a <em>thank you</em> message to the person having offered his time, knowledge and help, to make my life at work better&hellip;..but I didn&rsquo;t want this to stay only between us.</p>
+<p>I always sent my gratitude with a <em>thank you</em> message to the person having offered his time, knowledge and help, to make my life at work better&hellip;but I didn&rsquo;t want this to stay only between us.</p>
 
 <ul>
-<li>That person made me happy, and I wanted to show to the rest of the company <strong>that I was happy</strong>.</li>
+<li><p>That person made me happy, and I wanted to show to the rest of the company <strong>that I was happy</strong>.</p></li>
+<li><p>I also wanted to show to the rest of the company my happiness of <strong>having
+colleagues who could make others happy</strong>.</p></li>
+<li><p>I wanted to show to the rest of the company <strong>who is the person that can make others happy</strong>.</p></li>
+<li><p>I believe that my colleagues who can make others happy, they deserve to be, at least, <strong>recognized in public</strong>.</p></li>
 </ul>
 
-
-<p><br>
-<br></p>
-
-<ul>
-<li>I also wanted to show to the rest of the company my happiness of <strong>having
-colleagues who could make others happy</strong>.</li>
-</ul>
-
-
-<p><br>
-<br></p>
-
-<ul>
-<li>I wanted to show to the rest of the company <strong>who is the person that can make others happy</strong>.</li>
-</ul>
-
-
-<p><br>
-<br></p>
-
-<ul>
-<li>I believe that my colleagues who can make others happy, they deserve to be, at least, <strong>recognized in public</strong>.</li>
-</ul>
-
-
-<p><br>
-<br></p>
 
 <p>And, I wanted to make public, <strong>the reason I am thanking</strong> my colleague. Not many details. Brief short phrase to let anyone actually be in my shoes for the reason I am happy for. To give a little more context and value to this open gratitude.</p>
-
-<p><br>
-<br></p>
 
 <p>Then, everyone went mad about it. They loved it.</p>
 
@@ -87,7 +57,7 @@ colleagues who could make others happy</strong>.</li>
 
 <p>And they even have a leader board:</p>
 
-<p><img src="../images/lavanda-tacos-leaderboard.jpg" alt="dfad" /></p>
+<p><img src="../../../../../images/lavanda-tacos-leaderboard.jpg" alt="Lavanda Tacos Leader Board" /></p>
 
 <p>So, employees, earned tacos on a daily basis. And they gave tacos to other colleagues too.</p>
 
@@ -97,7 +67,7 @@ colleagues who could make others happy</strong>.</li>
 
 <p><a href="https://handbook.gitlab.com/handbook/values/#say-thanks">The Gitlab Handbook</a></p>
 
-<p>Ohhh. They have a <code>#thanks</code> channel. Similar to the one I introduced at
+<p>Ohhh! They have a <code>#thanks</code> channel. Similar to the one I introduced at
 Lavanda! I was so happy I saw that.</p>
 
 <p>And then I also found this:</p>
@@ -132,20 +102,108 @@ Lavanda! I was so happy I saw that.</p>
 
 <p>And I want to accumulate such value even, going from one company to the next.</p>
 
-<p><br>
-<br></p>
-
 <p><strong>It is part of my reputation as a professional</strong>.</p>
 
 <h1>The Solution</h1>
 
 <p>Join <strong>Arigatai</strong>.</p>
 
-<p>Arigatai, with symbol <code>$ARIGATAI</code>, stores the gratitude value on Ethereum, as an <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">ERC-20 token</a>.</p>
+<h2>ERC-20 Token</h2>
 
-<p><img src="../images/ARIGATAI-is-erc-20.png" alt="ARIGATAI is an ERC-20 Token" /></p>
+<p>Arigatai, with symbol <code>ARIG</code>, stores the gratitude value on Ethereum, as an <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">ERC-20 token</a>.</p>
 
-<p>Arigatai, is my professional reputation points on the <em>gratitude</em> dimension.</p>
+<p><img src="../../../../../images/ARIGATAI-is-erc-20.png" alt="ARIGATAI is an ERC-20 Token" /></p>
+
+<p><code>ARIG</code>, is my professional reputation points on the <em>gratitude</em> dimension.</p>
+
+<h2>Minting</h2>
+
+<p>When <code>Arigatai</code> Smart Contract is deployed it doesn&rsquo;t have any initial circulation. I.e. the circulating supply is <code>0</code>.</p>
+
+<p>Minting starts when clients call the external functions <code>arigatoDeliver()</code> and <code>arigatoAccept()</code></p>
+
+<p>This is the signature of the function:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function arigatoDeliver(
+</span><span class='line'>  address _recipient, // The EOA that will receive the `ARIG`
+</span><span class='line'>  uint256 _amount, // The amount of `ARIG` the _recipient will get
+</span><span class='line'>  bytes[640] memory _reason, // The reason sender is sending the _recipient this amount of ARIG
+</span><span class='line'>) external;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are some rules for this call to succeed.</p>
+
+<ol>
+<li>The caller should be an EOA, not a contract.</li>
+<li>Recipient should be an EOA, not a contract.</li>
+<li>The caller should not exceed the maximum daily delivery amount which is 5.</li>
+</ol>
+
+
+<p>This function does not actually <em>create</em> <code>ARIG</code>.  It is the <code>arigatoAccept()</code> that does.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function arigatoAccept(
+</span><span class='line'>  address _sender, // The EOA that sent the arigatoRequest()
+</span><span class='line'>  uint256 _amount, // The amount of $ARIG that will be accepted
+</span><span class='line'>) external;</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>The caller needs to have a pending <code>ARIG</code> delivery from the <code>_sender</code>.</li>
+<li>The pending delivery should be for the <code>_amount</code>.</li>
+<li>The delivery should have been created within the last 24 hours from acceptance.</li>
+</ol>
+
+
+<p>So, it is the <code>arigatoAccept()</code> that does the actual minting of the <code>ARIG</code> token.</p>
+
+<p>When <code>arigatoAccept()</code> succeeds, the caller gets the amount of <code>ARIG</code> and there is
+a record created (<code>Arigato</code> record) in the state of the contract to record the details of the reward.</p>
+
+<p>The <code>arigatoAccept()</code> will internally call a <code>_mint()</code> function like:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>_mint(msg.sender, _amount)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and will also take care to create the <code>Arigato</code> record.</p>
+
+<h2>Properties of the ERC-20 Token</h2>
+
+<ul>
+<li><code>name</code>: <code>ARIGATAI</code></li>
+<li><code>symbol</code>:<code>ARIG</code></li>
+<li><code>decimals</code>: <code>0</code>. The value <code>ARIG</code> token is not divisible.</li>
+</ul>
+
+
+<h2>How can an EOA Find The List of its <code>Arigato</code> Records?</h2>
+
+<p>There is a function that allows pagination access to the <code>Arigato</code> records of an address:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function getArigatos(address receiver, uint256 start, uint256 count) public view returns (Arigato[] memory);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Also, there is a function that returns the total number of <code>Arigato</code> records of an address:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function getArigatosCount(address receiver) public view returns uint256;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>How can we have a Leader Board?</h2>
+
+<p>Contract keeps track of the recipients and their <code>Arigato</code> records. Building a Leader Board,
+is outside of the scope of the Smart Contract, but we have other plans for it.</p>
 ]]></content>
   </entry>
   

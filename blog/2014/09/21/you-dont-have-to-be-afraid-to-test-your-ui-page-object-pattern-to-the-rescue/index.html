@@ -314,7 +314,7 @@ Using namespace is a good practice in general and not only for the <code>site_pr
 </span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
 </span><span class='line'>    <span class="k">module</span> <span class="nn">Pages</span>
 </span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
-</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Page</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="no">SitePrism</span><span class="o">::</span><span class="no">Page</span>
 </span><span class='line'>          <span class="c1"># ... your page code goes here ... #</span>
 </span><span class='line'>        <span class="k">end</span>
 </span><span class='line'>      <span class="k">end</span>
@@ -401,15 +401,15 @@ Here is a sample implementation in order to understand what I am talking about:<
 </span><span class='line'>      <span class="k">end</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="k">def</span> <span class="nf">home</span>
-</span><span class='line'>        <span class="vi">@pages</span><span class="o">[</span><span class="ss">:home</span><span class="o">]</span> <span class="o">||=</span> <span class="ss">Bookstore</span><span class="p">:</span><span class="ss">:PageObjects</span><span class="o">::</span><span class="ss">Pages</span><span class="p">:</span><span class="ss">:HomePage</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>        <span class="vi">@pages</span><span class="o">[</span><span class="ss">:home</span><span class="o">]</span> <span class="o">||=</span> <span class="no">Bookstore</span><span class="o">::</span><span class="no">PageObjects</span><span class="o">::</span><span class="no">Pages</span><span class="o">::</span><span class="no">HomePage</span><span class="o">.</span><span class="n">new</span>
 </span><span class='line'>      <span class="k">end</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="k">def</span> <span class="nf">sign_in</span>
-</span><span class='line'>        <span class="vi">@pages</span><span class="o">[</span><span class="ss">:sign_in</span><span class="o">]</span> <span class="o">||=</span> <span class="ss">Bookstore</span><span class="p">:</span><span class="ss">:PageObjects</span><span class="o">::</span><span class="ss">Pages</span><span class="p">:</span><span class="ss">:SignInPage</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>        <span class="vi">@pages</span><span class="o">[</span><span class="ss">:sign_in</span><span class="o">]</span> <span class="o">||=</span> <span class="no">Bookstore</span><span class="o">::</span><span class="no">PageObjects</span><span class="o">::</span><span class="no">Pages</span><span class="o">::</span><span class="no">SignInPage</span><span class="o">.</span><span class="n">new</span>
 </span><span class='line'>      <span class="k">end</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="k">def</span> <span class="nf">checkout</span>
-</span><span class='line'>        <span class="vi">@pages</span><span class="o">[</span><span class="ss">:checkout</span><span class="o">]</span> <span class="o">||=</span> <span class="ss">Bookstore</span><span class="p">:</span><span class="ss">:PageObjects</span><span class="o">::</span><span class="ss">Pages</span><span class="p">:</span><span class="ss">:CheckoutPage</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>        <span class="vi">@pages</span><span class="o">[</span><span class="ss">:checkout</span><span class="o">]</span> <span class="o">||=</span> <span class="no">Bookstore</span><span class="o">::</span><span class="no">PageObjects</span><span class="o">::</span><span class="no">Pages</span><span class="o">::</span><span class="no">CheckoutPage</span><span class="o">.</span><span class="n">new</span>
 </span><span class='line'>      <span class="k">end</span>
 </span><span class='line'>    <span class="k">end</span>
 </span><span class='line'>  <span class="k">end</span>
@@ -425,7 +425,7 @@ Here is a sample implementation in order to understand what I am talking about:<
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Before</span> <span class="k">do</span> <span class="o">|</span><span class="n">scenario</span><span class="o">|</span>
-</span><span class='line'>  <span class="vi">@app</span> <span class="o">||=</span> <span class="ss">Bookstore</span><span class="p">:</span><span class="ss">:PageObjects</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>  <span class="vi">@app</span> <span class="o">||=</span> <span class="no">Bookstore</span><span class="o">::</span><span class="no">PageObjects</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">new</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -486,7 +486,7 @@ Here is a sample implementation in order to understand what I am talking about:<
 </span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
 </span><span class='line'>    <span class="k">module</span> <span class="nn">Pages</span>
 </span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
-</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Page</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="no">SitePrism</span><span class="o">::</span><span class="no">Page</span>
 </span><span class='line'>
 </span><span class='line'>          <span class="n">elements</span> <span class="ss">:book_items</span><span class="p">,</span> <span class="s1">&#39;#books-table tr.book-item&#39;</span>
 </span><span class='line'>
@@ -527,9 +527,9 @@ Here is a sample implementation in order to understand what I am talking about:<
 </span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
 </span><span class='line'>    <span class="k">module</span> <span class="nn">Pages</span>
 </span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
-</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Page</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="no">SitePrism</span><span class="o">::</span><span class="no">Page</span>
 </span><span class='line'>
-</span><span class='line'>          <span class="n">sections</span> <span class="ss">:book_items</span><span class="p">,</span> <span class="ss">Bookstore</span><span class="p">:</span><span class="ss">:PageObjects</span><span class="o">::</span><span class="ss">Sections</span><span class="p">:</span><span class="ss">:Books</span><span class="o">::</span><span class="no">BookEntrySection</span><span class="p">,</span> <span class="s1">&#39;#books-table tr.book-item&#39;</span>
+</span><span class='line'>          <span class="n">sections</span> <span class="ss">:book_items</span><span class="p">,</span> <span class="no">Bookstore</span><span class="o">::</span><span class="no">PageObjects</span><span class="o">::</span><span class="no">Sections</span><span class="o">::</span><span class="no">Books</span><span class="o">::</span><span class="no">BookEntrySection</span><span class="p">,</span> <span class="s1">&#39;#books-table tr.book-item&#39;</span>
 </span><span class='line'>
 </span><span class='line'>        <span class="k">end</span>
 </span><span class='line'>      <span class="k">end</span>
@@ -562,7 +562,7 @@ Here is a sample implementation in order to understand what I am talking about:<
 </span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
 </span><span class='line'>    <span class="k">module</span> <span class="nn">Sections</span>
 </span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
-</span><span class='line'>        <span class="k">class</span> <span class="nc">BookEntrySection</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Section</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">BookEntrySection</span> <span class="o">&lt;</span> <span class="no">SitePrism</span><span class="o">::</span><span class="no">Section</span>
 </span><span class='line'>          <span class="n">element</span> <span class="ss">:title</span><span class="p">,</span>        <span class="s1">&#39;td.title&#39;</span>
 </span><span class='line'>          <span class="n">element</span> <span class="ss">:author</span><span class="p">,</span>       <span class="s1">&#39;td.author&#39;</span>
 </span><span class='line'>          <span class="n">element</span> <span class="ss">:published_at</span><span class="p">,</span> <span class="s1">&#39;td.published-at&#39;</span>
@@ -609,7 +609,7 @@ Here is a sample implementation in order to understand what I am talking about:<
 </span><span class='line'>  <span class="k">module</span> <span class="nn">PageObjects</span>
 </span><span class='line'>    <span class="k">module</span> <span class="nn">Pages</span>
 </span><span class='line'>      <span class="k">module</span> <span class="nn">Books</span>
-</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="ss">SitePrism</span><span class="p">:</span><span class="ss">:Page</span>
+</span><span class='line'>        <span class="k">class</span> <span class="nc">IndexPage</span> <span class="o">&lt;</span> <span class="no">SitePrism</span><span class="o">::</span><span class="no">Page</span>
 </span><span class='line'>          <span class="c1"># .... other index page code .... #</span>
 </span><span class='line'>
 </span><span class='line'>          <span class="n">sections</span> <span class="ss">:book_items</span><span class="p">,</span> <span class="s1">&#39;#books-table tr.book-item&#39;</span> <span class="k">do</span>
