@@ -1,0 +1,19 @@
+.hackathon {
+  margin-bottom: 70px;
+}
+
+.hackathon div {
+  text-align: center;
+}
+
+.hackathon .title {
+  margin-bottom: 10px;
+}
+
+.hackathon img.badge {
+  width:25%;
+}
+
+.hackathon hr.achievement_divider {
+  width: 50%;
+}
