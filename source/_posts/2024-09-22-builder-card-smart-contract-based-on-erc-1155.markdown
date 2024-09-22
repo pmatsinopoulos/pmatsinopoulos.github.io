@@ -8,6 +8,8 @@ categories: ["solidity", "blockchain", "erc-1155"]
 
 # Builder Card Smart Contract - Based on ERC-1155
 
+[Download PDF Version](../../../../../pdfs/builder-card-smart-contract/builder-card-smart-contract.pdf)
+
 ## Introduction
 
 In [EthGlobal Hackathon in Brussels, Jul 2027](https://ethglobal.com/events/brussels), I actively participated as a member of the [Talent Protocol](https://www.talentprotocol.com/) team.
