@@ -1,19 +1,24 @@
-.hackathon {
+.hackathon,
+.bootcamp {
   margin-bottom: 70px;
 }
 
-.hackathon div {
+.hackathon div,
+.bootcamp div {
   text-align: center;
 }
 
-.hackathon .title {
+.hackathon .title,
+.bootcamp .title {
   margin-bottom: 10px;
 }
 
-.hackathon img.badge {
+.hackathon img.badge,
+.bootcamp img.badge {
   width:25%;
 }
 
-.hackathon hr.achievement_divider {
+.hackathon hr.achievement_divider,
+.bootcamp hr.achievement_divider {
   width: 50%;
 }
