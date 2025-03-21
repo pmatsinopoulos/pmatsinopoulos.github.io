@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Instrumentation | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/instrumentation/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2025-03-21T09:37:40+02:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Find Slow Ruby on Rails Requests]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2025/03/21/find-slow-ruby-on-rails-requests/"/>
+    <updated>2025-03-21T09:33:29+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2025/03/21/find-slow-ruby-on-rails-requests</id>
+    <content type="html"><![CDATA[<p>I have published a new blog post about how I find slow Ruby on Rails HTTP requests.</p>
+
+<p>It will be helpful to you if you work with Ruby on Rails and store your logs to AWS.</p>
+
+<p>Title: <a href="https://mirror.xyz/panagiotismatsinopoulos.eth/ohjF_JmXl7PgNrjMulJXPkJr3jahzP_Cg5CYCgMPiHI">Find Long Ruby on Rails Requests</a></p>
+]]></content>
+  </entry>
+  
+</feed>
