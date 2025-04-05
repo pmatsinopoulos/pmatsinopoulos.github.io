@@ -9,8 +9,8 @@
   <meta name="author" content="Panos Matsinopoulos">
 
   
-  <meta name="description" content="Having done the Apple developer tutorial Getting Started on iOS development, the next was to have a deeper dive in
-Objective-C. Looking around for &hellip;">
+  <meta name="description" content="Introduction Today, I had to find a way to make my production Rails application log into different log files per process. I have
+the application &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -376,6 +376,48 @@ Objective-C. Looking around for &hellip;">
   </div>
 
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/">Making Rails Logger Use One Log File Per Process With Phusion Passenger</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-02-19T16:57:00+02:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>4:57 pm</span></time>
+        
+           | <a href="/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/#disqus_thread"
+             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Introduction</h2>
+
+<p>Today, I had to find a way to make my production Rails application log into different log files per process. I have
+the application deployed using <a href="https://www.phusionpassenger.com/">Phusion Passenger</a> as an Apache 2 module. The reason
+I decided to do that was the fact that I wanted to analyze the logs with <a href="https://github.com/wvanbergen/request-log-analyzer">Request Log Analyzer</a> tool.
+This tool requires the log files to be separate so that they do not interleave the log entries of different requests.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/02/19/making-rails-logger-use-one-log-file-per-process-with-phusion-passenger/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -806,55 +848,6 @@ Here is an example of an <code>ActiveRecord::Migration</code> that uses this typ
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/24/the-clean-coder-a-code-of-conduct-for-professional-programmers-r-martin-pearson/">The Clean Coder - a Code of Conduct for Professional Programmers - R. Martin (Pearson)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-12-24T22:14:00+02:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:14 pm</span></time>
-        
-           | <a href="/blog/2013/12/24/the-clean-coder-a-code-of-conduct-for-professional-programmers-r-martin-pearson/#disqus_thread"
-             data-disqus-identifier="http://pmatsinopoulos.github.io/blog/2013/12/24/the-clean-coder-a-code-of-conduct-for-professional-programmers-r-martin-pearson/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I have recently finished the book <a href="http://www.amazon.com/gp/product/0137081073/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0137081073&amp;linkCode=as2&amp;tag=panayotmatsin-20">&ldquo;The Clean Coder - A Code of Conduct for Professional Programmers - R. Martin (Pearson, 2011) BBS&rdquo;</a>. Here is my short review:</p>
-
-<p>Overall: Fantastic. Worth reading for every developer that wants to become professional.</p>
-
-<h2>My Notes and Highlights</h2>
-
-<h3>Chapter 1 - Professionalism</h3>
-
-<ul>
-<li>Professionalism is a marker of responsibility and accountability.</li>
-<li>It is better to make your manager unhappy rather than your manager customers.</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/12/24/the-clean-coder-a-code-of-conduct-for-professional-programmers-r-martin-pearson/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/8">&larr; Older</a>
@@ -872,6 +865,10 @@ Here is an example of an <code>ActiveRecord::Migration</code> that uses this typ
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2025/04/05/sql-query-annotation/">SQL Query Annotation</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2025/03/21/find-slow-ruby-on-rails-requests/">Find Slow Ruby on Rails Requests</a>
       </li>
     
@@ -885,10 +882,6 @@ Here is an example of an <code>ActiveRecord::Migration</code> that uses this typ
     
       <li class="post">
         <a href="/blog/2024/08/25/arigatai-express-gratitude-that-stays-in-history/">Arigatai; Express Gratitude That Stays in History</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2024/07/25/ethcc-7-ethglobal-9-amazing-days-in-my-life/">EthCC[7] - EthGlobal - 9 Amazing Days in My Life</a>
       </li>
     
   </ul>
