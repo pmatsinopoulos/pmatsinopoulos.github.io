@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Background-jobs | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/background-jobs/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2025-04-13T14:55:15+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Singleton]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2025/04/13/singleton/"/>
+    <updated>2025-04-13T14:53:16+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2025/04/13/singleton</id>
+    <content type="html"><![CDATA[<p>My new blog post about <a href="https://mirror.xyz/panagiotismatsinopoulos.eth/BXASzF0jEoAsou65RCbXk4OTr6byn7sFeYkBUT8Yg2k">Singleton, Unique Jobs and Concurrency</a>.
+Tech stack: Ruby on Rails and Sidekiq.</p>
+]]></content>
+  </entry>
+  
+</feed>
