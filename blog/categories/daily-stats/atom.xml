@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Daily_stats | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/daily-stats/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2025-05-04T11:49:20+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Querying a Daily Stats Table - Postgres]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2025/05/04/querying-a-daily-stats-table-postgres/"/>
+    <updated>2025-05-04T11:47:50+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2025/05/04/querying-a-daily-stats-table-postgres</id>
+    <content type="html"><![CDATA[<p>My new blog post about <a href="https://mirror.xyz/panagiotismatsinopoulos.eth/CxkN4TvWZBXmbUf7repP3LZMTXcaaVLtNwLNpKVxtik">Querying a Daily Stats Table - Postgres</a></p>
+]]></content>
+  </entry>
+  
+</feed>

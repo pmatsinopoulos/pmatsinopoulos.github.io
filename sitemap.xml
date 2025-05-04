@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2025/05/04/querying-a-daily-stats-table-postgres/</loc>
+<lastmod>2025-05-04T11:47:50+03:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2025/04/13/singleton/</loc>
 <lastmod>2025-04-13T14:53:16+03:00</lastmod>
 </url>
@@ -728,6 +732,12 @@
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/blog/categories/concurrency/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/analytics/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/daily-stats/</loc>
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/panayotis-m-newsletter/thank-you-for-confirming-subscription-to-our-newsletter/index.html</loc>
