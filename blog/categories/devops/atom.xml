@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Devops | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/devops/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2025-07-13T13:36:49+03:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How I Set Up TimescaleDB on AWS]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2025/07/13/how-i-set-up-timescaledb-on-aws/"/>
+    <updated>2025-07-13T13:34:48+03:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2025/07/13/how-i-set-up-timescaledb-on-aws</id>
+    <content type="html"><![CDATA[<p>Read here how I set up TimescaleDB on AWS:</p>
+
+<p><a href="https://mirror.xyz/panagiotismatsinopoulos.eth/09nsCECzMgVCZk0jcFZbs3DIeTQD7rH6W0IvHzaCsS4">https://mirror.xyz/panagiotismatsinopoulos.eth/09nsCECzMgVCZk0jcFZbs3DIeTQD7rH6W0IvHzaCsS4</a></p>
+]]></content>
+  </entry>
+  
+</feed>
