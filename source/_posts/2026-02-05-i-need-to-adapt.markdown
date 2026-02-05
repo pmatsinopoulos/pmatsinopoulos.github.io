@@ -144,7 +144,7 @@ The future is uncertain.
 
 What I can be certain of is myself and how I approach the new technology boom.
 
-With "strong beliefs, weakly held."
+With "strong beliefs, weakly held." [1]
 
 ## Closing Note
 
@@ -157,3 +157,5 @@ Yesterday, I used the Copilot Coding Agent:
 - I merged it, and it was pushed to production thanks to CI/CD (GitHub Actions)
 
 I am happy I live in the era of this huge technology change.
+
+[1] Taken from [Paul Saffro, at Palo Alto's Institute for the Future](https://library.educause.edu/resources/1998/1/paul-saffo-interview-betting-on-strong-opinions-weakly-held)
