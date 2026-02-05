@@ -8,11 +8,11 @@ categories: ["software engineering", "coding agents", "AI", "professional develo
 
 ## Introduction
 
-I am 55 years old at the time of this writing.
+I am a seasoned software engineer. You can guess my age if you look at my CV.
 
 Everywhere I look, I see blog posts and messages about AI and coding agents.
 
-Will they take over my job?
+Will they take over my job? How should I be looking at this subject at my age and with the experience that I have acquired over the years?
 
 ## The Way I Think
 
