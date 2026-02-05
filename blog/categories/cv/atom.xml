@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Cv | Panos Matsinopoulos]]></title>
+  <link href="http://pmatsinopoulos.github.io/blog/categories/cv/atom.xml" rel="self"/>
+  <link href="http://pmatsinopoulos.github.io/"/>
+  <updated>2026-02-05T11:00:25+02:00</updated>
+  <id>http://pmatsinopoulos.github.io/</id>
+  <author>
+    <name><![CDATA[Panos Matsinopoulos]]></name>
+    <email><![CDATA[panayotis@matsinopoulos.gr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[I'm Proud of My Work]]></title>
+    <link href="http://pmatsinopoulos.github.io/blog/2026/02/05/i-m-proud-of-my-work/"/>
+    <updated>2026-02-05T08:21:18+02:00</updated>
+    <id>http://pmatsinopoulos.github.io/blog/2026/02/05/i-m-proud-of-my-work</id>
+    <content type="html"><![CDATA[<p>Looking back at 2025, I am really proud of my work.</p>
+
+<p>Read more <a href="https://www.linkedin.com/pulse/proud-my-work-panagiotis-panos-matsinopoulos-ww5wf/">here</a></p>
+]]></content>
+  </entry>
+  
+</feed>

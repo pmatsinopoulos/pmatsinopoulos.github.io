@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pmatsinopoulos.github.io/blog/2026/02/05/i-m-proud-of-my-work/</loc>
+<lastmod>2026-02-05T08:21:18+02:00</lastmod>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/2026/02/05/i-need-to-adapt/</loc>
+<lastmod>2026-02-05T08:20:41+02:00</lastmod>
+</url>
+<url>
 <loc>http://pmatsinopoulos.github.io/blog/2025/07/13/how-i-set-up-timescaledb-on-aws/</loc>
 <lastmod>2025-07-13T13:34:48+03:00</lastmod>
 </url>
@@ -748,6 +756,21 @@
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/blog/categories/timescaledb/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/software-engineering/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/coding-agents/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/ai/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/professional-development/</loc>
+</url>
+<url>
+<loc>http://pmatsinopoulos.github.io/blog/categories/cv/</loc>
 </url>
 <url>
 <loc>http://pmatsinopoulos.github.io/panayotis-m-newsletter/thank-you-for-confirming-subscription-to-our-newsletter/index.html</loc>
