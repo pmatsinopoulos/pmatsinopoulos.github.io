@@ -3,6 +3,7 @@ layout: post
 title: "Adapting to AI: An Engineer's Journey"
 date: 2026-02-05 08:20:41 +0200
 comments: true
+canonical: "https://www.matsinopoulos.gr/blog/2026/02/05/i-need-to-adapt/"
 categories: ["software engineering", "coding agents", "AI", "professional development"]
 ---
 
